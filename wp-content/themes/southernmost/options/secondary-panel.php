@@ -29,7 +29,7 @@ array_unshift($wp_cats, "Select a category");
 array_unshift($terms, "Select a Location"); 
 array_unshift($type, "Select a Type"); 
 
-$prefix = 'cebo';
+$prefix = 'misfit';
 
 $numbers = array('0', '1', '2', '3', '4', '5', '6', '7', '8', '9+');
 $pagetypes = array('Two Column', 'Full Width', 'With Sidebar');

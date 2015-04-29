@@ -57,9 +57,9 @@
 	?>
 	</head> 
 	
-	<body>	
+	<body <?php body_class(); ?>>	
 
-	<div id="wrapper" class="wrapper home_page">
+	<div id="wrapper" class="wrapper">
 	
 	<a href="#" class="closer"></a>
 	
@@ -74,15 +74,16 @@
 					<ul class="topnavigation">
 						<li><a href="#">Accomodations</a></li>
 						<li><a href="#">Gallery</a></li>
-						<li><a href="specials.html">Specials</a></li>
+						<li><a href="<?php bloginfo ('url'); ?>/specials">Specials</a></li>
 						<li><a href="#">Dining</a></li>
 					</ul>
 				</div>
-			</div>
-	
-			<div class="hamburger">
-				<a  class="cheese" href="#"><img src="<?php bloginfo ('template_url'); ?>/images/hamburger-button.png" alt="menu"/></a>
-				<a class="royale" href="#"><img src="<?php bloginfo ('template_url'); ?>/images/hamburger-close.png" alt="menu"/></a>
+
+				<div class="hamburger">
+					<a  class="cheese" href="#"><img src="<?php bloginfo ('template_url'); ?>/images/hamburger-button.png" alt="menu"/></a>
+					<a class="royale" href="#"><img src="<?php bloginfo ('template_url'); ?>/images/hamburger-close.png" alt="menu"/></a>
+				</div>
+
 			</div>
 	
 			<div class="reserve">

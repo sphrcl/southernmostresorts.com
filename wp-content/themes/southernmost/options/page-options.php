@@ -34,9 +34,10 @@ $prefix = 'misfit';
 $numbers = array('0', '1', '2', '3', '4', '5', '6', '7', '8', '9+');
 $pagetypes = array('Basic No Feature', 'Scrolling Feature', 'Full Screen Feature', 'Colored Background Area');
 
-$article_meta_boxer = array(
-	'id' => 'CUSTOM FIELDS',
-	'title' => 'Additional Information for Articles',
+$page_meta_boxer = array(
+
+	'id' => 'page-fields',
+	'title' => 'Options For Pages',
 	// 'page' => determines where the custom field is supposed to show up.
 	// here it is desplaying Testimonials, but other options are
 	// page or post
@@ -44,34 +45,16 @@ $article_meta_boxer = array(
 	'context' => 'normal',
 	'priority' => 'high',
 	'fields' => array(
-				
-
+	
 		array( 
-              "name" => "Author",
-	          "desc" => "Author Name here",
-	          "id" => $prefix."_authorname",
-	          "type" => "text",
-	          "std" => ""
-              )
- 		,
+			"name" => "Subtitle",
+			"id" => $prefix."_subtitle",
+			"type" => "text",
+			"std" => ""
+		),
  		
- 		array( 
-              "name" => "Author Bio",
-	          "desc" => "If you have an author bio, put it here.",
-	          "id" => $prefix."_authorbio",
-	          "type" => "textarea",
-	          "std" => ""
-              )
- 		,
- 		array( 
-              "name" => "Author Pic (if Applies)",
-	          "desc" => "Try to keep it square ",
-	          "id" => $prefix."_authorpic",
-	          "type" => "upload",
-	          "std" => ""
-              )
-       	 		
-       	)
+	)
+
 );
 
 
@@ -86,16 +69,16 @@ wp_enqueue_script('color-picker', get_template_directory_uri().'/options/js/colo
 
 
 /* ----------------------------------------------- DONT TOUCH BELOW UNLESS YOU KNOW WHAT YOU'RE DOING */
-add_action('admin_menu', 'article_option_add_boxer');
+add_action('admin_menu', 'pageoptions_add_boxer');
 // Add meta boxer
-function article_option_add_boxer() {
-	global $article_meta_boxer;
-	foreach ( array( 'article', 'event' ) as $page )
-	add_meta_box($article_meta_boxer['id'], $article_meta_boxer['title'], 'article_option_show_boxer', $page, $article_meta_boxer['context'], 			$article_meta_boxer['priority']);
+function pageoptions_add_boxer() {
+	global $page_meta_boxer;
+	foreach ( array( 'page' ) as $page )
+	add_meta_box($page_meta_boxer['id'], $page_meta_boxer['title'], 'pageoptions_show_boxer', $page, $page_meta_boxer['context'], 			$page_meta_boxer['priority']);
 }
 // Callback function to show fields in meta boxer
-function article_option_show_boxer() {
-	global $article_meta_boxer, $post;
+function pageoptions_show_boxer() {
+	global $page_meta_boxer, $post;
 	// Use nonce for verification
 	
 	echo '
@@ -161,9 +144,9 @@ jQuery(document).ready(function() {
 		
 		';
 		
-	echo '<input type="hidden" name="article_option_article_meta_boxer_nonce" value="', wp_create_nonce(basename(__FILE__)), '" />';
+	echo '<input type="hidden" name="pageoptions_page_meta_boxer_nonce" value="', wp_create_nonce(basename(__FILE__)), '" />';
 	echo '<table class="form-table">';
-	foreach ($article_meta_boxer['fields'] as $field) {
+	foreach ($page_meta_boxer['fields'] as $field) {
 		// get current post meta data
 		$meta = get_post_meta($post->ID, $field['id'], true);
 		echo '<tr>',
@@ -172,7 +155,7 @@ jQuery(document).ready(function() {
 			
 			
 			case 'text':
-				echo '<div style="font-weight: bold;" class="title">' ,$field['name'], '</div><div style="font-style: italic; font-size: 12px; color: #a2a2a2;"class="descriptive">', $field['desc'], '</div>', '<input type="text" name="', $field['id'], '" id="', $field['id'], '" value="', $meta ? $meta : $field['std'], '" size="30" style="width: 100%; padding: 10px 0;" />';
+				echo '<div style="font-weight: bold;" class="title">' ,$field['name'], '</div><div style="font-style: italic; font-size: 12px; color: #a2a2a2;"class="descriptive">', $field['desc'], '</div>', '<input type="text" name="', $field['id'], '" id="', $field['id'], '" value="', $meta ? $meta : $field['std'], '" size="30" style="width: 100%; padding: 10px;" />';
 				break;
 			
 			
@@ -182,7 +165,7 @@ jQuery(document).ready(function() {
 							
 				
 			case 'upload':
-				echo '<div style="font-weight: bold;" class="title">' ,$field['name'], '</div><div style="font-style: italic; font-size: 12px; color: #a2a2a2;"class="descriptive">', $field['desc'], '</div>', '<input type="text" class="upload_image" name="', $field['id'], '" id="', $field['id'], '"  value="', $meta ? $meta : $field['std'], '" size="30" style="width: 100%; padding: 10px 0;" /><input class="upload_image_button" type="button" value="Upload Image" />';
+				echo '<div style="font-weight: bold;" class="title">' ,$field['name'], '</div><div style="font-style: italic; font-size: 12px; color: #a2a2a2;"class="descriptive">', $field['desc'], '</div>', '<input type="text" class="upload_image" name="', $field['id'], '" id="', $field['id'], '"  value="', $meta ? $meta : $field['std'], '" size="30" style="width: 100%; padding: 10px;" /><input class="upload_image_button button button-primary button-large" style="margin-top: 10px;" type="button" value="Upload Image" />';
 				break;
 			
 			case 'textarea':
@@ -213,12 +196,12 @@ jQuery(document).ready(function() {
 	echo '</table>';
 }
 
-add_action('save_post', 'article_option_save_data');
+add_action('save_post', 'pageoptions_save_data');
 // Save data from meta boxer
-function article_option_save_data($post_id) {
-	global $article_meta_boxer;	
+function pageoptions_save_data($post_id) {
+	global $page_meta_boxer;	
 	// verify nonce
-	if (!wp_verify_nonce($_POST['article_option_article_meta_boxer_nonce'], basename(__FILE__))) {
+	if (!wp_verify_nonce($_POST['pageoptions_page_meta_boxer_nonce'], basename(__FILE__))) {
 		return $post_id;
 	}
 	// check autosave
@@ -232,7 +215,7 @@ function article_option_save_data($post_id) {
 	} elseif (!current_user_can('edit_post', $post_id)) {
 		return $post_id;
 	}
-	foreach ($article_meta_boxer['fields'] as $field) {
+	foreach ($page_meta_boxer['fields'] as $field) {
 		$old = get_post_meta($post_id, $field['id'], true);
 		$new = $_POST[$field['id']];		
 		if ($new && $new != $old) {

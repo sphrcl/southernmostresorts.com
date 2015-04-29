@@ -162,4 +162,39 @@ function createds_post_types() {
 }
 
 
+
+add_action('init', 'dining_items');
+
+function dining_items()
+{
+  $labels = array(
+    'name' => _x('Dining', 'post type general name'),
+    'singular_name' => _x('Dining', 'post type singular name'),
+    'add_new' => _x('Add New', 'Dining'),
+    'add_new_item' => __('Add New Dining'),
+    'edit_item' => __('Edit Dining'),
+    'new_item' => __('New Dining'),
+    'view_item' => __('View Dining'),
+    'search_items' => __('Search Dining'),
+    'not_found' =>  __('No Dining found'),
+    'not_found_in_trash' => __('No Dining found in Trash'),
+    'parent_item_colon' => ''
+  );
+  $args = array(
+    'labels' => $labels,
+    'public' => true,
+    'publicly_queryable' => true,
+    'show_ui' => true,
+    'query_var' => true,
+    'rewrite' => array( 'slug' => 'dining' ),
+    'capability_type' => 'post',
+    'menu_icon' => 'dashicons-carrot',
+    'hierarchical' => false,
+    'menu_position' => null,
+    'supports' => array('title','custom-fields','editor','author','thumbnail','revisions')
+  );
+  register_post_type('dining',$args);
+}
+
+
 ?>
