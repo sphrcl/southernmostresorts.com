@@ -11,3 +11,28 @@ wp-content/cache/
 wp-content/upgrade/
 wp-content/uploads/
 wp-content/wp-cache-config.php
+
+# ignore debug.log
+wp-content/debug.log
+# ignore local-config.php
+local-config.php
+
+# ignore wordpress themes
+wp-content/wp-content/themes/classic/
+wp-content/wp-content/themes/twentyfifteen/
+wp-content/wp-content/themes/twentyfourteen/
+wp-content/wp-content/themes/twentythirteen/
+wp-content/wp-content/themes/twentytwelve/
+
+# ignore other themes
+wp-content/wp-content/themes/default/
+
+# Custom individual ignores
+wp-content/plugins/wp-google-maps/1markers.xml
+tmp/
+blogs/
+.DS_Store
+test/
+*timthumb.txt
+cache/
+*-cache.txt
