@@ -64,6 +64,13 @@ function tt($image,$width,$height){
     return bloginfo('template_url') . "/library/thumb.php?src=$image&w=$width&h=$height";
 }
 
+function is_subpage() {
+    global $post;
+    if ( is_page() && $post->post_parent ) {
+        return $post->post_parent;          
+    } else { return false; }
+}
+
 if ( !function_exists('ss_framework_admin_scripts') ) {
 
 	// Backend Scripts

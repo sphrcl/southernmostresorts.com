@@ -52,6 +52,13 @@ $page_meta_boxer = array(
 			"type" => "text",
 			"std" => ""
 		),
+
+		array( 
+			"name" => "Title on banner image",
+			"id" => $prefix."_banner_title",
+			"type" => "text",
+			"std" => ""
+		),
  		
 	)
 

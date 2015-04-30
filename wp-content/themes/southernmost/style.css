@@ -1335,3 +1335,44 @@ ul.subnavigation li.current::after {
 .page-template-page-dining-php .flexslider.topbanner li {
   height: 550px;
 }
+
+
+
+/* Page - Gallery ########################################################################################## */
+
+.page-template-page-gallery-php div#pagecontent .container {
+    width: 90%;
+}
+
+.gallery-list {
+    overflow: hidden;
+    padding: 0;
+}
+
+.gallery-list > a {
+    float: left;
+    margin: 0.25%;
+    width: 19.6%;
+    display: block;
+}
+
+.gallery-list > a:last-child {
+    margin-right: 0;
+}
+
+.gallery-list > a:first-child {
+    margin-left: 0;
+}
+
+.gallery-list > a:nth-child(5n) {
+    margin-right: 0;
+}
+
+.gallery-list > a:nth-child(6n) {
+    margin-left: 0;
+}
+
+.gallery-list a img {
+    height: auto;
+    width: 100%;
+}
