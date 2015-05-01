@@ -30,6 +30,7 @@ include(TEMPLATEPATH . '/library/post_types.php');
 /* Below is an include to a few options for your posts.*/
 include(TEMPLATEPATH . '/options/single-options.php');
 include(TEMPLATEPATH . '/options/page-options.php');
+include(TEMPLATEPATH . '/options/activities-options.php');
 
 
 

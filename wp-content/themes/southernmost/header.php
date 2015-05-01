@@ -72,10 +72,8 @@
 			<div class="navigation">
 				<div id="navmenu">
 					<ul class="topnavigation">
-						<li><a href="#">Accomodations</a></li>
-						<li><a href="#">Gallery</a></li>
-						<li><a href="<?php bloginfo ('url'); ?>/specials">Specials</a></li>
-						<li><a href="#">Dining</a></li>
+
+						<?php wp_nav_menu( array( 'theme_location' => 'primary' ,  'container' => '', 'menu_class' => 'dl-menu scrolling' ) ); ?>
 					</ul>
 				</div>
 

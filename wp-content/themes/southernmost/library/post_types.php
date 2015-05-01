@@ -197,4 +197,39 @@ function dining_items()
 }
 
 
+
+add_action('init', 'activity_items');
+
+function activity_items()
+{
+  $labels = array(
+    'name' => _x('Activities', 'post type general name'),
+    'singular_name' => _x('Activity', 'post type singular name'),
+    'add_new' => _x('Add New', 'Activity'),
+    'add_new_item' => __('Add New Activity'),
+    'edit_item' => __('Edit Activity'),
+    'new_item' => __('New Activity'),
+    'view_item' => __('View Activity'),
+    'search_items' => __('Search Activities'),
+    'not_found' =>  __('No Activity found'),
+    'not_found_in_trash' => __('No Activity found in Trash'),
+    'parent_item_colon' => ''
+  );
+  $args = array(
+    'labels' => $labels,
+    'public' => true,
+    'publicly_queryable' => true,
+    'show_ui' => true,
+    'query_var' => true,
+    'rewrite' => array( 'slug' => 'activities' ),
+    'capability_type' => 'post',
+    'menu_icon' => 'dashicons-smiley',
+    'hierarchical' => false,
+    'menu_position' => null,
+    'supports' => array('title','custom-fields','editor','author','thumbnail','revisions')
+  );
+  register_post_type('activities',$args);
+}
+
+
 ?>
