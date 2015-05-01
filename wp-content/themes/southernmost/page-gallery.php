@@ -31,66 +31,36 @@
 
 </div>
 
-<div class="page-nav">
+<ul class="page-nav">
 
 	<?php 
-
-		if(is_subpage()) {
-
-			$currency = $post->ID;
-			$ancestors = get_post_ancestors($post->ID);
-			$parents = $ancestors[0];
-			$this_post = $post->ID;
 				
-			query_posts(
-				array(
-				'post_type' => 'page',
-				'post_parent' => $parents,
-				'posts_per_page'=> 8,
-				// 'post__not_in' => array($currency)
-		
-			)); if(have_posts()) : while(have_posts()) : the_post(); 
+		// $ancestors = get_post_ancestors($post->ID);
+		// $parents = $ancestors[0];
+		$this_post = $post->ID;
+		$query_gallery_single = new wp_query(array(
+			'post_type' => 'imagegalleries',
+			'posts_per_page'=> 6,	
+		)); 
+		$count = 1;
+
+		if($query_gallery_single->have_posts()) : while($query_gallery_single->have_posts()) : $query_gallery_single->the_post(); 
 
 	?>
 
-		<li <?php if( $this_post == $post->ID ) { echo ' class="current"'; } ?>><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></li>
+		<li <?php if( $count == 1 ) { echo ' class="current"'; } ?>><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></li>
 	
-	<?php 
-
-		endwhile; endif; wp_reset_query();
-
-		} else { 
-
-			$children = get_pages('child_of='.$post->ID);
-			if( count( $children ) != 0 ) { 
-
-				$currency = $post->ID;
-				$ancestors = get_post_ancestors($post->ID);
-				$parents = $ancestors[0];
-				$this_post = $post->ID;
-				$parent = $post->ID; query_posts(
-				array(
-				'post_type' => 'page',
-				'post_parent' => $parent,
-				'posts_per_page'=> 8
-				
-				)); if(have_posts()) : while(have_posts()) : the_post(); 
-
-	?>
-
-			<li <?php if( $this_post == $post->ID ) { echo ' class="current"'; } ?>><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></li>
-			<?php endwhile; endif; wp_reset_query(); ?>	
 	
-	<?php } } ?>
+	<?php $count++; endwhile; endif; wp_reset_query(); ?>	
 			
-</div>
+</ul>
 	
 <div class="innerpage wrapper">
 	<div id="pagecontent">
 
 		<div class="container">
 
-			<div class="gallery-list">
+			<ul class="gallery-list">
 				
 				<?php 
 					$pagename = get_option('misfit_sliderpage');

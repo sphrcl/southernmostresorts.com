@@ -192,6 +192,19 @@ img.right, img.alignright {float: right;margin: 0 0 7px 15px;}
 
 
 
+/*----------------------------------------------------------------------------------------------------------------
+                                                    TRANSITIONS
+----------------------------------------------------------------------------------------------------------------*/
+
+.page li > a {
+    -webkit-transition: all .5s ease;
+    -moz-transition: all .5s ease;
+    -o-transition: all .5s ease;
+    transition: all .5s ease;
+}
+
+
+
 
 
 /* Base Styles -----------------------------------------------------------*/
@@ -863,7 +876,7 @@ ul.instapics li img {
 }
 
 div#footer {
-  background-image: url(images/footer-bg.jpg);
+  /*background-image: url(images/footer-bg.jpg);*/
   background-position: bottom center;
   background-repeat: no-repeat;
   background-size: 100%;
@@ -1340,7 +1353,7 @@ ul.subnavigation li.current::after {
 
 /* Page - Gallery ########################################################################################## */
 
-.page-template-page-gallery-php div#pagecontent .container {
+.page-template-page-gallery-php div#pagecontent .container, .single-imagegalleries div#pagecontent .container {
     width: 90%;
 }
 
@@ -1376,3 +1389,40 @@ ul.subnavigation li.current::after {
     height: auto;
     width: 100%;
 }
+
+.page-nav {
+    border-bottom: 1px solid #e3e3e3;
+    padding: 0;
+    text-align: center;
+    width: 100%;
+}
+
+.page-nav li.current::before {
+    transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    background: url("images/ico-page-nav-pointer.png") no-repeat scroll 0 0 transparent;
+    bottom: -16px;
+    content: "";
+    height: 16px;
+    left: 50%;
+    position: absolute;
+    width: 30px;
+}
+
+.page-nav li {
+    display: inline-block;
+    margin: 0 20px;
+    position: relative;
+}
+
+.page-nav li > a {
+    color: #777;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 25px 0;
+    display: inline-block;
+}
+    .page-nav li > a:hover, .page-nav li.current > a {
+        color: #3E87BE;
+    }

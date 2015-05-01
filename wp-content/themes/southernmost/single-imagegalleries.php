@@ -1,6 +1,7 @@
 <?php 
 
 	get_header(); 
+
 	$imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "Full");
 
 ?>
@@ -28,41 +29,36 @@
 
 </div>
 
-<div class="page-nav">
+<ul class="page-nav">
 
-	<ul>
-
-		<?php 
+	<?php 
 				
-			// $ancestors = get_post_ancestors($post->ID);
-			// $parents = $ancestors[0];
-			$this_post = $post->ID;
+		// $ancestors = get_post_ancestors($post->ID);
+		// $parents = $ancestors[0];
+		$this_post = $post->ID;
+		$query_gallery_single = new wp_query(array(
+			'post_type' => 'imagegalleries',
+			'posts_per_page'=> 6,	
+		)); 
+		$count = 1;
 
-			$query_nav = new wp_query(array(
-				'post_type' => 'page',
-				'post_parent' => $parents,
-				'posts_per_page'=> 8,	
-			)); 
+		if($query_gallery_single->have_posts()) : while($query_gallery_single->have_posts()) : $query_gallery_single->the_post(); 
 
-			if($query_nav->have_posts()) : while($query_nav->have_posts()) : $query_nav->the_post(); 
+	?>
 
-		?>
-
-			<li <?php if( $this_post == $post->ID ) { echo ' class="current"'; } ?>><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></li>
-		
-		
-		<?php endwhile; endif; wp_reset_query(); ?>	
-
-	</ul>
-
-</div>
+		<li <?php if( $this_post == $post->ID ) { echo ' class="current"'; } ?>><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></li>
+	
+	
+	<?php $count++; endwhile; endif; wp_reset_query(); ?>	
+			
+</ul>
 	
 <div class="innerpage wrapper">
 	<div id="pagecontent">
 
 		<div class="container">
 
-			<div class="gallery-list">
+			<ul class="gallery-list">
 				
 				<?php 
 					$pagename = get_option('misfit_sliderpage');
