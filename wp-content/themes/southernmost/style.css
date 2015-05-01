@@ -1320,6 +1320,10 @@ ul.subnavigation li.current::after {
     height: 755px;
 }
 
+.static-banner.short {
+    height: 550px;
+}
+
 .banner-title {
     background-color: rgba(0, 0, 0, 0.4);
     height: 100%;
@@ -1430,3 +1434,48 @@ ul.subnavigation li.current::after {
     .page-nav li > a:hover, .page-nav li.current > a {
         color: #3E87BE;
     }
+
+
+
+
+/* Module - Post List ########################################################################################## */
+
+.post-meta-area {
+    overflow: hidden;
+}
+
+.post-list {
+    padding: 0;
+}
+
+.post-list li {
+    background: none repeat scroll 0 0 #f6f6f6;
+    margin-bottom: 20px;
+    min-height: 350px;
+}
+
+.post-list li .post-image {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 50%;
+    min-height: 350px;
+}
+
+.post-list li .post-content {
+    height: 100%;
+    padding: 50px 5% 0 0;
+    width: 40%;
+}
+
+.post-list .post-content h3 {
+    color: #727272;
+    font-size: 25px;
+    margin-bottom: 20px;
+}
+
+.post-list .post-content p {
+    color: #888;
+    font-size: 14px;
+    line-height: 1.6;
+}

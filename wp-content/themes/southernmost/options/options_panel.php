@@ -1397,7 +1397,7 @@ if (!function_exists('of_options')) {
 function of_options(){
 
 //Theme Shortname
-$themename = "Apollo Options";
+$themename = "Southernmost Theme";
 $shortname = "misfit";
 
 

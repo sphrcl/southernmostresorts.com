@@ -64,10 +64,10 @@
 
 			<div class="socialmedia">
 				<ul>
-					<li><a href="http://facebook.com/" target="_blank"><i class="fa fa-facebook"></i></a></li>
-					<li><a href="http://twitter.com/" target="_blank"><i class="fa fa-twitter"></i></a></li>
-					<li><a href="http://youtube.com/" target="_blank"><i class="fa fa-youtube-play"></i></a></li>
-					<li><a href="http://instagram.com/" target="_blank"><i class="fa fa-instagram"></i></a></li>
+					<li><a href="<?php echo get_option('misfit_facebook'); ?>" target="_blank"><i class="fa fa-facebook"></i></a></li>
+					<li><a href="<?php echo get_option('misfit_twitter'); ?>" target="_blank"><i class="fa fa-twitter"></i></a></li>
+					<li><a href="<?php echo get_option('misfit_youtube'); ?>" target="_blank"><i class="fa fa-youtube-play"></i></a></li>
+					<li><a href="<?php echo get_option('misfit_instagram'); ?>" target="_blank"><i class="fa fa-instagram"></i></a></li>
 				</ul>
 			</div>
 
