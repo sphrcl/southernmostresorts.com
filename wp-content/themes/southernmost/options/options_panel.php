@@ -1651,6 +1651,12 @@ $options[] = array( "name" => __('Instagram Access Token','misfitlang'),
 			"id" => $shortname."_instagramtok",
 			"std" => "",
 			"type" => "text");
+
+$options[] = array( "name" => __('Youtube URL','misfitlang'),
+			"desc" => "",
+			"id" => $shortname."_youtube",
+			"std" => "",
+			"type" => "text");
 						
 $options[] = array( "name" => __('Dribbble Username','misfitlang'),
 			"desc" => "By entering your dribbble you activate the dribbble link and icon.",
