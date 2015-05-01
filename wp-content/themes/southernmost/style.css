@@ -1357,6 +1357,10 @@ ul.subnavigation li.current::after {
     width: 90%;
 }
 
+.page-template-page-gallery-php .static-banner, .single-imagegalleries .static-banner {
+    height: 550px;
+}
+
 .gallery-list {
     overflow: hidden;
     padding: 0;
