@@ -8,18 +8,19 @@
 
 <div id="topbanner">
 
-	<div class="flexslider topbanner">
-		<ul class="slides">
-			<li style="background-image: url(<?php bloginfo ('template_url'); ?>/images/topbanner4.jpg);">
 
-			</li>
-			<li style="background-image: url(<?php bloginfo ('template_url'); ?>/images/topbanner4.jpg);">
+<?php 
+	if(have_posts()) : while(have_posts()) : the_post(); 
+	$imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "Full"); 
+?>
 
-			</li>
-		</ul>
-	</div>
+	<div class="static-banner" style="background-image: url('<?php echo tt($imgsrc[0],1400,755); ?>')"></div>
 
 	<div class="topbanner-overlay"></div>
+
+
+<?php endwhile; endif; wp_reset_query(); ?>	
+
 
 </div>
 	
@@ -29,9 +30,16 @@
 		<div class="container">
 
 			<div class="contenttitle">
+				
+				<?php 
+					if(have_posts()) : while(have_posts()) : the_post(); 
+					$imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "Full"); 
+				?>
 
-				<h1 class="title">Specials and Packages</h1>
-				<h2 class="subtitle">The most of everything</h2>
+				<h1 class="title"><?php the_title(); ?></h1>
+				<h2 class="subtitle"><?php echo get_post_meta($post->ID,'misfit_shortname',true); ?></h2>
+				
+				<?php endwhile; endif; wp_reset_query(); ?>	
 
 			</div>
 
@@ -53,60 +61,40 @@
 	</div>
 
 	<div id="specials_list">
+	
+	
+	<?php 
 
-		<div class="specialsbox" style="background-image: url(<?php bloginfo ('template_url'); ?>/images/specials1.jpg);">
+			$dining = new WP_Query(array(					
+				'post_type' => 'sspecials',
+				'posts_per_page' => -1
+			));
+
+			if($dining->have_posts()) : while($dining->have_posts()) : $dining->the_post(); 
+			$imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "Full");
+
+		?>
+		
+		
+		<div class="specialsbox" style="background-image: url(<?php echo tt($imgsrc[0],1400,755); ?>);">
+		
+			
 			<div class="specialscontent">
 				<div class="specialtitle">
-					<h3>EARLY BOOKING BONUS</h3>
-					<h4>Save up to 20% on weekdays and 10% on weekends</h4>
+					<h3><?php the_title(); ?></h3>
+					<h4><?php echo get_post_meta($post->ID,'misfit_shortname',true); ?></h4>
 				</div>
 				<div class="specialbuttons">
-					<a class="button6" href="#">Book</a>
-					<a class="button7" href="#">Details</a>
+					<a class="button6" href="<?php echo get_post_meta($post->ID,'misfit_reservation',true); ?>">Book</a>
+					<a class="button7" href="<?php the_permalink(); ?>">Details</a>
 				</div>
 			</div>
 		</div>
 
-		<div class="specialsbox" style="background-image: url(<?php bloginfo ('template_url'); ?>/images/specials2.jpg);">
-			<div class="specialscontent">
-				<div class="specialtitle">
-					<h3>SEA OF LOVE</h3>
-					<h4>Champagne, Advenure, and a sunset sail</h4>
-				</div>
-				<div class="specialbuttons">
-					<a class="button6" href="#">Book</a>
-					<a class="button7" href="#">Details</a>
-				</div>
-			</div>
-		</div>
-
-		<div class="specialsbox" style="background-image: url(<?php bloginfo ('template_url'); ?>/images/specials3.jpg);">
-			<div class="specialscontent">
-				<div class="specialtitle">
-					<h3>HONEYMOON PACKAGE</h3>
-					<h4>Champagne, rose petals, and signature bath robes</h4>
-				</div>
-				<div class="specialbuttons">
-					<a class="button6" href="#">Book</a>
-					<a class="button7" href="#">Details</a>
-				</div>
-			</div>
-		</div>
-
-		<div class="specialsbox" style="background-image: url(<?php bloginfo ('template_url'); ?>/images/specials4.jpg);">
-			<div class="specialscontent">
-				<div class="specialtitle">
-					<h3>family package</h3>
-					<h4>Save up to 20% on weekdays and 10% on weekends</h4>
-				</div>
-				<div class="specialbuttons">
-					<a class="button6" href="#">Book</a>
-					<a class="button7" href="#">Details</a>
-				</div>
-			</div>
-		</div>
-
-
+		<?php endwhile; endif; wp_reset_query(); ?>	
+		
+		
+		
 	</div>
 
 </div> <!-- #wrapper -->

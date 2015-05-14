@@ -63,7 +63,7 @@ $(document).ready(function(){
 	$('.roomcarousel').flexslider({
 		animation: "slide",
 		controlNav: false,
-		directionNav: false,
+		directionNav: true,
 		animationLoop: false,
 		slideshow: false,
 		itemWidth: 256,
@@ -101,8 +101,131 @@ $(document).ready(function(){
 	});
 
 
+});
 
 
 
+
+
+$(document).ready(function(){
+	$(".reserve .button1").click(function(){
+		$(".reservebox").slideToggle(500);
+		$(".xey").addClass("opened");
+  });
+  
+  $(".xey").click(function(){
+		$(".reservebox").slideToggle(500);
+		$(this).removeClass("openeed");
+  });
+  
+  // $("a[rel^='prettyPhoto']").prettyPhoto();
+
+
+
+	$('.fa.fa-close').click(function() {
+		 $(".lightbox").trigger('close');
+	});
+	
+	
+	// Datepicker
+		$.datepicker._defaults.dateFormat = 'mm/dd/yy';
+
+		$(".datepicker").datepicker({
+			minDate: 0,
+			numberOfMonths: [2,1],
+			defaultDate: new Date(2015, 09),
+			beforeShowDay: function(date) {
+				var date1 = $.datepicker.parseDate($.datepicker._defaults.dateFormat, $("#arrival_date").val());
+				var date2 = $.datepicker.parseDate($.datepicker._defaults.dateFormat, $("#departure_date").val());
+				return [true, date1 && ((date.getTime() == date1.getTime()) || (date2 && date >= date1 && date <= date2)) ? "dp-highlight" : ""];
+			},
+			onSelect: function(dateText, inst) {
+				var date1 = $.datepicker.parseDate($.datepicker._defaults.dateFormat, $("#arrival_date").val());
+				var date2 = $.datepicker.parseDate($.datepicker._defaults.dateFormat, $("#departure_date").val());
+                var selectedDate = $.datepicker.parseDate($.datepicker._defaults.dateFormat, dateText);
+
+
+                if (!date1 || date2) {
+					$("#arrival_date").val(dateText);
+					$("#departure_date").val("");
+                    $(this).datepicker();
+                } else if( selectedDate < date1 ) {
+                    $("#departure_date").val( $("#arrival_date").val() );
+                    $("#arrival_date").val( dateText );
+                    $(this).datepicker();
+                } else {
+					$("#departure_date").val(dateText);
+                    $(this).datepicker();
+				}
+			}
+		});
+		
+		
+		$( "#date" ).datepicker();
+		$( "#dater" ).datepicker();
+
+	 	$(".reserve .button1").click(function(e) {
+			e.preventDefault();
+			$(".ressys").addClass("dropit");
+			$(".overlay").addClass("doit");
+			$(".overlay").addClass("crispy");
+
+
+		});
+		
+		$(".button2").click(function(e) {
+			e.preventDefault();
+			$(".ressys").addClass("dropit");
+			$(".overlay").addClass("doit");
+			$(".overlay").addClass("crispy");
+
+
+		});
+
+		$(".shutdown").click(function(e) {
+			e.preventDefault();
+			$(".ressys").removeClass("dropit");
+			$(".overlay").removeClass("doit");
+			$(".overlay").removeClass("crispy");
+			$(".sixtynav").removeClass("sixtyopen");
+			$(".go").removeClass("gone");
+
+		});
+		
+		$(".ressys .btn1").click(function(e) {
+			e.preventDefault();
+			$(".ressys").removeClass("dropit");
+			$(".overlay").removeClass("doit");
+			$(".overlay").removeClass("crispy");
+			$(".sixtynav").removeClass("sixtyopen");
+			$(".go").removeClass("gone");
+
+		});
+		
+		
+		// TOGGLE FUNCTION //
+	$('#toggle-view li').click(function () {
+        var text = $(this).children('div.panel');
+        if (text.is(':hidden')) {
+            text.slideDown('200');
+            $(this).children('span').addClass('toggle-minus');     
+            $(this).addClass('activated');     
+        } else {
+            text.slideUp('200');
+			$(this).children('span').removeClass('toggle-minus'); 
+            $(this).children('span').addClass('toggle-plus'); 
+			$(this).removeClass('activated'); 			
+        }
+         
+    });
+		
+		
+		//  $("a[rel^='prettyPhoto']").click(function(e) {
+   // var href = $(this).attr('href');
+   // $(href).lightbox_me({
+   //     centered: true, 
+   //     });
+   // e.preventDefault();
+	//});
 
 });

@@ -1,6 +1,6 @@
 <?php 
 
-	/* Template Name: Activities */
+	/* Template Name: Rooms */
 
 	get_header(); 
 
@@ -31,30 +31,6 @@
 	<?php if(get_post_meta($post->ID,'misfit_banner_title',true)) { ?><div class="topbanner-overlay"></div><?php } ?>
 
 </div>
-
- <ul class="page-nav">
-
-	<?php 
-				
-		// $ancestors = get_post_ancestors($post->ID);
-		// $parents = $ancestors[0];
-		$this_post = $post->ID;
-		$query_gallery_single = new wp_query(array(
-			'post_type' => 'activities',
-			'posts_per_page'=> 6,	
-		)); 
-		$count = 1;
-
-		if($query_gallery_single->have_posts()) : while($query_gallery_single->have_posts()) : $query_gallery_single->the_post(); 
-
-	?>
-
-		<li <?php if( $count == 1 ) { echo ' class="current"'; } ?>><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></li>
-	
-	
-	<?php $count++; endwhile; endif; wp_reset_query(); ?>	
-			
-</ul> 
 	
 <div class="innerpage wrapper">
 	<div id="pagecontent">
@@ -85,7 +61,7 @@
 				
 				<?php 
 					$query_activities = new wp_query(array(
-						'post_type' => 'activities',
+						'post_type' => 'rooms',
 						'posts_per_page' => 10
 					)); 
 					if($query_activities->have_posts()) : while($query_activities->have_posts()) : $query_activities->the_post();
@@ -99,7 +75,9 @@
 	        				<h3><?php the_title(); ?></h3>
 	        				<p><?php echo excerpt(50); ?></p>
 	        				
-	        				<a class="button" href="<?php the_permalink(); ?>">Details</a>
+	        				<a class="button" href="<?php echo get_post_meta($post->ID,'misfit_reservation',true); ?>">Reserve</a>&nbsp;&nbsp;&nbsp;&nbsp;&bull;&nbsp;&nbsp;
+	        				<a class="" href="<?php the_permalink(); ?>">Details</a>
+
 	        			</div>
 
 	        		</li>

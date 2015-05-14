@@ -29,12 +29,12 @@ array_unshift($wp_cats, "Select a category");
 array_unshift($terms, "Select a Location"); 
 array_unshift($type, "Select a Type"); 
 
-$prefix = 'misfit';
+$prefix = 'cebo';
 
 $numbers = array('0', '1', '2', '3', '4', '5', '6', '7', '8', '9+');
 $pagetypes = array('Basic No Feature', 'Scrolling Feature', 'Full Screen Feature', 'Colored Background Area');
 
-$article_meta_boxer = array(
+$meta_boxer = array(
 	'id' => 'CUSTOM FIELDS',
 	'title' => 'Additional Information for Articles',
 	// 'page' => determines where the custom field is supposed to show up.
@@ -86,16 +86,16 @@ wp_enqueue_script('color-picker', get_template_directory_uri().'/options/js/colo
 
 
 /* ----------------------------------------------- DONT TOUCH BELOW UNLESS YOU KNOW WHAT YOU'RE DOING */
-add_action('admin_menu', 'article_option_add_boxer');
+add_action('admin_menu', 'mythemer_add_boxer');
 // Add meta boxer
-function article_option_add_boxer() {
-	global $article_meta_boxer;
+function mythemer_add_boxer() {
+	global $meta_boxer;
 	foreach ( array( 'article', 'event' ) as $page )
-	add_meta_box($article_meta_boxer['id'], $article_meta_boxer['title'], 'article_option_show_boxer', $page, $article_meta_boxer['context'], 			$article_meta_boxer['priority']);
+	add_meta_box($meta_boxer['id'], $meta_boxer['title'], 'mythemer_show_boxer', $page, $meta_boxer['context'], 			$meta_boxer['priority']);
 }
 // Callback function to show fields in meta boxer
-function article_option_show_boxer() {
-	global $article_meta_boxer, $post;
+function mythemer_show_boxer() {
+	global $meta_boxer, $post;
 	// Use nonce for verification
 	
 	echo '
@@ -161,9 +161,9 @@ jQuery(document).ready(function() {
 		
 		';
 		
-	echo '<input type="hidden" name="article_option_article_meta_boxer_nonce" value="', wp_create_nonce(basename(__FILE__)), '" />';
+	echo '<input type="hidden" name="mythemer_meta_boxer_nonce" value="', wp_create_nonce(basename(__FILE__)), '" />';
 	echo '<table class="form-table">';
-	foreach ($article_meta_boxer['fields'] as $field) {
+	foreach ($meta_boxer['fields'] as $field) {
 		// get current post meta data
 		$meta = get_post_meta($post->ID, $field['id'], true);
 		echo '<tr>',
@@ -213,12 +213,12 @@ jQuery(document).ready(function() {
 	echo '</table>';
 }
 
-add_action('save_post', 'article_option_save_data');
+add_action('save_post', 'mythemer_save_data');
 // Save data from meta boxer
-function article_option_save_data($post_id) {
-	global $article_meta_boxer;	
+function mythemer_save_data($post_id) {
+	global $meta_boxer;	
 	// verify nonce
-	if (!wp_verify_nonce($_POST['article_option_article_meta_boxer_nonce'], basename(__FILE__))) {
+	if (!wp_verify_nonce($_POST['mythemer_meta_boxer_nonce'], basename(__FILE__))) {
 		return $post_id;
 	}
 	// check autosave
@@ -232,7 +232,7 @@ function article_option_save_data($post_id) {
 	} elseif (!current_user_can('edit_post', $post_id)) {
 		return $post_id;
 	}
-	foreach ($article_meta_boxer['fields'] as $field) {
+	foreach ($meta_boxer['fields'] as $field) {
 		$old = get_post_meta($post_id, $field['id'], true);
 		$new = $_POST[$field['id']];		
 		if ($new && $new != $old) {

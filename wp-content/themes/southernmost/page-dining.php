@@ -90,11 +90,15 @@
 		?>
 
 			<div class="specialsbox" style="background-image: url('<?php echo tt($imgsrc[0],1400,755); ?>');">
+			
+				<a href="<?php the_permalink(); ?>" class="dropanchor"></a>
+				
 				<div class="specialscontent">
 					<div class="specialtitle">
 						<a href="<?php the_permalink(); ?>"><h3><?php the_title(); ?></h3></a>
 					</div>
 				</div>
+				
 			</div>
 
 		<?php endwhile; endif; wp_reset_query(); ?>	

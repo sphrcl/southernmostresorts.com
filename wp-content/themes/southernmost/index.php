@@ -86,13 +86,18 @@
 					<form method="get" action="https://reztrip.com/search?">
 
 						<span class="calsec">
-							<input type="text" id="date" name="date" placeholder="SELECT DATES" class="calendarsection">
+							<input type="text" id="date" name="date" placeholder="ARRIVAL" class="calendarsection">
 							<input type="hidden" id="arv">
 						</span>
-
+						
+						<span class="calsec">
+							<input type="text" id="dater" name="date" placeholder="DEPARTURE" class="calendarsection">
+							<input type="hidden" id="dept">
+						</span>
+						
 						<span class="dropsec">
 							<select name="rooms[]" id="rooms" class="halfsies">
-								<option value="" disabled selected>NUMBER OF ROOMS</option>
+								<option value="" disabled selected>Total ROOMS</option>
 								<option value="1">1 Room</option>
 								<option value="2">2 Rooms</option>
 								<option value="3">3 Rooms</option>
@@ -102,7 +107,7 @@
 
 						<span class="dropsec">
 							<select name="guests[]" id="guests" class="halfsies">
-								<option value="" disabled selected>NUMBER OF GUESTS</option>
+								<option value="" disabled selected>Total GUESTS</option>
 								<option value="1">1 Guest</option>
 								<option value="2">2 Guests</option>
 								<option value="3">3 Guests</option>
@@ -138,35 +143,6 @@
 			
 			<?php endwhile; endif; wp_reset_query(); ?>	
 			
-			<li style="background-image: url(<?php bloginfo ('template_url'); ?>/images/roomthumb2.jpg);">
-				<div class="room-caption">
-					<h3>One King</h3>
-					<a class="button4" href="#">Reserve Now</a><br/>
-					<a class="button5" href="#">DETAILS</a>
-				</div>
-			</li>
-			<li style="background-image: url(<?php bloginfo ('template_url'); ?>/images/roomthumb3.jpg);">
-				<div class="room-caption">
-					<h3>Two Queen</h3>
-					<a class="button4" href="#">Reserve Now</a><br/>
-					<a class="button5" href="#">DETAILS</a>
-				</div>
-			</li>
-			<li style="background-image: url(<?php bloginfo ('template_url'); ?>/images/roomthumb4.jpg);">
-				<div class="room-caption">
-					<h3>Deluxe King</h3>
-					<a class="button4" href="#">Reserve Now</a><br/>
-					<a class="button5" href="#">DETAILS</a>
-				</div>
-			</li>
-			<li style="background-image: url(<?php bloginfo ('template_url'); ?>/images/roomthumb5.jpg);">
-				<div class="room-caption">
-					<h3>Junior Suite</h3>
-					<a class="button4" href="#">Reserve Now</a><br/>
-					<a class="button5" href="#">DETAILS</a>
-				</div>
-			</li>
-			<!-- items mirrored twice, total of 12 -->
 		  </ul>
 		</div>
 		<div class="flexslider roomcarousel">
@@ -174,29 +150,20 @@
 		  
 		  	<?php query_posts('post_type=rooms'); if(have_posts()) : while(have_posts()) : the_post(); $imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "Full"); ?>
 		  
-			<li style="background-image: url(<?php echo $imgsrc[0]; ?>);">
+			<li>
+			
+			
 			<?php if(get_post_meta($post->ID, 'cebo_reservation', true)) { ?>
+			<div class="roomboom" style="background-image: url(<?php echo $imgsrc[0]; ?>);"></div>
 			  <div class="flex-caption"><?php echo get_post_meta($post->ID, 'cebo_reservation', true); ?></div>
 			<?php } else { ?>
+			<div class="roomboom" style="background-image: url(<?php echo $imgsrc[0]; ?>);"></div>
 				 <div class="flex-caption"><?php the_title(); ?></div>
 			<?php } ?>
 			</li>
 		
 			<?php endwhile; endif; wp_reset_query(); ?>	
 			
-			
-			<li style="background-image: url(<?php bloginfo ('template_url'); ?>/images/roomthumb2.jpg);">
-			  <div class="flex-caption">One King</div>
-			</li>
-			<li style="background-image: url(<?php bloginfo ('template_url'); ?>/images/roomthumb3.jpg);">
-			  <div class="flex-caption">Two Queen</div>
-			</li>
-			<li style="background-image: url(<?php bloginfo ('template_url'); ?>/images/roomthumb4.jpg);">
-			  <div class="flex-caption">Deluxe King</div>
-			</li>
-			<li style="background-image: url(<?php bloginfo ('template_url'); ?>/images/roomthumb5.jpg);">
-			  <div class="flex-caption">Junior Suite</div>
-			</li>
 			<!-- items mirrored twice, total of 12 -->
 		  </ul>
 		</div>
@@ -208,45 +175,82 @@
 		<h4>discover southernmost beach resort</h4>
 
 		<div class="flexslider discoverdining">
+		
+			<?php query_posts('post_type=page&p=27'); if(have_posts()) : while(have_posts()) : the_post(); ?>
 
-			<h5 class="discovertext">Dining</h5>
+			<h5 class="discovertext"><?php the_title(); ?></h5>
+			
+			<a href="<?php the_permalink(); ?>" class="dropanchor"></a>
 
 			<ul class="slides">
-				<li style="background-image: url(<?php bloginfo ('template_url'); ?>/images/dining1.jpg);">
-
-				</li>
-				<li style="background-image: url(<?php bloginfo ('template_url'); ?>/images/dining2.jpg);">
-
-				</li>
-				<li style="background-image: url(<?php bloginfo ('template_url'); ?>/images/dining3.jpg);">
-
-				</li>
+			
+				 <?php $galleryImages = get_post_gallery_imagess(); 
+			           $imagesCount = count($galleryImages); ?>
+			           
+        		<?php if ($imagesCount > 0) : ?>
+              	<?php for ($i = 0; $i < $imagesCount; $i++): ?>
+                <?php if (!empty($galleryImages[$i])) :?>
+                
+				
+				
+				<li style="background-image: url(<?php echo $galleryImages[$i]['full'][0];?>);"></li>
+				
+				
+				
+				
+				<?php endif; ?>
+    			<?php endfor; ?>
+				<?php endif; ?>
+				
+				
+				
 			</ul>
-
+				
+			<?php endwhile; endif; wp_reset_query(); ?>
+			
 		</div>
 
 		<div class="flexslider discoverweddings">
+			
+			
+			<?php query_posts('post_type=page&p=100'); if(have_posts()) : while(have_posts()) : the_post(); ?>
 
-			<h5 class="discovertext">Weddings</h5>
+			<h5 class="discovertext"><?php the_title(); ?></h5>
+			
+			<a href="<?php the_permalink(); ?>" class="dropanchor"></a>
 
 			<ul class="slides">
-				<li style="background-image: url(<?php bloginfo ('template_url'); ?>/images/wedding1.jpg);">
-
-				</li>
-				<li style="background-image: url(<?php bloginfo ('template_url'); ?>/images/wedding2.jpg);">
-
-				</li>
-				<li style="background-image: url(<?php bloginfo ('template_url'); ?>/images/wedding3.jpg);">
-
-				</li>
+			
+				 <?php $galleryImages = get_post_gallery_imagess(); 
+			           $imagesCount = count($galleryImages); ?>
+			           
+        		<?php if ($imagesCount > 0) : ?>
+              	<?php for ($i = 0; $i < $imagesCount; $i++): ?>
+                <?php if (!empty($galleryImages[$i])) :?>
+                
+				
+				
+				<li style="background-image: url(<?php echo $galleryImages[$i]['full'][0];?>);"></li>
+				
+				
+				
+				
+				<?php endif; ?>
+    			<?php endfor; ?>
+				<?php endif; ?>
+				
+				
+				
 			</ul>
+				
+			<?php endwhile; endif; wp_reset_query(); ?>
 
 		</div>
 
 	</div>
 
 	<div id="instagram">
-		<h4><a href="#">follow us on instagram</a></h4>
+		<h4><a href="<?php echo get_option('misfit_instagram'); ?>">follow us on instagram</a></h4>
 
 		<div id="instafeed"></div>
 

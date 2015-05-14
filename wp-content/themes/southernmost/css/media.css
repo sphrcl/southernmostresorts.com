@@ -1,9 +1,44 @@
-/* ================================================ 1100 ======================================= */
-
-@media only screen and (max-width : 1100px) {}
+/* ================================================  MOBILES BELOW 399 ======================================= */
 
 
+@media only screen 
+and (max-width : 799px) 
+{	
 
-/* ================================================ 1024 ======================================= */
+	
+	
+	.navigation #navmenu { display: none }
+	.reserve { right: 80px; }
+	.hamburger { right: -53px; top: -1px; width: 40px; overflow: hidden; }
+	
+	
+	.logo { left: 15px; width: 115px; }
+	#welcome .formfields { display: none; }
+	
+	
+	.flexslider.roomslider li { height: 250px }
+	.room-caption { right: 25px; }
+	.room-caption h3 { font-size: 21px; margin-bottom: 0; }
+	.room-caption .button5 { padding: 2px; font-size: 15px; }
+	.flexslider.roomslider { height: 250px; }
+	.flexslider.roomcarousel .slides li { height: 180px; width: 180px !important; }
+	.flexslider.roomcarousel .slides li .flex-caption { font-size: 17px; }
+	
+	.flexslider.discoverdining {  width: 100%; float: none; }
+	.flexslider.discoverweddings {  width: 100%; float: none; }
+	
+	
+	.footleft { display: none; }
+	.footmiddle { width: 100%; }
+	.footright { display: none; }
+	
+	.footaddress { max-width: 90%; margin: auto auto 50px; }
+	.flexslider.roomcarousel a.flex-next { background: #ff9968; }
+	
+	
+}
 
-@media only screen and (max-width : 1024px) {}
+
+
+
+

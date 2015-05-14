@@ -71,15 +71,14 @@
 	
 			<div class="navigation">
 				<div id="navmenu">
-					<ul class="topnavigation">
-
-						<?php wp_nav_menu( array( 'theme_location' => 'primary' ,  'container' => '', 'menu_class' => 'dl-menu scrolling' ) ); ?>
-					</ul>
+					
+					<?php wp_nav_menu( array( 'theme_location' => 'primary' ,  'container' => false, 'menu_class' => 'topnavigation' ) ); ?>
+					
 				</div>
 
 				<div class="hamburger">
-					<a  class="cheese" href="#"><img src="<?php bloginfo ('template_url'); ?>/images/hamburger-button.png" alt="menu"/></a>
-					<a class="royale" href="#"><img src="<?php bloginfo ('template_url'); ?>/images/hamburger-close.png" alt="menu"/></a>
+					<a class="cheese" href="#"><img src="<?php bloginfo ('template_url'); ?>/images/hamburger-button.png" alt="menu"/></a>
+					
 				</div>
 
 			</div>

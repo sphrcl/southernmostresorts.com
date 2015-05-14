@@ -52,10 +52,19 @@ $meta_box = array(
 	          "type" => "text",
 	          "std" => ""
               )
-       	,	
+       	,
+       	array( 
+              "name" => "Room or Specials Code",
+	          "desc" => "used to get rates from API",
+	          "id" => $prefix."_code",
+	          "type" => "text",
+	          "std" => ""
+              )
+       	,
+       		
 		array( 
-              "name" => "Shortname",
-	          "desc" => "If you want to shorten the name of the room",
+              "name" => "Shortname/Subtitle",
+	          "desc" => "If you want to shorten the name of the room or add subtitle to special",
 	          "id" => $prefix."_shortname",
 	          "type" => "text",
 	          "std" => ""
@@ -68,7 +77,7 @@ add_action('admin_menu', 'mytheme_add_box');
 // Add meta box
 function mytheme_add_box() {
 	global $meta_box;
-	foreach ( array( 'rooms', 'event' ) as $page )
+	foreach ( array( 'rooms', 'sspecials' ) as $page )
 	add_meta_box($meta_box['id'], $meta_box['title'], 'mytheme_show_box', $page, $meta_box['context'], 			$meta_box['priority']);
 }
 // Callback function to show fields in meta box

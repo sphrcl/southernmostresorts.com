@@ -64,13 +64,71 @@
 
 
 		<section class="rightnav">
-
-
+			
+			<a class="royale" href="#"><img src="<?php bloginfo ('template_url'); ?>/images/hamburger-close.png" alt="menu"/></a>
 
 			<div class="spacer"></div>
 
 		</section><!-- end right nav -->
 
+
+
+
+	<div class="overlay">
+			<a href="#" class="shutdown"></a>
+		</div>
+
+
+<div class="ressys">
+	
+	<div class="logo-white" style="text-align: center;">
+		<img src="http://www.southernmostresorts.com.php53-24.ord1-1.websitetestlink.com/wp-content/themes/southernmost/images/logo-white.png" alt="*">
+	</div>
+			
+	<a class="btn1" href="#">Close</a>
+	<div class="whippapeal">
+		<div class="formfields">
+			<div class="reservationform">
+				<form method="get" action="#" target="_blank">
+				
+					
+					
+					<input type="hidden"  id="arrival_date" name="arrivalDate" class="calendarsection" />
+					<input type="hidden"  id="arv">
+
+
+					<input type="hidden" id="departure_date" name="departureDate" class="calendarsection" />
+					<input type="hidden" id="dep">
+
+
+					<div class="calendars">
+						<div class="datepicker"></div>
+					</div>
+
+					<button class="button" type="submit">View Availability</button>
+
+				<!-- <a href="#" class="button" onclick="_gaq.push(['_trackEvent', 'Booking-widget', 'Search-now', 'Search dates with booking widget']);">Search Now</a>	 -->
+
+
+				</form>
+
+			</div><!-- end reservation form -->
+
+		</div><!-- end formfields form -->
+	</div><!-- end whip appeal form -->
+
+
+</div><!-- end ressys form -->
+
+
+
+
+
+
+
+
+
+<script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.1/jquery-ui.min.js'></script>
 
 <!-- JavaScripts -->
 <script type="text/javascript" src="<?php bloginfo ('template_url'); ?>/js/instafeed.min.js"></script>

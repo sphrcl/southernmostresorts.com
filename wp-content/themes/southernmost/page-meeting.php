@@ -8,55 +8,52 @@
 
 <div id="topbanner">
 
+	
+<?php if(have_posts()) : while(have_posts()) : the_post(); ?>
+	
 	<div class="flexslider meetingslider">
 	  <ul class="slides">
-		<li style="background-image: url(<?php bloginfo ('template_url'); ?>/images/meeting1.jpg);">
-
-		</li>
-		<li style="background-image: url(<?php bloginfo ('template_url'); ?>/images/roomthumb2.jpg);">
-
-		</li>
-		<li style="background-image: url(<?php bloginfo ('template_url'); ?>/images/roomthumb3.jpg);">
-
-		</li>
-		<li style="background-image: url(<?php bloginfo ('template_url'); ?>/images/roomthumb4.jpg);">
-
-		</li>
-		<li style="background-image: url(<?php bloginfo ('template_url'); ?>/images/roomthumb5.jpg);">
-
-		</li>
-		<li style="background-image: url(<?php bloginfo ('template_url'); ?>/images/roomthumb1.jpg);">
-
-		</li>
-		<li style="background-image: url(<?php bloginfo ('template_url'); ?>/images/roomthumb2.jpg);">
-
-		</li>
-		<!-- items mirrored twice, total of 12 -->
+		
+		 <?php $galleryImages = get_post_gallery_imagess(); 
+			           $imagesCount = count($galleryImages); ?>
+			           
+        		<?php if ($imagesCount > 0) : ?>
+              	<?php for ($i = 0; $i < $imagesCount; $i++): ?>
+                <?php if (!empty($galleryImages[$i])) :?>
+                
+				
+				
+				<li style="background-image: url(<?php echo $galleryImages[$i]['full'][0];?>);"></li>
+				
+				
+				
+				
+				<?php endif; ?>
+    			<?php endfor; ?>
+				<?php endif; ?>		<!-- items mirrored twice, total of 12 -->
+				
 	  </ul>
 	</div>
 	<div class="flexslider meetingcarousel">
 	  <ul class="slides">
-		<li style="background-image: url(<?php bloginfo ('template_url'); ?>/images/meetingthumb1.jpg);">
-		  <div class="flex-caption"></div>
-		</li>
-		<li style="background-image: url(<?php bloginfo ('template_url'); ?>/images/roomthumb2.jpg);">
-		  <div class="flex-caption"></div>
-		</li>
-		<li style="background-image: url(<?php bloginfo ('template_url'); ?>/images/roomthumb3.jpg);">
-		  <div class="flex-caption"></div>
-		</li>
-		<li style="background-image: url(<?php bloginfo ('template_url'); ?>/images/roomthumb4.jpg);">
-		  <div class="flex-caption"></div>
-		</li>
-		<li style="background-image: url(<?php bloginfo ('template_url'); ?>/images/roomthumb5.jpg);">
-		  <div class="flex-caption"></div>
-		</li>
-		<li style="background-image: url(<?php bloginfo ('template_url'); ?>/images/roomthumb1.jpg);">
-		  <div class="flex-caption"></div>
-		</li>
-		<li style="background-image: url(<?php bloginfo ('template_url'); ?>/images/roomthumb2.jpg);">
-		  <div class="flex-caption"></div>
-		</li>
+		 <?php $galleryImages = get_post_gallery_imagess(); 
+			           $imagesCount = count($galleryImages); ?>
+			           
+        		<?php if ($imagesCount > 0) : ?>
+              	<?php for ($i = 0; $i < $imagesCount; $i++): ?>
+                <?php if (!empty($galleryImages[$i])) :?>
+                
+				
+				
+				<li style="background-image: url(<?php echo $galleryImages[$i]['full'][0];?>);"></li>
+				
+				
+				
+				
+				<?php endif; ?>
+    			<?php endfor; ?>
+				<?php endif; ?>
+	  
 	  </ul>
 	</div>
 

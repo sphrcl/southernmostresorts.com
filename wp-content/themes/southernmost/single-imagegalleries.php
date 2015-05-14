@@ -60,17 +60,7 @@
 
 			<ul class="gallery-list">
 				
-				<?php 
-					$pagename = get_option('misfit_sliderpage');
-					$page = get_page_by_title($pagename);
-					$featured_id =  $page->ID;
-					$query_gallery = new wp_query(array(
-						'post_type' => 'page',
-						'p' => $featured_id,
-						'posts_per_page' => -1
-					)); 
-
-					if($query_gallery->have_posts()) : while($query_gallery->have_posts()) : $query_gallery->the_post(); 
+				<?php if(have_posts()) : while(have_posts()) : the_post();
 
 						$galleryImages = get_post_gallery_imagess(); 
 						$imagesCount = count($galleryImages); 
