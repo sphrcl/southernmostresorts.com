@@ -269,7 +269,7 @@ function nerdy_get_images($size = 'thumbnail', $limit = '0', $offset = '0') {
             <li>
                 <a href="<?php echo $img_url; ?>"><img src="<?php echo $img_preview; ?>" alt="<?php echo $img_caption; ?>" title="<?php echo $img_title; ?>"></a>
             </li>
-            <?
+            <?php
             }
             $i++;
         }
