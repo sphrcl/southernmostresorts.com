@@ -1,12 +1,70 @@
-/* ================================================  MOBILES BELOW 399 ======================================= */
 
+/* ============================================================  1500 - 9999  ============================================================ */
 
 @media only screen 
-and (max-width : 799px) 
-{	
+and (min-width: 1500px) {
+	
+	/* ============================== HOMEPAGE ============================== */
+	
+	/* header */
+	
+	.home div#header {
+		max-width: 1500px;
+		left: 50%;
+		margin-left: -750px;
+	}
 
+}
+
+
+
+/* ============================================================  1499 - 0000  ============================================================ */
+
+@media only screen 
+and (max-width: 1499px) {
 	
+	/* ======================== HOMEPAGE ======================== */
 	
+	/* header */
+	
+	.logo {
+		left: 10px;
+		top: 10px;
+	}
+
+}
+
+
+
+/* ============================================================  1439 - 0000  ============================================================ */
+
+@media only screen 
+and (max-width: 1439px) {
+	
+	/* ======================== HOMEPAGE ======================== */
+	
+	/* header */
+	
+	.hamburger {
+		display: block;
+	}
+	
+	.navigation {
+		right: 258px;
+	}
+	
+	.navigation #navmenu {
+		display: none;
+	}
+
+}
+
+
+/* ============================================================  799 - 000  ============================================================ */
+
+@media only screen 
+and (max-width: 799px) {
+
 	.navigation #navmenu { display: none }
 	.reserve { right: 80px; }
 	.hamburger { right: -53px; top: -1px; width: 40px; overflow: hidden; }
@@ -14,7 +72,6 @@ and (max-width : 799px)
 	
 	.logo { left: 15px; width: 115px; }
 	#welcome .formfields { display: none; }
-	
 	
 	.flexslider.roomslider li { height: 250px }
 	.room-caption { right: 25px; }
@@ -27,15 +84,12 @@ and (max-width : 799px)
 	.flexslider.discoverdining {  width: 100%; float: none; }
 	.flexslider.discoverweddings {  width: 100%; float: none; }
 	
-	
 	.footleft { display: none; }
 	.footmiddle { width: 100%; }
 	.footright { display: none; }
 	
 	.footaddress { max-width: 90%; margin: auto auto 50px; }
 	.flexslider.roomcarousel a.flex-next { background: #ff9968; }
-	
-	
 }
 
 

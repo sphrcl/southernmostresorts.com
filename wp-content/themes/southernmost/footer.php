@@ -65,9 +65,13 @@
 
 		<section class="rightnav">
 			
-			<a class="royale" href="#"><img src="<?php bloginfo ('template_url'); ?>/images/hamburger-close.png" alt="menu"/></a>
+			<div class="royalewrap"><a class="royale" href="#"><img src="<?php bloginfo ('template_url'); ?>/images/hamburger-close.png" alt="menu"/></a></div>
 
 			<div class="spacer"></div>
+			
+			<div id="navmenumob">
+				<?php wp_nav_menu( array( 'theme_location' => 'primary' ,  'container' => false, 'menu_class' => 'topnavigationmob' ) ); ?>
+			</div>
 
 		</section><!-- end right nav -->
 
@@ -104,8 +108,11 @@
 					<div class="calendars">
 						<div class="datepicker"></div>
 					</div>
-
-					<button class="button" type="submit">View Availability</button>
+					
+					<div class="availbutton">
+						<button class="button" type="submit">View Availability</button>
+						<i class="shutdown fa fa-times"></i>
+					</div>
 
 				<!-- <a href="#" class="button" onclick="_gaq.push(['_trackEvent', 'Booking-widget', 'Search-now', 'Search dates with booking widget']);">Search Now</a>	 -->
 
