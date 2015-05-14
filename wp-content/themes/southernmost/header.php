@@ -72,7 +72,12 @@
 			<div class="navigation">
 				<div id="navmenu">
 					
-					<?php wp_nav_menu( array( 'theme_location' => 'primary' ,  'container' => false, 'menu_class' => 'topnavigation' ) ); ?>
+					<ul id="menu-top-navigation" class="topnavigation">
+						<li><a href="/rooms/">Accommodations</a></li>
+						<li><a href="/photo-gallery-2/">Gallery</a></li>
+						<li><a href="/vacation-packages/">Specials</a></li>
+						<li><a href="/dining-2/">Dining</a></li>
+					</ul>
 					
 				</div>
 

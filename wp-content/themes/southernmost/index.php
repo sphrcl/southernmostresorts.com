@@ -134,9 +134,10 @@
 			<li style="background-image: url(<?php echo $imgsrc[0]; ?>);">
 				<div class="room-caption">
 					<h3><?php the_title(); ?></h3>
-					<?php if(get_post_meta($post->ID, 'cebo_reservation', true)) { ?>
-						<a class="button4" href="<?php echo get_post_meta($post->ID, 'cebo_reservation', true); ?>">Reserve Now</a><br/>
+					<?php if(get_post_meta($post->ID, 'misfit_reservation', true)) { ?>
+						<a class="button4" href="<?php echo get_post_meta($post->ID, 'misfit_reservation', true); ?>">Reserve Now</a><br/>
 					<?php } ?>
+					
 					<a class="button5" href="<?php the_permalink(); ?>">DETAILS</a>
 				</div>
 			</li>
@@ -153,9 +154,9 @@
 			<li>
 			
 			
-			<?php if(get_post_meta($post->ID, 'cebo_reservation', true)) { ?>
+			<?php if(get_post_meta($post->ID, 'misfit_shortname', true)) { ?>
 			<div class="roomboom" style="background-image: url(<?php echo $imgsrc[0]; ?>);"></div>
-			  <div class="flex-caption"><?php echo get_post_meta($post->ID, 'cebo_reservation', true); ?></div>
+			  <div class="flex-caption"><?php echo get_post_meta($post->ID, 'misfit_shortname', true); ?></div>
 			<?php } else { ?>
 			<div class="roomboom" style="background-image: url(<?php echo $imgsrc[0]; ?>);"></div>
 				 <div class="flex-caption"><?php the_title(); ?></div>
@@ -173,6 +174,12 @@
 	<div id="discover">
 
 		<h4>discover southernmost beach resort</h4>
+		
+		<?php if(get_option('misfit_discover')) { ?>
+		
+		<p class="disco"><?php echo get_option('misfit_discover'); ?></p>
+		
+		<?php } ?>
 
 		<div class="flexslider discoverdining">
 		

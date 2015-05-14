@@ -1491,50 +1491,16 @@ $options[] = array( "name" => __('General Personalization','misfitlang'),
 			
 
 
-$options[] = array( "name" => __('Page To Create','cebolang'),
-			"desc" => __('Content and title on this page will be pulled and featured into the dashboard tab','cebolang'),
-			"id" => $shortname."_sliderpage",
+
+											   
+$options[] = array( "name" => __('Home Page Copy','misfitlang'),
+			"desc" => __('If you would like text under the "Discover Southernmost... " please paste it here.','misfitlang'),
+			"id" => $shortname."_discover",
 			"std" => "",
-			"type" => "select",
-			"options" => $tt_pages);
+			"type" => "textarea");
 			
 			
-$options[] = array( "name" => __('Website Logo/Personal Avatar','misfitlang'),
-			"desc" => __('Upload and insert your sparkling new logo here. You can upload a personal image as well. This creates the section on the top of the dashboard.','misfitlang'),
-			"id" => $shortname."_logo",
-			"std" => "",
-			"type" => "upload");
-
-
-$options[] = array( "name" => __('Company Name/Personal Name','misfitlang'),
-			"desc" => __('It is always nice to have a bit of text or your name to go along with that logo/avatar. Put type that here.','misfitlang'),
-			"id" => $shortname."_logotext",
-			"std" => "",
-			"type" => "text");
 			
-$options[] = array( "name" => __('Custom Favicon','misfitlang'),
-			"desc" => __('Have a favorite favicon? Upload and insert your favorite 16px x 16px Png/Gif that will hang out next to the address bar.','misfitlang'),
-			"id" => $shortname."_custom_favicon",
-			"std" => "",
-			"type" => "upload");
-						
-
-
-$options[] = array( "name" => __('Show portfolio on homepage','misfitlang'),
-			"desc" => "This will pull your portfolio items into the homepage. Please create a portfolio page using the portfolio template to finish off the magic.",
-			"id" => $shortname."_showport",
-			"std" => "",
-			"type" => "checkbox");
-			
-			
-						
-$options[] = array( "name" => __('Email','misfitlang'),
-			"desc" => "This email will be used in various places as well as used to create the built-in contact forms. Please be aware that Gmail sends it to spam, initially.",
-			"id" => $shortname."_email",
-			"std" => "",
-			"type" => "text");
-
-
 
 $options[] = array( "name" => __('Contact Page Map Coordinates (Latitude)','misfitlang'),
 			"desc" => "Grab your latitude from Google Maps. ex: 40.7295712. **If this is blank, it will disable the map and you can use an image on the contact page instead.",
@@ -1568,30 +1534,18 @@ $options[] = array( "name" => __('Tracking Code','misfitlang'),
 			"std" => "",
 			"type" => "textarea");
 			
-			
-			
-			
-			
-/* Option Page 2 - Sample Page */
-$options[] = array( "name" => __('Navigation Options','misfitlang'),
-			"type" => "heading");
 
 
 
+$options[] = array( "name" => __('Newsletter Code','misfitlang'),
+			"desc" => __('Paste in your newsletter code','misfitlang'),
+			"id" => $shortname."_news_code",
+			"std" => "",
+			"type" => "textarea");			
 
-$options[] = array( "name" => __('Traditional Navigation','misfitlang'),
-			"desc" => __('If you prefer the traditional navigation over the default dashboard, check this box','misfitlang'),
-			"id" => $shortname."_tradnav",
-			"std" => "false",
-			"type" => "checkbox");
-			
 
-						
-/* Option Page 2 - Sample Page */
-$options[] = array( "name" => __('Socialize','misfitlang'),
-			"type" => "heading");	
+
 			
-										
 $options[] = array( "name" => __('Your Facebook Username ex: (http://Facebook.com/) -> YourFacebookUsername','misfitlang'),
 			"desc" => "DO NOT USE HTTP://Facebook.COM, JUST THE HANDLE By entering your Facebook link, you create the links to all Facebook icons or else they will not appear",
 			"id" => $shortname."_facebook",
@@ -1658,132 +1612,8 @@ $options[] = array( "name" => __('Youtube URL','misfitlang'),
 			"std" => "",
 			"type" => "text");
 						
-$options[] = array( "name" => __('Dribbble Username','misfitlang'),
-			"desc" => "By entering your dribbble you activate the dribbble link and icon.",
-			"id" => $shortname."_dribbble",
-			"std" => "",
-			"type" => "text");
-					
-
-
-$options[] = array( "name" => __('Behance Username','misfitlang'),
-			"desc" => "By entering your Behance username you activate the behance link and icon.",
-			"id" => $shortname."_behance",
-			"std" => "",
-			"type" => "text");					
-
-
-
-$options[] = array( "name" => __('Google plus Username','misfitlang'),
-			"desc" => "By entering your Google Plus you activate the google link and icon.",
-			"id" => $shortname."_googleplus",
-			"std" => "",
-			"type" => "text");
-					
-					
-
-
-
-
-
-/* Option Page 2 - Sample Page */
-$options[] = array( "name" => __('Footer','misfitlang'),
-			"type" => "heading");
-
-
-$options[] = array( "name" => __('Footer Background Image','misfitlang'),
-			"desc" => __('This background image will cover the entire area, regardless of size.','misfitlang'),
-			"id" => $shortname."_footerbg",
-			"std" => "",
-			"type" => "upload");
-
-
-
-/* Option Page 2 - Sample Page */
-$options[] = array( "name" => __('Under Construction','misfitlang'),
-			"type" => "heading");
-
-
-$options[] = array( "name" => __('What Year Will You Be Back?','misfitlang'),
-			"desc" => "Do you own a Delorean? ex 2016",
-			"id" => $shortname."_year",
-			"std" => "",
-			"type" => "text");	
-
-$options[] = array( "name" => __('What Month Will You Be Back?','misfitlang'),
-			"desc" => "Are you from the future? ex: 09",
-			"id" => $shortname."_month",
-			"std" => "",
-			"type" => "text");
-
-$options[] = array( "name" => __('What Day Will You Be Back?','misfitlang'),
-			"desc" => "Seriously, are you from the future? ex: 25",
-			"id" => $shortname."_day",
-			"std" => "",
-			"type" => "text");	
-			
-			
-						
-
-/* Option Page 2 - Sample Page */
-$options[] = array( "name" => __('Email Newsletters','misfitlang'),
-			"type" => "heading");			
-
-$options[] = array( "name" => __('Basic Email Newsletter Code','misfitlang'),
-		"desc" => "This code will generate an Email Newsletter that you can edit, copy and paste into any mail service and start sending out emails to your peeps. Learn more about this newsletter feature, <a href=\"http://legend.misfit.co/newsletter\" target=\"_blank\">click here</a>",
-		"id" => $shortname."_newsletter",
-		"std" => $newsletter_code,
-		"type" => "codeblockthree");
-		
-$options[] = array( "name" => __('Show Page Template as Heading','misfitlang'),
-		"desc" => "If you would like to use the page template as the header for the newsletter, please check here.",
-		"id" => $shortname."_heading",
-		"std" => "true",
-		"type" => "checkbox");
-	
-$options[] = array( "name" => __('Show Recent Projects','misfitlang'),
-		"desc" => "If you would like your 3 most recent projects to display on your newsletter, please check here",
-		"id" => $shortname."_recentprojects",
-		"std" => "true",
-		"type" => "checkbox");
-
-$options[] = array( "name" => __('Portfolio Heading','misfitlang'),
-			"desc" => "Override Portfolio heading text",
-			"id" => $shortname."_portfolioheader",
-			"std" => "",
-			"type" => "text");		
-			
 
 			
-		
-$options[] = array( "name" => __('Show Recent Blog Posts','misfitlang'),
-		"desc" => "If you would show your recent blog postson your newsletter, please check here",
-		"id" => $shortname."_recentposts",
-		"std" => "true",
-		"type" => "checkbox");
-		
-		
-$options[] = array( "name" => __('Blog Heading','misfitlang'),
-			"desc" => "Override Blog section heading text",
-			"id" => $shortname."_blogheader",
-			"std" => "",
-			"type" => "text");		
-			
-			
-$options[] = array( "name" => __('Number of Blog Posts to Display','misfitlang'),  
-		"desc" => "Choose How Many Blog Posts will be displayed, up to 10.",  
-		"id" => $shortname."_newsletterpostcount",  
-		"type" => "select",  
-		"std" => "3",
-		"options" => array("1", "2", "3", "4", "5","6", "7", "8","9","10"));
-	
-$options[] = array( "name" => __('Mailchimp RSS Email Newsletter Code','misfitlang'),
-		"desc" => "This code will generate an Email Newsletter that you can edit, copy and paste into Mailchimp and start sending out emails to your peeps. Learn more about this newsletter feature, <a href=\"http://legend.misfit.co/newsletter\" target=\"_blank\">click here</a>",
-		"id" => $shortname."_mailchimp",
-		"std" => $mailchimp_code,
-		"type" => "codeblocktwo");
-
-
 
 update_option('of_template',$options); 					  
 update_option('of_themename',$themename);   
