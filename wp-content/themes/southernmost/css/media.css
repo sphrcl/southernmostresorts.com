@@ -107,7 +107,24 @@ and (max-width: 1024px) {
 
 @media only screen 
 and (max-width: 1023px) {
-
+	
+	/* ======================== PAGE TEMPLATE - DEFAULT ======================== */
+	
+	div#pagecontent .container {
+		margin: 0 auto;
+		padding: 0 20px;
+		width: auto;
+	}
+	
+	.post-list li .post-image {
+		width: 48%;
+	}
+	
+	.post-list li .post-content {
+		padding: 30px 3% 0 0;
+		width: 45%;
+	}
+	
 }
 
 
@@ -284,6 +301,35 @@ and (max-width: 767px) {
 	.room-caption h3 {
 		font-size: 38px;
 	}
+	
+	
+	/* ======================== PAGE TEMPLATE - DEFAULT ======================== */
+	
+	.contenttitle {
+		float: none;
+		margin-bottom: 0;
+		text-align: center;
+	}
+	
+	#pagecontent .socialmedia {
+		float: none;
+		margin: 15px 0 30px;
+	}
+	
+	.post-list li .post-image,
+	.post-list li .post-content {
+		float: none;
+		width: auto;
+	}
+	
+	.post-list li .post-content {
+		padding: 25px;
+	}
+	
+	.post-content .button {
+		display: inline-block;
+		margin: 0;
+	}
 
 }
 
@@ -404,6 +450,24 @@ and (max-width: 599px) {
 	h5.discovertext {
 		font-size: 18px;
 	}
+	
+	
+	/* ======================== PAGE TEMPLATE - DEFAULT ======================== */
+	
+	.innerpage {
+		padding: 30px 0;
+	}
+	
+	.post-list .post-content h3 {
+		font-size: 22px;
+		margin-bottom: 16px;
+	}
+	
+	.post-list li .post-image {
+		min-height: 240px;
+	}
+	
+	
 
 
 }
@@ -511,6 +575,17 @@ and (max-width: 479px) {
 		text-align: center;
 		width: 90%;
 	}
+	
+	
+	/* ======================== PAGE TEMPLATE - DEFAULT ======================== */
+	
+	.innerpage .socialmedia ul li a {
+		font-size: 20px;
+		height: 35px;
+		line-height: 35px;
+		width: 35px;
+	}
+
 	
 }
 

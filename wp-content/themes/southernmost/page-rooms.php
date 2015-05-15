@@ -89,8 +89,9 @@
 		</div>
 
 	</div>
-</div> <!-- #wrapper -->
+</div>
 <?php endwhile; endif; wp_reset_query(); ?>	
 
+</div> <!-- #wrapper -->
 
 <?php get_footer(); ?>
