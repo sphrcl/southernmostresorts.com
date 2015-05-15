@@ -96,6 +96,9 @@ a, button {
 	-webkit-transition: all 0.5s;
 	-o-transition: all 0.5s;
 }
+	a:hover {
+		color: #ff9968;
+	}
 
 article blockquote {
 	border-left: 1px solid #ebe0b5;
@@ -204,6 +207,14 @@ img.right, img.alignright {float: right;margin: 0 0 7px 15px;}
     -moz-transition: all .5s ease;
     -o-transition: all .5s ease;
     transition: all .5s ease;
+}
+
+a, 
+.button {
+	-webkit-transition: all .4s ease;
+    -moz-transition: all .4s ease;
+    -o-transition: all .4s ease;
+    transition: all .4s ease;	
 }
 
 
@@ -1437,6 +1448,9 @@ div#specials_list {
     -webkit-transition: all 0.4s;
     -o-transition: all 0.4s;
 }
+	a.button:hover {
+		color: #fff;
+	}
 
 .ressys .btn1 {
 	background-color: #ff9968;
@@ -1723,10 +1737,9 @@ ul.roomsub li a {
 #toggle-view {
     list-style:none;    
     font-size:12px;
-    margin:0;
+    margin: 40px 0 60px;
     padding:0;
     width:100%;
-	margin-bottom:10px;
 	border: 1px solid #ddd;
 }
 #toggle-view:before {
@@ -1734,7 +1747,7 @@ ul.roomsub li a {
 }
 #toggle-view li {
 	margin-bottom:1px;
-    border-bottom: 1px solid #EFEFEF;
+    /*border-bottom: 1px solid #EFEFEF;*/
 	position:relative;
 }
 
@@ -1773,6 +1786,7 @@ ul.roomsub li a {
 }
 #toggle-view li.activated:after {
 	content: '\2014';
+	cursor: pointer;
 	
 }
 #toggle-view h3 {
@@ -1851,18 +1865,17 @@ ul.roomsub li a {
 	padding: 12px 0;
 }
 
-
-
 .promo h2 {
+	-moz-font-smoothing: antialiased;
+	text-rendering: optimizeLegibility;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
 	width: 30%;
 	float: left;
-	text-align: center;
+	text-align: right;
 	font-size: 28px;
-	  font-family: NewsGothicMT;
-  -moz-font-smoothing: antialiased;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+	font-family: NewsGothicMT;
+	color: #333;
 }
 
 .promo p {

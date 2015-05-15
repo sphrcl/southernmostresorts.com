@@ -78,7 +78,7 @@
 					
 					<ul id="menu-top-navigation" class="topnavigation">
 						<li>
-							<a href="/rooms/">Accommodations</a>
+							<a href="<?php bloginfo('url');?>/rooms/">Accommodations</a>
 							<div class="slidedown-nav">
 
 								<div class="left">
@@ -111,7 +111,7 @@
 							</div>
 						</li>
 						<li>
-							<a href="/photo-gallery-2/">Gallery</a>
+							<a href="<?php bloginfo('url');?>/photo-gallery-2/">Gallery</a>
 							<div class="slidedown-nav">
 
 								<div class="left">
@@ -144,7 +144,7 @@
 							</div>
 						</li>
 						<li>
-							<a href="/vacation-packages/">Specials</a>
+							<a href="<?php bloginfo('url');?>/vacation-packages/">Specials</a>
 							<div class="slidedown-nav">
 
 								<div class="left">
@@ -177,7 +177,7 @@
 							</div>
 						</li>
 						<li>
-							<a href="/dining-2/">Dining</a>
+							<a href="<?php bloginfo('url');?>/dining-2/">Dining</a>
 							<div class="slidedown-nav">
 
 								<div class="left">

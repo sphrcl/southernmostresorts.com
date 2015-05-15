@@ -31,6 +31,7 @@ include(TEMPLATEPATH . '/library/post_types.php');
 include(TEMPLATEPATH . '/options/single-options.php');
 include(TEMPLATEPATH . '/options/page-options.php');
 include(TEMPLATEPATH . '/options/activities-options.php');
+include(TEMPLATEPATH . '/options/available-packages-repeatable-fields.php');
 
 
 

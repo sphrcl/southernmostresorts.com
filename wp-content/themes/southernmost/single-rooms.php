@@ -62,7 +62,7 @@
 </div>
 <div class="wrapper">
 	<div id="submenu">
-		<ul class="subnavigation roomsub">
+		<!-- <ul class="subnavigation roomsub">
 			<?php $thisid = $post->ID; ?>
 			
 			<?php query_posts('post_type=rooms&posts_per_page=-1'); if(have_posts()) : while(have_posts()) : the_post(); ?>
@@ -72,7 +72,7 @@
 				<li<?php if($thisid == $otherid) { ?> class="current"<?php } ?>><a href="<?php the_permalink(); ?>"><?php echo get_post_meta($post->ID,'misfit_shortname',true); ?></a></li>
 				
 			<?php endwhile; endif; wp_reset_query(); ?>	
-		</ul>
+		</ul> -->
 		</div>
 	</div>
 
@@ -118,35 +118,27 @@
 			        		<h3>Available Rates and Packages</h3>
 			        		
 			        		<div class="panel">
-			        			
-			        			<div class="promo">
-			        			
-			        				<h2>Standard Rate</h2>
-			        				
-			        				<p>Room Rate: $529.00 USD</p>
-			        				
-			        				<a class="button" href="#">Reserve Now</a>
-			        				
-			        				<div class="clear"></div>
-			        				
-			        			</div>
-			        			
-			        			
-			        			<div class="promo">
-			        			
-			        				<h2>Last Minute Promo</h2>
-			        				
-			        				<p>Room Rate: $529.00 USD</p>
-			        				
-			        				<a class="button" href="#">Reserve Now</a>
-			        				
-			        				<div class="clear"></div>
-			        				
-			        			</div>
-			        			
-			        			
-			        			
-			        		
+
+			        			<?php 
+									$repeatable_fields = get_post_meta($post->ID, 'repeatable_fields', true);
+									foreach ( $repeatable_fields as $field ) { 
+								?>
+
+									<?php if ($field['url'] != '' || $field['description'] != '' || $field['namer'] != '') { ?>
+
+										<div class="promo">
+				        			
+					        				<h2><?php echo $field['namer']; ?></h2>				        				
+					        				<p><?php echo $field['description']; ?></p>				        				
+					        				<a class="button" href="<?php echo $field['url']; ?>">Reserve Now</a>				        				
+					        				<div class="clear"></div>
+					        				
+					        			</div>
+
+				        			<?php } ?>
+
+								<?php } ?>
+			        						        		
 			        		</div>
 			        	</li>
 			        </ul>
