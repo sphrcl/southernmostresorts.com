@@ -104,37 +104,6 @@ and (max-width: 959px) {
 	
 	/* ======================== NAVIGATION ======================== */
 	
-	.navigation {
-		text-align: right;
-		top: 15px;
-		width: 300px;
-	}
-	
-	ul.topnavigation li {
-		margin: 0 12px 10px;
-	}
-	
-	.hamburger {
-		top: 12px;
-	}
-	
-	
-}
-
-
-
-/* ============================================================  799 - 000  ============================================================ */
-
-@media only screen 
-and (max-width: 799px) {
-	
-	/* ======================== NAVIGATION ======================== */
-	
-	.navigation {
-		top: 27px;
-		width: 1px;
-	}
-	
 	.navigation #navmenu {
 		display: none;
 	}
@@ -144,6 +113,15 @@ and (max-width: 799px) {
 		width: 40px;
 		overflow: hidden;
 	}
+	
+}
+
+
+
+/* ============================================================  799 - 000  ============================================================ */
+
+@media only screen 
+and (max-width: 799px) {
 	
 	/* ======================== HOMEPAGE ======================== */
 	
@@ -261,7 +239,12 @@ and (max-width: 479px) {
 	/* top banner */
 	
 	.topbannercontent {
-		bottom: 45px;
+		bottom: 85px;
+	}
+	
+	.arrow {
+		top: auto;
+		bottom: 25px;
 	}
 	
 	/* instafeed */
@@ -374,6 +357,11 @@ and (max-height: 600px) {
 	
 	.flexslider.topbanner li {
 		height: 600px;
+	}
+	
+	.arrow {
+		top: auto;
+		bottom: 25px;
 	}
 	
 	/* instafeed */
