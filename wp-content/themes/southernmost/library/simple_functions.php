@@ -233,12 +233,6 @@ function my_jquery_enqueue() {
 }
 
 
-function get_avatar_url($author_id, $size){
-    $get_avatar = get_avatar( $author_id, $size );
-    preg_match("/src='(.*?)'/i", $get_avatar, $matches);
-    return ( $matches[1] );
-}
-
 
 // Removed shortcodes from the content
 function  strip_shortcode_gallery( $content ) {
