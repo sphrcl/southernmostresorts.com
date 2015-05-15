@@ -532,6 +532,99 @@ div#topbanner {
   /*margin-bottom: 75px;*/
 }
 
+
+
+/* Slide Down Nav ############################################################################################################## */
+
+.slidedown-nav {
+    background: none repeat scroll 0 0 rgba(255, 255, 255, 0.85);
+    left: 0;
+    opacity: 0;
+    padding: 50px 0;
+    position: fixed;
+    top: 64px;
+    visibility: hidden;
+    width: 100%;
+}
+
+.slidedown-nav #owl {
+    padding: 0 5% 0 3%;
+    width: 70%;
+}
+
+.slidedown-nav .slide-image {
+    height: 270px;
+    width: 100%;
+}
+
+.slidedown-nav .owl-carousel .owl-item {
+    margin: 0 10px;
+}
+
+.slidedown-nav .item h3 {
+    color: #79797b;
+    font-size: 16px;
+    font-weight: bold;
+    margin-top: 10px;
+    text-transform: uppercase;
+}
+
+.slidedown-nav .btn {
+    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    cursor: pointer;
+    position: absolute;
+    top: 44%;
+    z-index: 9;
+}
+
+.slidedown-nav .btn i {
+    font-size: 40px;
+    color: #A2A3A5;
+}
+
+.slidedown-nav .btn.next {
+    right: 2%;
+}
+
+.slidedown-nav .btn.prev {
+    left: 22.5%;
+}
+
+.slidedown-nav .left h3 {
+    color: #5e5e5e;
+    font-family: NewsGothicMT;
+    font-size: 40px;
+    font-weight: normal;
+    line-height: 1.3;
+    text-transform: uppercase;
+}
+
+.slidedown-nav .left {
+    transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    padding-left: 1%;
+    position: absolute;
+    text-align: center;
+    top: 46%;
+    width: 20%;
+}
+
+.slidedown-nav .left a {
+    border: 2px solid #5e5e5e;
+    border-radius: 8px;
+    color: #7b7c7e;
+    display: inline-block;
+    margin-top: 20px;
+    padding: 12px 20px;
+}
+
+
+
+/* Flexslider ############################################################################################################## */
+
 .flexslider {
   border: 0;
   margin-bottom: 0;
@@ -3677,5 +3770,3 @@ a.mobihid {
   bottom: 40px;
   z-index: 9999999999;
   right: 40px;
-  top: auto;
-}

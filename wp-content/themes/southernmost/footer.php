@@ -160,6 +160,31 @@ $(window).load(function() {
 <script type="text/javascript" src="<?php bloginfo ('template_url'); ?>/js/jquery.flexslider-min.js"></script>
 <script type="text/javascript" src="<?php bloginfo ('template_url'); ?>/js/general.js"></script>
 
+<script type="text/javascript" src="<?php bloginfo('template_url'); ?>/js/owl-carousel/owl.carousel.min.js"></script>
+<script type="text/javascript">
+	$(document).ready(function() {
+
+		var owl = $("#owl");
+
+		owl.owlCarousel({
+			items : 3, //10 it
+			itemsDesktop : [1000,2], //5 items between 1000px and 901px
+			itemsDesktopSmall : [900,1], // betweem 900px and 601px
+			itemsTablet: [600,1], //2 items between 600 and 0
+			itemsMobile : false, // itemsMobile disabled - inherit from itemsTablet option
+			pagination: false,
+		});
+
+		$(".next").click(function(){
+			owl.trigger('owl.next');
+		})
+		$(".prev").click(function(){
+			owl.trigger('owl.prev');
+		})
+	 
+	});
+</script>
+
 </body>
 
 </html>

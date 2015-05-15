@@ -38,6 +38,10 @@
 	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 	<link rel="stylesheet" type="text/css" href="<?php bloginfo ('template_url'); ?>/css/font-awesome.css">
 	<link rel="stylesheet" type="text/css" href="<?php bloginfo ('template_url'); ?>/css/fonts.css">
+
+	<link rel="stylesheet" type="text/css" href="<?php bloginfo ('template_url'); ?>/js/owl-carousel/owl.carousel.css">
+	<link rel="stylesheet" type="text/css" href="<?php bloginfo ('template_url'); ?>/js/owl-carousel/owl.theme.css">
+	<link rel="stylesheet" type="text/css" href="<?php bloginfo ('template_url'); ?>/js/owl-carousel/owl.transitions.css">
 	
 	<!-- CSS -->
 	<link rel="stylesheet" type="text/css" href="<?php bloginfo ('template_url'); ?>/css/flexslider.css" />
@@ -73,7 +77,41 @@
 				<div id="navmenu">
 					
 					<ul id="menu-top-navigation" class="topnavigation">
-						<li><a href="/rooms/">Accommodations</a></li>
+						<li>
+							<a href="/rooms/">Accommodations</a>
+							<div class="slidedown-nav">
+
+								<div class="left">
+
+									<h3><?php the_title(); ?></h3>
+									<a href="#">See Availability</a>
+									
+								</div>
+
+								<a class="btn next right"><i class="fa fa-angle-right"></i></a>
+
+								<div id="owl" class="right owl-carousel owl-theme">
+
+									<?php 
+										$query_slidedown_rooms = new wp_query(array(
+											'post_type' => 'rooms',
+											'posts_per_page' => -1
+										)); 
+										if($query_slidedown_rooms->have_posts()) : while($query_slidedown_rooms->have_posts()) : $query_slidedown_rooms->the_post();
+										$imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "Full"); 
+								    ?>
+										<div class="item">
+											<div class="slide-image" style="background-image: url(<?php echo tt($imgsrc[0],340,270); ?>);"></div>
+											<h3><?php the_title(); ?></h3>
+										</div>
+									<?php endwhile; endif; wp_reset_query(); ?>
+
+								</div>
+
+								<a class="btn prev right"><i class="fa fa-angle-left"></i></a>
+
+							</div>
+						</li>
 						<li><a href="/photo-gallery-2/">Gallery</a></li>
 						<li><a href="/vacation-packages/">Specials</a></li>
 						<li><a href="/dining-2/">Dining</a></li>
