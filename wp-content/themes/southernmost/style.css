@@ -3539,11 +3539,15 @@ body .ui-tooltip {
 
 
 
-.datepicker {
+.datepicker, .datepickermob {
 	width: 100%;
 	position: relative;
 	z-index: 3;
 	background: transparent;
+}
+
+.datepickermob {
+	display: none;
 }
 
 .dp-highlight .ui-state-default {

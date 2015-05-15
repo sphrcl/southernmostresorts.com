@@ -178,6 +178,35 @@ $(document).ready(function(){
 			}
 		});
 		
+		$(".datepickermob").datepicker({
+			minDate: 0,
+			defaultDate: new Date(2015, 09),
+			beforeShowDay: function(date) {
+				var date1 = $.datepicker.parseDate($.datepicker._defaults.dateFormat, $("#arrival_date").val());
+				var date2 = $.datepicker.parseDate($.datepicker._defaults.dateFormat, $("#departure_date").val());
+				return [true, date1 && ((date.getTime() == date1.getTime()) || (date2 && date >= date1 && date <= date2)) ? "dp-highlight" : ""];
+			},
+			onSelect: function(dateText, inst) {
+				var date1 = $.datepicker.parseDate($.datepicker._defaults.dateFormat, $("#arrival_date").val());
+				var date2 = $.datepicker.parseDate($.datepicker._defaults.dateFormat, $("#departure_date").val());
+                var selectedDate = $.datepicker.parseDate($.datepicker._defaults.dateFormat, dateText);
+
+
+                if (!date1 || date2) {
+					$("#arrival_date").val(dateText);
+					$("#departure_date").val("");
+                    $(this).datepicker();
+                } else if( selectedDate < date1 ) {
+                    $("#departure_date").val( $("#arrival_date").val() );
+                    $("#arrival_date").val( dateText );
+                    $(this).datepicker();
+                } else {
+					$("#departure_date").val(dateText);
+                    $(this).datepicker();
+				}
+			}
+		});
+		
 		
 		$( "#date" ).datepicker();
 		$( "#dater" ).datepicker();

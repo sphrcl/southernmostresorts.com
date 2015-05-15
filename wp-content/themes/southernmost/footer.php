@@ -107,6 +107,7 @@
 
 					<div class="calendars">
 						<div class="datepicker"></div>
+						<div class="datepickermob"></div>
 					</div>
 					
 					<button class="button" type="submit">View Availability</button>

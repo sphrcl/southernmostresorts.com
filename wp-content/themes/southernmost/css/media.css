@@ -133,17 +133,18 @@ and (max-width: 959px) {
 
 
 
-/* ============================================================  640 - 000  ============================================================ */
+/* ============================================================  860 - 000  ============================================================ */
 
 @media only screen 
-and (max-width: 640px) {
-
+and (max-width: 860px) {
+	
 	/* ======================== HEADER ======================== */
 	
 	/* reserve now */
 	
-	.availbutton .shutdown {
-		display: block;
+	.ressys {
+		width: 760px;
+		margin: auto auto auto -380px;
 	}
 
 }
@@ -179,6 +180,15 @@ and (max-width: 800px) {
 
 @media only screen 
 and (max-width: 799px) {
+	
+	/* ======================== HEADER ======================== */
+	
+	/* reserve now */
+	
+	.ressys {
+		width: 728px;
+		margin: auto auto auto -364px;
+	}
 	
 	/* ======================== HOMEPAGE ======================== */
 	
@@ -253,6 +263,16 @@ and (max-width: 799px) {
 @media only screen 
 and (max-width: 767px) {
 	
+	/* ======================== HEADER ======================== */
+	
+	/* reserve now */
+	
+	.ressys {
+		width: 560px;
+		margin: auto auto auto -280px;
+	}
+	
+	
 	/* ======================== HOMEPAGE ======================== */
 	
 	/* roomsection */
@@ -285,6 +305,62 @@ and (max-width: 640px) {
 @media only screen 
 and (max-width: 599px) {
 
+	/* ======================== HEADER ======================== */
+	
+	/* header */
+	
+	div#header {
+		background: -moz-linear-gradient(top,  rgba(255,255,255,0.75) 100%, rgba(255,255,255,0) 100%); /* FF3.6+ */
+		background: -webkit-gradient(linear, left top, left bottom, color-stop(100%,rgba(255,255,255,0.75)), color-stop(100%,rgba(255,255,255,0))); /* Chrome,Safari4+ */
+		background: -webkit-linear-gradient(top,  rgba(255,255,255,0.75) 100%,rgba(255,255,255,0) 100%); /* Chrome10+,Safari5.1+ */
+		background: -o-linear-gradient(top,  rgba(255,255,255,0.75) 100%,rgba(255,255,255,0) 100%); /* Opera 11.10+ */
+		background: -ms-linear-gradient(top,  rgba(255,255,255,0.75) 100%,rgba(255,255,255,0) 100%); /* IE10+ */
+		background: linear-gradient(to bottom,  rgba(255,255,255,0.75) 100%,rgba(255,255,255,0) 100%); /* W3C */
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#bfffffff', endColorstr='#00ffffff',GradientType=0 ); /* IE6-9 */
+		height: 45px;
+	}
+	
+	.logo {
+		left: 10px;
+		top: 10px;
+	}
+	
+	.navigation {
+		right: 238px;
+		top: 13px;
+	}
+	
+	.reserve {
+		right: 0;
+		top: 0;
+	}
+	
+	/* reserve now */
+	
+	.ressys .datepicker,
+	.ressys .logo-white {
+		display: none;
+	}
+	
+	.ressys {
+		width: 528px;
+		margin: auto auto auto -264px;
+	}
+	
+	.datepickermob {
+		display: block;
+	}
+	
+	.datepickermob .ui-datepicker {
+		padding: 0.2em 2% 0;
+		position: relative;
+		width: 96%;
+	}
+	
+	.datepickermob .ui-datepicker .ui-datepicker-next {
+		right: 2%;
+	}
+	
 	/* ======================== HOMEPAGE ======================== */
 	
 	/* top banner */
@@ -323,7 +399,11 @@ and (max-width: 599px) {
 		font-size: 15px;
 	}
 	
-
+	/* discover */
+	
+	h5.discovertext {
+		font-size: 18px;
+	}
 
 
 }
@@ -335,6 +415,27 @@ and (max-width: 599px) {
 @media only screen 
 and (max-width: 568px) {
 
+
+
+}
+
+
+
+/* ============================================================  567 - 000  ============================================================ */
+
+@media only screen 
+and (max-width: 567px) {
+
+	/* ======================== HEADER ======================== */
+	
+	/* reserve now */
+	
+	.ressys {
+		width: 440px;
+		margin: auto auto auto -220px;
+	}
+
+
 }
 
 
@@ -343,6 +444,33 @@ and (max-width: 568px) {
 
 @media only screen 
 and (max-width: 479px) {
+	
+	/* ======================== HEADER ======================== */
+	
+	/* reserve now */
+	
+	.ressys {
+		width: 360px;
+		margin: auto auto auto -180px;
+	}
+	
+	.logo {
+		left: 0;
+		top: 0;
+		width: 100px;
+	}
+	
+	.navigation {
+		right: 188px;
+	}
+	
+	.hamburger {
+		width: 30px;
+	}
+	
+	.button1 {
+		padding: 0 15px;
+	}
 	
 	/* ======================== HOMEPAGE ======================== */
 	
@@ -395,6 +523,13 @@ and (max-width: 399px) {
 
 	/* ======================== HEADER ======================== */
 	
+	/* reserve now */
+	
+	.ressys {
+		width: 280px;
+		margin: auto auto auto -140px;
+	}
+	
 	/* nav */
 	
 	.rightnav {
@@ -413,7 +548,7 @@ and (max-width: 399px) {
 
 @media only screen 
 and (max-width: 319px) {
-
+	
 	/* ======================== HEADER ======================== */
 	
 	/* nav */
@@ -489,6 +624,16 @@ and (max-height: 600px) {
 		height: 220px;
 	}
 	
+	/* discover */
+	
+	.flexslider.discoverdining .slides li {
+		height: 400px;
+	}
+	
+	.flexslider.discoverweddings .slides li {
+		height: 400px;
+	}
+	
 }
 
 
@@ -512,6 +657,16 @@ and (max-height: 500px) {
 		height: 200px;
 	}
 	
+	/* discover */
+	
+	.flexslider.discoverdining .slides li {
+		height: 300px;
+	}
+	
+	.flexslider.discoverweddings .slides li {
+		height: 300px;
+	}
+	
 }
 
 
@@ -530,11 +685,7 @@ and (max-height: 400px) {
 	}
 	
 	.topbannercontent {
-		bottom: 45px;
-	}
-	
-	.reservenow {
-		display: none;
+		bottom: 85px;
 	}
 	
 	
@@ -553,6 +704,16 @@ and (max-height: 320px) {
 	
 	.flexslider.topbanner li {
 		height: 320px;
+	}
+	
+	/* discover */
+	
+	.flexslider.discoverdining .slides li {
+		height: 280px;
+	}
+	
+	.flexslider.discoverweddings .slides li {
+		height: 280px;
 	}
 	
 }
