@@ -23,9 +23,7 @@ and (min-width: 1500px) {
 @media only screen 
 and (max-width: 1499px) {
 	
-	/* ======================== HOMEPAGE ======================== */
-	
-	/* header */
+	/* ======================== HEADER ======================== */
 	
 	.logo {
 		left: 10px;
@@ -41,9 +39,9 @@ and (max-width: 1499px) {
 @media only screen 
 and (max-width: 1439px) {
 	
-	/* ======================== HOMEPAGE ======================== */
+	/* ======================== HEADER ======================== */
 	
-	/* header */
+	/* nav */
 	
 	.navigation {
 		right: 258px;
@@ -61,6 +59,13 @@ and (max-width: 1439px) {
 and (max-width: 1024px) {
 	
 	/* ======================== HOMEPAGE ======================== */
+	
+	/* top banner */
+	
+	.topbannercontent {
+		top: auto;
+		bottom: 125px;
+	}
 	
 	/* welcome */
 	
@@ -92,10 +97,53 @@ and (max-width: 1024px) {
 
 
 
+/* ============================================================  959 - 000  ============================================================ */
+
+@media only screen 
+and (max-width: 959px) {
+	
+	/* ======================== NAVIGATION ======================== */
+	
+	.navigation {
+		text-align: right;
+		top: 15px;
+		width: 300px;
+	}
+	
+	ul.topnavigation li {
+		margin: 0 12px 10px;
+	}
+	
+	.hamburger {
+		top: 12px;
+	}
+	
+	
+}
+
+
+
 /* ============================================================  799 - 000  ============================================================ */
 
 @media only screen 
 and (max-width: 799px) {
+	
+	/* ======================== NAVIGATION ======================== */
+	
+	.navigation {
+		top: 27px;
+		width: 1px;
+	}
+	
+	.navigation #navmenu {
+		display: none;
+	}
+	
+	.hamburger {
+		top: 0;
+		width: 40px;
+		overflow: hidden;
+	}
 	
 	/* ======================== HOMEPAGE ======================== */
 	
@@ -137,8 +185,7 @@ and (max-width: 799px) {
 	/* ======================== ////// ======================== */
 	
 	.navigation #navmenu { display: none }
-	.reserve { right: 80px; }
-	.hamburger { right: -53px; top: -1px; width: 40px; overflow: hidden; }
+	.hamburger { top: 0; width: 40px; overflow: hidden; }
 	
 	
 	.logo { left: 15px; width: 115px; }
@@ -169,9 +216,28 @@ and (max-width: 799px) {
 
 @media only screen 
 and (max-width: 640px) {
-	
+
+
+
+}
+
+
+
+/* ============================================================  599 - 000  ============================================================ */
+
+@media only screen 
+and (max-width: 599px) {
+
 	/* ======================== HOMEPAGE ======================== */
 	
+	/* top banner */
+	
+	.topbannercontent {
+		left: 50%;
+		margin-left: -131px;
+	}
+
+
 }
 
 
@@ -180,19 +246,23 @@ and (max-width: 640px) {
 
 @media only screen 
 and (max-width: 568px) {
-	
-	/* ======================== HOMEPAGE ======================== */
-	
+
 }
 
 
 
-/* ============================================================  568 - 000  ============================================================ */
+/* ============================================================  479 - 000  ============================================================ */
 
 @media only screen 
 and (max-width: 479px) {
 	
 	/* ======================== HOMEPAGE ======================== */
+	
+	/* top banner */
+	
+	.topbannercontent {
+		bottom: 45px;
+	}
 	
 	/* instafeed */
 	
@@ -216,6 +286,45 @@ and (max-width: 479px) {
 
 
 
+/* ============================================================  399 - 000  ============================================================ */
+
+@media only screen 
+and (max-width: 399px) {
+
+	/* ======================== HEADER ======================== */
+	
+	/* nav */
+	
+	.rightnav {
+		width: 320px;
+	}
+	
+	.opened {
+		left: -320px;
+	}
+
+}
+
+
+
+/* ============================================================  319 - 000  ============================================================ */
+
+@media only screen 
+and (max-width: 319px) {
+
+	/* ======================== HEADER ======================== */
+	
+	/* nav */
+	
+	.rightnav {
+		width: 100%;
+	}
+	
+	.opened {
+		left: -100%;
+	}
+
+}
 
 
 
@@ -227,6 +336,30 @@ and (max-width: 479px) {
 
 
 
+
+
+
+
+
+
+
+
+
+
+/* ============================================================  HEIGHT 640 - 000  ============================================================ */
+
+@media only screen 
+and (max-height: 640px) {
+	
+	/* ======================== HOMEPAGE ======================== */
+	
+	/* topbanner */
+	
+	.flexslider.topbanner li {
+		height: 640px;
+	}
+	
+}
 
 
 
@@ -236,6 +369,12 @@ and (max-width: 479px) {
 and (max-height: 600px) {
 	
 	/* ======================== HOMEPAGE ======================== */
+	
+	/* topbanner */
+	
+	.flexslider.topbanner li {
+		height: 600px;
+	}
 	
 	/* instafeed */
 	
@@ -254,10 +393,59 @@ and (max-height: 500px) {
 	
 	/* ======================== HOMEPAGE ======================== */
 	
+	/* topbanner */
+	
+	.flexslider.topbanner li {
+		height: 500px;
+	}
+	
 	/* instafeed */
 	
 	#instafeed .instaimg {
 		height: 200px;
+	}
+	
+}
+
+
+
+/* ============================================================  HEIGHT 400 - 000  ============================================================ */
+
+@media only screen 
+and (max-height: 400px) {
+	
+	/* ======================== HOMEPAGE ======================== */
+	
+	/* topbanner */
+	
+	.flexslider.topbanner li {
+		height: 400px;
+	}
+	
+	.topbannercontent {
+		bottom: 45px;
+	}
+	
+	.reservenow {
+		display: none;
+	}
+	
+	
+}
+
+
+
+/* ============================================================  HEIGHT 320 - 000  ============================================================ */
+
+@media only screen 
+and (max-height: 320px) {
+	
+	/* ======================== HOMEPAGE ======================== */
+	
+	/* topbanner */
+	
+	.flexslider.topbanner li {
+		height: 320px;
 	}
 	
 }
