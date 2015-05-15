@@ -47,6 +47,62 @@ and (max-width: 1439px) {
 		right: 258px;
 	}
 	
+	/* ======================== PAGE - SPECIALS ======================== */
+	
+	.specialtitle {
+		max-width: 330px;
+		min-width: 330px;
+	}
+	
+	
+
+}
+
+
+
+/* ============================================================  1200 - 0000  ============================================================ */
+
+@media only screen 
+and (max-width: 1200px) {
+	
+	/* ======================== PAGE - SPECIALS ======================== */
+	
+	.specialscontent {
+		bottom: 2%;
+		left: 2%;
+		padding: 10px 1%;
+		right: auto;
+		width: 94%;
+	}
+	
+	.specialtitle {
+		float: none;
+		max-width: 100%;
+		min-width: 0;
+		width: auto;
+		text-align: center;
+		padding: 0;
+		margin-bottom: 10px;
+	}
+	
+	.specialbuttons {
+		width: 100%;
+	}
+	
+	.specialbuttons .button6,
+	.specialbuttons .button7 {
+		padding: 10px 0;
+		width: 50%;
+	}
+	
+	.specialbuttons .button6 {
+		float: left;
+	}
+	
+	.specialbuttons .button7 {
+		float: right;
+	}
+	
 	
 
 }
@@ -96,6 +152,19 @@ and (max-width: 1024px) {
 	
 	.room-caption {
 		width: 540px;
+	}
+	
+	
+	/* ======================== PAGE - SPECIALS ======================== */
+	
+	.specialsbox {
+		height: 420px;
+	}
+	
+	.specialscontent {
+		left: 4%;
+		padding: 10px 2%;
+		width: 88%;
 	}
 	
 
@@ -168,7 +237,7 @@ and (max-width: 860px) {
 
 
 
-/* ============================================================  799 - 000  ============================================================ */
+/* ============================================================  800 - 000  ============================================================ */
 
 @media only screen 
 and (max-width: 800px) {
@@ -330,6 +399,25 @@ and (max-width: 767px) {
 		display: inline-block;
 		margin: 0;
 	}
+	
+	
+	/* ======================== PAGE - SPECIALS ======================== */
+	
+	.specialtitle h3 {
+		font-size: 20px;
+		line-height: 26px;
+	}
+	
+	.specialbuttons .button6,
+	.specialbuttons .button7 {
+		display: block;
+		float: none;
+		width: auto;
+	}
+	
+	.specialbuttons .button6 {
+		margin-bottom: 5px;
+	}
 
 }
 
@@ -468,6 +556,26 @@ and (max-width: 599px) {
 	}
 	
 	
+	/* ======================== PAGE - SPECIALS ======================== */
+	
+	.specialsbox {
+		float: none !important;
+		height: 300px;
+		width: 100%;
+	}
+	
+	.specialbuttons .button6,
+	.specialbuttons .button7 {
+		width: 50%;
+	}
+	
+	.specialbuttons .button6 {
+		float: left;
+	}
+	
+	.specialbuttons .button7 {
+		float: right;
+	}
 
 
 }
@@ -579,6 +687,10 @@ and (max-width: 479px) {
 	
 	/* ======================== PAGE TEMPLATE - DEFAULT ======================== */
 	
+	h1.title {
+		font-size: 36px;
+	}
+	
 	.innerpage .socialmedia ul li a {
 		font-size: 20px;
 		height: 35px;
@@ -658,6 +770,7 @@ and (max-width: 319px) {
 
 
 
+
 /* ============================================================  HEIGHT 640 - 000  ============================================================ */
 
 @media only screen 
@@ -669,6 +782,13 @@ and (max-height: 640px) {
 	
 	.flexslider.topbanner li {
 		height: 640px;
+	}
+	
+	
+	/* ======================== PAGE TEMPLATE - DEFAULT ======================== */
+	
+	.static-banner {
+		height: 568px;
 	}
 	
 }
@@ -709,6 +829,13 @@ and (max-height: 600px) {
 		height: 400px;
 	}
 	
+	
+	/* ======================== PAGE TEMPLATE - DEFAULT ======================== */
+	
+	.static-banner {
+		height: 480px;
+	}
+	
 }
 
 
@@ -742,6 +869,14 @@ and (max-height: 500px) {
 		height: 300px;
 	}
 	
+	
+	/* ======================== PAGE TEMPLATE - DEFAULT ======================== */
+	
+	.static-banner {
+		height: 420px;
+	}
+	
+	
 }
 
 
@@ -763,6 +898,12 @@ and (max-height: 400px) {
 		bottom: 85px;
 	}
 	
+	
+	/* ======================== PAGE TEMPLATE - DEFAULT ======================== */
+	
+	.static-banner {
+		height: 320px;
+	}
 	
 }
 
@@ -788,6 +929,12 @@ and (max-height: 320px) {
 	}
 	
 	.flexslider.discoverweddings .slides li {
+		height: 280px;
+	}
+	
+	/* ======================== PAGE TEMPLATE - DEFAULT ======================== */
+	
+	.static-banner {
 		height: 280px;
 	}
 	

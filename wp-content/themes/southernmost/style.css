@@ -1421,7 +1421,7 @@ div#specials_list {
 
 .specialtitle {
   float: right;
-  padding: 10px 25px;
+  padding: 10px 25px 0;
   min-width: 325px;
   max-width: 440px;
 }
@@ -1982,7 +1982,7 @@ ul.subnavigation li.current::after {
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
-    height: 755px;
+    height: 600px;
 }
 
 .static-banner.short {
@@ -3802,3 +3802,4 @@ a.mobihid {
   bottom: 40px;
   z-index: 9999999999;
   right: 40px;
+}
