@@ -197,7 +197,9 @@ img.right, img.alignright {float: right;margin: 0 0 7px 15px;}
 ----------------------------------------------------------------------------------------------------------------*/
 
 .page li > a,
-.slidedown-nav {
+.slidedown-nav,
+.slidedown-nav .btn i,
+.slidedown-nav .left h3 {
     -webkit-transition: all .5s ease;
     -moz-transition: all .5s ease;
     -o-transition: all .5s ease;
@@ -590,6 +592,9 @@ div#topbanner {
     font-size: 40px;
     color: #A2A3A5;
 }
+	.slidedown-nav .btn:hover i {
+	    color: #555;
+	}
 
 .slidedown-nav .btn.next {
     right: 2%;
@@ -607,6 +612,9 @@ div#topbanner {
     line-height: 1.3;
     text-transform: uppercase;
 }
+	.slidedown-nav .left h3:hover {
+		color: #555;
+	}
 
 .slidedown-nav .left {
     transform: translateY(-50%);
