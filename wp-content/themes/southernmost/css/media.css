@@ -187,6 +187,38 @@ and (max-width: 568px) {
 
 
 
+/* ============================================================  568 - 000  ============================================================ */
+
+@media only screen 
+and (max-width: 479px) {
+	
+	/* ======================== HOMEPAGE ======================== */
+	
+	/* instafeed */
+	
+	#instafeed .instabox {
+		margin-right: 0;
+		width: auto;
+		float: none;
+	}
+	
+	#instafeed .instabox.four,
+	#instafeed .instabox.five {
+		width: auto;
+	}
+	
+	#instafeed .instabox a,
+	#instafeed .instabox.four a {
+		margin-right: 0;
+	}
+	
+}
+
+
+
+
+
+
 
 
 
@@ -225,41 +257,7 @@ and (max-height: 500px) {
 	/* instafeed */
 	
 	#instafeed .instaimg {
-		height: 180px;
-	}
-	
-}
-
-
-
-/* ============================================================  HEIGHT 400 - 000  ============================================================ */
-
-@media only screen 
-and (max-height: 400px) {
-	
-	/* ======================== HOMEPAGE ======================== */
-	
-	/* instafeed */
-	
-	#instafeed .instaimg {
-		height: 160px;
-	}
-	
-}
-
-
-
-/* ============================================================  HEIGHT 319 - 000  ============================================================ */
-
-@media only screen 
-and (max-height: 319px) {
-	
-	/* ======================== HOMEPAGE ======================== */
-	
-	/* instafeed */
-	
-	#instafeed .instaimg {
-		height: 150px;
+		height: 200px;
 	}
 	
 }
