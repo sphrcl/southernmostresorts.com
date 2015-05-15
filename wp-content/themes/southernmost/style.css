@@ -1063,6 +1063,15 @@ ul.instapics li {
 	margin-right: 0;
 }
 
+#instafeed .instaimg {
+	display: none;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center center;
+	height: 260px;
+	width: 100%;
+}
+
 #instafeed img {
 	display: block;
 	max-width: 100%;
