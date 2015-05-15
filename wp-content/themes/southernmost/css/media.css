@@ -95,7 +95,7 @@ and (max-width: 1024px) {
 	/* roomsection */
 	
 	.room-caption {
-		width: 520px;
+		width: 540px;
 	}
 	
 
@@ -129,6 +129,48 @@ and (max-width: 959px) {
 		overflow: hidden;
 	}
 	
+}
+
+
+
+/* ============================================================  640 - 000  ============================================================ */
+
+@media only screen 
+and (max-width: 640px) {
+
+	/* ======================== HEADER ======================== */
+	
+	/* reserve now */
+	
+	.availbutton .shutdown {
+		display: block;
+	}
+
+}
+
+
+
+/* ============================================================  799 - 000  ============================================================ */
+
+@media only screen 
+and (max-width: 800px) {
+	
+	/* ======================== HOMEPAGE ======================== */
+	
+	/* roomsection */
+	
+	.flexslider.roomslider {
+		height: 500px;
+	}
+	
+	.flexslider.roomslider li {
+		height: 500px;
+	}
+	
+	.room-caption {
+		bottom: 44px;
+		right: 40px;
+	}
 }
 
 
@@ -188,7 +230,7 @@ and (max-width: 799px) {
 	.flexslider.roomslider li { height: 250px }
 	.room-caption { right: 25px; }
 	.room-caption h3 { font-size: 21px; margin-bottom: 0; }
-	.room-caption .button5 { padding: 2px; font-size: 15px; }
+	
 	.flexslider.roomslider { height: 250px; }
 	*/
 	.flexslider.roomcarousel .slides li { height: 180px; width: 180px !important; }
@@ -202,7 +244,27 @@ and (max-width: 799px) {
 	.footright { display: none; }
 	
 	.footaddress { max-width: 90%; margin: auto auto 50px; }
-	.flexslider.roomcarousel a.flex-next { background: #ff9968; }
+}
+
+
+
+/* ============================================================  767 - 000  ============================================================ */
+
+@media only screen 
+and (max-width: 767px) {
+	
+	/* ======================== HOMEPAGE ======================== */
+	
+	/* roomsection */
+	
+	.room-caption {
+		width: 320px;
+	}
+	
+	.room-caption h3 {
+		font-size: 38px;
+	}
+
 }
 
 
@@ -231,6 +293,37 @@ and (max-width: 599px) {
 		left: 50%;
 		margin-left: -131px;
 	}
+	
+	/* roomsection */
+	
+	.flexslider.roomslider {
+		height: 320px;
+	}
+	
+	.flexslider.roomslider li {
+		height: 320px;
+	}
+	
+	.room-caption {
+		bottom: 20px;
+		right: 20px;
+		width: 300px;
+	}
+	
+	.room-caption h3 {
+		font-size: 32px;
+	}
+	
+	.room-caption .button4 {
+		padding: 12px 28px;
+	}
+	
+	.room-caption .button5 {
+		padding: 2px;
+		font-size: 15px;
+	}
+	
+
 
 
 }
@@ -280,6 +373,15 @@ and (max-width: 479px) {
 	#instafeed .instabox a,
 	#instafeed .instabox.four a {
 		margin-right: 0;
+	}
+	
+	/* roomsection */
+	
+	.room-caption {
+		padding: 0 5%;
+		right: auto;
+		text-align: center;
+		width: 90%;
 	}
 	
 }
@@ -410,20 +512,6 @@ and (max-height: 500px) {
 		height: 200px;
 	}
 	
-	/* roomsection */
-	
-	.flexslider.roomslider {
-		height: 480px;
-	}
-	
-	.flexslider.roomslider li {
-		height: 480px;
-	}
-	
-	.room-caption {
-		bottom: 44px;
-	}
-	
 }
 
 
@@ -449,16 +537,6 @@ and (max-height: 400px) {
 		display: none;
 	}
 	
-	/* roomsection */
-	
-	.flexslider.roomslider {
-		height: 380px;
-	}
-	
-	.flexslider.roomslider li {
-		height: 380px;
-	}
-	
 	
 }
 
@@ -475,16 +553,6 @@ and (max-height: 320px) {
 	
 	.flexslider.topbanner li {
 		height: 320px;
-	}
-	
-	/* roomsection */
-	
-	.flexslider.roomslider {
-		height: 300px;
-	}
-	
-	.flexslider.roomslider li {
-		height: 300px;
 	}
 	
 }
