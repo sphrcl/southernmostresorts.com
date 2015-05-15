@@ -196,7 +196,8 @@ img.right, img.alignright {float: right;margin: 0 0 7px 15px;}
                                                     TRANSITIONS
 ----------------------------------------------------------------------------------------------------------------*/
 
-.page li > a {
+.page li > a,
+.slidedown-nav {
     -webkit-transition: all .5s ease;
     -moz-transition: all .5s ease;
     -o-transition: all .5s ease;
@@ -347,12 +348,9 @@ ul.topnavigation {
 
 ul.topnavigation li {
   display: inline-block;
-  margin: 0 12px;
+  margin: 0;
   position: relative;
 }
-
-
-
 
 ul.topnavigation ul {
 	position: relative;
@@ -389,7 +387,9 @@ ul.topnavigation ul:before {
 ul.topnavigation ul li a {
 	font-size: 12px;
 }
-
+	ul.topnavigation li:hover > a {
+		background-color: rgba(255,255,255,0.75);
+	}
 
 ul.topnavigation li:hover ul {
 	visibility: visible;
@@ -397,13 +397,14 @@ ul.topnavigation li:hover ul {
 	top: 25px;
 }
 
-ul.topnavigation li a {
-  color: #000;
-  font-family: NewsGothicMT-Bold;
-  font-size: 13px;
-  line-height: 22px;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
+ul.topnavigation li > a {
+    color: #000;
+    font-family: NewsGothicMT-Bold;
+    font-size: 13px;
+    letter-spacing: 0.08em;
+    line-height: 22px;
+    padding: 20px 12px;
+    text-transform: uppercase;
 }
 
 ul.topnavigation li a:hover {
@@ -542,9 +543,15 @@ div#topbanner {
     opacity: 0;
     padding: 50px 0;
     position: fixed;
-    top: 64px;
+    top: 54px;
     visibility: hidden;
     width: 100%;
+}
+
+.topnavigation > li:hover .slidedown-nav {
+    opacity: 1;
+    top: 66px;
+    visibility: visible;
 }
 
 .slidedown-nav #owl {

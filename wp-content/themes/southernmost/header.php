@@ -101,8 +101,8 @@
 										$imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "Full"); 
 								    ?>
 										<div class="item">
-											<div class="slide-image" style="background-image: url(<?php echo tt($imgsrc[0],340,270); ?>);"></div>
-											<h3><?php the_title(); ?></h3>
+											<a href="<?php the_permalink(); ?>"><div class="slide-image" style="background-image: url(<?php echo tt($imgsrc[0],340,270); ?>);"></div></a>
+											<a href="<?php the_permalink(); ?>"><h3><?php the_title(); ?></h3></a>
 										</div>
 									<?php endwhile; endif; wp_reset_query(); ?>
 
@@ -112,7 +112,10 @@
 
 							</div>
 						</li>
-						<li><a href="/photo-gallery-2/">Gallery</a></li>
+						<li>
+							<a href="/photo-gallery-2/">Gallery</a>
+							
+						</li>
 						<li><a href="/vacation-packages/">Specials</a></li>
 						<li><a href="/dining-2/">Dining</a></li>
 					</ul>
