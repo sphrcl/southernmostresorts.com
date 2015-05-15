@@ -258,6 +258,11 @@ and (max-width: 800px) {
 		bottom: 44px;
 		right: 40px;
 	}
+	
+	.bigcam, .smallcams {
+		width: 100%;
+		margin: 0;
+	}
 }
 
 

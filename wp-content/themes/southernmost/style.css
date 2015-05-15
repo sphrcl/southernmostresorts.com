@@ -2025,6 +2025,30 @@ ul.subnavigation li.current::after {
 
 /* Page - Gallery ########################################################################################## */
 
+
+
+
+.HTMLBlock {
+	width: 100%;
+}
+
+.HTMLBlock img {
+  width: 100%;
+  max-width: 100%;
+  height: inherit !important;
+}
+
+
+.a {
+	width: 59%;
+	float: left;
+	margin-right: 1%;
+}
+
+.smallcams {
+	width: 40%;
+	float: left;
+}
 .page-template-page-gallery-php div#pagecontent .container, .single-imagegalleries div#pagecontent .container {
     width: 90%;
 }
