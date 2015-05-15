@@ -1438,31 +1438,23 @@ div#specials_list {
     -o-transition: all 0.4s;
 }
 
-.availbutton {
-	position: relative;
+.ressys .btn1 {
+	background-color: #ff9968;
+	color: #fff;
+	display: inline-block;
+	font-family: NewsGothicMT-Bold;
+	padding: 5px 10px;
+	text-align: center;
+	text-transform: uppercase;
+	
+	transition: all 0.4s;
+	-moz-transition: all 0.4s;
+	-webkit-transition: all 0.4s;
+	-o-transition: all 0.4s;
 }
-
-.availbutton .button {
-	margin: 0;
-}
-
-.availbutton .shutdown {
-	display: none;
-	background-color: #fff;
-	bottom: 0;
-	color: #000;
-	font-size: 35px;
-	line-height: 62px;
-	right: 0;
-	width: 62px;
-	z-index: 999;
-}
-
-@-moz-document url-prefix() {
-	.availbutton .shutdown {
-		bottom: 1px;
+	.ressys .btn1:hover {
+		background-color: #333;
 	}
-}
 
 .roomtits {
   position: absolute;

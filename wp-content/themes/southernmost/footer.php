@@ -109,10 +109,7 @@
 						<div class="datepicker"></div>
 					</div>
 					
-					<div class="availbutton">
-						<button class="button" type="submit">View Availability</button>
-						<i class="shutdown fa fa-times"></i>
-					</div>
+					<button class="button" type="submit">View Availability</button>
 
 				<!-- <a href="#" class="button" onclick="_gaq.push(['_trackEvent', 'Booking-widget', 'Search-now', 'Search dates with booking widget']);">Search Now</a>	 -->
 
