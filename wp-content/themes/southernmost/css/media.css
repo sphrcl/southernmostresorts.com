@@ -92,6 +92,21 @@ and (max-width: 1024px) {
 		width: 100%;
 	}
 	
+	/* roomsection */
+	
+	.room-caption {
+		width: 520px;
+	}
+	
+
+}
+
+
+
+/* ============================================================  1023 - 0000  ============================================================ */
+
+@media only screen 
+and (max-width: 1023px) {
 
 }
 
@@ -169,11 +184,13 @@ and (max-width: 799px) {
 	.logo { left: 15px; width: 115px; }
 	#welcome .formfields { display: none; }
 	
+	/*
 	.flexslider.roomslider li { height: 250px }
 	.room-caption { right: 25px; }
 	.room-caption h3 { font-size: 21px; margin-bottom: 0; }
 	.room-caption .button5 { padding: 2px; font-size: 15px; }
 	.flexslider.roomslider { height: 250px; }
+	*/
 	.flexslider.roomcarousel .slides li { height: 180px; width: 180px !important; }
 	.flexslider.roomcarousel .slides li .flex-caption { font-size: 17px; }
 	
@@ -393,6 +410,20 @@ and (max-height: 500px) {
 		height: 200px;
 	}
 	
+	/* roomsection */
+	
+	.flexslider.roomslider {
+		height: 480px;
+	}
+	
+	.flexslider.roomslider li {
+		height: 480px;
+	}
+	
+	.room-caption {
+		bottom: 44px;
+	}
+	
 }
 
 
@@ -418,6 +449,16 @@ and (max-height: 400px) {
 		display: none;
 	}
 	
+	/* roomsection */
+	
+	.flexslider.roomslider {
+		height: 380px;
+	}
+	
+	.flexslider.roomslider li {
+		height: 380px;
+	}
+	
 	
 }
 
@@ -434,6 +475,16 @@ and (max-height: 320px) {
 	
 	.flexslider.topbanner li {
 		height: 320px;
+	}
+	
+	/* roomsection */
+	
+	.flexslider.roomslider {
+		height: 300px;
+	}
+	
+	.flexslider.roomslider li {
+		height: 300px;
 	}
 	
 }
