@@ -142,12 +142,20 @@
 <script type="text/javascript">
 var userFeed = new Instafeed({
     get: 'user',
+	template: '<div class="instabox"><a href="{{link}}"><img src="{{image}}" /></a></div>',
     resolution: 'low_resolution',
     userId: 421860270,
     limit: 5,
     accessToken: '5532366.467ede5.a35264fd4db5467e9535e37af9246a6b'
 });
 userFeed.run();
+
+$(window).load(function() {
+	$('.instabox').each(function(index) {
+		var numbarray = ['one', 'two', 'three', 'four', 'five'];
+		$(this).addClass(numbarray[index]);
+	});
+});
 </script>
 <script type="text/javascript" src="<?php bloginfo ('template_url'); ?>/js/jquery.flexslider-min.js"></script>
 <script type="text/javascript" src="<?php bloginfo ('template_url'); ?>/js/general.js"></script>

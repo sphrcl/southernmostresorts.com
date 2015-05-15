@@ -45,10 +45,6 @@ and (max-width: 1439px) {
 	
 	/* header */
 	
-	.hamburger {
-		display: block;
-	}
-	
 	.navigation {
 		right: 258px;
 	}
@@ -56,6 +52,44 @@ and (max-width: 1439px) {
 	
 
 }
+
+
+
+/* ============================================================  1024 - 0000  ============================================================ */
+
+@media only screen 
+and (max-width: 1024px) {
+	
+	/* ======================== HOMEPAGE ======================== */
+	
+	/* welcome */
+	
+	#welcome form {
+		width: 600px;
+		margin: 0 auto;
+	}
+	
+	#welcome .calsec,
+	#welcome .dropsec {
+		display: block;
+		margin-bottom: 5px;
+	}
+	
+	#welcome input,
+	#welcome select {
+		width: 100%;
+		box-sizing: border-box;
+		-moz-box-sizing: border-box;
+		-webkit-box-sizing: border-box;
+	}
+	
+	#welcome .button3 {
+		width: 100%;
+	}
+	
+
+}
+
 
 
 /* ============================================================  799 - 000  ============================================================ */

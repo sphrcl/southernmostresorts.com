@@ -499,7 +499,6 @@ ul.topnavigationmob ul.sub-menu li a {
 }
 
 .hamburger {
-	display: none;
     position: absolute;
     right: -70px;
     top: 2px;
@@ -1046,9 +1045,27 @@ ul.instapics li {
   display: inline-block;
 }
 
+#instafeed {
+	overflow: auto;
+}
+
+#instafeed .instabox {
+	width: 20%;
+	float: left;
+}
+
+#instafeed a {
+	display: block;
+	margin-right: 1px;
+}
+
+#instafeed .five a {
+	margin-right: 0;
+}
+
 #instafeed img {
-  width: calc( 20% - 1px );
-  margin-right: 1px ;
+	display: block;
+	max-width: 100%;
 }
 
 ul.instapics li img {
