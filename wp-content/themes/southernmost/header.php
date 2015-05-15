@@ -82,10 +82,8 @@
 							<div class="slidedown-nav">
 
 								<div class="left">
-
-									<h3><?php the_title(); ?></h3>
-									<a href="#">See Availability</a>
-									
+									<h3>Rooms</h3>
+									<a href="#">See Availability</a>									
 								</div>
 
 								<a class="btn next right"><i class="fa fa-angle-right"></i></a>
@@ -114,10 +112,103 @@
 						</li>
 						<li>
 							<a href="/photo-gallery-2/">Gallery</a>
-							
+							<div class="slidedown-nav">
+
+								<div class="left">
+									<h3>Gallery</h3>
+									<a href="#">See Availability</a>									
+								</div>
+
+								<a class="btn next1 right"><i class="fa fa-angle-right"></i></a>
+
+								<div id="owl1" class="right owl-carousel owl-theme">
+
+									<?php 
+										$query_slidedown_gallery = new wp_query(array(
+											'post_type' => 'imagegalleries',
+											'posts_per_page' => -1
+										)); 
+										if($query_slidedown_gallery->have_posts()) : while($query_slidedown_gallery->have_posts()) : $query_slidedown_gallery->the_post();
+										$imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "Full"); 
+								    ?>
+										<div class="item">
+											<a href="<?php the_permalink(); ?>"><div class="slide-image" style="background-image: url(<?php echo tt($imgsrc[0],340,270); ?>);"></div></a>
+											<a href="<?php the_permalink(); ?>"><h3><?php the_title(); ?></h3></a>
+										</div>
+									<?php endwhile; endif; wp_reset_query(); ?>
+
+								</div>
+
+								<a class="btn prev1 right"><i class="fa fa-angle-left"></i></a>
+
+							</div>
 						</li>
-						<li><a href="/vacation-packages/">Specials</a></li>
-						<li><a href="/dining-2/">Dining</a></li>
+						<li>
+							<a href="/vacation-packages/">Specials</a>
+							<div class="slidedown-nav">
+
+								<div class="left">
+									<h3>Specials</h3>
+									<a href="#">See Availability</a>									
+								</div>
+
+								<a class="btn next2 right"><i class="fa fa-angle-right"></i></a>
+
+								<div id="owl2" class="right owl-carousel owl-theme">
+
+									<?php 
+										$query_slidedown_gallery = new wp_query(array(
+											'post_type' => 'sspecials',
+											'posts_per_page' => -1
+										)); 
+										if($query_slidedown_gallery->have_posts()) : while($query_slidedown_gallery->have_posts()) : $query_slidedown_gallery->the_post();
+										$imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "Full"); 
+								    ?>
+										<div class="item">
+											<a href="<?php the_permalink(); ?>"><div class="slide-image" style="background-image: url(<?php echo tt($imgsrc[0],340,270); ?>);"></div></a>
+											<a href="<?php the_permalink(); ?>"><h3><?php the_title(); ?></h3></a>
+										</div>
+									<?php endwhile; endif; wp_reset_query(); ?>
+
+								</div>
+
+								<a class="btn prev2 right"><i class="fa fa-angle-left"></i></a>
+
+							</div>
+						</li>
+						<li>
+							<a href="/dining-2/">Dining</a>
+							<div class="slidedown-nav">
+
+								<div class="left">
+									<h3>Dining</h3>
+									<a href="#">See Availability</a>									
+								</div>
+
+								<a class="btn next3 right"><i class="fa fa-angle-right"></i></a>
+
+								<div id="owl3" class="right owl-carousel owl-theme">
+
+									<?php 
+										$query_slidedown_gallery = new wp_query(array(
+											'post_type' => 'dining',
+											'posts_per_page' => -1
+										)); 
+										if($query_slidedown_gallery->have_posts()) : while($query_slidedown_gallery->have_posts()) : $query_slidedown_gallery->the_post();
+										$imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "Full"); 
+								    ?>
+										<div class="item">
+											<a href="<?php the_permalink(); ?>"><div class="slide-image" style="background-image: url(<?php echo tt($imgsrc[0],340,270); ?>);"></div></a>
+											<a href="<?php the_permalink(); ?>"><h3><?php the_title(); ?></h3></a>
+										</div>
+									<?php endwhile; endif; wp_reset_query(); ?>
+
+								</div>
+
+								<a class="btn prev3 right"><i class="fa fa-angle-left"></i></a>
+
+							</div>
+						</li>
 					</ul>
 					
 				</div>

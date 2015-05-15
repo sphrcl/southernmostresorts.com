@@ -65,7 +65,7 @@
 	
 	<?php 
 
-			$dining = new WP_Query(array(					
+			$dining = new WP_Query(array(
 				'post_type' => 'sspecials',
 				'posts_per_page' => -1
 			));

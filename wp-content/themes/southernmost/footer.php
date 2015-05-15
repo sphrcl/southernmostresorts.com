@@ -164,7 +164,10 @@ $(window).load(function() {
 <script type="text/javascript">
 	$(document).ready(function() {
 
-		var owl = $("#owl");
+		var owl = $("#owl"),
+			owl1 = $("#owl1"),
+			owl2 = $("#owl2"),
+			owl3 = $("#owl3")
 
 		owl.owlCarousel({
 			items : 3, //10 it
@@ -180,6 +183,54 @@ $(window).load(function() {
 		})
 		$(".prev").click(function(){
 			owl.trigger('owl.prev');
+		})
+
+		owl1.owlCarousel({
+			items : 3, //10 it
+			itemsDesktop : [1000,2], //5 items between 1000px and 901px
+			itemsDesktopSmall : [900,1], // betweem 900px and 601px
+			itemsTablet: [600,1], //2 items between 600 and 0
+			itemsMobile : false, // itemsMobile disabled - inherit from itemsTablet option
+			pagination: false,
+		});
+
+		$(".next1").click(function(){
+			owl1.trigger('owl.next');
+		})
+		$(".prev1").click(function(){
+			owl1.trigger('owl.prev');
+		})
+
+		owl2.owlCarousel({
+			items : 3, //10 it
+			itemsDesktop : [1000,2], //5 items between 1000px and 901px
+			itemsDesktopSmall : [900,1], // betweem 900px and 601px
+			itemsTablet: [600,1], //2 items between 600 and 0
+			itemsMobile : false, // itemsMobile disabled - inherit from itemsTablet option
+			pagination: false,
+		});
+
+		$(".next1").click(function(){
+			owl2.trigger('owl.next');
+		})
+		$(".prev1").click(function(){
+			owl2.trigger('owl.prev');
+		})
+
+		owl3.owlCarousel({
+			items : 3, //10 it
+			itemsDesktop : [1000,2], //5 items between 1000px and 901px
+			itemsDesktopSmall : [900,1], // betweem 900px and 601px
+			itemsTablet: [600,1], //2 items between 600 and 0
+			itemsMobile : false, // itemsMobile disabled - inherit from itemsTablet option
+			pagination: false,
+		});
+
+		$(".next1").click(function(){
+			owl3.trigger('owl.next');
+		})
+		$(".prev1").click(function(){
+			owl3.trigger('owl.prev');
 		})
 	 
 	});

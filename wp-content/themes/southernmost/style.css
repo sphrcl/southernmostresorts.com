@@ -556,7 +556,7 @@ div#topbanner {
     visibility: visible;
 }
 
-.slidedown-nav #owl {
+.slidedown-nav .owl-carousel {
     padding: 0 5% 0 3%;
     width: 70%;
 }
@@ -564,6 +564,9 @@ div#topbanner {
 .slidedown-nav .slide-image {
     height: 270px;
     width: 100%;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .slidedown-nav .owl-carousel .owl-item {
@@ -596,11 +599,17 @@ div#topbanner {
 	    color: #555;
 	}
 
-.slidedown-nav .btn.next {
+.slidedown-nav .btn.next,
+.slidedown-nav .btn.next1,
+.slidedown-nav .btn.next2,
+.slidedown-nav .btn.next3 {
     right: 2%;
 }
 
-.slidedown-nav .btn.prev {
+.slidedown-nav .btn.prev,
+.slidedown-nav .btn.prev1,
+.slidedown-nav .btn.prev2,
+.slidedown-nav .btn.prev3 {
     left: 22.5%;
 }
 
