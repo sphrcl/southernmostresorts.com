@@ -931,11 +931,11 @@ div#rooms-section {
 }
 
 .room-caption {
-  top: 55%;
-  right: 80px;
-  position: relative;
-  text-align: right;
-  color: #fff;
+	bottom: 88px;
+	color: #fff;
+	position: absolute;
+	right: 80px;
+	text-align: right;
 }
 
 .room-caption h3 {
