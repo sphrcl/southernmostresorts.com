@@ -70,7 +70,7 @@ add_action('admin_menu', 'amenities_add_boxel');
 // Add meta boxel
 function amenities_add_boxel() {
 	global $amenities_box;
-	foreach ( array( 'amenities' ) as $page )
+	foreach ( array( 'samenities' ) as $page )
 	add_meta_box($amenities_box['id'], $amenities_box['title'], 'amenities_show_boxel', $page, $amenities_box['context'], 			$amenities_box['priority']);
 }
 // Callback function to show fields in meta boxel

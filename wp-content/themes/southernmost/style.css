@@ -212,7 +212,8 @@ img.right, img.alignright {float: right;margin: 0 0 7px 15px;}
 a, 
 .button,
 .footleft input[type="text"],
-.footleft input[type="submit"] {
+.footleft input[type="submit"],
+.slidedown-nav .owl-carousel .owl-item {
 	-webkit-transition: all .4s ease;
     -moz-transition: all .4s ease;
     -o-transition: all .4s ease;
@@ -641,6 +642,9 @@ div#topbanner {
 .slidedown-nav .owl-carousel .owl-item {
     margin: 0 10px;
 }
+	.slidedown-nav .owl-carousel .owl-item:hover {
+		opacity: .8;
+	}
 
 .slidedown-nav .item h3 {
     color: #79797b;
