@@ -104,6 +104,18 @@ and (max-width: 1200px) {
 	}
 	
 	
+	/* ======================== PAGE - RESTAURANT & BARS ======================== */
+	
+	.dining .specialscontent {
+		padding: 5px 1%;
+	}
+	
+	.dining .specialtitle {
+		padding: 0 25px;
+		margin: 0;
+	}
+	
+	
 
 }
 
@@ -165,6 +177,13 @@ and (max-width: 1024px) {
 		left: 4%;
 		padding: 10px 2%;
 		width: 88%;
+	}
+	
+	
+	/* ======================== PAGE - RESTAURANTS & BARS ======================== */
+	
+	.banner-title > h2 {
+		font-size: 60px;
 	}
 	
 
@@ -422,6 +441,13 @@ and (max-width: 767px) {
 	
 	.specialbuttons .button6 {
 		margin-bottom: 5px;
+	}
+	
+	
+	/* ======================== PAGE - RESTAURANTS & BARS ======================== */
+	
+	.banner-title > h2 {
+		font-size: 50px;
 	}
 
 }
@@ -701,6 +727,13 @@ and (max-width: 479px) {
 		height: 35px;
 		line-height: 35px;
 		width: 35px;
+	}
+	
+	
+	/* ======================== PAGE - RESTAURANTS & BARS ======================== */
+	
+	.banner-title > h2 {
+		font-size: 35px;
 	}
 
 	

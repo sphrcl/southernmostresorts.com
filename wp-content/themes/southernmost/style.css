@@ -1386,7 +1386,7 @@ div#specials_list {
   width: calc(50% - 1px);
   height: 480px;
   float: left;
-  margin-bottom: 4px;
+  margin-bottom: 2px;
     position: relative;
 }
 
@@ -1424,6 +1424,10 @@ div#specials_list {
   padding: 10px 25px 0;
   min-width: 325px;
   max-width: 440px;
+}
+
+.dining .specialtitle {
+	padding: 5px 25px;
 }
 
 .specialbuttons {

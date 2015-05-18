@@ -50,7 +50,7 @@
 
 </div>
 	
-<div class="innerpage wrapper specials_page">
+<div class="innerpage wrapper specials_page dining">
 	<div id="pagecontent">
 
 		<div class="container">
