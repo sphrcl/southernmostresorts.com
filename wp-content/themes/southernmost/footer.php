@@ -69,15 +69,16 @@
 			<div class="spacer"></div>
 			
 			<div id="navmenumob">
-				<div class="slidedown-navmob">
+				<!-- <div class="slidedown-navmob">
 					<ul class="slidedownlist">
 						<li class="first"><a href="<?php bloginfo('url');?>/rooms/">Accommodations</a><span class="ibox pressroom"><i class="fa fa-plus"></i></span></li>
 						<li><a href="<?php bloginfo('url');?>/photo-gallery-2/">Gallery</a><span class="ibox pressphot"><i class="fa fa-plus"></i></span></li>
 						<li><a href="<?php bloginfo('url');?>/vacation-packages/">Specials</a><span class="ibox pressvaca"><i class="fa fa-plus"></i></span></li>
 						<li class="last"><a href="<?php bloginfo('url');?>/dining-2/">Dining</a><span class="ibox pressdini"><i class="fa fa-plus"></i></span></li>
 					</ul>
-				</div>
-				<?php wp_nav_menu( array( 'theme_location' => 'primary' ,  'container' => false, 'menu_class' => 'topnavigationmob' ) ); ?>
+				</div> -->
+
+				<?php wp_nav_menu( array( 'theme_location' => 'secondary' ,  'container' => false, 'menu_class' => 'topnavigationmob' ) ); ?>
 			</div>
 
 		</section><!-- end right nav -->
