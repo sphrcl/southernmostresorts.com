@@ -8,7 +8,7 @@
 
 
 	<div id="footer">
-		<div class="footaddress">Southernmost beach resort • 1319 Duval Street • Key West, FL 33040</div>
+		<div class="footaddress"><?php echo get_option('misfit_footer_address'); ?></div>
 
 		<div class="footcolumn">
 			<div class="footleft">
@@ -41,22 +41,21 @@
 			</div>
 
 			<div class="footright">
-				<p>Sed id elementum eros. Integer egestas sit amet sem eu ultricies. Suspendisse ac ornare magna, vitae accumsan lectus. Nam nec tempus turpis, vel tincidunt orci.</p>
-
-				<p>Nullam suscipit turpis eu urna consequat mattis et a diam. Nam diam elit, sagittis vitae mauris ac, luctus pellentesque ex.</p>
+				<?php echo get_option('misfit_footer_paragraph'); ?>
 			</div>
 
 		</div>
 
 		<div class="footnav">
 			<ul class="footernavigation">
-					<li><a href="#">Privacy Policy</a></li>
-					<li><a href="#">Site Map</a></li>
-					<li><a href="#">Press</a></li>
-					<li><a href="#">Contact</a></li>
-					<li><a href="#">About</a></li>
-					<li><a href="#">Hotel Policies</a></li>
-				</ul>
+				<?php wp_nav_menu( array( 'theme_location' => 'footer_nav' ,  'items_wrap' => '%3$s', 'container' => '', 'menu_class' => 'navitem' ) ); ?>
+				<!-- <li><a href="#">Privacy Policy</a></li>
+				<li><a href="#">Site Map</a></li>
+				<li><a href="#">Press</a></li>
+				<li><a href="#">Contact</a></li>
+				<li><a href="#">About</a></li>
+				<li><a href="#">Hotel Policies</a></li> -->
+			</ul>
 		</div>
 
 
@@ -189,22 +188,19 @@
 <div class="ressys">
 	
 	<div class="logo-white" style="text-align: center;">
-		<img src="http://www.southernmostresorts.com.php53-24.ord1-1.websitetestlink.com/wp-content/themes/southernmost/images/logo-white.png" alt="*">
+		<img src="<?php bloginfo('template_url'); ?>/images/logo-white.png" alt="Southernmost Beach Resort Key West Logo">
 	</div>
 			
 	<a class="btn1" href="#">Close</a>
 	<div class="whippapeal">
 		<div class="formfields">
 			<div class="reservationform">
-				<form method="get" action="#" target="_blank">
-				
-					
-					
-					<input type="hidden"  id="arrival_date" name="arrivalDate" class="calendarsection" />
+				<form method="get" action="<?php echo get_option('misfit_booking_link'); ?>" target="_blank">
+									
+					<input type="hidden"  id="arrival_date" name="arrival_date" class="calendarsection" />
 					<input type="hidden"  id="arv">
 
-
-					<input type="hidden" id="departure_date" name="departureDate" class="calendarsection" />
+					<input type="hidden" id="departure_date" name="departure_date" class="calendarsection" />
 					<input type="hidden" id="dep">
 
 
@@ -214,9 +210,6 @@
 					</div>
 					
 					<button class="button" type="submit">View Availability</button>
-
-				<!-- <a href="#" class="button" onclick="_gaq.push(['_trackEvent', 'Booking-widget', 'Search-now', 'Search dates with booking widget']);">Search Now</a>	 -->
-
 
 				</form>
 

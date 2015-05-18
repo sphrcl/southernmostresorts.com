@@ -11,6 +11,10 @@ register_nav_menus( array(
 	'secondary' => __( 'Side Navigation', 'cebo' ),
 ) );
 
+register_nav_menus( array(
+	'footer_nav' => __( 'Footer Navigation', 'cebo' ),
+) );
+
 
 // Sidebar Activation
 

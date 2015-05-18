@@ -1491,6 +1491,11 @@ $options[] = array( "name" => __('General Personalization','misfitlang'),
 			
 
 
+$options[] = array( "name" => __('General Booking Link','misfitlang'),
+			"id" => $shortname."_booking_link",
+			"std" => "",
+			"type" => "text");
+
 
 											   
 $options[] = array( "name" => __('Home Page Copy','misfitlang'),
@@ -1541,7 +1546,21 @@ $options[] = array( "name" => __('Newsletter Code','misfitlang'),
 			"desc" => __('Paste in your newsletter code','misfitlang'),
 			"id" => $shortname."_news_code",
 			"std" => "",
-			"type" => "textarea");			
+			"type" => "textarea");
+
+
+
+$options[] = array( "name" => __('Footer paragraph','misfitlang'),
+			"id" => $shortname."_footer_paragraph",
+			"std" => "",
+			"type" => "textarea");	
+
+
+
+$options[] = array( "name" => __('Footer address','misfitlang'),
+			"id" => $shortname."_footer_address",
+			"std" => "",
+			"type" => "textarea");	
 
 
 
