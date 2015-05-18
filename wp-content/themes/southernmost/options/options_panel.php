@@ -1497,6 +1497,14 @@ $options[] = array( "name" => __('General Booking Link','misfitlang'),
 			"type" => "text");
 
 
+
+$options[] = array( "name" => __('Custom Favicon','cebolang'),
+			"desc" => __('Have a favorite favicon? Upload and insert your favorite 16px x 16px Png/Gif that will hang out next to the address bar.','cebolang'),
+			"id" => $shortname."_custom_favicon",
+			"std" => "",
+			"type" => "upload");
+
+
 											   
 $options[] = array( "name" => __('Home Page Copy','misfitlang'),
 			"desc" => __('If you would like text under the "Discover Southernmost... " please paste it here.','misfitlang'),
