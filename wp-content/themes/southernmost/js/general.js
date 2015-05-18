@@ -43,7 +43,7 @@ $(document).ready(function(){
 	});
 	
 	$('#navmenumob li').each(function() {
-		if ($(this).hasClass('menu-item-has-children')) {
+		if ($(this).hasClass('page_item_has_children')) {
 			$('<i class="fa fa-plus"></i>').insertAfter($(this).children('a'));
 		}
 	});
@@ -59,7 +59,7 @@ $(document).ready(function(){
 			$(this).removeClass('active');
 		}
 		
-		$(this).parent('li').find('.sub-menu').slideToggle(500);
+		$(this).parent('li').find('.children').slideToggle(500);
 	});
 	
 	$('.ibox').click(function() {
