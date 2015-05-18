@@ -70,10 +70,113 @@
 			<div class="spacer"></div>
 			
 			<div id="navmenumob">
+				<div class="slidedown-navmob">
+					<ul class="slidedownlist">
+						<li class="first"><a href="<?php bloginfo('url');?>/rooms/">Accommodations</a><span class="ibox pressroom"><i class="fa fa-plus"></i></span></li>
+						<li><a href="<?php bloginfo('url');?>/photo-gallery-2/">Gallery</a><span class="ibox pressphot"><i class="fa fa-plus"></i></span></li>
+						<li><a href="<?php bloginfo('url');?>/vacation-packages/">Specials</a><span class="ibox pressvaca"><i class="fa fa-plus"></i></span></li>
+						<li class="last"><a href="<?php bloginfo('url');?>/dining-2/">Dining</a><span class="ibox pressdini"><i class="fa fa-plus"></i></span></li>
+					</ul>
+				</div>
 				<?php wp_nav_menu( array( 'theme_location' => 'primary' ,  'container' => false, 'menu_class' => 'topnavigationmob' ) ); ?>
 			</div>
 
 		</section><!-- end right nav -->
+		
+		<section class="secondrightnav">
+			<div class="srnbox">
+				<div class="srnlist">
+					
+					<ul class="pressroom">
+						
+						<?php 
+							$query_slidedown_rooms = new wp_query(array(
+								'post_type' => 'rooms',
+								'posts_per_page' => -1
+							)); 
+							if($query_slidedown_rooms->have_posts()) : while($query_slidedown_rooms->have_posts()) : $query_slidedown_rooms->the_post();
+							$imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "Full"); 
+						?>
+						
+						<li>
+							<a href="<?php the_permalink(); ?>">
+								<div style="background-image: url(<?php echo tt($imgsrc[0],320,240); ?>);"></div>
+								<h3><?php the_title(); ?></h3>
+							</a>
+						</li>
+						
+						<?php endwhile; endif; wp_reset_query(); ?>
+						
+					</ul>
+					
+					<ul class="pressphot">
+						
+						<?php 
+							$query_slidedown_gallery = new wp_query(array(
+								'post_type' => 'imagegalleries',
+								'posts_per_page' => -1
+							)); 
+							if($query_slidedown_gallery->have_posts()) : while($query_slidedown_gallery->have_posts()) : $query_slidedown_gallery->the_post();
+							$imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "Full"); 
+						?>
+						
+						<li>
+							<a href="<?php the_permalink(); ?>">
+								<div style="background-image: url(<?php echo tt($imgsrc[0],320,240); ?>);"></div>
+								<h3><?php the_title(); ?></h3>
+							</a>
+						</li>
+						
+						<?php endwhile; endif; wp_reset_query(); ?>
+						
+					</ul>
+					
+					<ul class="pressvaca">
+						
+						<?php 
+							$query_slidedown_gallery = new wp_query(array(
+								'post_type' => 'sspecials',
+								'posts_per_page' => -1
+							)); 
+							if($query_slidedown_gallery->have_posts()) : while($query_slidedown_gallery->have_posts()) : $query_slidedown_gallery->the_post();
+							$imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "Full"); 
+						?>
+						
+						<li>
+							<a href="<?php the_permalink(); ?>">
+								<div style="background-image: url(<?php echo tt($imgsrc[0],320,240); ?>);"></div>
+								<h3><?php the_title(); ?></h3>
+							</a>
+						</li>
+						
+						<?php endwhile; endif; wp_reset_query(); ?>
+						
+					</ul>
+					
+					<ul class="pressdini">
+						
+						<?php 
+							$query_slidedown_gallery = new wp_query(array(
+								'post_type' => 'dining',
+								'posts_per_page' => -1
+							)); 
+							if($query_slidedown_gallery->have_posts()) : while($query_slidedown_gallery->have_posts()) : $query_slidedown_gallery->the_post();
+							$imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "Full"); 
+						?>
+						
+						<li>
+							<a href="<?php the_permalink(); ?>">
+								<div style="background-image: url(<?php echo tt($imgsrc[0],320,240); ?>);"></div>
+								<h3><?php the_title(); ?></h3>
+							</a>
+						</li>
+						
+						<?php endwhile; endif; wp_reset_query(); ?>
+						
+					</ul>
+				</div>
+			</div>
+		</section>
 
 
 
