@@ -262,7 +262,16 @@ $(window).load(function() {
 		var owl = $("#owl"),
 			owl1 = $("#owl1"),
 			owl2 = $("#owl2"),
-			owl3 = $("#owl3")
+			owl3 = $("#owl3"),
+			totalItems = $('#owl .item').length,
+			totalItems1 = $('#owl1 .item').length,
+			totalItems2 = $('#owl2 .item').length,
+			totalItems3 = $('#owl3 .item').length;
+
+		if(totalItems <= 3) { $('.btn.next, .btn.prev').hide() }
+		if(totalItems1 <= 3) { $('.btn.next1, .btn.prev1').hide() }
+		if(totalItems2 <= 3) { $('.btn.next2, .btn.prev2').hide() }
+		if(totalItems3 <= 3) { $('.btn.next3, .btn.prev3').hide() }
 
 		owl.owlCarousel({
 			items : 3, //10 it
