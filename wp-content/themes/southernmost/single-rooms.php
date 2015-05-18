@@ -101,49 +101,41 @@
 
 			<div class="content">
 
-					<?php
-			        $gallery = get_post_gallery();
-			
+				<?php
+			        $gallery = get_post_gallery();			
 			        $content = strip_shortcode_gallery( get_the_content() );                                        
 			        $content = str_replace( ']]>', ']]&gt;', apply_filters( 'the_content', $content ) ); 
 			        echo $content;
-			
-			        ?>
+		        ?>
+		        
+		        <ul id="toggle-view">
+		        	<li class="activated">
+		        		<h3>Available Rates and Packages</h3>
+		        		
+		        		<div class="panel">
+
+		        			<?php 
+								$repeatable_fields = get_post_meta($post->ID, 'repeatable_fields', true);
+								if( $repeatable_fields ) { foreach ( $repeatable_fields as $field ) { 
+							?>
+
+								<?php if ($field['url'] != '' || $field['description'] != '' || $field['namer'] != '') { ?>
+
+									<div class="promo">				        			
+				        				<h2><?php echo $field['namer']; ?></h2>				        				
+				        				<p><?php echo $field['description']; ?></p>				        				
+				        				<a class="button" href="<?php echo $field['url']; ?>">Reserve Now</a>
+				        				<div class="clear"></div>					        				
+				        			</div>
+
+			        			<?php } ?>
+
+							<?php } } ?>
+		        						        		
+		        		</div>
+		        	</li>
+		        </ul>
 			        
-			        
-			        
-			        
-			        <ul id="toggle-view">
-			        	<li class="activated">
-			        		<h3>Available Rates and Packages</h3>
-			        		
-			        		<div class="panel">
-
-			        			<?php 
-									$repeatable_fields = get_post_meta($post->ID, 'repeatable_fields', true);
-									foreach ( $repeatable_fields as $field ) { 
-								?>
-
-									<?php if ($field['url'] != '' || $field['description'] != '' || $field['namer'] != '') { ?>
-
-										<div class="promo">
-				        			
-					        				<h2><?php echo $field['namer']; ?></h2>				        				
-					        				<p><?php echo $field['description']; ?></p>				        				
-					        				<a class="button" href="<?php echo $field['url']; ?>">Reserve Now</a>				        				
-					        				<div class="clear"></div>
-					        				
-					        			</div>
-
-				        			<?php } ?>
-
-								<?php } ?>
-			        						        		
-			        		</div>
-			        	</li>
-			        </ul>
-
-
 			</div>
 
 		</div>
