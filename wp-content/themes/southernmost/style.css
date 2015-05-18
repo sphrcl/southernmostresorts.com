@@ -1885,17 +1885,17 @@ ul.roomsub li a {
 #toggle-view:before {
 	display: none;
 }
-#toggle-view li {
+#toggle-view > li {
 	margin-bottom:1px;
     /*border-bottom: 1px solid #EFEFEF;*/
 	position:relative;
 }
 
-#toggle-view li:hover {
+#toggle-view > li:hover {
 
 }
 
-#toggle-view li:after {
+#toggle-view > li:after {
 	content: '+';
 	background: transparent;
 	color: #333;
@@ -1909,7 +1909,7 @@ ul.roomsub li a {
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
 }
-#toggle-view li:before {
+#toggle-view > li:before {
 	content: '';
 	background: transparent;
 	color: #fff;
@@ -1945,6 +1945,11 @@ ul.roomsub li a {
 	letter-spacing: -0.2px; 
 }
 
+#toggle-view .halfsie ul > li {
+    color: #5e5e5e;
+    font-size: 14px;
+    line-height: 1.5;
+}
 
 .panel .halfsie {
 	width: 45%;

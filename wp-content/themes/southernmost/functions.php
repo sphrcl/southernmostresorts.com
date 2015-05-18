@@ -32,6 +32,7 @@ include(TEMPLATEPATH . '/options/single-options.php');
 include(TEMPLATEPATH . '/options/page-options.php');
 include(TEMPLATEPATH . '/options/activities-options.php');
 include(TEMPLATEPATH . '/options/dining-options.php');
+include(TEMPLATEPATH . '/options/amenities-options.php');
 include(TEMPLATEPATH . '/options/available-packages-repeatable-fields.php');
 
 
