@@ -211,7 +211,8 @@ img.right, img.alignright {float: right;margin: 0 0 7px 15px;}
 
 a, 
 .button,
-.footleft input[type="text"] {
+.footleft input[type="text"],
+.footleft input[type="submit"] {
 	-webkit-transition: all .4s ease;
     -moz-transition: all .4s ease;
     -o-transition: all .4s ease;
@@ -255,6 +256,10 @@ a,
 
 .royalewrap {
 	padding: 10px 0;
+}
+
+.royale:hover {
+    opacity: 0.5;
 }
 
 .opened .cheese {
@@ -590,6 +595,10 @@ ul.topnavigationmob ul.sub-menu li a {
   text-align: center;
   padding: 0 35px;
 }
+	.button1:hover {
+		background: #179dab;
+		color: #fff;
+	}
 
 div#topbanner {
   position: relative;
@@ -1227,7 +1236,7 @@ h5.discovertext {
 .flexslider.discoverdining .flex-control-nav {
   bottom: 20px;
   right: 20px;
-  z-index: 2;
+  z-index: 99999;
   width: auto;
 }
 
@@ -1249,7 +1258,7 @@ h5.discovertext {
 .flexslider.discoverweddings .flex-control-nav {
   bottom: 20px;
   left: 20px;
-  z-index: 2;
+  z-index: 99999;
   width: auto;
 }
 
@@ -3920,7 +3929,7 @@ a.mobihid {
 	position: fixed;
 	height: 100%;
 	width: 100%;
-	z-index: 9999;
+	z-index: 9999999;
 	opacity: 0;
 	visibility: hidden;
 	-webkit-transition: all 1.2s ease;

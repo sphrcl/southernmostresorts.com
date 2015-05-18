@@ -305,10 +305,10 @@ $(window).load(function() {
 			pagination: false,
 		});
 
-		$(".next1").click(function(){
+		$(".next2").click(function(){
 			owl2.trigger('owl.next');
 		})
-		$(".prev1").click(function(){
+		$(".prev3").click(function(){
 			owl2.trigger('owl.prev');
 		})
 
@@ -321,10 +321,10 @@ $(window).load(function() {
 			pagination: false,
 		});
 
-		$(".next1").click(function(){
+		$(".next3").click(function(){
 			owl3.trigger('owl.next');
 		})
-		$(".prev1").click(function(){
+		$(".prev3").click(function(){
 			owl3.trigger('owl.prev');
 		})
 	 
