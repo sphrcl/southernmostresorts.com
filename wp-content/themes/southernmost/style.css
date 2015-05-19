@@ -2419,6 +2419,11 @@ ul.subnavigation li.current::after {
     width: 100%;
 }
 
+.page-id-100 .page-nav {
+	border-top: 1px solid #e3e3e3;
+	border-bottom: 0 none;
+}
+
 .page-nav li.current::before {
     transform: translateX(-50%);
     -moz-transform: translateX(-50%);

@@ -281,6 +281,18 @@ and (max-width: 1023px) {
 		width: 45%;
 	}
 	
+	.page-nav {
+		padding: 15px 0;
+	}
+	
+	.page-nav li.current::before {
+		background: url("images/ico-page-nav-pointer.png") no-repeat scroll 0 0 transparent;
+	}
+	
+	.page-nav li > a {
+		padding: 5px 0;
+	}
+	
 }
 
 
@@ -307,6 +319,25 @@ and (max-width: 960px) {
 	
 	.gallery-list > a:nth-child(4n + 1) {
 		margin-left: 0;
+	}
+	
+	
+	/* ======================== PAGE TEMPLATE - DEFAULT ======================== */
+	
+	.content {
+		margin-bottom: 20px;
+	}
+	
+	.content .left {
+		float: none;
+		width: auto;
+	}
+	
+	.content .right {
+		float: none;
+		margin: 0 auto;
+		width: auto;
+		max-width: 300px;
 	}
 	
 	
