@@ -93,6 +93,8 @@
 			<div class="srnbox">
 				<div class="srnlist">
 					
+					<div class="srnclose"><i class="fa fa-close"></i></div>
+					
 					<ul class="pressroom">
 						
 						<?php 

@@ -450,6 +450,7 @@ ul.topnavigation ul li:hover {
 
 .topnavigationmob {
 	border-top: 1px solid #fff;
+	padding: 0;
 }
 
 .topnavigationmob ul {
@@ -753,36 +754,41 @@ div#topbanner {
 /* secondright nav */
 
 .secondrightnav {
-  display: none;
-  background: url('images/logo.jpg') no-repeat scroll center center #fff;
-  background-size: 80% auto;
-  overflow: scroll;
-  height: 100%;
-  width: 320px;
-  
-  position: fixed;
-  z-index: 1;
-  right: -320px;
-  top: 0;
-  
-  -webkit-transition: all .5s ease;
-  -moz-transition: all .5s ease;
-  -o-transition: all .5s ease;
-  transition: all .5s ease;
+	display: none;
+	background: url('images/logo.jpg') no-repeat scroll center center #fff;
+	background-size: 80% auto;
+	overflow: scroll;
+	height: 100%;
+	width: 320px;
+	
+	position: fixed;
+	z-index: 1;
+	right: -320px;
+	top: 0;
+	
+	-webkit-transition: all .5s ease;
+	-moz-transition: all .5s ease;
+	-o-transition: all .5s ease;
+	transition: all .5s ease;
 }
 
 .secondrightready {
-  right: 80px;
+	right: 80px;
 }
 
 .secondrightready.open {
-  right: 400px;
+	right: 400px;
+}
+
+.srnlist {
+	position: relative;
+	padding: 1px 1px 0;
 }
 
 .srnlist ul {
 	background-color: #fff;
 	display: none;
-	padding: 1px 1px 0;
+	padding: 0;
 }
 
 .srnlist a div {
@@ -798,6 +804,38 @@ div#topbanner {
 	margin: 0 0 1px;
 	padding: 10px;
 	text-align: center;
+}
+
+.srnclose {
+	background-color: #189dac;
+	display: none;
+	width: 398px;
+	text-align: center;
+	
+	position: fixed;
+	top: 0;
+	right: -400px;
+	z-index: 14;
+	
+	-webkit-transition: all .5s ease;
+	-moz-transition: all .5s ease;
+	-o-transition: all .5s ease;
+	transition: all .5s ease;
+}
+	.srnclose:hover {
+		background-color: #ff9968;
+	}
+	
+	.open .srnclose {
+		right: 1px;
+	}
+
+.srnclose i {
+	display: block;
+	font-size: 30px;
+	padding: 5px 0;
+	border-bottom: 1px solid #fff;
+	color: #fff;
 }
 
 
@@ -875,6 +913,7 @@ div#topbanner {
 }
 .button2:hover {
   background: #179dab;
+  color: #fff;
 }
 
 div#welcome {
@@ -1112,6 +1151,7 @@ div#rooms-section {
 }
 .button4:hover {
   background: #ff9966;
+  color: #fff;
 }
 
 .button5 {
@@ -1864,11 +1904,24 @@ div#specials_list {
 
 
 #rooms-section .flex-direction-nav {
-  position: absolute;
-  bottom: 120px;
-  z-index: 999999999;
-  width: 100%;
-  height: 40px;
+	margin-top: -30px;
+	position: relative;
+	top: -50%;
+	width: 100%;
+	z-index: 999;
+}
+
+#rooms-section .flex-direction-nav li {
+	height: auto;
+}
+
+#rooms-section .flex-direction-nav a {
+	height: 60px;
+}
+
+#rooms-section .flex-direction-nav a::before {
+	color: rgba(255, 255, 255, 0.8);
+	font-size: 60px;
 }
 
 .flexslider.roomcarousel .slides li.flex-active-slide::before {
@@ -1971,14 +2024,16 @@ ul.roomsub li a {
     margin: 40px 0 60px;
     padding:0;
     width:100%;
-	border: 1px solid #ddd;
+	border-top: 1px solid #ddd;
+	border-left: 1px solid #ddd;
+	border-right: 1px solid #ddd;
 }
 #toggle-view:before {
 	display: none;
 }
 #toggle-view > li {
 	margin-bottom:1px;
-    /*border-bottom: 1px solid #EFEFEF;*/
+    border-bottom: 1px solid #ddd;
 	position:relative;
 }
 
@@ -1990,9 +2045,9 @@ ul.roomsub li a {
 	content: '+';
 	background: transparent;
 	color: #333;
-	font-size: 14px;
+	font-size: 30px;
 	font-family: 'GothamBook';
-	top: 26px;
+	top: 15px;
 	right: 30px;
 	position: absolute;
 	-moz-font-smoothing: antialiased;
@@ -2018,7 +2073,8 @@ ul.roomsub li a {
 #toggle-view li.activated:after {
 	content: '\2014';
 	cursor: pointer;
-	
+    right: 34px;
+    top: 14px;
 }
 #toggle-view h3 {
 	margin:0;
@@ -2052,11 +2108,6 @@ ul.roomsub li a {
 	float: right;
 }
 
-#toggle-view .activated h3 {
-	    border-bottom: 1px solid #ddd;
-}
-
-
 .prices p {
 	padding: 0;
 	margin: 0;
@@ -2079,6 +2130,7 @@ ul.roomsub li a {
 
 #toggle-view .panel {
 	display:none;
+	border-top: 1px solid #ddd;
 	background:#fff;
 	overflow:hidden;
 	padding: 50px;
@@ -2317,12 +2369,13 @@ ul.subnavigation li.current::after {
     margin-right: 0;
 }
 
-.gallery-list > a:nth-child(6n) {
+.gallery-list > a:nth-child(5n + 1) {
     margin-left: 0;
 }
 
 .gallery-list a img {
-    height: auto;
+    display: block;
+	height: auto;
     width: 100%;
 }
 
