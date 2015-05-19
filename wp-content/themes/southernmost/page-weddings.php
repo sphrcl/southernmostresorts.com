@@ -110,7 +110,14 @@
 		</div>
 
 		<div class="content">
-			<?php the_content(); ?>
+			<div class="left">
+				<?php the_content(); ?>
+			</div>
+			<div class="right">
+				<?php if(get_post_meta($post->ID,'misfit_extenal_booking',true)) { ?>
+					<a class="button" style="position: relative; display: inline-block; padding: 20px; margin-right: 10px;" href="<?php echo get_post_meta($post->ID,'misfit_extenal_booking',true); ?>"><?php _e('Request for proposal','theme-text'); ?></a>
+				<?php } ?>
+			</div>
 		</div>
 
 		<ul class="post-list">

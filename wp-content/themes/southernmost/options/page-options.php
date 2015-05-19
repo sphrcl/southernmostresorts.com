@@ -59,12 +59,20 @@ $page_meta_boxer = array(
 			"type" => "text",
 			"std" => ""
 		),
+		
 		array( 
 			"name" => "Comma separated list (if needed)",
 			"id" => $prefix."_commalist",
 			"type" => "text",
 			"std" => ""
-		)
+		),
+
+		array( 
+			"name" => "Extenal booking link",
+			"id" => $prefix."_external_booking",
+			"type" => "text",
+			"std" => ""
+		),
  		
 	)
 

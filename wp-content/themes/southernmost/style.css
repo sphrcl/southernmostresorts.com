@@ -1519,7 +1519,17 @@ h2.subtitle {
 }
 
 .content {
-  clear: both;
+	clear: both;
+	overflow: hidden;
+}
+
+.content .left {
+    width: 70%;
+}
+
+.content .right {
+    text-align: right;
+    width: 30%;
 }
 
 .innerpage h3 {
