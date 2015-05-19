@@ -273,7 +273,7 @@ $(window).load(function() {
 			owl1 = $("#owl1"),
 			owl2 = $("#owl2"),
 			owl3 = $("#owl3"),
-			owl3 = $("#owl4"),
+			owl4 = $("#owl4"),
 			totalItems = $('#owl .item').length,
 			totalItems1 = $('#owl1 .item').length,
 			totalItems2 = $('#owl2 .item').length,

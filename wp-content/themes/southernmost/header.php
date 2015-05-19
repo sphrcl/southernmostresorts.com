@@ -182,11 +182,11 @@
 								<div id="owl3" class="right owl-carousel owl-theme">
 
 									<?php 
-										$query_slidedown_gallery = new wp_query(array(
+										$query_slidedown_gallerys = new wp_query(array(
 											'post_type' => 'dining',
 											'posts_per_page' => -1
 										)); 
-										if($query_slidedown_gallery->have_posts()) : while($query_slidedown_gallery->have_posts()) : $query_slidedown_gallery->the_post();
+										if($query_slidedown_gallerys->have_posts()) : while($query_slidedown_gallerys->have_posts()) : $query_slidedown_gallerys->the_post();
 										$imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "Full"); 
 								    ?>
 										<div class="item">
