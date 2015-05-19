@@ -174,6 +174,8 @@ $(document).ready(function(){
 	});
 
 	// The slider being synced must be initialized first
+	
+	/*
 	$('.roomcarousel').flexslider({
 		animation: "slide",
 		controlNav: false,
@@ -184,14 +186,14 @@ $(document).ready(function(){
 		itemMargin: 5,
 		asNavFor: '.roomslider'
 	});
+	*/
 
 	$('.roomslider').flexslider({
 		animation: "slide",
 		controlNav: false,
-		directionNav: false,
+		directionNav: true,
 		animationLoop: false,
 		slideshow: false,
-		sync: ".roomcarousel"
 	});
 
 	$('.meetingcarousel').flexslider({

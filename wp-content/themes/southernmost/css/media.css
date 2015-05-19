@@ -177,9 +177,20 @@ and (max-width: 1024px) {
 	
 	/* roomsection */
 	
+	.flexslider.roomslider {
+		height: 500px;
+	}
+	
+	.flexslider.roomslider li {
+		height: 500px;
+	}
+	
 	.room-caption {
 		width: 540px;
 	}
+	
+	.flexslider .flex-direction-nav .flex-prev { left: 10px;}
+	.flexslider .flex-direction-nav .flex-next { right: 10px;}
 	
 	
 	/* ======================== PAGE - SPECIALS ======================== */
@@ -201,6 +212,12 @@ and (max-width: 1024px) {
 		font-size: 60px;
 	}
 	
+	
+	/* ======================== PAGE - GALLERY ======================== */
+	
+	.page-template-page-gallery-php .innerpage {
+		padding: 30px 0;
+	}
 
 }
 
@@ -210,6 +227,21 @@ and (max-width: 1024px) {
 
 @media only screen 
 and (max-width: 1023px) {
+	
+	/* ======================== HEADER ======================== */
+	
+	/* header */
+	
+	div#header {
+		background: -moz-linear-gradient(top,  rgba(255,255,255,0.75) 100%, rgba(255,255,255,0) 100%); /* FF3.6+ */
+		background: -webkit-gradient(linear, left top, left bottom, color-stop(100%,rgba(255,255,255,0.75)), color-stop(100%,rgba(255,255,255,0))); /* Chrome,Safari4+ */
+		background: -webkit-linear-gradient(top,  rgba(255,255,255,0.75) 100%,rgba(255,255,255,0) 100%); /* Chrome10+,Safari5.1+ */
+		background: -o-linear-gradient(top,  rgba(255,255,255,0.75) 100%,rgba(255,255,255,0) 100%); /* Opera 11.10+ */
+		background: -ms-linear-gradient(top,  rgba(255,255,255,0.75) 100%,rgba(255,255,255,0) 100%); /* IE10+ */
+		background: linear-gradient(to bottom,  rgba(255,255,255,0.75) 100%,rgba(255,255,255,0) 100%); /* W3C */
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#bfffffff', endColorstr='#00ffffff',GradientType=0 ); /* IE6-9 */
+		height: 74px;
+	}
 	
 	/* ======================== PAGE TEMPLATE - DEFAULT ======================== */
 	
@@ -230,6 +262,45 @@ and (max-width: 1023px) {
 	
 }
 
+
+
+/* ============================================================  960 - 000  ============================================================ */
+
+@media only screen 
+and (max-width: 960px) {
+
+	/* ======================== PAGE - GALLERY ======================== */
+	
+	.gallery-list > a {
+		width: 24.5%;
+	}
+	
+	.gallery-list > a:nth-child(5n),
+	.gallery-list > a:nth-child(5n + 1) {
+		margin: 0.25%;
+	}
+	
+	.gallery-list > a:nth-child(4n) {
+		margin-right: 0;
+	}
+	
+	.gallery-list > a:nth-child(4n + 1) {
+		margin-left: 0;
+	}
+	
+	
+	/* ======================== PAGE - MEETING ======================== */
+	
+	.flexslider.meetingslider,
+	.flexslider.meetingslider .slides li {
+		height: 450px;
+	}
+	
+	.flexslider.meetingcarousel .slides li {
+		height: 170px;
+	}
+	
+}
 
 
 /* ============================================================  959 - 000  ============================================================ */
@@ -276,17 +347,9 @@ and (max-width: 800px) {
 	
 	/* roomsection */
 	
-	.flexslider.roomslider {
-		height: 500px;
-	}
-	
-	.flexslider.roomslider li {
-		height: 500px;
-	}
-	
 	.room-caption {
 		bottom: 44px;
-		right: 40px;
+		right: 60px;
 	}
 	
 	.bigcam, .smallcams {
@@ -383,6 +446,30 @@ and (max-width: 799px) {
 
 @media only screen 
 and (max-width: 767px) {
+	
+	/* ======================== HEADER ======================== */
+	
+	/* header */
+	
+	div#header {
+		height: 45px;
+	}
+	
+	.logo {
+		left: 10px;
+		top: 10px;
+	}
+	
+	.navigation {
+		right: 238px;
+		top: 13px;
+	}
+	
+	.reserve {
+		right: 0;
+		top: 0;
+	}
+	
 	
 	/* ======================== NAVIGATION ======================== */
 	
@@ -485,6 +572,29 @@ and (max-width: 767px) {
 	.banner-title > h2 {
 		font-size: 50px;
 	}
+	
+	
+	/* ======================== PAGE - GALLERY ======================== */
+	
+	.gallery-list > a {
+		width: 33%;
+		margin: 0 0.25% 4px;
+	}
+	
+	.gallery-list > a:nth-child(5n),
+	.gallery-list > a:nth-child(5n + 1),
+	.gallery-list > a:nth-child(4n),
+	.gallery-list > a:nth-child(4n + 1) {
+		margin: 0 0.25% 4px;
+	}
+	
+	.gallery-list > a:nth-child(3n) {
+		margin-right: 0;
+	}
+	
+	.gallery-list > a:nth-child(3n + 1) {
+		margin-left: 0;
+	}
 
 }
 
@@ -507,34 +617,6 @@ and (max-width: 640px) {
 and (max-width: 599px) {
 
 	/* ======================== HEADER ======================== */
-	
-	/* header */
-	
-	div#header {
-		background: -moz-linear-gradient(top,  rgba(255,255,255,0.75) 100%, rgba(255,255,255,0) 100%); /* FF3.6+ */
-		background: -webkit-gradient(linear, left top, left bottom, color-stop(100%,rgba(255,255,255,0.75)), color-stop(100%,rgba(255,255,255,0))); /* Chrome,Safari4+ */
-		background: -webkit-linear-gradient(top,  rgba(255,255,255,0.75) 100%,rgba(255,255,255,0) 100%); /* Chrome10+,Safari5.1+ */
-		background: -o-linear-gradient(top,  rgba(255,255,255,0.75) 100%,rgba(255,255,255,0) 100%); /* Opera 11.10+ */
-		background: -ms-linear-gradient(top,  rgba(255,255,255,0.75) 100%,rgba(255,255,255,0) 100%); /* IE10+ */
-		background: linear-gradient(to bottom,  rgba(255,255,255,0.75) 100%,rgba(255,255,255,0) 100%); /* W3C */
-		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#bfffffff', endColorstr='#00ffffff',GradientType=0 ); /* IE6-9 */
-		height: 45px;
-	}
-	
-	.logo {
-		left: 10px;
-		top: 10px;
-	}
-	
-	.navigation {
-		right: 238px;
-		top: 13px;
-	}
-	
-	.reserve {
-		right: 0;
-		top: 0;
-	}
 	
 	/* reserve now */
 	
@@ -583,7 +665,6 @@ and (max-width: 599px) {
 	
 	.room-caption {
 		bottom: 20px;
-		right: 20px;
 		width: 300px;
 	}
 	
@@ -673,8 +754,31 @@ and (max-width: 567px) {
 		width: 440px;
 		margin: auto auto auto -220px;
 	}
-
-
+	
+	
+	/* ======================== PAGE - GALLERY ======================== */
+	
+	.gallery-list > a {
+		margin: 0 1% 6px;
+		width: 48%;
+	}
+	.gallery-list > a:nth-child(5n),
+	.gallery-list > a:nth-child(5n + 1),
+	.gallery-list > a:nth-child(4n),
+	.gallery-list > a:nth-child(4n + 1),
+	.gallery-list > a:nth-child(3n),
+	.gallery-list > a:nth-child(3n + 1) {
+		margin: 0 1% 6px;
+	}
+	
+	.gallery-list > a:nth-child(2n) {
+		margin-right: 0;
+	}
+	
+	.gallery-list > a:nth-child(2n + 1) {
+		margin-left: 0;
+	}
+	
 }
 
 
@@ -743,6 +847,18 @@ and (max-width: 479px) {
 	}
 	
 	/* roomsection */
+	
+	#rooms-section .flex-direction-nav {
+		margin-top: -20px;
+	}
+	
+	#rooms-section .flex-direction-nav a {
+		height: 40px;
+	}
+
+	#rooms-section .flex-direction-nav a::before {
+		font-size: 40px;
+	}
 	
 	.room-caption {
 		padding: 0 5%;
@@ -918,7 +1034,8 @@ and (max-height: 600px) {
 	
 	/* ======================== PAGE TEMPLATE - DEFAULT ======================== */
 	
-	.static-banner {
+	.static-banner,
+	.static-banner.short {
 		height: 480px;
 	}
 	
@@ -958,7 +1075,8 @@ and (max-height: 500px) {
 	
 	/* ======================== PAGE TEMPLATE - DEFAULT ======================== */
 	
-	.static-banner {
+	.static-banner,
+	.static-banner.short {
 		height: 420px;
 	}
 	
@@ -987,7 +1105,8 @@ and (max-height: 400px) {
 	
 	/* ======================== PAGE TEMPLATE - DEFAULT ======================== */
 	
-	.static-banner {
+	.static-banner,
+	.static-banner.short {
 		height: 320px;
 	}
 	
@@ -1020,7 +1139,8 @@ and (max-height: 320px) {
 	
 	/* ======================== PAGE TEMPLATE - DEFAULT ======================== */
 	
-	.static-banner {
+	.static-banner,
+	.static-banner.short {
 		height: 280px;
 	}
 	

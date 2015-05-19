@@ -348,6 +348,8 @@
 		</div>
 
 	</div>
+</div>
+
 </div> <!-- #wrapper -->
 
 
