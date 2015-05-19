@@ -753,36 +753,41 @@ div#topbanner {
 /* secondright nav */
 
 .secondrightnav {
-  display: none;
-  background: url('images/logo.jpg') no-repeat scroll center center #fff;
-  background-size: 80% auto;
-  overflow: scroll;
-  height: 100%;
-  width: 320px;
-  
-  position: fixed;
-  z-index: 1;
-  right: -320px;
-  top: 0;
-  
-  -webkit-transition: all .5s ease;
-  -moz-transition: all .5s ease;
-  -o-transition: all .5s ease;
-  transition: all .5s ease;
+	display: none;
+	background: url('images/logo.jpg') no-repeat scroll center center #fff;
+	background-size: 80% auto;
+	overflow: scroll;
+	height: 100%;
+	width: 320px;
+	
+	position: fixed;
+	z-index: 1;
+	right: -320px;
+	top: 0;
+	
+	-webkit-transition: all .5s ease;
+	-moz-transition: all .5s ease;
+	-o-transition: all .5s ease;
+	transition: all .5s ease;
 }
 
 .secondrightready {
-  right: 80px;
+	right: 80px;
 }
 
 .secondrightready.open {
-  right: 400px;
+	right: 400px;
+}
+
+.srnlist {
+	position: relative;
+	padding: 1px 1px 0;
 }
 
 .srnlist ul {
 	background-color: #fff;
 	display: none;
-	padding: 1px 1px 0;
+	padding: 0;
 }
 
 .srnlist a div {
@@ -798,6 +803,38 @@ div#topbanner {
 	margin: 0 0 1px;
 	padding: 10px;
 	text-align: center;
+}
+
+.srnclose {
+	background-color: #189dac;
+	display: none;
+	width: 398px;
+	text-align: center;
+	
+	position: fixed;
+	top: 0;
+	right: -400px;
+	z-index: 14;
+	
+	-webkit-transition: all .5s ease;
+	-moz-transition: all .5s ease;
+	-o-transition: all .5s ease;
+	transition: all .5s ease;
+}
+	.srnclose:hover {
+		background-color: #ff9968;
+	}
+	
+	.open .srnclose {
+		right: 1px;
+	}
+
+.srnclose i {
+	display: block;
+	font-size: 30px;
+	padding: 5px 0;
+	border-bottom: 1px solid #fff;
+	color: #fff;
 }
 
 

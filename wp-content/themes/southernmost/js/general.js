@@ -85,6 +85,16 @@ $(document).ready(function(){
 		$(this).parent('li').find('.sub-menu').slideToggle(500);
 	});
 	
+	$('.srnclose').click(function () {
+		$(".secondrightnav").removeClass("open");
+		$('.ibox').removeClass('active');
+		$('.ibox i').addClass('fa-plus');
+		$('.ibox i').removeClass('fa-minus');
+		$('.ibox i').removeClass('active');
+		$('.srnlist ul').fadeOut(500);
+		$('.srnlist ul').removeClass('active');
+	});
+	
 	$('.ibox').click(function() {
 		var findi = $(this).find('i');
 		var iboxclass = $(this).attr('class').replace('ibox ', '').replace(' active', '');

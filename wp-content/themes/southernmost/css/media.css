@@ -384,6 +384,31 @@ and (max-width: 799px) {
 @media only screen 
 and (max-width: 767px) {
 	
+	/* ======================== NAVIGATION ======================== */
+	
+	.srnlist {
+		padding: 0 1px;
+	}
+	
+	.secondrightready {
+		width: 400px;
+		right: -400px;
+		z-index: 13;
+	}
+	
+	.secondrightready.open {
+		right: 0;
+	}
+	
+	.srnclose {
+		display: block;
+	}
+	
+	.srnlist ul {
+		padding: 41px 0 0;
+	}
+	
+	
 	/* ======================== HEADER ======================== */
 	
 	/* reserve now */
@@ -756,7 +781,19 @@ and (max-width: 479px) {
 
 @media only screen 
 and (max-width: 399px) {
-
+	
+	/* ======================== NAVIGATION ======================== */
+	
+	.secondrightready {
+		width: 320px;
+		right: -320px;
+	}
+	
+	.srnclose {
+		width: 318px;
+	}
+	
+	
 	/* ======================== HEADER ======================== */
 	
 	/* reserve now */
