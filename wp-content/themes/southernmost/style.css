@@ -4157,3 +4157,24 @@ a.mobihid {
 .page-template-page-weddings .gallery {
 	display: none;
 }
+
+
+
+/* PAGE - Sitemap ################################################################################################ */
+
+.page-id-614 .innerpage .content {
+    font-size: 20px;
+    line-height: 1.5;
+    text-align: center;
+}
+
+.page-id-614 .innerpage .content h2 {
+    border-bottom: 1px solid #ccc;
+    color: #444;
+    display: inline-block;
+    margin-bottom: 13px;
+}
+
+.page-id-614 .innerpage .content ul {
+	margin-bottom: 20px;
+}
