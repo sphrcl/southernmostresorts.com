@@ -16,17 +16,6 @@ get_header(); ?>
 
 	<div id="topbanner">
 
-		<!-- <div class="flexslider topbanner">
-			<ul class="slides">
-				<li style="background-image: url(<?php bloginfo ('template_url'); ?>/images/topbanner4.jpg);">
-
-				</li>
-				<li style="background-image: url(<?php bloginfo ('template_url'); ?>/images/topbanner4.jpg);">
-
-				</li>
-			</ul>
-		</div> -->
-
 		<div class="static-banner" style="background-image: url('<?php echo tt($imgsrc[0],1400,755); ?>')"></div>
 
 		<div class="topbanner-overlay"></div>
@@ -61,6 +50,38 @@ get_header(); ?>
 					<?php the_content(); ?>
 
 				</div>
+
+			</div>
+
+		</div>
+
+		<div class="latest-posts">
+
+			<h3>Latest Posts</h3>
+
+			<div class="post-slider">
+
+				<a class="btn next4 right"><i class="fa fa-angle-right"></i></a>
+			
+				<div id="owl4" class="right owl-carousel owl-theme">
+			
+					<?php 
+						$query_blog_posts = new wp_query(array(
+							'post_type' => 'post',
+							'posts_per_page' => 6
+						)); 
+						if($query_blog_posts->have_posts()) : while($query_blog_posts->have_posts()) : $query_blog_posts->the_post();
+						$imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "Full"); 
+				    ?>
+						<div class="item">
+							<a href="<?php the_permalink(); ?>"><div class="slide-image" style="background-image: url(<?php echo tt($imgsrc[0],340,270); ?>);"></div></a>
+							<a class="slider-hover" href="<?php the_permalink(); ?>"><h3><?php the_title(); ?></h3></a>
+						</div>
+					<?php endwhile; endif; wp_reset_query(); ?>
+	
+				</div>
+	
+				<a class="btn prev4 right"><i class="fa fa-angle-left"></i></a>
 
 			</div>
 

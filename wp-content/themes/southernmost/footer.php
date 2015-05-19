@@ -273,6 +273,7 @@ $(window).load(function() {
 			owl1 = $("#owl1"),
 			owl2 = $("#owl2"),
 			owl3 = $("#owl3"),
+			owl3 = $("#owl4"),
 			totalItems = $('#owl .item').length,
 			totalItems1 = $('#owl1 .item').length,
 			totalItems2 = $('#owl2 .item').length,
@@ -345,6 +346,22 @@ $(window).load(function() {
 		})
 		$(".prev3").click(function(){
 			owl3.trigger('owl.prev');
+		})
+
+		owl4.owlCarousel({
+			items : 3, //10 it
+			itemsDesktop : [1000,2], //5 items between 1000px and 901px
+			itemsDesktopSmall : [900,1], // betweem 900px and 601px
+			itemsTablet: [600,1], //2 items between 600 and 0
+			itemsMobile : false, // itemsMobile disabled - inherit from itemsTablet option
+			pagination: false,
+		});
+
+		$(".next4").click(function(){
+			owl4.trigger('owl.next');
+		})
+		$(".prev4").click(function(){
+			owl4.trigger('owl.prev');
 		})
 	 
 	});

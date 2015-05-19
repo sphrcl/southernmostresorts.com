@@ -4175,6 +4175,82 @@ a.mobihid {
     margin-bottom: 13px;
 }
 
-.page-id-614 .innerpage .content ul {
+.page-id-614 .innerpage .content > ul {
 	margin-bottom: 20px;
 }
+
+
+
+/* PAGE - Blog ################################################################################################ */
+
+.post-content.right .post-meta {
+    color: #ff9955;
+    font-size: 13px;
+    margin-bottom: 20px;
+    margin-top: -12px;
+    text-transform: uppercase;
+}
+
+.post-content.right .post-meta .post-author {
+	margin-right: 20px; 
+}
+
+.post-content.right .read-more {
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.page-template-page-blog .post-content.right h3 {
+	font-weight: normal;
+	color: #727272;
+}
+
+
+
+/* SINGLE - Blog ################################################################################################ */
+
+.innerpage h3 {
+	color: #fff;
+	font-size: 22px;
+	font-weight: bold;
+	position: relative;
+	text-align: center;
+	top: 50%;
+}
+
+.latest-posts .owl-item {
+    margin: 0 5px;
+}
+
+.latest-posts .owl-carousel .item {
+    position: relative;
+}
+
+.post-slider .slide-image {
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 300px;
+    width: 100%;
+}
+
+.latest-posts .owl-item {
+    margin: 0 5px;
+}
+
+.latest-posts .slider-hover {
+    background-color: rgba(0, 0, 0, 0.6);
+    display: block;
+    height: 100%;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    visibility: hidden;
+    width: 100%;
+}
+
+.latest-posts .owl-carousel .item:hover .slider-hover {
+    opacity: 1;
+    visibility: visible;
+}
+
