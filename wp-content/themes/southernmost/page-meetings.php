@@ -1,80 +1,72 @@
 <?php 
 
-/* Template Name: Weddings */
- get_header(); ?>
+/* Template Name: Meetings and Events */
+ get_header(); 
+
+ ?>
 
 
 <div id="topbanner">
 
+	<?php if(have_posts()) : while(have_posts()) : the_post(); ?>
 
+		<div class="flexslider meetingslider">
+			<h1 class="roomtits"><?php the_title(); ?></h1>
+			<a class="button roomtitties" href="<?php echo get_post_meta($post->ID,'misfit_reservation',true); ?>">See Availability</a>
+			<ul class="slides">
 
-<?php if(have_posts()) : while(have_posts()) : the_post(); ?>
-
-	<div class="flexslider meetingslider">
-	<h1 class="roomtits"><?php the_title(); ?></h1>
-	<a class="button roomtitties" href="<?php echo get_post_meta($post->ID,'misfit_reservation',true); ?>">See Availability</a>
-	  <ul class="slides">
-	  
-	  
-		 <?php $galleryImages = get_post_gallery_imagess(); 
-			           $imagesCount = count($galleryImages); ?>
-			           
-        		<?php if ($imagesCount > 0) : ?>
-              	<?php for ($i = 0; $i < $imagesCount; $i++): ?>
-                <?php if (!empty($galleryImages[$i])) :?>
-                
-				
-				
-				<li style="background-image: url(<?php echo $galleryImages[$i]['full'][0];?>);"></li>
-				
-				
-				
+				<?php 
+					$galleryImages = get_post_gallery_imagess(); 
+					$imagesCount = count($galleryImages); 
+				?>
+					           
+				<?php if ($imagesCount > 0) : ?>
+		      	<?php for ($i = 0; $i < $imagesCount; $i++): ?>
+		        <?php if (!empty($galleryImages[$i])) :?>
+		        
+					<li style="background-image: url(<?php echo $galleryImages[$i]['full'][0];?>);"></li>
 				
 				<?php endif; ?>
-    			<?php endfor; ?>
+				<?php endfor; ?>
 				<?php endif; ?>		<!-- items mirrored twice, total of 12 -->
-	  </ul>
-	</div>
-	<div class="flexslider meetingcarousel">
-	  <ul class="slides">
-		 <?php $galleryImages = get_post_gallery_imagess(); 
-			           $imagesCount = count($galleryImages); ?>
-			           
-        		<?php if ($imagesCount > 0) : ?>
-              	<?php for ($i = 0; $i < $imagesCount; $i++): ?>
-                <?php if (!empty($galleryImages[$i])) :?>
-                
-				
-				
+
+			</ul>
+		</div>
+
+		<div class="flexslider meetingcarousel">
+			<ul class="slides">
+				<?php 
+					$galleryImages = get_post_gallery_imagess(); 
+					$imagesCount = count($galleryImages); 
+				?>
+					           
+				<?php if ($imagesCount > 0) : ?>
+		      	<?php for ($i = 0; $i < $imagesCount; $i++): ?>
+		        <?php if (!empty($galleryImages[$i])) :?>
+		        
 				<li style="background-image: url(<?php echo $galleryImages[$i]['full'][0];?>);"></li>
 				
-				
-				
-				
 				<?php endif; ?>
-    			<?php endfor; ?>
+				<?php endfor; ?>
 				<?php endif; ?>
-	  </ul>
-	</div>
+			</ul>
+		</div>
+
 	<?php endwhile; endif; wp_reset_query(); ?>	
+
 </div>
 
 <ul class="page-nav">
 
 	<?php 
-				
-		// $ancestors = get_post_ancestors($post->ID);
-		// $parents = $ancestors[0];
 		$this_post = $post->ID;
 		$query_gallery_single = new wp_query(array(
-			'post_parent' => $this_post,
-			'post_type' => 'page',
+			'post_type' => 'smeets',
 			'posts_per_page'=> 6,	
 		)); 
 		$count = 1;
 
 		if($query_gallery_single->have_posts()) : while($query_gallery_single->have_posts()) : $query_gallery_single->the_post(); 
-
 	?>
 
 		<li <?php if( $count == 1 ) { echo ' class="current"'; } ?>><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></li>
@@ -87,8 +79,8 @@
 <div class="wrapper"><div id="submenu"></div></div>
 
 <div id="pagecontent">
-	<?php if(have_posts()) : while(have_posts()) : the_post(); ?>
-	
+
+	<?php if(have_posts()) : while(have_posts()) : the_post(); ?>	
 	
 	<div class="container">
 
@@ -114,9 +106,15 @@
 				<?php the_content(); ?>
 			</div>
 			<div class="right">
+
+				<?php if(get_post_meta($post->ID,'misfit_infosheet',true)) { ?>
+					<a class="button" style="position: relative; display: inline-block; padding: 20px; margin-right: 10px;" href="<?php echo get_post_meta($post->ID,'misfit_infosheet',true); ?>"><?php _e('Request for proposal','theme-text'); ?></a>
+				<?php } ?>
+
 				<?php if(get_post_meta($post->ID,'misfit_external_booking',true)) { ?>
 					<a class="button" style="position: relative; display: inline-block; padding: 20px; margin-right: 10px;" href="<?php echo get_post_meta($post->ID,'misfit_extenal_booking',true); ?>"><?php _e('Request proposal','theme-text'); ?></a>
 				<?php } ?>
+
 			</div>
 		</div>
 
@@ -124,8 +122,7 @@
 				
 			<?php 
 				$query_activities = new wp_query(array(
-					'post_parent' => $this_post,
-					'post_type' => 'page',
+					'post_type' => 'smeets',
 					'posts_per_page' => 10
 				)); 
 				if($query_activities->have_posts()) : while($query_activities->have_posts()) : $query_activities->the_post();

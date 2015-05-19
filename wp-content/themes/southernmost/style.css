@@ -1529,8 +1529,25 @@ h2.subtitle {
 
 .content .right {
     text-align: right;
-    width: 30%;
+    width: 25%;
 }
+
+.content .right .button {
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    text-align: center;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.content .right .button.infosheet {
+    background-color: #99cc99;
+}
+	.content .right .button.infosheet:hover {
+	    background-color: #ff9968;
+	}
 
 .innerpage h3 {
     font-weight: bold;
@@ -1691,7 +1708,55 @@ div#specials_list {
 }
 
 
-/* Meeting Page */
+/* PAGE - Meeting ######################################################################################################## */
+
+.page-template-page-meetings .gallery {
+	display: none;
+}
+
+.dimensions > ul {
+    overflow: hidden;
+}
+
+.dimensions ul > li {
+    border-bottom: 1px solid #b8b8b8;
+    border-right: 1px solid #b8b8b8;
+    border-top: 1px solid #b8b8b8;
+    float: left;
+    padding: 40px 30px 55px;
+    position: relative;
+    text-align: center;
+}
+
+.dimensions ul > li:first-child {
+    border-left: 1px solid #b8b8b8;
+}
+
+.dimensions ul > li:last-child {
+    color: #555;
+    float: none;
+    font-size: 16px;
+    height: 108px;
+    overflow: hidden;
+    padding: 20px;
+    text-transform: uppercase;
+}
+
+.dimensions ul > li h3 {
+    color: #333333;
+    font-size: 45px;
+}
+
+.dimensions ul > li span {
+    bottom: 15px;
+    color: #b8b8b8;
+    font-size: 14px;
+    left: 0;
+    position: absolute;
+    right: 0;
+    text-transform: uppercase;
+}
+
 .flexslider.meetingslider {
   height: 540px;
   margin-bottom: 5px;

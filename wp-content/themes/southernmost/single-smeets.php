@@ -1,0 +1,155 @@
+<?php get_header(); ?>
+
+
+<div id="topbanner">
+
+	<?php if(have_posts()) : while(have_posts()) : the_post(); ?>
+
+		<div class="flexslider meetingslider">
+			<h1 class="roomtits"><?php the_title(); ?></h1>
+			<a class="button roomtitties" href="<?php echo get_post_meta($post->ID,'misfit_reservation',true); ?>">See Availability</a>
+			<ul class="slides">
+
+				<?php 
+					$galleryImages = get_post_gallery_imagess(); 
+					$imagesCount = count($galleryImages); 
+				?>
+					           
+				<?php if ($imagesCount > 0) : ?>
+		      	<?php for ($i = 0; $i < $imagesCount; $i++): ?>
+		        <?php if (!empty($galleryImages[$i])) :?>
+		        
+					<li style="background-image: url(<?php echo $galleryImages[$i]['full'][0];?>);"></li>
+				
+				<?php endif; ?>
+				<?php endfor; ?>
+				<?php endif; ?>		<!-- items mirrored twice, total of 12 -->
+
+			</ul>
+		</div>
+
+		<div class="flexslider meetingcarousel">
+			<ul class="slides">
+				<?php 
+					$galleryImages = get_post_gallery_imagess(); 
+					$imagesCount = count($galleryImages); 
+				?>
+					           
+				<?php if ($imagesCount > 0) : ?>
+		      	<?php for ($i = 0; $i < $imagesCount; $i++): ?>
+		        <?php if (!empty($galleryImages[$i])) :?>
+		        
+				<li style="background-image: url(<?php echo $galleryImages[$i]['full'][0];?>);"></li>
+				
+				<?php endif; ?>
+				<?php endfor; ?>
+				<?php endif; ?>
+			</ul>
+		</div>
+
+	<?php endwhile; endif; wp_reset_query(); ?>	
+
+</div>
+
+<ul class="page-nav">
+
+	<?php 
+		$this_post = $post->ID;
+		$query_gallery_single = new wp_query(array(
+			'post_type' => 'smeets',
+			'posts_per_page'=> 6,	
+		)); 
+		$count = 1;
+
+		if($query_gallery_single->have_posts()) : while($query_gallery_single->have_posts()) : $query_gallery_single->the_post(); 
+	?>
+
+		<li <?php if( $this_post == $post->ID ) { echo ' class="current"'; } ?>><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></li>
+	
+	
+	<?php $count++; endwhile; endif; wp_reset_query(); ?>	
+			
+</ul>
+
+<div class="wrapper"><div id="submenu"></div></div>
+
+<div id="pagecontent">
+
+	<?php if(have_posts()) : while(have_posts()) : the_post(); ?>	
+	
+	<div class="container">
+
+		<div class="contenttitle">
+
+			<h1 class="title"><?php the_title(); ?></h1>
+			<h2 class="subtitle"><?php echo get_post_meta($post->ID,'misfit_shortname',true); ?>.</h2>
+
+		</div>
+
+		<div class="socialmedia">
+			<ul>
+				<li><a href="<?php echo get_option('misfit_facebook'); ?>" target="_blank"><i class="fa fa-facebook"></i></a></li>
+				<li><a href="<?php echo get_option('misfit_twitter'); ?>" target="_blank"><i class="fa fa-twitter"></i></a></li>
+				<li><a href="<?php echo get_option('misfit_youtube'); ?>" target="_blank"><i class="fa fa-youtube-play"></i></a></li>
+				<li><a href="<?php echo get_option('misfit_instagram'); ?>" target="_blank"><i class="fa fa-instagram"></i></a></li>
+				<li><a href="<?php echo get_option('misfit_google_plus'); ?>" target="_blank"><i class="fa fa-google-plus"></i></a></li>
+			</ul>
+		</div>
+
+		<div class="content">
+			<div class="left">
+				<?php the_content(); ?>
+			</div>
+			<div class="right">
+
+				<?php if(get_post_meta($post->ID,'misfit_infosheet',true)) { ?>
+					<a class="button infosheet" style="position: relative; display: inline-block; padding: 20px; margin-right: 10px;" href="<?php echo get_post_meta($post->ID,'misfit_infosheet',true); ?>"><?php _e('Information Sheet','theme-text'); ?></a>
+				<?php } ?>
+
+				<?php if(get_post_meta($post->ID,'misfit_external_booking',true)) { ?>
+					<a class="button" style="position: relative; display: inline-block; padding: 20px; margin-right: 10px;" href="<?php echo get_post_meta($post->ID,'misfit_extenal_booking',true); ?>"><?php _e('Request proposal','theme-text'); ?></a>
+				<?php } ?>
+
+			</div>
+		</div>
+
+		<div class="dimensions">
+
+			<ul>
+				<li>
+					<h3><?php echo get_post_meta($post->ID,'misfit_dimensions',true); ?></h3>
+					<span>Dimensions</span>
+				</li>
+				<li>
+					<h3><?php echo get_post_meta($post->ID,'misfit_sqft',true); ?></h3>
+					<span>SQ. FT.</span>
+				</li>
+				<li>
+					<h3><?php echo get_post_meta($post->ID,'misfit_height',true); ?></h3>
+					<span>Height</span>
+				</li>
+				<li>
+					<?php if(get_post_meta($post->ID,'misfit_reception',true) || get_post_meta($post->ID,'misfit_banquet',true) || get_post_meta($post->ID,'misfit_theatre',true)) { ?>
+
+						Capacity Seating:<br>
+						<?php if(get_post_meta($post->ID,'misfit_reception',true)) { ?>Reception: <?php echo get_post_meta($post->ID,'misfit_reception',true); ?><br><?php } ?>
+						<?php if(get_post_meta($post->ID,'misfit_banquet',true)) { ?>Banquet: <?php echo get_post_meta($post->ID,'misfit_banquet',true); ?><br><?php } ?>
+						<?php if(get_post_meta($post->ID,'misfit_theatre',true)) { ?>Theatre: <?php echo get_post_meta($post->ID,'misfit_theatre',true); ?><?php } ?>
+
+					<?php } ?>
+				</li>
+			</ul>
+
+		</div>
+
+	</div>
+	
+	<?php endwhile; endif; wp_reset_query(); ?>	
+
+</div>
+
+
+</div> <!-- #wrapper -->
+
+
+<?php get_footer(); ?>

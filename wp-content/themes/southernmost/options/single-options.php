@@ -52,13 +52,21 @@ $meta_boxel = array(
 	          "type" => "text",
 	          "std" => ""
               )
- 		,		
+ 		,
+
+ 		array( 
+              "name" => "External booking link",
+	          "id" => $prefix."_external_booking",
+	          "type" => "text",
+	          "std" => ""
+        	  )
+ 		,	
 		
 		array( 
               "name" => "Information Sheet",
 	          "desc" => "upload your pdf",
 	          "id" => $prefix."_infosheet",
-	          "type" => "upload",
+	          "type" => "upload_file",
 	          "std" => ""
         	  )
  		,
@@ -84,7 +92,7 @@ $meta_boxel = array(
  		array( 
               "name" => "Height",
 	          "desc" => "exampple 8'x 14'",
-	          "id" => $prefix."_dimensions",
+	          "id" => $prefix."_height",
 	          "type" => "text",
 	          "std" => ""
               )
@@ -93,7 +101,7 @@ $meta_boxel = array(
  		array( 
               "name" => "Capacity Seating: Reception",
 	          "desc" => "",
-	          "id" => $prefix."_dimensions",
+	          "id" => $prefix."_reception",
 	          "type" => "text",
 	          "std" => ""
               )
@@ -101,7 +109,7 @@ $meta_boxel = array(
 		array( 
               "name" => "Capacity Seating: Banquet",
 	          "desc" => "",
-	          "id" => $prefix."_dimensions",
+	          "id" => $prefix."_banquet",
 	          "type" => "text",
 	          "std" => ""
               )
@@ -109,7 +117,7 @@ $meta_boxel = array(
 		array( 
               "name" => "Capacity Seating: Theature",
 	          "desc" => "",
-	          "id" => $prefix."_dimensions",
+	          "id" => $prefix."_theatre",
 	          "type" => "text",
 	          "std" => ""
               )
@@ -224,7 +232,11 @@ jQuery(document).ready(function() {
 							
 				
 			case 'upload':
-				echo '<div style="font-weight: bold;" class="title">' ,$field['name'], '</div><div style="font-style: italic; font-size: 12px; color: #a2a2a2;"class="descriptive">', $field['desc'], '</div>', '<input type="text" class="upload_image" name="', $field['id'], '" id="', $field['id'], '"  value="', $meta ? $meta : $field['std'], '" size="30" style="width: 100%; padding: 10px 0;" /><input class="upload_image_button button button-primary button-large" style="margin-top: 10px;" type="button" value="Upload Image" />';
+				echo '<div style="font-weight: bold;" class="title">' ,$field['name'], '</div><div style="font-style: italic; font-size: 12px; color: #a2a2a2;"class="descriptive">', $field['desc'], '</div>', '<input type="text" class="upload_image" name="', $field['id'], '" id="', $field['id'], '"  value="', $meta ? $meta : $field['std'], '" size="30" style="width: 100%; padding: 10px;" /><input class="upload_image_button button button-primary button-large" style="margin-top: 10px;" type="button" value="Upload Image" />';
+				break;
+
+			case 'upload_file':
+				echo '<div style="font-weight: bold;" class="title">' ,$field['name'], '</div><div style="font-style: italic; font-size: 12px; color: #a2a2a2;"class="descriptive">', $field['desc'], '</div>', '<input type="text" class="upload_image" name="', $field['id'], '" id="', $field['id'], '"  value="', $meta ? $meta : $field['std'], '" size="30" style="width: 100%; padding: 10px;" /><input class="upload_image_button button button-primary button-large" style="margin-top: 10px;" type="button" value="Upload File" />';
 				break;
 			
 			case 'textarea':

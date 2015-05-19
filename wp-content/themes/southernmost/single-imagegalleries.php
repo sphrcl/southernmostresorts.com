@@ -61,113 +61,109 @@
 			<ul class="gallery-list">
 				
 				<?php if(have_posts()) : while(have_posts()) : the_post(); ?>
-				
-				
-				
-				<?php if(get_the_title() == "Webcam")  { ?>
-				
+								
+					<?php if(get_the_title() == "Webcam")  { ?>
+					
 						<div class="webcamblock">
 					
-					
-					
-					
-										<div class="bigcam">
+							<div class="bigcam">
+							
+								<div id="HTMLBlock1854" class="HTMLBlock">
+									
+									<script language="JavaScript"> 
+										// <!-- Cut from here to the end of image display comment -->
 										
-										
-											<div id="HTMLBlock1854" class="HTMLBlock">
-												
-												
-												
-														<SCRIPT LANGUAGE="JavaScript"> 
-														<!-- Cut from here to the end of image display comment -->
-														
-																							<!-- Note: If you do not see a JavaScript below in the view source window you must -->
-																							<!-- first save the html file from your browser, then open the saved -->
-																							<!-- file in a text editor, for instance Notepad.-->
-																							// Set the BaseURL to the url of your Web server
-														
-																							var BaseURL = "http://66.184.211.231/";
-																							var BaseURLFF = "http://root:pass@66.184.211.231/";
-																							
-														// DisplayWidth & DisplayHeight specifies the displayed width & height of the image.
-														// You may change these numbers, the effect will be a stretched or a shrunk image
-														var DisplayWidth = "704";
-														var DisplayHeight = "480";
-														// This is the path to the image generating file inside the camera itself
-														var File = "axis-cgi/mjpg/video.cgi?resolution=704x480";
-														// No changes required below this point
-														var output = "";
-														if ((navigator.appName == "Microsoft Internet Explorer") &&
-														(navigator.platform != "MacPPC") && (navigator.platform != "Mac68k"))
-														{
-														// If Internet Explorer under Windows then use ActiveX
-														output = '<OBJECT ID="Player1" width='
-														output += DisplayWidth;
-														output += ' height=';
-														output += DisplayHeight;
-														output += ' CLASSID="CLSID:DE625294-70E6-45ED-B895-CFFA13AEB044" ';
-														output += 'CODEBASE="';
-														output += BaseURL;
-														output += 'activex/AMC.cab#version=5,3,20,0">';
-														output += '<PARAM NAME="MediaURL" VALUE="';
-														output += BaseURL;
-														output += File + '">';
-														output += '<param name="MediaType" value="mjpeg-unicast">';
-														output += '<param name="ShowStatusBar" value="0">';
-														output += '<param name="ShowToolbar" value="0">';
-														output += '<param name="AutoStart" value="1">';
-														output += '<param name="StretchToFit" value="1">';
-														output += '<param name="wmode" value="transparent">';
-														// Remove the // for the ptz settings below to use the code for click-in-image. // output += '<param name="PTZControlURL" value="';
-														// output += BaseURL;
-														// output += '/axis-cgi/com/ptz.cgi?camera=1">';
-														// output += '<param name="UIMode" value="ptz-relative">'; // or "ptz-absolute"
-														output += '<BR><B>Axis Media Control</B><BR>';
-														output += 'The AXIS Media Control, which enables you ';
-														output += 'to view live image streams in Microsoft Internet';
-														output += ' Explorer, could not be registered on your computer.';
-														output += '<BR></OBJECT>';
-														} else {
-														// If not IE for Windows use the browser itself to display
-														theDate = new Date();
-														output = '<IMG SRC="';
-														output += BaseURLFF;
-														output += File;
-														output += '&dummy=' + theDate.getTime().toString(10);
-														output += '" HEIGHT="';
-														output += DisplayHeight;
-														output += '" WIDTH="';
-														output += DisplayWidth;
-														output += '" ALT="Camera Image">';
-														}
-														document.write(output);
-														document.Player1.MediaUsername = "root"
-														document.Player1.MediaPassword = "pass"
-														document.Player1.ToolbarConfiguration = "play,+snapshot,+fullscreen"
-														// Remove the // below to use the code for Motion Detection. // document.Player.UIMode = "MDConfig";
-														// document.Player.MotionConfigURL = "/axis-cgi/operator/param.cgi?ImageSource=0"
-														// document.Player.MotionDataURL = "/axis-cgi/motion/motiondata.cgi";
-												</SCRIPT>
-												
-												<p>SOUTHERNMOST POOL LIVE WEB CAM</p>
-											</div>
+										// <!-- Note: If you do not see a JavaScript below in the view source window you must -->
+										// <!-- first save the html file from your browser, then open the saved -->
+										// <!-- file in a text editor, for instance Notepad.-->
+										// Set the BaseURL to the url of your Web server
 
-										</div>
-										
-										
-										<div class="smallcams">
-										<div id="HTMLBlock2075" class="HTMLBlock">
-										<SCRIPT LANGUAGE="JavaScript"> 
-										<!-- Cut from here to the end of image display comment -->
-										
-																			<!-- Note: If you do not see a JavaScript below in the view source window you must -->
-																			<!-- first save the html file from your browser, then open the saved -->
-																			<!-- file in a text editor, for instance Notepad.-->
-																			// Set the BaseURL to the url of your Web server
-										
-																			var BaseURL = "http://72.243.112.72/";
-																			var BaseURLFF = "http://root:pass@72.243.112.72/";
+										var BaseURL = "http://66.184.211.231/";
+										var BaseURLFF = "http://root:pass@66.184.211.231/";
 																			
+										// DisplayWidth & DisplayHeight specifies the displayed width & height of the image.
+										// You may change these numbers, the effect will be a stretched or a shrunk image
+										var DisplayWidth = "704";
+										var DisplayHeight = "480";
+										// This is the path to the image generating file inside the camera itself
+										var File = "axis-cgi/mjpg/video.cgi?resolution=704x480";
+										// No changes required below this point
+										var output = "";
+										if ((navigator.appName == "Microsoft Internet Explorer") &&
+										(navigator.platform != "MacPPC") && (navigator.platform != "Mac68k"))
+										{
+										// If Internet Explorer under Windows then use ActiveX
+										output = '<OBJECT ID="Player1" width='
+										output += DisplayWidth;
+										output += ' height=';
+										output += DisplayHeight;
+										output += ' CLASSID="CLSID:DE625294-70E6-45ED-B895-CFFA13AEB044" ';
+										output += 'CODEBASE="';
+										output += BaseURL;
+										output += 'activex/AMC.cab#version=5,3,20,0">';
+										output += '<PARAM NAME="MediaURL" VALUE="';
+										output += BaseURL;
+										output += File + '">';
+										output += '<param name="MediaType" value="mjpeg-unicast">';
+										output += '<param name="ShowStatusBar" value="0">';
+										output += '<param name="ShowToolbar" value="0">';
+										output += '<param name="AutoStart" value="1">';
+										output += '<param name="StretchToFit" value="1">';
+										output += '<param name="wmode" value="transparent">';
+										// Remove the // for the ptz settings below to use the code for click-in-image. // output += '<param name="PTZControlURL" value="';
+										// output += BaseURL;
+										// output += '/axis-cgi/com/ptz.cgi?camera=1">';
+										// output += '<param name="UIMode" value="ptz-relative">'; // or "ptz-absolute"
+										output += '<BR><B>Axis Media Control</B><BR>';
+										output += 'The AXIS Media Control, which enables you ';
+										output += 'to view live image streams in Microsoft Internet';
+										output += ' Explorer, could not be registered on your computer.';
+										output += '<BR></OBJECT>';
+										} else {
+										// If not IE for Windows use the browser itself to display
+										theDate = new Date();
+										output = '<IMG SRC="';
+										output += BaseURLFF;
+										output += File;
+										output += '&dummy=' + theDate.getTime().toString(10);
+										output += '" HEIGHT="';
+										output += DisplayHeight;
+										output += '" WIDTH="';
+										output += DisplayWidth;
+										output += '" ALT="Camera Image">';
+										}
+										document.write(output);
+										document.Player1.MediaUsername = "root"
+										document.Player1.MediaPassword = "pass"
+										document.Player1.ToolbarConfiguration = "play,+snapshot,+fullscreen"
+										// Remove the // below to use the code for Motion Detection. // document.Player.UIMode = "MDConfig";
+										// document.Player.MotionConfigURL = "/axis-cgi/operator/param.cgi?ImageSource=0"
+										// document.Player.MotionDataURL = "/axis-cgi/motion/motiondata.cgi";
+									</script>
+									
+									<p>SOUTHERNMOST POOL LIVE WEB CAM</p>
+
+								</div>
+
+							</div>
+										
+										
+							<div class="smallcams">
+
+								<div id="HTMLBlock2075" class="HTMLBlock">
+
+									<script language="JavaScript"> 
+
+										//<!-- Cut from here to the end of image display comment -->
+									
+										// <!-- Note: If you do not see a JavaScript below in the view source window you must -->
+										// <!-- first save the html file from your browser, then open the saved -->
+										// <!-- file in a text editor, for instance Notepad.-->
+										// Set the BaseURL to the url of your Web server
+
+										var BaseURL = "http://72.243.112.72/";
+										var BaseURLFF = "http://root:pass@72.243.112.72/";
+																		
 										// DisplayWidth & DisplayHeight specifies the displayed width & height of the image.
 										// You may change these numbers, the effect will be a stretched or a shrunk image
 										var DisplayWidth = "400";
@@ -226,26 +222,25 @@
 										// Remove the // below to use the code for Motion Detection. // document.Player.UIMode = "MDConfig";
 										// document.Player.MotionConfigURL = "/axis-cgi/operator/param.cgi?ImageSource=0"
 										// document.Player.MotionDataURL = "/axis-cgi/motion/motiondata.cgi";
-																			<!-- End of image display part  -->
-																				</SCRIPT>
+										//<!-- End of image display part  -->
+
+									</script>
 																				
-																				<p>PINEAPPLE POOL LIVE WEB CAM</p>
-										</div>
+									<p>PINEAPPLE POOL LIVE WEB CAM</p>
+
+								</div>
 										
+								<div id="HTMLBlock2077" class="HTMLBlock">
 										
-										
-										<div id="HTMLBlock2077" class="HTMLBlock">
-										
-										<SCRIPT LANGUAGE="JavaScript"> 
-										<!-- Cut from here to the end of image display comment -->
-										
-																			<!-- Note: If you do not see a JavaScript below in the view source window you must -->
-																			<!-- first save the html file from your browser, then open the saved -->
-																			<!-- file in a text editor, for instance Notepad.-->
-																			// Set the BaseURL to the url of your Web server
-										
-																			var BaseURL = "http://72.243.112.71/";
-																			var BaseURLFF = "http://root:pass@72.243.112.71/";
+									<script language="JavaScript"> 
+										//<!-- Cut from here to the end of image display comment -->
+										// <!-- Note: If you do not see a JavaScript below in the view source window you must -->
+										// <!-- first save the html file from your browser, then open the saved -->
+										// <!-- file in a text editor, for instance Notepad.-->
+										// Set the BaseURL to the url of your Web server
+
+										var BaseURL = "http://72.243.112.71/";
+										var BaseURLFF = "http://root:pass@72.243.112.71/";
 																			
 										// DisplayWidth & DisplayHeight specifies the displayed width & height of the image.
 										// You may change these numbers, the effect will be a stretched or a shrunk image
@@ -305,41 +300,39 @@
 										// Remove the // below to use the code for Motion Detection. // document.Player.UIMode = "MDConfig";
 										// document.Player.MotionConfigURL = "/axis-cgi/operator/param.cgi?ImageSource=0"
 										// document.Player.MotionDataURL = "/axis-cgi/motion/motiondata.cgi";
-									<!-- End of image display part  -->
-										</SCRIPT>
+										// <!-- End of image display part  -->
+									</script>
 									
-										<p>OCEANFRONT TANNING BEACH AND PRIVATE PIER</p>
-									</div>
-									
-									
-									
-									</div>
+									<p>OCEANFRONT TANNING BEACH AND PRIVATE PIER</p>
+
+								</div>
 									
 									
-									<div class="clear"></div>
+									
+							</div>
+									
+									
+							<div class="clear"></div>
+
 						</div>
+							
+					<?php } else { ?>
+					
+						<?php
+							$galleryImages = get_post_gallery_imagess(); 
+							$imagesCount = count($galleryImages); 
+					    ?>
+						           
+		        		<?php if ($imagesCount > 0) : ?>
+		              	<?php for ($i = 0; $i < $imagesCount; $i++): ?>
+		                <?php if (!empty($galleryImages[$i])) :?>
+						                  		
+							<a class="lightbox" href="<?php echo $galleryImages[$i]['full'][0]; ?>" data-lightbox-gallery="<?php echo $post->post_name; ?>"><img src="<?php echo tt($galleryImages[$i]['full'][0],240,220); ?>" alt="Southernmost Gallery Image"></a>
+					
+						<?php endif; endfor; endif; ?>
 						
-				<?php } else { ?>
-				
-				<?php
-						$galleryImages = get_post_gallery_imagess(); 
-						$imagesCount = count($galleryImages); 
-			    ?>
-				           
-	        		<?php if ($imagesCount > 0) : ?>
-	              	<?php for ($i = 0; $i < $imagesCount; $i++): ?>
-	                <?php if (!empty($galleryImages[$i])) :?>
-					                  		
-						<a class="lightbox" href="<?php echo $galleryImages[$i]['full'][0]; ?>" data-lightbox-gallery="<?php echo $post->post_name; ?>"><img src="<?php echo tt($galleryImages[$i]['full'][0],240,220); ?>" alt="Southernmost Gallery Image"></a>
-					
-					<?php endif; endfor; endif; ?>
-					
-					
+						
 					<?php } ?>
-					
-					
-					
-					
 					
 				<?php endwhile; endif; wp_reset_query(); ?>	
 
@@ -348,7 +341,9 @@
 		</div>
 
 	</div>
+
 </div> <!-- #wrapper -->
 
+</div>
 
 <?php get_footer(); ?>
