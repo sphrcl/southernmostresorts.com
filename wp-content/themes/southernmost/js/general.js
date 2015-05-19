@@ -28,7 +28,16 @@ $(document).ready(function(){
 		
 		$(".secondrightnav").addClass("secondrightready");
 	});
-
+	
+	
+	
+	$("ul.topnavigation li").hover(function() {
+		$(this).addClass("ahoy");
+		
+		}, function() {
+		
+		$(this).removeClass("ahoy");
+	});
 	$(".closer ").click(function(e){
 		e.preventDefault();
 		$("#wrapper").removeClass("opened");

@@ -579,12 +579,17 @@ div#topbanner {
     opacity: 0;
     padding: 50px 0;
     position: fixed;
-    top: 54px;
+    top: 66px;
     visibility: hidden;
     width: 100%;
+    transition: all 0.1s ease;
+	-moz-transition: all 0.1s ease;
+	-webkit-transition: all 0.1s ease;
+	-o-transition: all 0.1s ease;
+	-ms-transition: all 0.1s ease;
 }
 
-.topnavigation > li:hover .slidedown-nav {
+.topnavigation > li.ahoy .slidedown-nav {
     opacity: 1;
     top: 66px;
     visibility: visible;
