@@ -975,7 +975,7 @@ and (max-width: 479px) {
 	
 	/* roomsection */
 	
-	#rooms-section .flex-direction-nav {
+	/*#rooms-section .flex-direction-nav {
 		margin-top: -20px;
 	}
 	
@@ -985,7 +985,7 @@ and (max-width: 479px) {
 
 	#rooms-section .flex-direction-nav a::before {
 		font-size: 40px;
-	}
+	}*/
 	
 	.room-caption {
 		padding: 0 5%;

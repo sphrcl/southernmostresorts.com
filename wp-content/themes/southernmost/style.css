@@ -1936,10 +1936,10 @@ div#specials_list {
 
 #rooms-section .flex-direction-nav {
   position: absolute;
-  bottom: 120px;
+  bottom: 130px;
   z-index: 999999999;
   width: 100%;
-  height: 40px;
+  height: auto;
 }
 
 /*
