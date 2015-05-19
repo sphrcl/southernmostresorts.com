@@ -309,7 +309,7 @@ $(document).ready(function(){
 		$( "#date" ).datepicker();
 		$( "#dater" ).datepicker();
 
-	 	$(".reserve .button1").click(function(e) {
+	 	$(".reserve .button1, .slidedown-nav .left a").click(function(e) {
 			e.preventDefault();
 			$(".ressys").addClass("dropit");
 			$(".overlay").addClass("doit");
