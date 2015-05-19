@@ -969,6 +969,39 @@ div#welcome p {
   border-radius: 100%;
 }
 
+.socialmedia ul li a .fa.fa-tripadvisor {
+	width: 27px;
+	width: 27px;
+	position: relative;
+}
+
+.socialmedia ul li a .fa.fa-tripadvisor::after, .socialmedia ul li a .fa.fa-tripadvisor::before {
+    background-position: 0 0;
+    background-repeat: no-repeat;
+    background-size: contain;
+    content: "";
+    height: 27px;
+    left: 0;
+    margin: 0 auto;
+    position: absolute;
+    right: 0;
+    top: -22px;
+    width: 27px;
+    z-index: 1;
+}
+
+.socialmedia ul li a .fa.fa-tripadvisor:before {
+    background-image: url("images/tripadvisor.png");
+}
+
+.socialmedia ul li a .fa.fa-tripadvisor:after {
+    background-image: url("images/tripadvisor-white.png");
+    opacity: 0;
+}
+	.socialmedia ul li:hover a .fa.fa-tripadvisor:after {
+		opacity: 1;
+	}
+
 .socialmedia ul li a:hover {
   background: #5e5e5e;
   color: #fff;

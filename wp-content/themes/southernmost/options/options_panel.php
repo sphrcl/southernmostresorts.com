@@ -1590,6 +1590,11 @@ $options[] = array( "name" => __('Google plus URL','misfitlang'),
 			"std" => "",
 			"type" => "text");
 
+$options[] = array( "name" => __('Tripadvisor URL','misfitlang'),
+			"id" => $shortname."_tripadvisor",
+			"std" => "",
+			"type" => "text");
+
 
 $options[] = array( "name" => __('Twitter API Key','misfitlang'),
 			"desc" => "Twitter's recent API update requires new authentication. Therefore you will need your key, consumer secret, token and user secret to use the twitter feed. Learn how to get yours <a href=\"http://legend.misfit.co/twitter\" target=\"_blank\">here</a>",
