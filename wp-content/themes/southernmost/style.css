@@ -3988,3 +3988,11 @@ a.mobihid {
   z-index: 9999999999;
   right: 40px;
 }
+
+
+
+/* PAGE - Weddings ################################################################################################ */
+
+.page-template-page-weddings .gallery {
+	display: none;
+}

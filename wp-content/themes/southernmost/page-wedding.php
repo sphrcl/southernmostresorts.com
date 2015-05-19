@@ -1,6 +1,6 @@
 <?php 
 
-	/* Template Name: Rooms */
+	/* Template Name: Wedding2 */
 
 	get_header(); 
 
@@ -123,7 +123,7 @@
 				           
 	        		<li>
 	        			
-	        			<div class="post-image left" style="background-image: url('<?php echo tt($imgsrcs[0],550,330); ?>');"); ><a href="<?php the_permalink(); ?>" class="dropanchor"></a></div>
+	        			<div class="post-image left" style="background-image: url('<?php echo tt($imgsrcs[0],550,330); ?>');" ><a href="<?php the_permalink(); ?>" class="dropanchor"></a></div>
 	        			<div class="post-content right">
 	        				<h3><?php the_title(); ?></h3>
 	        				<p><?php echo excerpt(70); ?></p>
