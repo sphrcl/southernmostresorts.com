@@ -65,7 +65,7 @@
 		<div id="header">
 	
 			<div class="logo">
-				<a href="<?php bloginfo ('url'); ?>"><img src="<?php bloginfo ('template_url'); ?>/images/logo.jpg" alt="Southernmost"></a>
+				<a href="<?php bloginfo ('url'); ?>"><img src="<?php bloginfo ('template_url'); ?>/images/logo-footer.png" alt="Southernmost"></a>
 			</div>
 	
 			<div class="navigation">
