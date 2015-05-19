@@ -79,7 +79,7 @@
 				</div>
 
 				<?php wp_nav_menu(array(
-					'menu' => 'secondary',
+					'theme_location' => 'secondary',
 					'container' => false,
 					'menu_class' => 'topnavigationmob',
 					'before' => '<div class="tnbox">',
