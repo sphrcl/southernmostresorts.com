@@ -22,24 +22,47 @@ $(document).ready(function(){
 		e.preventDefault();
 		$("#wrapper").addClass("opened");
 		$(".rightnav").addClass("rightready");
-		$(".secondrightnav").addClass("secondrightready");
 		$(".closer").addClass("open-left");
+		
+		// secondrightnav
+		
+		$(".secondrightnav").addClass("secondrightready");
 	});
 
 	$(".closer ").click(function(e){
 		e.preventDefault();
 		$("#wrapper").removeClass("opened");
 		$(".rightnav").removeClass("rightready");
-		$(".secondrightnav").removeClass("secondrightready");
 		$(this).removeClass("open-left");
+		
+		// secondrightnav reset all
+		
+		$(".secondrightnav").removeClass("secondrightready");
+		$(".secondrightnav").removeClass("open");
+		$('.ibox').removeClass('active');
+		$('.ibox i').addClass('fa-plus');
+		$('.ibox i').removeClass('fa-minus');
+		$('.ibox i').removeClass('active');
+		$('.srnlist ul').fadeOut(500);
+		$('.srnlist ul').removeClass('active');
 	});
 
 	$(".royale").click(function(e){
 		e.preventDefault();
 		$("#wrapper").removeClass("opened");
 		$(".rightnav").removeClass("rightready");
-		$(".secondrightnav").removeClass("secondrightready");
 		$(".closer").removeClass("open-left");
+		
+		// secondrightnav reset all
+		
+		$(".secondrightnav").removeClass("secondrightready");
+		$(".secondrightnav").removeClass("open");
+		$('.ibox').removeClass('active');
+		$('.ibox i').addClass('fa-plus');
+		$('.ibox i').removeClass('fa-minus');
+		$('.ibox i').removeClass('active');
+		$('.srnlist ul').fadeOut(500);
+		$('.srnlist ul').removeClass('active');
 	});
 	
 	$('#navmenumob li').each(function() {
@@ -64,6 +87,19 @@ $(document).ready(function(){
 	
 	$('.ibox').click(function() {
 		var findi = $(this).find('i');
+		var iboxclass = $(this).attr('class').replace('ibox ', '').replace(' active', '');
+		
+		// reset
+		
+		$('.ibox').removeClass('active');
+		$('.ibox i').addClass('fa-plus');
+		$('.ibox i').removeClass('fa-minus');
+		$('.ibox i').removeClass('active');
+		
+		$(this).addClass('active');
+		
+		// add plus or minus icon
+		
 		if (findi.hasClass('fa-plus')) {
 			findi.removeClass('fa-plus');
 			findi.addClass('fa-minus');
@@ -73,6 +109,40 @@ $(document).ready(function(){
 			findi.removeClass('fa-minus');
 			findi.removeClass('active');
 		}
+		
+		// open .secondarynav if box is clicked
+
+		if ($('.ibox i').hasClass('fa-minus')) {
+			$('.secondrightnav').addClass('open');
+		} else {
+			$('.secondrightnav').removeClass('open');
+		}
+		
+		// fadein and fadeout functions
+		
+		if ($('.srnlist ' + '.' + iboxclass).hasClass('active')) {
+			
+			// reset if user click the same box
+			
+			findi.addClass('fa-plus');
+			findi.removeClass('fa-minus');
+			findi.removeClass('active');
+			
+			$('.secondrightnav').removeClass('open');
+			
+			$('.srnlist ul').fadeOut(500);
+			$('.srnlist ul').removeClass('active');
+			
+		} else {
+			$('.srnlist ul').fadeOut(500);
+			$('.srnlist ul').removeClass('active');
+			
+			setTimeout(function(){
+				$('.srnlist ' + '.' + iboxclass).fadeIn(500);
+				$('.srnlist ' + '.' + iboxclass).addClass('active');
+			}, 501);
+		}
+		
 	});
 
 	$('.topbanner').flexslider({

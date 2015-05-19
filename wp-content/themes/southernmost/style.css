@@ -321,53 +321,6 @@ a,
   top: 0;
 }
 
-/* secondright nav */
-
-.secondrightnav {
-  display: none;
-  background: none repeat scroll 0 0 #fff;
-  overflow: scroll;
-  height: 100%;
-  width: 320px;
-  
-  position: fixed;
-  z-index: 1;
-  right: -320px;
-  top: 0;
-  
-  -webkit-transition: all .5s ease;
-  -moz-transition: all .5s ease;
-  -o-transition: all .5s ease;
-  transition: all .5s ease;
-}
-
-.secondrightready {
-  right: 80px;
-}
-
-.secondrightready.open {
-  right: 400px;
-}
-
-.srnlist ul {
-	padding: 20px 0;
-}
-
-.srnlist a div {
-	background-position: center;
-	background-size: cover;
-	width: 100%;
-	height: 200px;
-}
-
-.srnlist a h3 {
-	background-color: #189dac;
-	color: #fff;
-	margin: 0 0 2px;
-	padding: 10px;
-	text-align: center;
-}
-
 /* header */
 
 div#header {
@@ -797,6 +750,55 @@ div#topbanner {
 		color: #fff;
 	}
 
+/* secondright nav */
+
+.secondrightnav {
+  display: none;
+  background: url('images/logo.jpg') no-repeat scroll center center #fff;
+  background-size: 80% auto;
+  overflow: scroll;
+  height: 100%;
+  width: 320px;
+  
+  position: fixed;
+  z-index: 1;
+  right: -320px;
+  top: 0;
+  
+  -webkit-transition: all .5s ease;
+  -moz-transition: all .5s ease;
+  -o-transition: all .5s ease;
+  transition: all .5s ease;
+}
+
+.secondrightready {
+  right: 80px;
+}
+
+.secondrightready.open {
+  right: 400px;
+}
+
+.srnlist ul {
+	background-color: #fff;
+	display: none;
+	padding: 1px 1px 0;
+}
+
+.srnlist a div {
+	background-position: center;
+	background-size: cover;
+	width: 100%;
+	height: 160px;
+}
+
+.srnlist a h3 {
+	background-color: #189dac;
+	color: #fff;
+	margin: 0 0 1px;
+	padding: 10px;
+	text-align: center;
+}
 
 
 /* Flexslider ############################################################################################################## */

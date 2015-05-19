@@ -126,6 +126,21 @@ and (max-width: 1200px) {
 @media only screen 
 and (max-width: 1024px) {
 	
+	/* ======================== NAVIGATION ======================== */
+	
+	.navigation #navmenu {
+		display: none;
+	}
+	
+	.slidedown-navmob {
+		display: block;
+	}
+	
+	.secondrightnav {
+		display: block;
+	}
+	
+	
 	/* ======================== HOMEPAGE ======================== */
 	
 	/* top banner */
@@ -223,10 +238,6 @@ and (max-width: 1023px) {
 and (max-width: 959px) {
 	
 	/* ======================== NAVIGATION ======================== */
-	
-	.navigation #navmenu {
-		display: none;
-	}
 	
 	.hamburger {
 		top: 0;
