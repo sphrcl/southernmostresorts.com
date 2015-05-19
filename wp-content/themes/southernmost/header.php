@@ -111,7 +111,6 @@
 
 								<div class="left">
 									<h3>Gallery</h3>
-									<a href="#">See Availability</a>									
 								</div>
 
 								<a class="btn next1 right"><i class="fa fa-angle-right"></i></a>
@@ -144,7 +143,6 @@
 
 								<div class="left">
 									<h3>Specials</h3>
-									<a href="#">See Availability</a>									
 								</div>
 
 								<a class="btn next2 right"><i class="fa fa-angle-right"></i></a>
@@ -177,7 +175,6 @@
 
 								<div class="left">
 									<h3>Dining</h3>
-									<a href="#">See Availability</a>									
 								</div>
 
 								<a class="btn next3 right"><i class="fa fa-angle-right"></i></a>
