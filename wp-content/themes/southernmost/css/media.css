@@ -218,6 +218,27 @@ and (max-width: 1024px) {
 	.page-template-page-gallery-php .innerpage {
 		padding: 30px 0;
 	}
+	
+	
+	/* ======================== PAGE - SPA ======================== */
+	
+	#toggle-view > li::after {
+		right: 24px;
+		top: 13px;
+	}
+	
+	#toggle-view li.activated::after {
+		right: 22px;
+		top: 11px;
+	}
+	
+	#toggle-view h3 {
+		font-size: 20px;
+	}
+	
+	#toggle-view .panel {
+		padding: 25px 50px;
+	}
 
 }
 
@@ -595,6 +616,35 @@ and (max-width: 767px) {
 	.gallery-list > a:nth-child(3n + 1) {
 		margin-left: 0;
 	}
+	
+	
+	/* ======================== PAGE - MEETING ======================== */
+	
+	.flexslider.meetingcarousel .slides li.flex-active-slide::before {
+		border: 0 none;
+	}
+	
+	.flexslider.meetingslider,
+	.flexslider.meetingslider .slides li {
+		height: 400px;
+	}
+	
+	.flexslider.meetingcarousel .slides li {
+		height: 140px;
+	}
+	
+	.meetingslider .roomtits {
+		bottom: 70px;
+		left: 5%;
+		text-align: center;
+		width: 90%;;
+	}
+	
+	.meetingslider .roomtitties {
+		bottom: 10px;
+		right: 50%;
+		margin-right: -98px;
+	}
 
 }
 
@@ -638,6 +688,14 @@ and (max-width: 599px) {
 		padding: 0.2em 2% 0;
 		position: relative;
 		width: 96%;
+	}
+	
+	.calendars {
+		padding-bottom: 0;
+	}
+	
+	.reservationform::after {
+		background: none no-repeat scroll 0 0 transparent;
 	}
 	
 	.datepickermob .ui-datepicker .ui-datepicker-next {
@@ -724,7 +782,45 @@ and (max-width: 599px) {
 	.specialbuttons .button7 {
 		float: right;
 	}
-
+	
+	
+	/* ======================== PAGE - MEETING ======================== */
+	
+	.flexslider.meetingslider,
+	.flexslider.meetingslider .slides li {
+		height: 280px;
+	}
+	
+	.flexslider.meetingcarousel .slides li {
+		height: 120px;
+	}
+	
+	.meetingslider .roomtits {
+		font-size: 28px;
+		bottom: 65px;
+	}
+	
+	
+	/* ======================== PAGE - SPA ======================== */
+	
+	#toggle-view > li:after {
+		right: 20px;
+		top: 10px;
+	}
+	
+	#toggle-view li.activated:after {
+		right: 18px;
+		top: 9px;
+	}
+	
+	#toggle-view h3 {
+		font-size: 16px;
+		padding: 17px 50px 20px 20px;
+	}
+	
+	#toggle-view .panel {
+		padding: 25px;
+	}
 
 }
 
@@ -1039,6 +1135,19 @@ and (max-height: 600px) {
 		height: 480px;
 	}
 	
+}
+
+
+
+/* ============================================================  HEIGHT 540 - 000  ============================================================ */
+
+@media only screen 
+and (max-height: 540px) {
+
+	.ressys .logo-white {
+		display: none;
+	}
+
 }
 
 

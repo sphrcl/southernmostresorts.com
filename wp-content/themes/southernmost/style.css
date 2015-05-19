@@ -1959,14 +1959,16 @@ ul.roomsub li a {
     margin: 40px 0 60px;
     padding:0;
     width:100%;
-	border: 1px solid #ddd;
+	border-top: 1px solid #ddd;
+	border-left: 1px solid #ddd;
+	border-right: 1px solid #ddd;
 }
 #toggle-view:before {
 	display: none;
 }
 #toggle-view > li {
 	margin-bottom:1px;
-    /*border-bottom: 1px solid #EFEFEF;*/
+    border-bottom: 1px solid #ddd;
 	position:relative;
 }
 
@@ -1978,9 +1980,9 @@ ul.roomsub li a {
 	content: '+';
 	background: transparent;
 	color: #333;
-	font-size: 14px;
+	font-size: 30px;
 	font-family: 'GothamBook';
-	top: 26px;
+	top: 15px;
 	right: 30px;
 	position: absolute;
 	-moz-font-smoothing: antialiased;
@@ -2006,7 +2008,8 @@ ul.roomsub li a {
 #toggle-view li.activated:after {
 	content: '\2014';
 	cursor: pointer;
-	
+    right: 34px;
+    top: 14px;
 }
 #toggle-view h3 {
 	margin:0;
@@ -2040,11 +2043,6 @@ ul.roomsub li a {
 	float: right;
 }
 
-#toggle-view .activated h3 {
-	    border-bottom: 1px solid #ddd;
-}
-
-
 .prices p {
 	padding: 0;
 	margin: 0;
@@ -2067,6 +2065,7 @@ ul.roomsub li a {
 
 #toggle-view .panel {
 	display:none;
+	border-top: 1px solid #ddd;
 	background:#fff;
 	overflow:hidden;
 	padding: 50px;
