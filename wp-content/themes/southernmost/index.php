@@ -53,7 +53,7 @@
 				<img src="<?php bloginfo ('template_url'); ?>/images/logo-white.png" alt="*" />
 			</div>
 			<div class="reservenow">
-				<a class="button2" href="#">Reserve Now</a>
+				<a class="button2" href="<?php echo get_option('misfit_booking_link'); ?>">Reserve Now</a>
 			</div>
 		</div>
 
