@@ -158,7 +158,7 @@
         				<h3><?php the_title(); ?></h3>
         				<p><?php echo excerpt(50); ?></p>
 
-        				<a class="" href="<?php the_permalink(); ?>">Details</a>
+        				<a class="button" href="<?php the_permalink(); ?>">Details</a>
 
         			</div>
 
