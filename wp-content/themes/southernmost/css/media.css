@@ -729,6 +729,11 @@ and (max-width: 599px) {
 		margin: auto auto auto -264px;
 	}
 	
+	.formfields .button {
+		font-size: 18px;
+		padding: 16px 15px;
+	}
+	
 	.datepickermob {
 		display: block;
 	}
@@ -1270,6 +1275,37 @@ and (max-height: 400px) {
 
 
 
+/* ============================================================  HEIGHT 380 - 000  ============================================================ */
+
+@media only screen 
+and (max-height: 380px) {
+	
+	/* ======================== HEADER ======================== */
+	
+	/* datepicker */
+	
+	.ressys .btn1 {
+		display: none;
+	}
+	
+	.btn1.toosmall {
+		display: block;
+	}
+	
+	.formfields .button {
+		float: left;
+		font-size: 18px;
+		padding: 16px 15px;
+		width: 84%;
+	}
+	
+	.calendars .ui-state-default,
+	.calendars .ui-widget-content .ui-state-default,
+	.calendars  .ui-widget-header .ui-state-default {
+		padding: 2px;
+	}
+}
+
 /* ============================================================  HEIGHT 320 - 000  ============================================================ */
 
 @media only screen 
@@ -1299,5 +1335,6 @@ and (max-height: 320px) {
 	.static-banner.short {
 		height: 280px;
 	}
+	
 	
 }
