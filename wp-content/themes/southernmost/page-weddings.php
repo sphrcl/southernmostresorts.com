@@ -95,7 +95,7 @@
 		<div class="contenttitle">
 
 			<h1 class="title"><?php the_title(); ?></h1>
-			<h2 class="subtitle"><?php echo get_post_meta($post->ID,'misfit_shortname',true); ?>.</h2>
+			<h2 class="subtitle"><?php echo get_post_meta($post->ID,'misfit_subtitle',true); ?></h2>
 
 		</div>
 
