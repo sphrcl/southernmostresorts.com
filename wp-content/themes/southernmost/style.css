@@ -862,7 +862,8 @@ div#topbanner {
 }
 
 .topbanner-overlay {
-  background: url(images/topbanner-overlay.png);
+  /* background: url(images/topbanner-overlay.png); */
+
   position: absolute;
   z-index: 3;
   height: 100%;
@@ -2479,7 +2480,7 @@ ul.subnavigation li.current::after {
     display: inline-block;
 }
     .page-nav li > a:hover, .page-nav li.current > a {
-        color: #3E87BE;
+       /* color: #3E87BE; */
     }
 
 
@@ -4279,4 +4280,36 @@ a.mobihid {
     opacity: 1;
     visibility: visible;
 }
+
+/* LIST ELEMENT STYLING ################################################################################################ */
+
+
+#pagecontent ul li {
+  line-height: 27px;
+  font-size: 14px;
+  font-family: 'NewsGothicMT';
+}
+
+#pagecontent h4 {
+  font-size: 16px;
+  margin-bottom: 14px;
+  font-family: 'NewsGothicMT';
+}
+
+/* ROOM LIST PAGE STYLING ################################################################################################ */
+
+a.details {
+  text-transform: uppercase;
+}
+
+
+
+
+
+
+
+
+
+
+
 
