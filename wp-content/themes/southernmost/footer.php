@@ -221,6 +221,7 @@
 					</div>
 					
 					<button class="button" type="submit">View Availability</button>
+					<div class="btn1 toosmall"><i class="fa fa-times"></i></div>
 
 				</form>
 

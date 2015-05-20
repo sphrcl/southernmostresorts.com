@@ -760,8 +760,8 @@ div#topbanner {
 
 .secondrightnav {
 	display: none;
-	background: url('images/logo.jpg') no-repeat scroll center center #fff;
-	background-size: 80% auto;
+	background: url('images/logo-footer.png') no-repeat scroll center center #fff;
+	background-size: 240px auto;
 	overflow: scroll;
 	height: 100%;
 	width: 320px;
@@ -1730,6 +1730,22 @@ div#specials_list {
 	.ressys .btn1:hover {
 		background-color: #333;
 	}
+	
+.btn1.toosmall {
+	border-left: 1px solid #fff;
+	display: none;
+	float: right;
+	font-size: 30px;
+	padding: 6px 0 8px;
+	width: calc(16% - 1px);
+	z-index: 9;
+}
+
+@-moz-document url-prefix() {
+	.btn1.toosmall {
+		padding: 6px 0 9px;
+	}
+}
 
 .roomtits {
   position: absolute;
@@ -3992,13 +4008,6 @@ a.mobihid {
 
 #welcome .dropsec:after {
 	display: none;
-}
-
-
-@-moz-document url-prefix() { 
-  .reservationform:after {
-     top: 136px;
-  }
 }
 
 
