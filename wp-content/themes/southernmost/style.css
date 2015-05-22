@@ -1584,7 +1584,7 @@ ul.footernavigation li a {
 }
 
 .innerpage .content {
-    padding-top: 20px;
+    padding-top: 10px;
 }
 
 .innerpage div#topbanner {
@@ -1602,7 +1602,7 @@ div#pagecontent .container {
 
 .contenttitle {
   float: left;
-  margin-bottom: 40px;
+  margin-bottom: 15px;
 }
 
 h1.title {
@@ -1626,6 +1626,7 @@ h2.subtitle {
 .content {
 	clear: both;
 	overflow: hidden;
+  margin-bottom: 50px;
 }
 
 .content .left {
@@ -4322,18 +4323,43 @@ a.mobihid {
   font-family: 'NewsGothicMT';
 }
 
+#pagecontent .content ul li {
+  list-style-type: disc;
+  margin-left: 20px;
+}
+
 /* ROOM LIST PAGE STYLING ################################################################################################ */
 
 a.details {
   text-transform: uppercase;
 }
 
+/* FORM STYLING ################################################################################################ */
 
 
+input.wpcf7-form-control.wpcf7-submit {
+  background: #179dab;
+  color: #fff;
+  text-transform: uppercase;
+  font-family: NewsGothicMT-Bold;
+  font-size: 14px;
+  letter-spacing: 0.04em;
+  text-align: center;
+  cursor: pointer;
+  padding:12px 30px;
+  margin-bottom: 4px;
+  transition: all 0.4s;
+    -moz-transition: all 0.4s;
+    -webkit-transition: all 0.4s;
+    -o-transition: all 0.4s;
+}
 
 
+/* SMALL FIX ################################################################################################ */
 
-
+.page-template-page-dining #pagecontent .container .subtitle {
+  margin-bottom: 20px;
+}
 
 
 
