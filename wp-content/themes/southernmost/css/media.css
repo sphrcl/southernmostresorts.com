@@ -676,6 +676,12 @@ and (max-width: 767px) {
 		margin-right: -98px;
 	}
 
+	/* ======================== PAGE TEMPLATE - ACTIVITIES ======================== */
+
+	.page-template-page-activities .page-nav {
+		display: none;
+	}	
+
 }
 
 
@@ -685,7 +691,11 @@ and (max-width: 767px) {
 @media only screen 
 and (max-width: 640px) {
 
+	/* ======================== PAGE TEMPLATE - ACTIVITIES ======================== */
 
+	.page-template-page-activities .page-nav {
+		display: none;
+	}
 
 }
 
@@ -1240,7 +1250,8 @@ and (max-height: 500px) {
 	.static-banner.short {
 		height: 420px;
 	}
-	
+
+		
 	
 }
 
@@ -1270,6 +1281,8 @@ and (max-height: 400px) {
 	.static-banner.short {
 		height: 320px;
 	}
+
+
 	
 }
 
@@ -1336,5 +1349,6 @@ and (max-height: 320px) {
 		height: 280px;
 	}
 	
-	
+
+
 }
