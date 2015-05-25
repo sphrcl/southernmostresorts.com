@@ -78,7 +78,7 @@
 
 								<div class="left">
 									<h3>Rooms</h3>
-									<a href="#">See Availability</a>									
+									<a href="#">See All</a>									
 								</div>
 
 								<a class="btn next right"><i class="fa fa-angle-right"></i></a>
