@@ -372,6 +372,12 @@ $(window).load(function() {
 
 </html>
 <?php if ( get_option('misfit_tracking_code') <> "" ) { echo stripslashes(get_option('misfit_tracking_code')); } ?>
+
+<script src="<?php bloginfo ('template_url'); ?>/js/markermanager.js" type="text/javascript"></script>
+<script src="<?php bloginfo ('template_url'); ?>/js/StyledMarker.js" type="text/javascript"></script>
+<script src="<?php bloginfo ('template_url'); ?>/js/jquery.metadata.js" type="text/javascript"></script>
+<script src="<?php bloginfo ('template_url'); ?>/js/jquery.jmapping.js" type="text/javascript"></script>
+
 <?php wp_footer(); ?>		
 </body>
 </html>

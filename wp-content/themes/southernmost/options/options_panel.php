@@ -1648,6 +1648,23 @@ $options[] = array( "name" => __('Youtube URL','misfitlang'),
 			"id" => $shortname."_youtube",
 			"std" => "",
 			"type" => "text");
+
+$options[] = array( "name" => __('Map Center','cebolang'),
+			"desc" => "Place the coordinates for the map center here: ex: 30.181935,-85.791235",
+			"id" => $shortname."_mapcenter",
+			"std" => "",
+			"type" => "text");	
+			
+$options[] = array( "name" => __('Center Map Icon','cebolang'),
+			"desc" => __('The primary locations icon on the map','cebolang'),
+			"id" => $shortname."_mapmarker",
+			"std" => "",
+			"type" => "upload");
+
+$options[] = array( "name" => __('Map Address','cebolang'),
+			"id" => $shortname."_address",
+			"std" => "",
+			"type" => "text");	
 						
 
 			

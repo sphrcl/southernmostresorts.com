@@ -232,4 +232,32 @@ function activity_items()
 }
 
 
+
+create_activities_taxonomies();
+function create_activities_taxonomies() {
+
+	$labels = array(
+		'name' => _x( 'Activity Type', 'taxonomy general name' ),
+		'singular_name' => _x( 'Activity Type', 'taxonomy singular name' ),
+		'search_items' =>  __( 'Search Activity Types' ),
+		'all_items' => __( 'All Activity Types' ),
+		'parent_item' => __( 'Parent Activity Type' ),
+		'parent_item_colon' => __( 'Parent Activity Type:' ),
+		'edit_item' => __( 'Edit Activity Type' ),
+		'update_item' => __( 'Update Activity Type' ),
+		'add_new_item' => __( 'Add New Activity Type' ),
+		'new_item_name' => __( 'New Activity Type Name' ),
+	); 	
+
+	register_taxonomy('activity_type', array('activities'), array(
+		'hierarchical' => true,
+		'labels' => $labels,
+		'show_ui' => true,
+		'query_var' => true,
+		'rewrite' => array( 'slug' => 'activity-type' ),
+	));
+
+}
+
+
 ?>
