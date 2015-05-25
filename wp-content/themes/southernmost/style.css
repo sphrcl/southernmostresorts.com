@@ -2423,9 +2423,24 @@ ul.subnavigation li.current::after {
 }
 
 .smallcams {
-	width: 40%;
+	width: 37%;
+	float: right;
+}
+
+
+
+
+.bigcam {
+	width: 60%;
 	float: left;
 }
+
+.bigcam img {
+	width: 100%;
+}
+
+
+
 .page-template-page-gallery-php div#pagecontent .container, .single-imagegalleries div#pagecontent .container {
     width: 90%;
 }
