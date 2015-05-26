@@ -105,6 +105,7 @@
 		<ul class="post-list">
 				
 			<?php 
+				$this_post = $post->ID;
 				$query_activities = new wp_query(array(
 					'post_parent' => $this_post,
 					'post_type' => 'page',
