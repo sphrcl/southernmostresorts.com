@@ -15,23 +15,7 @@ $document.scroll(function() {
 
 
 
-
 $(document).ready(function(){
-
-	$('#maparea').jMapping({
-		force_zoom_level: 13,
-		default_zoom_level: 13,
-	    category_icon_options: function(category){
-	      if (category.charAt(0).match(/[a-c]/i)){
-	        return new google.maps.MarkerImage($(this).attr('data-icon'));
-	      } else if (category.charAt(0).match(/[d-z]/i)){
-	        return new google.maps.MarkerImage($(this).attr('data-icon'));
-	      } else {
-	        return new google.maps.MarkerImage($(this).attr('data-icon'));
-	      }
-	    },
-	    map_config: mapOptions
-	});
 	
 	$(".hamburger a").click(function(e){
 		e.preventDefault();

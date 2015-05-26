@@ -22,6 +22,8 @@
 	});
 </script>
 
+<?php //include( TEMPLATEPATH . '/library/activities-map.php'); ?> 
+
 <div class="mapbox">
 
 	<div id="maparea" style="width: 100%; height: 500px;"></div>
@@ -111,6 +113,8 @@
 </div>
 
 <?php endwhile; endif; wp_reset_query(); ?>	
+
+<?php include( TEMPLATEPATH . '/library/super-map.php'); ?> 
 
 </div> <!-- #wrapper -->
 

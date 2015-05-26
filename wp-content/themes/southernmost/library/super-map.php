@@ -4,7 +4,7 @@
 
 <!-- Google Map API Files -->
 
-<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false"></script>
+<script type="text/javascript" src="http://maps.google.com/maps/api/js?v=3.5&sensor=false"></script>
 
 <script type="text/javascript">
     $(document).ready(function() {
@@ -98,9 +98,6 @@
     });
 </script>
 
-	
-	  			
-	<script>!window.jQuery && document.write(unescape('%3Cscript src="js/libs/jquery-1.4.4.min.js"%3E%3C/script%3E'))</script>
 	<script type="text/javascript">
     $(document).ready(function() {
 
