@@ -12,7 +12,7 @@
 
 		<div class="flexslider meetingslider">
 			<h1 class="roomtits"><?php the_title(); ?></h1>
-			<a class="button roomtitties" href="<?php echo get_post_meta($post->ID,'misfit_reservation',true); ?>">See Availability</a>
+			<a class="button roomtitties" href="<?php echo get_option('misfit_booking_link'); ?>">See Availability</a>
 			<ul class="slides">
 
 				<?php 
