@@ -1,8 +1,5 @@
 <?php 
 
-/* Template Name: Meeting
-
-*/
  get_header(); ?>
 
 

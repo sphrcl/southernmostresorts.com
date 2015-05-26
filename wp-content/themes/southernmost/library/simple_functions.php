@@ -5,7 +5,9 @@ function southern_navmenus() {
 	register_nav_menus(array(
 		'primary' => __( 'Primary Navigation', 'cebo' ),
 		'secondary' => __( 'Side Navigation', 'cebo' ),
-		'footer_nav' => __( 'Footer Navigation', 'cebo' )
+		'footer_nav' => __( 'Footer Navigation', 'cebo' ),
+		'wedding_nav' => __( 'Weddings Navigation', 'cebo' ),
+		'meeting_nav' => __( 'Meetings and Events Navigation', 'cebo' ),
 	));
 }
 

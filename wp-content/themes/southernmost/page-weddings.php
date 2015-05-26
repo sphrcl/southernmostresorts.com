@@ -61,26 +61,7 @@
 
 <ul class="page-nav">
 
-	<?php 
-				
-		// $ancestors = get_post_ancestors($post->ID);
-		// $parents = $ancestors[0];
-		$this_post = $post->ID;
-		$query_gallery_single = new wp_query(array(
-			'post_parent' => $this_post,
-			'post_type' => 'page',
-			'posts_per_page'=> 6,	
-		)); 
-		$count = 1;
-
-		if($query_gallery_single->have_posts()) : while($query_gallery_single->have_posts()) : $query_gallery_single->the_post(); 
-
-	?>
-
-		<li <?php if( $count == 1 ) { echo ' class="current"'; } ?>><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></li>
-	
-	
-	<?php $count++; endwhile; endif; wp_reset_query(); ?>	
+	<?php wp_nav_menu( array( 'theme_location' => 'wedding_nav' ,  'items_wrap' => '%3$s', 'container' => '', 'menu_class' => 'navitem' ) ); ?>
 			
 </ul>
 
