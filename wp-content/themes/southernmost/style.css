@@ -303,7 +303,7 @@ a,
   transition: all .5s ease;
   z-index: 1;
   height: 100%;
-  width:400px;
+  width:300px;
   background: #189dac;
   right: -400px;
   overflow: scroll;
