@@ -326,14 +326,14 @@ $(document).ready(function(){
 
 		});
 		
-		$(".button2").click(function(e) {
-			e.preventDefault();
-			$(".ressys").addClass("dropit");
-			$(".overlay").addClass("doit");
-			$(".overlay").addClass("crispy");
+		// $(".button2").click(function(e) {
+		// 	e.preventDefault();
+		// 	$(".ressys").addClass("dropit");
+		// 	$(".overlay").addClass("doit");
+		// 	$(".overlay").addClass("crispy");
 
 
-		});
+		// });
 
 		$(".shutdown").click(function(e) {
 			e.preventDefault();
