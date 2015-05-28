@@ -46,14 +46,18 @@
 		</div>
 
 		<div class="topbanner-overlay"></div>
+		<!-- removed
 		<div class="arrow bounce"></div>
-
+		-->
 		<div class="topbannercontent">
 			<div class="logo-white">
 				<img src="<?php bloginfo ('template_url'); ?>/images/logo-white.png" alt="*" />
 			</div>
 			<div class="reservenow">
+				<!-- they want it to go to reztrip
 				<a class="button2" href="<?php echo get_option('misfit_booking_link'); ?>">Reserve Now</a>
+				-->
+				<a class="button2" href="https://southernmostresorts.reztrip.com">Reserve Now</a>
 			</div>
 		</div>
 
@@ -102,8 +106,8 @@
 								<option value="" disabled selected>Total ROOMS</option>
 								<option value="1">1 Room</option>
 								<option value="2">2 Rooms</option>
-								<!--<option value="3">3 Rooms</option>
-								<option value="4">4 Rooms</option>-->
+								<option value="3">3 Rooms</option>
+								<option value="4">4 Rooms</option>
 							</select>
 						</span>
 
@@ -113,7 +117,6 @@
 								<option value="1">1 Guest</option>
 								<option value="2">2 Guests</option>
 								<option value="3">3 Guests</option>
-								<option value="4">4 Guests</option>
 							</select>
 						</span>
 
