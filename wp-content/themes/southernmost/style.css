@@ -213,6 +213,8 @@ a,
 .button,
 .page-id-708 input[type="text"],
 .page-id-708 input[type="submit"],
+.page-id-802 input[type="text"],
+.page-id-802 input[type="submit"],
 .footleft input[type="text"],
 .footleft input[type="submit"],
 .slidedown-nav .owl-carousel .owl-item {
@@ -1492,6 +1494,28 @@ div#footer {
     display: inline !important;
   }
 
+.footleft input[type="text"],
+.page-id-802 input[type="text"],
+.page-id-802 select {
+  width: 90%;
+  border: 2px solid #99cc99;
+  padding: 15px 10px;
+  font-family: NewsGothicMT;
+  font-size: 13px;
+  line-height: 21px;
+  color: #5e5e5e;
+  margin-bottom: 10px;
+}
+  .footleft input[type="text"]:focus, .footleft input[type="text"]:hover,
+  .page-id-802 input[type="text"]:focus, .page-id-802 input[type="text"]:hover,
+  .page-id-802 select:focus, .page-id-802 select:hover {
+    border-color: #ff9968;
+  }
+
+  .page-id-802 .content .wpcf7-list-item-label {
+    display: inline !important;
+  }  
+
 .footleft input[type="text"]::-webkit-input-placeholder {
    color: #8e9197;
 }
@@ -1537,6 +1561,25 @@ div#footer {
   .page-id-708 input[type="submit"]:hover {
 		color: #ff9968;
 	}
+
+.page-id-802 input[type="submit"] {
+  -webkit-appearance: none;
+  appearance: none;
+  border: none;
+  /*float: right;*/
+  background: none;
+  padding: 0 10px;
+  color: #99cc99;
+  font-size: 14px;
+  font-family: NewsGothicMT-Bold;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+  .footleft input[type="submit"]:hover,
+  .page-id-802 input[type="submit"]:hover {
+    color: #ff9968;
+  }  
 
 .footmiddle {
   text-align: center;
