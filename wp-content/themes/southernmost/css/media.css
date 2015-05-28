@@ -469,7 +469,12 @@ and (max-width: 799px) {
 	.flexslider.discoverdining {  width: 100%; float: none; }
 	.flexslider.discoverweddings {  width: 100%; float: none; }
 	
-	.footleft { display: none; }
+	.footleft { 
+		*display: none; 
+		float: left;
+ 		width: 100%;
+  		text-align: center;
+  	}
 	.footmiddle { width: 100%; }
 	.footright { display: none; }
 	
