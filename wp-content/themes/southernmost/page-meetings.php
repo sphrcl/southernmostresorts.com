@@ -95,7 +95,7 @@
 				<?php the_content(); ?>
 			</div>
 			<div class="right">
-
+				<!-- removed temp 
 				<?php if(get_post_meta($post->ID,'misfit_infosheet',true)) { ?>
 					<a class="button" style="position: relative; display: inline-block; padding: 20px; margin-right: 10px;" href="<?php echo get_post_meta($post->ID,'misfit_infosheet',true); ?>"><?php _e('Request for proposal','theme-text'); ?></a>
 				<?php } ?>
@@ -103,6 +103,8 @@
 				<?php if(get_post_meta($post->ID,'misfit_external_booking',true)) { ?>
 					<a class="button" style="position: relative; display: inline-block; padding: 20px; margin-right: 10px;" href="<?php echo get_post_meta($post->ID,'misfit_extenal_booking',true); ?>"><?php _e('Request proposal','theme-text'); ?></a>
 				<?php } ?>
+
+				--><a class="button" style="position: relative; display: inline-block; padding: 20px; margin-right: 10px;" href="http://www.southernmostresorts.com.php53-24.ord1-1.websitetestlink.com/meeting-rfp/"><?php _e('Request for proposal','theme-text'); ?></a>
 
 			</div>
 		</div>
