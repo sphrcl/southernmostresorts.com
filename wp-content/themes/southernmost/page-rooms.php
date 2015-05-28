@@ -64,7 +64,7 @@
 				<?php 
 					$query_activities = new wp_query(array(
 						'post_type' => 'rooms',
-						'posts_per_page' => 10
+						'posts_per_page' => 15
 					)); 
 					if($query_activities->have_posts()) : while($query_activities->have_posts()) : $query_activities->the_post();
 					$imgsrcs = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "Full"); 
