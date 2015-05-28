@@ -4283,7 +4283,7 @@ a.mobihid {
 	font-size: 22px;
 	font-weight: bold;
 	position: relative;
-	text-align: center;
+	text-align: left;
 	top: 50%;
 }
 
@@ -4498,4 +4498,13 @@ input.wpcf7-form-control.wpcf7-submit {
 
 .page-template-page-dining #pagecontent .container .subtitle {
   margin-bottom: 20px;
+}
+
+.footaddress a {
+  color: #99cc99;
+  font-size: 14px;
+  font-family: NewsGothicMT-Bold;
+  text-align: center;
+  text-transform: uppercase;
+  margin-bottom: 50px;
 }
