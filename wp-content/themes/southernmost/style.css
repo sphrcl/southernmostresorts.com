@@ -4508,3 +4508,31 @@ input.wpcf7-form-control.wpcf7-submit {
   text-transform: uppercase;
   margin-bottom: 50px;
 }
+
+.single-activities #pagecontent h4 {
+  font-size: 16px;
+  margin-bottom: 14px;
+  font-family: 'NewsGothicMT';
+  border-bottom: 1px solid #99cc99;
+  width: 125px;
+  text-align: center;
+  padding-bottom: 12px;
+  text-transform: uppercase;
+  color: #99cc99;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+.single-activities #pagecontent p { 
+  line-height: 32px;
+}
+
+
+
+
+
+
+
+
+
+
