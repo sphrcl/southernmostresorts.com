@@ -108,6 +108,8 @@
 
 			        if( $repeatable_fields ) {
 		        ?>
+
+
 		        
 			        <ul id="toggle-view">
 			        	<li class="activated">
@@ -135,10 +137,13 @@
 			        		</div>
 			        	</li>
 			        </ul>
+			       
 
 		        <?php } ?>
-			        
+			    <a href="http://localhost/southernmostresorts.com/" class="button roomSingle">Book Now</a>    
 			</div>
+
+
 
 		</div>
 		

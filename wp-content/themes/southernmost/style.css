@@ -1837,6 +1837,11 @@ div#specials_list {
 
 }
 
+.roomSingle {
+    position: absolute;
+    z-index: 9999;
+}
+
 
 .button:hover {
 	background: #ff9968;
