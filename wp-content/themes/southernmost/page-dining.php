@@ -8,45 +8,19 @@
 
 <div id="topbanner">
 
-	<div class="flexslider topbanner">
 
-		<div class="banner-title"><h2><?php the_title(); ?></h2></div>
-		
-		<ul class="slides">
+<?php 
+	if(have_posts()) : while(have_posts()) : the_post(); 
+	$imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "Full"); 
+?>
 
-			<?php 
-				$pagename = get_option('misfit_sliderpage');
-				$page = get_page_by_title($pagename);
-				$featured_id =  $page->ID;
-							
-				$query_dining = new wp_query(array(
-					'post_type' => 'page',
-					'p' => $featured_id,
-					'posts_per_page' => -1
-				)); 
-
-				if($query_dining->have_posts()) : while($query_dining->have_posts()) : $query_dining->the_post(); 
-
-					$galleryImages = get_post_gallery_imagess(); 
-					$imagesCount = count($galleryImages); 
-		    ?>
-			           
-        		<?php if ($imagesCount > 0) : ?>
-              	<?php for ($i = 0; $i < $imagesCount; $i++): ?>
-                <?php if (!empty($galleryImages[$i])) :?>
-				                  		
-				                  		
-					<li style="background-image: url('<?php echo tt($galleryImages[$i]['full'][0],1400,755); ?>');"></li>
-				
-				<?php endif; endfor; endif; ?>
-				
-											
-			<?php endwhile; endif; wp_reset_query(); ?>	
-
-		</ul>
-	</div>
+	<div class="static-banner" style="background-image: url('<?php echo tt($imgsrc[0],1400,755); ?>')"></div>
 
 	<div class="topbanner-overlay"></div>
+
+
+<?php endwhile; endif; wp_reset_query(); ?>	
+
 
 </div>
 	
