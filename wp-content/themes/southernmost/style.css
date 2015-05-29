@@ -1167,7 +1167,7 @@ div#rooms-section {
 }
 
 .room-caption {
-	bottom: 88px;
+	bottom: 30px;
 	color: #fff;
 	position: absolute;
 	right: 80px;
@@ -1835,11 +1835,6 @@ div#specials_list {
   bottom: 10px;
   right: 30px;
 
-}
-
-.roomSingle {
-    position: absolute;
-    z-index: 9999;
 }
 
 
