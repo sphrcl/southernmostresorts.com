@@ -24,6 +24,7 @@
 
 <?php //include( TEMPLATEPATH . '/library/activities-map.php'); ?> 
 
+<!-- removed until client gets locations -->
 <div class="mapbox">
 
 	<div id="maparea" style="width: 100%; height: 500px;"></div>
