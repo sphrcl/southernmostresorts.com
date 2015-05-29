@@ -172,11 +172,11 @@
 							</div>
 						</li>
 						<li>
-							<a href="<?php bloginfo('url');?>/dining-2/">Dining</a>
+							<a href="<?php bloginfo('url');?>/dining-2/">Restaurants & Bars</a>
 							<div class="slidedown-nav">
 
 								<div class="left">
-									<h3>Dining</h3>
+									<h3>Restaurants & Bars</h3>
 								</div>
 
 								<a class="btn next3 right"><i class="fa fa-angle-right"></i></a>
