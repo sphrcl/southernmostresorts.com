@@ -98,7 +98,7 @@
 			<div class="right">
 				
 				<?php if(get_post_meta($post->ID,'misfit_external_booking',true)) { ?>
-					<a class="button" style="position: relative; display: inline-block; padding: 20px; margin-right: 10px;" href="<?php echo get_post_meta($post->ID,'misfit_external_booking',true); ?>"><?php _e('Request foo Proposal','theme-text'); ?></a>
+					<a class="button" style="position: relative; display: inline-block; padding: 20px; margin-right: 10px;" href="<?php echo get_post_meta($post->ID,'misfit_external_booking',true); ?>"><?php _e('Request for Proposal','theme-text'); ?></a>
 				<?php } ?>
 				
 				<?php if(get_post_meta($post->ID,'misfit_infosheet',true)) { ?>
@@ -106,7 +106,7 @@
 				<?php } ?>	
 
 				<?php if(get_post_meta($post->ID,'misfit_wedding_package',true)) { ?>
-					<a class="button" style="position: relative; display: inline-block; padding: 20px; margin-right: 10px;" href="<?php echo get_post_meta($post->ID,'misfit_wedding_package',true); ?>"><?php _e('Ceremonty Package','theme-text'); ?></a>
+					<a class="button" style="position: relative; display: inline-block; padding: 20px; margin-right: 10px;" href="<?php echo get_post_meta($post->ID,'misfit_wedding_package',true); ?>"><?php _e('Ceremony Package','theme-text'); ?></a>
 				<?php } ?>							
 
 			</div>
