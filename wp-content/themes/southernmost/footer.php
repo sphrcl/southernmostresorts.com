@@ -13,7 +13,7 @@
 		<div class="footcolumn">
 			<div class="footleft">
 
-				<p>Sign up for special offers</p>
+				<p>Sign up for Special Offers from the Hotel</p>
 				<div class="newsletter">
 					<form name="" action="#" method="get">
 						<input type="text" name="name" value="" placeholder="Your Name" >
