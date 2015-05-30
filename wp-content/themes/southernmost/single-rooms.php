@@ -108,8 +108,6 @@
 
 			        if( $repeatable_fields ) {
 		        ?>
-
-
 		        
 			        <ul id="toggle-view">
 			        	<li class="activated">
@@ -137,13 +135,18 @@
 			        		</div>
 			        	</li>
 			        </ul>
-			       
 
 		        <?php } ?>
-			    <a href="http://localhost/southernmostresorts.com/" class="button roomSingle">Book Now</a>    
+			       
+				    <!-- book now button -->
+	  
+				    <?php if(get_post_meta($post->ID,'misfit_reservation', true)) { ?>
+	   					<div class="reserver">
+			        		<a class="button" href="<?php echo get_post_meta($post->ID,'misfit_reservation', true); ?>">Book Now</a>
+			        	</div>
+			        <?php } ?>
+
 			</div>
-
-
 
 		</div>
 		
