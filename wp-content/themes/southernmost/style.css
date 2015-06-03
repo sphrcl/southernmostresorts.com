@@ -249,7 +249,7 @@ a,
 
 
 .opened {
-  left: -400px;
+  left: -300px;
   -webkit-transition: all .5s ease;
   -moz-transition: all .5s ease;
   -o-transition: all .5s ease;
@@ -263,6 +263,7 @@ a,
 
 .royalewrap {
 	padding: 10px 0;
+	background-color: #189dac;
 }
 
 .royale:hover {
@@ -307,10 +308,10 @@ a,
   transition: all .5s ease;
   z-index: 1;
   height: 100%;
-  width:400px;
-  background: #189dac;
-  right: -400px;
-  overflow: scroll;
+  width:300px;
+  background: #fff;
+  right: -300px;
+  overflow-x: hidden;
   top: 0;
 }
 
@@ -435,6 +436,7 @@ ul.topnavigation li > a {
     text-transform: uppercase;
 }
 
+ul.topnavigation li.ahoy > a,
 ul.topnavigation li a:hover {
   color: #179dab;
 }
@@ -697,6 +699,10 @@ div#topbanner {
 
 /* Slide Down Nav MOBILE ############################################################################################################## */
 
+#navmenumob {
+	background-color: #189dac;
+}
+
 .slidedown-navmob {
 	display: none;
 }
@@ -770,11 +776,11 @@ div#topbanner {
 	background-size: 240px auto;
 	overflow: scroll;
 	height: 100%;
-	width: 320px;
+	width: 300px;
 	
 	position: fixed;
 	z-index: 1;
-	right: -320px;
+	right: -300px;
 	top: 0;
 	
 	-webkit-transition: all .5s ease;
@@ -784,11 +790,11 @@ div#topbanner {
 }
 
 .secondrightready {
-	right: 80px;
+	right: 0;
 }
 
 .secondrightready.open {
-	right: 400px;
+	right: 300px;
 }
 
 .srnlist {
@@ -820,12 +826,12 @@ div#topbanner {
 .srnclose {
 	background-color: #189dac;
 	display: none;
-	width: 398px;
+	width: 298px;
 	text-align: center;
 	
 	position: fixed;
 	top: 0;
-	right: -400px;
+	right: -300px;
 	z-index: 14;
 	
 	-webkit-transition: all .5s ease;

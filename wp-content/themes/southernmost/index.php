@@ -146,6 +146,18 @@
 					
 					<a class="button5" href="<?php the_permalink(); ?>">DETAILS</a>
 				</div>
+				<div class="room-linkopen" style="display: none;">
+					<ul>
+						<?php
+							$content = get_the_content();
+							$content = apply_filters('the_content', $content);
+							$content = str_replace(']]>', ']]&gt;', $content);
+							preg_match('/<ul[^>]*>(.*)<\/ul>/is', $content, $matches);
+							echo $matches[1];
+							// echo $content;
+						?>
+					</ul>
+				</div>
 			</li>
 			
 			<?php endwhile; endif; wp_reset_query(); ?>	
