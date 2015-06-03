@@ -162,6 +162,27 @@ $(document).ready(function(){
 		}
 		
 	});
+	
+	$('.room-caption .button5').click(function(e) {
+		e.preventDefault();
+		if ($(this).text() == 'DETAILS') {
+			$(this).parent('.room-caption').parent('li').addClass('canopener');
+			$(this).text('CLOSE');
+			
+			$('.roomslider .flex-direction-nav li').addClass('displaynone');
+		} else {
+			$(this).parent('.room-caption').parent('li').removeClass('canopener');
+			$(this).text('DETAILS');
+			
+			$('.roomslider .flex-direction-nav li').removeClass('displaynone');
+		}
+	});
+	
+	$('.roomslider .flex-direction-nav li').click(function() {
+		$('.roomslider li').removeClass('canopener');
+		$('.room-caption .button5').text('DETAILS');
+		$('.roomslider .flex-direction-nav li').removeClass('displaynone');
+	});
 
 	$('.topbanner').flexslider({
 		animation: "fade",

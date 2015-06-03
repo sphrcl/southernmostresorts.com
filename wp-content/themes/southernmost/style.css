@@ -1180,6 +1180,11 @@ div#rooms-section {
 	position: absolute;
 	right: 80px;
 	text-align: right;
+	
+	transition: all 0.4s ease 0s;
+	-moz-transition: all 0.4s ease 0s;
+	-webkit-transition: all 0.4s ease 0s;
+	-o-transition: all 0.4s ease 0s;
 }
 
 .room-caption h3 {
@@ -1187,7 +1192,67 @@ div#rooms-section {
   font-size: 42px;
   font-family: NewsGothicMT;
   margin-bottom: 20px;
-    text-shadow: 0 0 35px #333;
+  text-shadow: 0 0 35px #333;
+}
+
+.room-linkopen {
+	background-color: rgba(0,0,0,0.5);
+	padding: 40px 15px 0;
+	height: 100%;
+	position: absolute;
+	width: 300px;
+	right: -330px;
+	top: 0;
+	
+	transition: all 0.4s ease 0s;
+	-moz-transition: all 0.4s ease 0s;
+	-webkit-transition: all 0.4s ease 0s;
+	-o-transition: all 0.4s ease 0s;
+}
+
+.room-linkopen h3 {
+	color: #fff;
+	font-family: NewsGothicMT;
+	font-size: 38px;
+	line-height: 1;
+	margin-bottom: 20px;
+}
+
+.room-linkopen ul {
+}
+
+.room-linkopen p {
+	color: #fff;
+	font-family: NewsGothicMT;
+	font-size: 14px;
+	line-height: 22px;
+	padding: 0 0 10px;
+}
+
+.room-linkopen p a {
+	color: #fff;
+	text-decoration: underline;
+}
+
+.room-linkopen li {
+	border-bottom: 1px dashed #fff;
+	color: #fff !important;
+	font-family: NewsGothicMT;
+	font-size: 16px;
+	line-height: 28px;
+	height: auto !important;
+}
+
+.flex-active-slide.canopener .room-caption {
+	right: 340px;
+}
+
+.flex-active-slide.canopener .room-linkopen {
+	right: 0;
+}
+
+.displaynone {
+	display: none;
 }
 
 .button4 {

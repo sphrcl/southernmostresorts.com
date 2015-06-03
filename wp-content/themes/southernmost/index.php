@@ -146,16 +146,31 @@
 					
 					<a class="button5" href="<?php the_permalink(); ?>">DETAILS</a>
 				</div>
-				<div class="room-linkopen" style="display: none;">
+				<div class="room-linkopen">
+					
+					<h3><?php the_title(); ?></h3>
+					
+					<?php
+						$content = get_the_content();
+						$content = apply_filters('the_content', $content);
+						$content = str_replace(']]>', ']]&gt;', $content);
+						preg_match('/<ul[^>]*>(.*)<\/ul>/is', $content, $ulmatch);
+						preg_match('/<p[^>]*>(.*)<\/p>/is', $content, $pmatch);
+						$pmatch = preg_split('/\s+/', $pmatch[1]);
+					?>
+					
+					<p>
+						<?php for ($i = 0; $i < 35; $i++) { ?>
+							<?php
+								if ($i != 34) { echo $pmatch[$i] . " "; }
+								else { echo $pmatch[$i] . "..."; }
+							?>
+						<?php } ?>
+						<a href="<?php the_permalink(); ?>">Click to view room</a>
+					</p>
+					
 					<ul>
-						<?php
-							$content = get_the_content();
-							$content = apply_filters('the_content', $content);
-							$content = str_replace(']]>', ']]&gt;', $content);
-							preg_match('/<ul[^>]*>(.*)<\/ul>/is', $content, $matches);
-							echo $matches[1];
-							// echo $content;
-						?>
+						<?php echo $ulmatch[1]; ?>
 					</ul>
 				</div>
 			</li>
