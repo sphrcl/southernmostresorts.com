@@ -1181,6 +1181,7 @@ div#rooms-section {
   font-size: 42px;
   font-family: NewsGothicMT;
   margin-bottom: 20px;
+    text-shadow: 0 0 35px #333;
 }
 
 .button4 {
@@ -1207,6 +1208,10 @@ div#rooms-section {
   font-family: GothamBold;
   font-size: 20px;
   letter-spacing: 0.04em;
+}
+
+.rooms-carousel .button5 {
+	  text-shadow: 0 0 35px #333;
 }
 
 .button5:hover {
@@ -1290,6 +1295,12 @@ div#rooms-section {
   letter-spacing: 0.06em;
   z-index: 9;
 }
+
+
+.flexslider.roomcarousel .slides li.flex-active-slide .flex-caption {
+	display: none;
+}
+
 
 div#discover {
   margin-bottom: 20px;
