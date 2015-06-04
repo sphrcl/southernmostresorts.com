@@ -106,8 +106,6 @@
 								<option value="" disabled selected>Total ROOMS</option>
 								<option value="1">1 Room</option>
 								<option value="2">2 Rooms</option>
-								<option value="3">3 Rooms</option>
-								<option value="4">4 Rooms</option>
 							</select>
 						</span>
 
@@ -117,6 +115,7 @@
 								<option value="1">1 Guest</option>
 								<option value="2">2 Guests</option>
 								<option value="3">3 Guests</option>
+								<option value="4">4 Guests</option>
 							</select>
 						</span>
 
@@ -191,7 +190,7 @@
 			
 			<?php if(get_post_meta($post->ID, 'misfit_shortname', true)) { ?>
 			<div class="roomboom" style="background-image: url(<?php echo $imgsrc[0]; ?>);"></div>
-			  <div class="flex-caption"><?php echo get_post_meta($post->ID, 'misfit_shortname', true); ?></div>
+			  <div class="flex-caption"><?php the_title(); ?> <!-- <?php echo get_post_meta($post->ID, 'misfit_shortname', true); ?> --></div>
 			<?php } else { ?>
 			<div class="roomboom" style="background-image: url(<?php echo $imgsrc[0]; ?>);"></div>
 				 <div class="flex-caption"><?php the_title(); ?></div>
