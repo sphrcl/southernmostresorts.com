@@ -178,6 +178,23 @@ $(document).ready(function(){
 		}
 	});
 	
+	$('.room-linkopen .closeme').click(function(e) {
+		e.preventDefault();
+		
+		if ($(this).parent('.mobcloseme').parent('.room-linkopen').parent('li').find('.room-caption').children('.button5').text() == 'DETAILS') {
+			$(this).parent('.mobcloseme').parent('.room-linkopen').parent('li').addClass('canopener');
+			$(this).parent('.mobcloseme').parent('.room-linkopen').parent('li').find('.room-caption').children('.button5').text('CLOSE');
+			
+			$('.roomslider .flex-direction-nav li').addClass('displaynone');
+		} else {
+			$(this).parent('.mobcloseme').parent('.room-linkopen').parent('li').removeClass('canopener');
+			$(this).parent('.mobcloseme').parent('.room-linkopen').parent('li').find('.room-caption').children('.button5').text('DETAILS');
+			
+			$('.roomslider .flex-direction-nav li').removeClass('displaynone');
+		}
+		
+	});
+	
 	$('.roomslider .flex-direction-nav li').click(function() {
 		$('.roomslider li').removeClass('canopener');
 		$('.room-caption .button5').text('DETAILS');

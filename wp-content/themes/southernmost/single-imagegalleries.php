@@ -8,7 +8,7 @@
 
 <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/js/nivo/nivo-lightbox.css" type="text/css" />
 <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/js/nivo/themes/default/default.css" type="text/css" />
-<script src="<?php bloginfo('template_url'); ?>/js/nivo/nivo-lightbox.min.js"></script>
+<script src="<?php bloginfo('template_url'); ?>/js/nivo/nivo-lightbox.js"></script>
 <script type="text/javascript">
 	$(document).ready(function() {
 

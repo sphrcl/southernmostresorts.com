@@ -308,9 +308,9 @@ a,
   transition: all .5s ease;
   z-index: 1;
   height: 100%;
-  width:300px;
+  width:320px;
   background: #fff;
-  right: -300px;
+  right: -320px;
   overflow-x: hidden;
   top: 0;
 }
@@ -776,11 +776,11 @@ div#topbanner {
 	background-size: 240px auto;
 	overflow: scroll;
 	height: 100%;
-	width: 300px;
+	width: 320px;
 	
 	position: fixed;
 	z-index: 1;
-	right: -300px;
+	right: -320px;
 	top: 0;
 	
 	-webkit-transition: all .5s ease;
@@ -794,7 +794,7 @@ div#topbanner {
 }
 
 .secondrightready.open {
-	right: 300px;
+	right: 320px;
 }
 
 .srnlist {
@@ -826,12 +826,12 @@ div#topbanner {
 .srnclose {
 	background-color: #189dac;
 	display: none;
-	width: 298px;
+	width: 318px;
 	text-align: center;
 	
 	position: fixed;
 	top: 0;
-	right: -300px;
+	right: -320px;
 	z-index: 14;
 	
 	-webkit-transition: all .5s ease;
@@ -1172,6 +1172,7 @@ div#rooms-section {
   background-size: cover;
   background-position: center;
   position: relative;
+  z-index: 1;
 }
 
 .room-caption {
@@ -1187,6 +1188,11 @@ div#rooms-section {
 	-o-transition: all 0.4s ease 0s;
 }
 
+.room-caption .button5 {
+	background-color: rgba(0, 0, 0, 0.7);
+	padding: 10px 20px;
+}
+
 .room-caption h3 {
   color: #fff;
   font-size: 42px;
@@ -1197,8 +1203,9 @@ div#rooms-section {
 
 .room-linkopen {
 	background-color: rgba(0,0,0,0.5);
-	padding: 40px 15px 0;
+	padding: 0 15px;
 	height: 100%;
+	overflow: auto;
 	position: absolute;
 	width: 300px;
 	right: -330px;
@@ -1215,7 +1222,7 @@ div#rooms-section {
 	font-family: NewsGothicMT;
 	font-size: 38px;
 	line-height: 1;
-	margin-bottom: 20px;
+	margin: 40px 0 20px;
 }
 
 .room-linkopen ul {
@@ -1253,6 +1260,18 @@ div#rooms-section {
 
 .displaynone {
 	display: none;
+}
+
+.mobcloseme {
+	display: none;
+	text-align: center;
+}
+
+.closeme.button5 {
+	display: inline-block;
+	font-size: 16px;
+	margin-bottom: 20px;
+	background-color: rgba(255,255,255,0.25);
 }
 
 .button4 {
@@ -2196,6 +2215,7 @@ div#specials_list {
 }
 
 .flexslider.roomcarousel .slides li .flex-caption {
+  background-color: rgba(255, 255, 255, 0.2);
   position: relative;
   top: 50%;
   text-align: center;
@@ -2204,6 +2224,15 @@ div#specials_list {
   letter-spacing: 0.06em;
   width: 90%;
   left: 5%;
+  
+  transition: all 0.4s ease 0s;
+  -moz-transition: all 0.4s ease 0s;
+  -webkit-transition: all 0.4s ease 0s;
+  -o-transition: all 0.4s ease 0s;
+}
+
+.flexslider.roomcarousel .slides li:hover .flex-caption {
+	background-color: rgba(255, 255, 255, 0.75);
 }
 
 .flexslider.roomcarousel .flex-direction-nav a {
@@ -2648,6 +2677,13 @@ ul.subnavigation li.current::after {
 .gallery-list a img {
     display: block;
 	height: auto;
+    width: 100%;
+}
+
+.gallery-list a div {
+    background: none no-repeat scroll center center transparent;
+	background-size: cover;
+	height: 220px;
     width: 100%;
 }
 
@@ -4385,6 +4421,11 @@ a.mobihid {
   bottom: 40px;
   z-index: 9999999999;
   right: 40px;
+}
+
+.nivo-preemptive {
+	position: relative;
+	z-index: -999;
 }
 
 

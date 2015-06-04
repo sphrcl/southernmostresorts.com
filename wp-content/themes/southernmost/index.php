@@ -163,7 +163,7 @@
 						<?php for ($i = 0; $i < 35; $i++) { ?>
 							<?php
 								if ($i != 34) { echo $pmatch[$i] . " "; }
-								else { echo $pmatch[$i] . "..."; }
+								else { echo $pmatch[$i] . "... "; }
 							?>
 						<?php } ?>
 						<a href="<?php the_permalink(); ?>">Click to view room</a>
@@ -172,6 +172,8 @@
 					<ul>
 						<?php echo $ulmatch[1]; ?>
 					</ul>
+					
+					<div class="mobcloseme"><a class="button5 closeme">Close</a></div>
 				</div>
 			</li>
 			

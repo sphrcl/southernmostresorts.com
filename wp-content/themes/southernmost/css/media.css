@@ -8,7 +8,7 @@ and (min-width: 1500px) {
 	
 	/* header */
 	
-	.home div#header {
+	div#header {
 		max-width: 1500px;
 		left: 50%;
 		margin-left: -750px;
@@ -216,6 +216,13 @@ and (max-width: 1024px) {
 	
 	.page-template-page-gallery-php .innerpage {
 		padding: 30px 0;
+	}
+	
+	
+	/* ======================== SINGLE - GALLERY ======================== */
+	
+	.gallery-list a div {
+		height: 190px;
 	}
 	
 	
@@ -534,8 +541,8 @@ and (max-width: 767px) {
 	}
 	
 	.secondrightready {
-		width: 300px;
-		right: -300px;
+		width: 320px;
+		right: -320px;
 		z-index: 13;
 	}
 	
@@ -804,8 +811,12 @@ and (max-width: 599px) {
 	}
 	
 	.room-caption .button5 {
-		padding: 2px;
+		padding: 7px 14px 8px;
 		font-size: 15px;
+	}
+	
+	.mobcloseme {
+		display: block;
 	}
 	
 	/* discover */
@@ -1025,9 +1036,30 @@ and (max-width: 479px) {
 	
 	.room-caption {
 		padding: 0 5%;
-		right: auto;
+		right: 0;
 		text-align: center;
 		width: 90%;
+	}
+	
+	.flex-active-slide.canopener .room-caption {
+		right: 100%;
+	}
+	
+	.room-linkopen {
+		padding: 0 2.5%;
+		right: -100%;
+		width: 95%;
+	}
+	
+	.room-linkopen h3 {
+		font-size: 30px;
+	}
+	
+	
+	/* ======================== SINGLE - GALLERY ======================== */
+	
+	.gallery-list a div {
+		height: 120px;
 	}
 	
 	
@@ -1089,7 +1121,7 @@ and (max-width: 399px) {
 	}
 	
 	.opened {
-		left: -320px;
+		left: -300px;
 	}
 
 }
