@@ -66,9 +66,11 @@
 
 		<section class="rightnav">
 			
-			<div class="royalewrap"><a class="royale" href="#"><img src="<?php bloginfo ('template_url'); ?>/images/hamburger-close.png" alt="menu"/></a></div>
-
-			<div class="spacer"></div>
+			<div class="royalewrap">
+				<a class="royale" href="#">Close Menu</a>
+			</div>
+			
+			<div class="spacer"><img src="<?php bloginfo ('template_url'); ?>/images/logo-white.png" /></div>
 			
 			<div id="navmenumob">
 				<div class="slidedown-navmob">
@@ -88,7 +90,19 @@
 					'after' => '</div>'
 				)); ?>
 			</div>
-
+			
+			<div class="socialmedia">
+				<ul>
+					<?php if(get_option('misfit_facebook')) { ?><li><div class="rnsm-fa"><a href="<?php echo get_option('misfit_facebook'); ?>" target="_blank"><i class="fa fa-facebook"></i></a></div></li><?php } ?>
+					<?php if(get_option('misfit_twitter')) { ?><li><div class="rnsm-tw"><a href="<?php echo get_option('misfit_twitter'); ?>" target="_blank"><i class="fa fa-twitter"></i></a></div></li><?php } ?>
+					<?php if(get_option('misfit_youtube')) { ?><li><div class="rnsm-yo"><a href="<?php echo get_option('misfit_youtube'); ?>" target="_blank"><i class="fa fa-youtube-play"></i></a></div></li><?php } ?>
+					<?php if(get_option('misfit_instagram')) { ?><li><div class="rnsm-in"><a href="<?php echo get_option('misfit_instagram'); ?>" target="_blank"><i class="fa fa-instagram"></i></a></div></li><?php } ?>
+					<?php if(get_option('misfit_google_plus')) { ?><li><div class="rnsm-go"><a href="<?php echo get_option('misfit_google_plus'); ?>" target="_blank"><i class="fa fa-google-plus"></i></a></div></li><?php } ?>
+					<?php if(get_option('misfit_tripadvisor')) { ?><li><div class="rnsm-tr"><a href="<?php echo get_option('misfit_tripadvisor'); ?>" target="_blank"><i class="fa fa-tripadvisor"></i></a></div></li><?php } ?>
+					<div class="clear"></div>
+				</ul>
+			</div>
+			
 		</section><!-- end right nav -->
 		
 		<section class="secondrightnav">

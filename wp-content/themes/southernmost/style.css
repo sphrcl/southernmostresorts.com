@@ -249,7 +249,7 @@ a,
 
 
 .opened {
-  left: -300px;
+  left: -320px;
   -webkit-transition: all .5s ease;
   -moz-transition: all .5s ease;
   -o-transition: all .5s ease;
@@ -261,13 +261,23 @@ a,
   display: block;
 }
 
-.royalewrap {
-	padding: 10px 0;
-	background-color: #189dac;
+.spacer {
+	padding: 65px 0 20px;
+	text-align: center;
 }
 
-.royale:hover {
-    opacity: 0.5;
+.spacer img {
+	max-width: 175px;
+	opacity: 0;
+	
+	transition: all 0.8s ease 0.2s;
+	-moz-transition: all 0.8s ease 0.2s;
+	-webkit-transition: all 0.8s ease 0.2s;
+	-o-transition: all 0.8s ease 0.4s;
+}
+
+.rightready .spacer img {
+	opacity: 1;
 }
 
 .opened .cheese {
@@ -302,30 +312,31 @@ a,
   width: 80%;
   margin: auto;
   top: 76px;
+  z-index: 1;
+  height: 100%;
+  width:320px;
+  background: none repeat scroll 0 0 rgba(0,0,0,0.5);
+  right: -320px;
+  overflow-x: hidden;
+  top: 0;
+  
   -webkit-transition: all .5s ease;
   -moz-transition: all .5s ease;
   -o-transition: all .5s ease;
   transition: all .5s ease;
-  z-index: 1;
-  height: 100%;
-  width:320px;
-  background: #fff;
-  right: -320px;
-  overflow-x: hidden;
-  top: 0;
 }
-
 
 .rightready {
   right: 0px;
   opacity: 1;
   visibility: visible;
+  z-index: 12;
+  top: 0;
+  
   -webkit-transition: all .5s ease;
   -moz-transition: all .5s ease;
   -o-transition: all .5s ease;
   transition: all .5s ease;
-  z-index: 12;
-  top: 0;
 }
 
 /* header */
@@ -347,6 +358,15 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#bfffffff', e
   left: 0;
   height:  125px;
   width: 100%;
+  
+  transition: all 0.5s ease 0s;
+  -moz-transition: all 0.5s ease 0s;
+  -webkit-transition: all 0.5s ease 0s;
+  -o-transition: all 0.5s ease 0s;
+}
+
+.opened div#header {
+	margin-left: -320px;
 }
 
 .logo {
@@ -356,6 +376,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#bfffffff', e
   padding: 5px;
   background: transparent;
     width: 200px;
+	z-index: 1;
   
 }
 
@@ -432,7 +453,7 @@ ul.topnavigation li > a {
     font-size: 13px;
     letter-spacing: 0.08em;
     line-height: 22px;
-    padding: 20px 12px;
+    padding: 5px 12px;
     text-transform: uppercase;
 }
 
@@ -457,7 +478,7 @@ ul.topnavigation ul li:hover {
 /* hambuger navmenu */
 
 .topnavigationmob {
-	border-top: 1px solid #fff;
+	border-top: 1px dashed #fff;
 	padding: 0;
 }
 
@@ -465,15 +486,16 @@ ul.topnavigation ul li:hover {
 	padding: 0;
 }
 
-.topnavigationmob li {
-	border-bottom: 1px solid #fff;
+.topnavigationmob li, .royalewrap {
+	border-bottom: 1px dashed #fff;
 	position: relative;
 }
 
 .topnavigationmob li a {
 	color: #fff;
 	display: block;
-	padding: 15px 60px 15px 15px;
+	font-size: 15px;
+	padding: 12px 30px 12px 15px;
 	font-weight: bold;
 	text-transform: uppercase;
 	
@@ -485,8 +507,36 @@ ul.topnavigation ul li:hover {
 }
 	.topnavigationmob li a:hover {
 		background-color: #ff9968;
+		padding: 12px 30px 12px 30px;
 	}
 
+.royalewrap {
+	background-color: #189dac;
+	max-width: 320px;
+	position: fixed;
+	width: 100%;
+	z-index: 1;
+}
+	
+.royalewrap a {
+	color: #fff;
+	display: block;
+	font-size: 14px;
+	font-weight: bold;
+	padding: 12px 0;
+	text-transform: uppercase;
+	text-align: center;
+	
+	transition: all 0.4s ease 0s;
+	-moz-transition: all 0.4s ease 0s;
+	-webkit-transition: all 0.4s ease 0s;
+	-o-transition: all 0.4s ease 0s;
+	-ms-transition: all 0.4s ease 0s;
+}
+	.royalewrap a:hover {
+		background-color: #ff9968;
+	}
+	
 .topnavigationmob li i.fa-plus:before,
 .topnavigationmob li i.fa-minus:before {
 	left: 50%;
@@ -539,6 +589,71 @@ ul.topnavigation ul li:hover {
 	text-transform: none;
 }
 
+.rightnav .socialmedia {
+	margin: 0;
+	padding: 0 0 30px;
+}
+
+.rightnav .socialmedia ul li {
+	display: block;
+	float: left;
+	width: 20%;
+}
+
+.rightnav .socialmedia ul li div {
+	border-right: 1px dashed #fff;
+	border-bottom: 1px dashed #fff;
+}
+
+.rightnav .socialmedia ul li div.rnsm-tr {
+	border-right: 0 none;
+}
+
+.rightnav .socialmedia ul li a {
+	background-color: transparent;
+	border-radius: 0;
+	border: 0 none;
+	color: #fff;
+	width: 100%;
+	height: 50px;
+	line-height: 50px;
+}
+
+.rightnav .socialmedia ul li a:hover {
+	font-size: 28px;
+}
+
+.rightnav .socialmedia ul li .rnsm-tr a:hover {
+	font-size: 24px;
+}
+
+.rightnav .socialmedia ul li a .fa.fa-tripadvisor {
+	border-right: 0 none;
+}
+
+.rightnav .socialmedia ul li a:hover {
+	background-color: #ff9968;
+}
+
+.rightnav .socialmedia ul li a .fa.fa-tripadvisor:before,
+.rightnav .socialmedia ul li a .fa.fa-tripadvisor:after {
+	background-image: url("images/tripadvisor-white.png");
+	
+	transition: all 0.4s ease 0s;
+	-moz-transition: all 0.4s ease 0s;
+	-webkit-transition: all 0.4s ease 0s;
+	-o-transition: all 0.4s ease 0s;
+}
+
+.rightnav .socialmedia ul li a:hover .fa.fa-tripadvisor:after,
+.rightnav .socialmedia ul li a:hover .fa.fa-tripadvisor:before {
+	height: 31px;
+	top: -25px;
+	width: 31px;
+	left: -2px;
+	right: auto;
+}
+
 .hamburger {
     position: absolute;
     right: -75px;
@@ -587,7 +702,7 @@ div#topbanner {
     opacity: 0;
     padding: 50px 0;
     position: fixed;
-    top: 66px;
+    top: 51px;
     visibility: hidden;
     width: 100%;
     transition: all 0.1s ease;
@@ -599,7 +714,7 @@ div#topbanner {
 
 .topnavigation > li.ahoy .slidedown-nav {
     opacity: 1;
-    top: 66px;
+    top: 51px;
     visibility: visible;
 }
 
@@ -699,31 +814,32 @@ div#topbanner {
 
 /* Slide Down Nav MOBILE ############################################################################################################## */
 
-#navmenumob {
-	background-color: #189dac;
-}
-
 .slidedown-navmob {
 	display: none;
 }
 
 .slidedownlist {
-	border-top: 1px solid #fff;
+	border-top: 1px dashed #fff;
 	padding: 0;
 	margin-bottom: -1px;
 }
 
 .slidedownlist li {
-	border-bottom: 1px solid #fff;
+	border-bottom: 1px dashed #fff;
 	position: relative;
+}
+
+.slidedownlist li.last {
+	border-bottom: 1px solid transparent;
 }
 
 .slidedownlist a {
 	color: #fff;
 	display: block;
-	padding: 15px 0 15px 15px;
+	padding: 12px 0 12px 15px;
 	font-weight: bold;
 	text-transform: uppercase;
+	font-size: 15px;
 	
 	transition: all 0.4s ease 0s;
 	-moz-transition: all 0.4s ease 0s;
@@ -733,6 +849,7 @@ div#topbanner {
 }
 	.slidedownlist a:hover {
 		background-color: #ff9968;
+		padding: 12px 0 12px 30px;
 	}
 
 .slidedownlist .ibox {
@@ -740,19 +857,19 @@ div#topbanner {
     right: 0;
     top: 0;
 	
-	height: 50px;
-    width: 50px;
+	height: 43px;
+    width: 43px;
 }
 	
 .slidedownlist i {
     background-color: #fff;
-	color: #189dac;
+	color: rgba(0, 0, 0, 0.5);
 	/*background-color: #ff9968;
 	color: #fff;*/
-    line-height: 40px;
-    width: 40px;
+	font-size: 18px;
+	line-height: 33px;
+    width: 33px;
 	cursor: pointer;
-	font-size: 22px;
 	text-align: center;
 	margin: 5px;
 	
@@ -818,9 +935,12 @@ div#topbanner {
 .srnlist a h3 {
 	background-color: #189dac;
 	color: #fff;
+	font-size: 14px;
+	font-weight: bold;
 	margin: 0 0 1px;
-	padding: 10px;
+	padding: 8px;
 	text-align: center;
+	text-transform: uppercase;
 }
 
 .srnclose {
@@ -2336,6 +2456,7 @@ ul.roomsub li a {
 	top: 15px;
 	right: 30px;
 	position: absolute;
+	cursor: pointer;
 	-moz-font-smoothing: antialiased;
 	text-rendering: optimizeLegibility;
 	-webkit-font-smoothing: antialiased;

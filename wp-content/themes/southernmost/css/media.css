@@ -13,6 +13,10 @@ and (min-width: 1500px) {
 		left: 50%;
 		margin-left: -750px;
 	}
+	
+	.opened div#header {
+		margin-left: -1070px;
+	}
 
 }
 
@@ -129,6 +133,14 @@ and (max-width: 1024px) {
 	
 	.navigation #navmenu {
 		display: none;
+	}
+	
+	.rightnav {
+		background: none repeat scroll 0 0 #fff;
+	}
+	
+	.spacer, #navmenumob, .rightnav .socialmedia {
+		background: none repeat scroll 0 0 rgba(0,0,0,0.5);
 	}
 	
 	.slidedown-navmob {
@@ -453,6 +465,39 @@ and (max-width: 799px) {
 		display: none;
 	}
 	
+	/* ======================== FOOTER ======================== */
+	
+	.footaddress {
+		max-width: 90%;
+		margin: auto auto 30px;
+	}
+	
+	.footleft { 
+		/*display: none;*/
+		float: left;
+ 		width: 100%;
+  		text-align: center;
+		margin: 0 0 20px;
+  	}
+	
+	.footmiddle {
+		width: 100%;
+	}
+	
+	.footright {
+		display: none;
+	}
+	
+	.footleft input[type="text"],
+	.page-id-818 input[type="text"],
+	.page-id-818 select {
+		padding: 10px;
+	}
+	
+	.footleft input[type="submit"] {
+		margin: 0 2.5% 0 0;
+	}
+	
 	
 	/* ======================== ////// ======================== */
 	
@@ -475,17 +520,6 @@ and (max-width: 799px) {
 	
 	.flexslider.discoverdining {  width: 100%; float: none; }
 	.flexslider.discoverweddings {  width: 100%; float: none; }
-	
-	.footleft { 
-		*display: none; 
-		float: left;
- 		width: 100%;
-  		text-align: center;
-  	}
-	.footmiddle { width: 100%; }
-	.footright { display: none; }
-	
-	.footaddress { max-width: 90%; margin: auto auto 50px; }
 }
 
 
@@ -1143,6 +1177,10 @@ and (max-width: 319px) {
 	
 	.opened {
 		left: -100%;
+	}
+	
+	.opened div#header {
+		margin-left: -100%;
 	}
 
 }
