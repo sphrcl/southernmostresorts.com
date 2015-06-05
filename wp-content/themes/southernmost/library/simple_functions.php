@@ -8,6 +8,7 @@ function southern_navmenus() {
 		'footer_nav' => __( 'Footer Navigation', 'cebo' ),
 		'wedding_nav' => __( 'Weddings Navigation', 'cebo' ),
 		'meeting_nav' => __( 'Meetings and Events Navigation', 'cebo' ),
+        'amenities_nav' => __( 'Amenities Navigation', 'cebo' ),
 	));
 }
 

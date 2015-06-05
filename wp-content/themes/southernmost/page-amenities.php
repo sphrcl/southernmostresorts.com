@@ -35,6 +35,16 @@
 
 </div>
 
+<!-- start sub navigation -->
+
+<ul class="page-nav">
+
+	<?php wp_nav_menu( array( 'theme_location' => 'amenities_nav' ,  'items_wrap' => '%3$s', 'container' => '', 'menu_class' => 'navitem' ) ); ?>
+			
+</ul>
+
+<!-- end sub navigation -->
+
 	
 <div class="innerpage wrapper">
 	<div id="pagecontent">
