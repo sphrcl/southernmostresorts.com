@@ -4857,12 +4857,22 @@ input.wpcf7-form-control.wpcf7-submit {
   line-height: 32px;
 }
 
-
-
 .reserver a.button {
   line-height: 40px;
 }
 
+.roomcarousel h4 {
+  color: #179dab;
+  font-size: 24px;
+  font-family: NewsGothicMT;
+  text-align: center;
+  padding-bottom: 24px;
+  text-transform: uppercase;
+  border-top: 1px solid lightgrey;
+  padding-top: 24px;
+  border-bottom: 1px solid lightgrey;
+  margin-bottom: 4px;
+}
 
 
 

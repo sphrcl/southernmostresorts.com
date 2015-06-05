@@ -9,7 +9,7 @@
 
 <?php if(have_posts()) : while(have_posts()) : the_post(); ?>
 
-	<div class="flexslider meetingslider">
+<div class="flexslider meetingslider">
 	<h1 class="roomtits"><?php the_title(); ?></h1>
 	<a class="button roomtitties" href="<?php echo get_post_meta($post->ID,'misfit_reservation',true); ?>">See Availability</a>
 	  <ul class="slides">
@@ -57,9 +57,14 @@
 	</div>
 	<?php endwhile; endif; wp_reset_query(); ?>	
 </div>
+
+
+
 <div class="wrapper">
+	
 	<div id="submenu">
-		<!-- <ul class="subnavigation roomsub">
+		<!--
+		<ul class="subnavigation roomsub">
 			<?php $thisid = $post->ID; ?>
 			
 			<?php query_posts('post_type=rooms&posts_per_page=-1'); if(have_posts()) : while(have_posts()) : the_post(); ?>
@@ -69,9 +74,11 @@
 				<li<?php if($thisid == $otherid) { ?> class="current"<?php } ?>><a href="<?php the_permalink(); ?>"><?php echo get_post_meta($post->ID,'misfit_shortname',true); ?></a></li>
 				
 			<?php endwhile; endif; wp_reset_query(); ?>	
-		</ul> -->
-		</div>
+		</ul> 
+		-->
 	</div>
+
+</div>
 
 	<div id="pagecontent">
 		<?php if(have_posts()) : while(have_posts()) : the_post(); ?>
@@ -153,7 +160,40 @@
 		<?php endwhile; endif; wp_reset_query(); ?>	
 
 	</div>
+	<!-- start other room type coursel -->
+		<div class="flexslider roomcarousel">
+			<h4>View Other Room Types</h4>
+		  <ul class="slides">
+		  
+		  	<?php query_posts('post_type=rooms&posts_per_page=15'); if(have_posts()) : while(have_posts()) : the_post(); $imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "Full"); ?>
+		  
+			<li>
+			
+			
+			<?php if(get_post_meta($post->ID, 'misfit_shortname', true)) { ?>
+			
+			
+			<a href="<?php the_permalink(); ?>">
+				<div class="roomboom" style="background-image: url(<?php echo $imgsrc[0]; ?>);"></div>
+			</a>
+			  <div class="flex-caption"><?php the_title(); ?> <!-- <?php echo get_post_meta($post->ID, 'misfit_shortname', true); ?> --></div>
 
+			<?php } else { ?>
+
+			<a href="<?php the_permalink(); ?>">
+				<div class="roomboom" style="background-image: url(<?php echo $imgsrc[0]; ?>);"></div>
+			</a>
+				 <div class="flex-caption"><?php the_title(); ?></div>
+
+			<?php } ?>
+			</li>
+		
+			<?php endwhile; endif; wp_reset_query(); ?>	
+			
+			<!-- items mirrored twice, total of 12 -->
+		  </ul>
+		</div>
+	<!-- end other room types coursel -->
 
 </div> <!-- #wrapper -->
 
