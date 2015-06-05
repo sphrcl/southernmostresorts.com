@@ -190,7 +190,7 @@
 			
 			<?php if(get_post_meta($post->ID, 'misfit_shortname', true)) { ?>
 			<div class="roomboom" style="background-image: url(<?php echo $imgsrc[0]; ?>);"></div>
-			  <div class="flex-caption"><?php echo get_post_meta($post->ID, 'misfit_shortname', true); ?></div>
+			  <div class="flex-caption"><?php the_title(); ?> <!-- <?php echo get_post_meta($post->ID, 'misfit_shortname', true); ?> --></div>
 			<?php } else { ?>
 			<div class="roomboom" style="background-image: url(<?php echo $imgsrc[0]; ?>);"></div>
 				 <div class="flex-caption"><?php the_title(); ?></div>
@@ -305,4 +305,5 @@
 
 
 
+>>>>>>> origin/master
 <?php get_footer(); ?>
