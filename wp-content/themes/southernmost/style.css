@@ -2716,6 +2716,29 @@ ul.subnavigation li.current::after {
   height: 550px;
 }
 
+/* Southbeach cafe single page */
+
+.sbcimg {
+	text-align: center;
+}
+
+.sbcimg img {
+	max-width: 90%;
+	width: 400px;
+}
+
+
+/* Page - Spa ########################################################################################## */
+
+.spasimg {
+	text-align: center;
+}
+
+.spasimg img {
+	max-width: 90%;
+	width: 360px;
+	margin: 20px 0;
+}
 
 
 /* Page - Gallery ########################################################################################## */
