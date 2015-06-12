@@ -12,7 +12,7 @@ get_header(); ?>
 
 	<div id="topbanner">
 
-			<a class="button roomtitties" href="/tranquility-veranda-rfp">Request for Proposal</a>
+			<a class="button roomtitties" href="<?php echo get_post_meta($post->ID, 'misfit_rfp', true); ?>">Request for Proposal</a>
 
 
 		<div class="static-banner" style="background-image: url('<?php echo tt($imgsrc[0],1400,755); ?>')"></div>

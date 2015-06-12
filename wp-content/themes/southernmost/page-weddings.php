@@ -6,8 +6,6 @@
 
 <div id="topbanner">
 
-
-
 <?php if(have_posts()) : while(have_posts()) : the_post(); ?>
 
 	<div class="flexslider meetingslider">
@@ -59,11 +57,13 @@
 	<?php endwhile; endif; wp_reset_query(); ?>	
 </div>
 
+<!--
 <ul class="page-nav">
 
 	<?php wp_nav_menu( array( 'theme_location' => 'wedding_nav' ,  'items_wrap' => '%3$s', 'container' => '', 'menu_class' => 'navitem' ) ); ?>
 			
 </ul>
+-->
 
 <div class="wrapper"><div id="submenu"></div></div>
 
@@ -119,7 +119,8 @@
 				$query_activities = new wp_query(array(
 					'post_parent' => $this_post,
 					'post_type' => 'page',
-					'posts_per_page' => 10
+					'posts_per_page' => 10,
+					'post__not_in' => array(108,102),
 				)); 
 				if($query_activities->have_posts()) : while($query_activities->have_posts()) : $query_activities->the_post();
 				$imgsrcs = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "Full"); 

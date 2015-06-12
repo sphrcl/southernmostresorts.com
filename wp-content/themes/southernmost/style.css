@@ -4897,7 +4897,9 @@ input.wpcf7-form-control.wpcf7-submit {
   margin-bottom: 4px;
 }
 
-
+.page-template-page-weddings a.button.roomtitties {
+	display: none;
+}
 
 
 
