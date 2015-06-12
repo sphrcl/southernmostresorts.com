@@ -58,11 +58,14 @@
 
 </div>
 
+<!--
 <ul class="page-nav">
 
 	<?php wp_nav_menu( array( 'theme_location' => 'meeting_nav' ,  'items_wrap' => '%3$s', 'container' => '', 'menu_class' => 'navitem' ) ); ?>
 			
 </ul>
+-->
+
 
 <div class="wrapper"><div id="submenu"></div></div>
 

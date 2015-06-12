@@ -2174,7 +2174,7 @@ div#specials_list {
     border-right: 1px solid #b8b8b8;
     border-top: 1px solid #b8b8b8;
     float: left;
-    padding: 40px 30px 55px;
+    padding: 45px 30px 55px;
     position: relative;
     text-align: center;
 }
@@ -2187,7 +2187,7 @@ div#specials_list {
     color: #555;
     float: none;
     font-size: 16px;
-    height: 108px;
+    height: 82px;
     overflow: hidden;
     padding: 20px;
     text-transform: uppercase;
@@ -4923,6 +4923,9 @@ input.wpcf7-form-control.wpcf7-submit {
 	display: none;
 }
 
+#pagecontent .dimensions ul li {
+  line-height: 22px !important;
+}
 
 
 

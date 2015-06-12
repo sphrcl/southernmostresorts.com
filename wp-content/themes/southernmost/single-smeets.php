@@ -1,56 +1,34 @@
 <?php get_header(); ?>
 
 
-<div id="topbanner">
+<?php 
+	if(have_posts()) : while(have_posts()) : the_post(); 
+	$imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "Full"); 
+?>
 
-	<?php if(have_posts()) : while(have_posts()) : the_post(); ?>
+	<div id="topbanner">
 
-		<div class="flexslider meetingslider">
-			<h1 class="roomtits"><?php the_title(); ?></h1>
-			<a class="button roomtitties" href="<?php echo get_post_meta($post->ID,'misfit_reservation',true); ?>">See Availability</a>
+		<!-- <div class="flexslider topbanner">
 			<ul class="slides">
+				<li style="background-image: url(<?php bloginfo ('template_url'); ?>/images/topbanner4.jpg);">
 
-				<?php 
-					$galleryImages = get_post_gallery_imagess(); 
-					$imagesCount = count($galleryImages); 
-				?>
-					           
-				<?php if ($imagesCount > 0) : ?>
-		      	<?php for ($i = 0; $i < $imagesCount; $i++): ?>
-		        <?php if (!empty($galleryImages[$i])) :?>
-		        
-					<li style="background-image: url(<?php echo $galleryImages[$i]['full'][0];?>);"></li>
-				
-				<?php endif; ?>
-				<?php endfor; ?>
-				<?php endif; ?>		<!-- items mirrored twice, total of 12 -->
+				</li>
+				<li style="background-image: url(<?php bloginfo ('template_url'); ?>/images/topbanner4.jpg);">
 
+				</li>
 			</ul>
-		</div>
+		</div> -->
 
-		<div class="flexslider meetingcarousel">
-			<ul class="slides">
-				<?php 
-					$galleryImages = get_post_gallery_imagess(); 
-					$imagesCount = count($galleryImages); 
-				?>
-					           
-				<?php if ($imagesCount > 0) : ?>
-		      	<?php for ($i = 0; $i < $imagesCount; $i++): ?>
-		        <?php if (!empty($galleryImages[$i])) :?>
-		        
-				<li style="background-image: url(<?php echo $galleryImages[$i]['full'][0];?>);"></li>
-				
-				<?php endif; ?>
-				<?php endfor; ?>
-				<?php endif; ?>
-			</ul>
-		</div>
+		<div class="static-banner" style="background-image: url('<?php echo tt($imgsrc[0],1400,755); ?>')"></div>
+
+		<div class="topbanner-overlay"></div>
+
+	</div>
 
 	<?php endwhile; endif; wp_reset_query(); ?>	
 
-</div>
 
+<!-- 
 <ul class="page-nav">
 
 	<?php 
@@ -70,7 +48,7 @@
 	<?php $count++; endwhile; endif; wp_reset_query(); ?>	
 			
 </ul>
-
+-->
 <div class="wrapper"><div id="submenu"></div></div>
 
 <div id="pagecontent">
@@ -82,7 +60,7 @@
 		<div class="contenttitle">
 
 			<h1 class="title"><?php the_title(); ?></h1>
-			<h2 class="subtitle"><?php echo get_post_meta($post->ID,'misfit_shortname',true); ?>.</h2>
+			<h2 class="subtitle"><?php echo get_post_meta($post->ID,'misfit_subtitle',true); ?></h2>
 
 		</div>
 
@@ -104,11 +82,11 @@
 			<div class="right">
 
 				<?php if(get_post_meta($post->ID,'misfit_infosheet',true)) { ?>
-					<a class="button infosheet" style="position: relative; display: inline-block; padding: 20px; margin-right: 10px;" href="<?php echo get_post_meta($post->ID,'misfit_infosheet',true); ?>"><?php _e('Information Sheet','theme-text'); ?></a>
+					<a target="_blank" class="button infosheet" style="position: relative; display: inline-block; padding: 20px; margin-right: 10px;" href="<?php echo get_post_meta($post->ID,'misfit_infosheet',true); ?>"><?php _e('Information Sheet','theme-text'); ?></a>
 				<?php } ?>
 
 				<?php if(get_post_meta($post->ID,'misfit_external_booking',true)) { ?>
-					<a class="button" style="position: relative; display: inline-block; padding: 20px; margin-right: 10px;" href="<?php echo get_post_meta($post->ID,'misfit_extenal_booking',true); ?>"><?php _e('Request proposal','theme-text'); ?></a>
+					<a target="_blank" class="button" style="position: relative; display: inline-block; padding: 20px; margin-right: 10px;" href="<?php echo get_post_meta($post->ID,'misfit_extenal_booking',true); ?>"><?php _e('Request proposal','theme-text'); ?></a>
 				<?php } ?>
 
 			</div>
