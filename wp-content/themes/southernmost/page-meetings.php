@@ -11,7 +11,7 @@
 	<?php if(have_posts()) : while(have_posts()) : the_post(); ?>
 
 		<div class="flexslider meetingslider">
-			<h1 class="roomtits"><?php the_title(); ?></h1>
+			<!-- <h1 class="roomtits"><?php the_title(); ?></h1> -->
 				<!-- remove see availbility btn 
 				<a class="button roomtitties" href="<?php echo get_option('misfit_booking_link'); ?>">See Availability</a>
 				-->
