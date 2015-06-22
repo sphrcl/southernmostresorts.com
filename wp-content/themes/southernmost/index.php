@@ -168,10 +168,18 @@
 						<a href="<?php the_permalink(); ?>">Click to view room</a>
 					</p>
 					
+					<!--
 					<ul>
 						<?php echo $ulmatch[1]; ?>
 					</ul>
-					
+					-->
+					<?php query_posts('post_type=page&p=912'); if(have_posts()) : while(have_posts()) : the_post(); ?>
+
+						<p style="text-transform: uppercase;"><?php the_title(); ?></p>
+						<?php the_content(); ?>
+
+					<?php endwhile; endif; wp_reset_query(); ?>	
+
 					<div class="mobcloseme"><a class="button5 closeme">Close</a></div>
 				</div>
 			</li>
@@ -305,5 +313,4 @@
 
 
 
->>>>>>> origin/master
 <?php get_footer(); ?>

@@ -1141,7 +1141,7 @@ div#welcome p {
 	}
 
 .socialmedia ul li a:hover {
-  background: #5e5e5e;
+  background: #ff9966;
   color: #fff;
 }
 
@@ -4927,5 +4927,24 @@ input.wpcf7-form-control.wpcf7-submit {
   line-height: 22px !important;
 }
 
+.fl {
+	float: left;
+}
+
+.fr {
+	float: right;
+}
+
+.img-logo {
+	position: absolute;
+  top: 38%;
+  left: 40%;
+}
+
+.img-logo-2 {
+  position: absolute;
+  top: 25%;
+  left: 40%;
+}
 
 
