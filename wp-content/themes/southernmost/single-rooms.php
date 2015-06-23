@@ -173,17 +173,17 @@
 			<?php if(get_post_meta($post->ID, 'misfit_shortname', true)) { ?>
 			
 			
-			<a href="<?php the_permalink(); ?>">
+			
 				<div class="roomboom" style="background-image: url(<?php echo $imgsrc[0]; ?>);"></div>
 			</a>
-			  <div class="flex-caption"><?php the_title(); ?> <!-- <?php echo get_post_meta($post->ID, 'misfit_shortname', true); ?> --></div>
+			  <div class="flex-caption"><a href="<?php the_permalink(); ?>"><?php the_title(); ?> <!-- <?php echo get_post_meta($post->ID, 'misfit_shortname', true); ?> --></div>
 
 			<?php } else { ?>
 
-			<a href="<?php the_permalink(); ?>">
+			
 				<div class="roomboom" style="background-image: url(<?php echo $imgsrc[0]; ?>);"></div>
 			</a>
-				 <div class="flex-caption"><?php the_title(); ?></div>
+				 <div class="flex-caption"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></div>
 
 			<?php } ?>
 			</li>
