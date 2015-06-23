@@ -173,12 +173,13 @@
 						<?php echo $ulmatch[1]; ?>
 					</ul>
 					-->
-					<?php query_posts('post_type=page&p=912'); if(have_posts()) : while(have_posts()) : the_post(); ?>
-
+					<?php $recent = new WP_Query('page_id=190');
+						while ($recent->have_posts()) : $recent->the_post(); ?>
+						    
 						<p style="text-transform: uppercase;"><?php the_title(); ?></p>
-						<?php the_content(); ?>
-
-					<?php endwhile; endif; wp_reset_query(); ?>	
+												<?php the_content(); ?>
+						<?php endwhile;
+						wp_reset_postdata(); ?>	
 
 					<div class="mobcloseme"><a class="button5 closeme">Close</a></div>
 				</div>
