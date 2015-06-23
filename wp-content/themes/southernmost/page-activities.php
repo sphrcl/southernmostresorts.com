@@ -130,7 +130,7 @@
 
 <?php endwhile; endif; wp_reset_query(); ?>	
 
-<?php include( TEMPLATEPATH . '/library/super-map.php'); ?> 
+<?php //include( TEMPLATEPATH . '/library/super-map.php'); ?> 
 
 </div> <!-- #wrapper -->
 
