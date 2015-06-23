@@ -173,7 +173,14 @@
 						<?php echo $ulmatch[1]; ?>
 					</ul>
 					-->
-					<?php $recent = new WP_Query('page_id=190');
+					<!--<?php //query_posts('post_type=page&p=912'); if(have_posts()) : while(have_posts()) : the_post(); ?>
+
+						<p style="text-transform: uppercase;"><?php the_title(); ?></p>
+						<?php the_content(); ?>
+
+					<?php //endwhile; endif; wp_reset_query(); ?>	-->
+
+					<?php $recent = new WP_Query('page_id=912');
 						while ($recent->have_posts()) : $recent->the_post(); ?>
 						    
 						<p style="text-transform: uppercase;"><?php the_title(); ?></p>
