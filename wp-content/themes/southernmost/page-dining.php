@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 /* Template Name: Dining
 
@@ -9,9 +9,9 @@
 <div id="topbanner">
 
 
-<?php 
-	if(have_posts()) : while(have_posts()) : the_post(); 
-	$imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "Full"); 
+<?php
+	if(have_posts()) : while(have_posts()) : the_post();
+	$imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "Full");
 ?>
 
 	<div class="static-banner" style="background-image: url('<?php echo tt($imgsrc[0],1400,755); ?>')"></div>
@@ -19,11 +19,11 @@
 	<div class="topbanner-overlay"></div>
 
 
-<?php endwhile; endif; wp_reset_query(); ?>	
+<?php endwhile; endif; wp_reset_query(); ?>
 
 
 </div>
-	
+
 <div class="innerpage wrapper specials_page dining">
 	<div id="pagecontent">
 
@@ -46,38 +46,42 @@
 					<?php if(get_option('misfit_tripadvisor')) { ?><li><a href="<?php echo get_option('misfit_tripadvisor'); ?>" target="_blank"><i class="fa fa-tripadvisor"></i></a></li><?php } ?>
 				</ul>
 			</div>
-
+			<div class="content">
+				<p>
+					<?php the_content(); ?>
+				</p>
+			</div>
 		</div>
 
 	</div>
 
 	<div id="specials_list">
 
-		<?php 
+		<?php
 
-			$dining = new WP_Query(array(					
+			$dining = new WP_Query(array(
 				'post_type' => 'dining',
 				'posts_per_page' => -1
 			));
 
-			if($dining->have_posts()) : while($dining->have_posts()) : $dining->the_post(); 
+			if($dining->have_posts()) : while($dining->have_posts()) : $dining->the_post();
 			$imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "Full");
 
 		?>
 
 			<div class="specialsbox" style="background-image: url('<?php echo tt($imgsrc[0],1400,755); ?>');">
-			
+
 				<a href="<?php the_permalink(); ?>" class="dropanchor"></a>
-				
+
 				<div class="specialscontent">
 					<div class="specialtitle">
 						<a href="<?php the_permalink(); ?>"><h3><?php the_title(); ?></h3></a>
 					</div>
 				</div>
-				
+
 			</div>
 
-		<?php endwhile; endif; wp_reset_query(); ?>	
+		<?php endwhile; endif; wp_reset_query(); ?>
 
 	</div>
 
