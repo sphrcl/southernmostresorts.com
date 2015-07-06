@@ -295,7 +295,7 @@ $(document).ready(function(){
 		$(".datepicker").datepicker({
 			minDate: 0,
 			numberOfMonths: [2,1],
-			defaultDate: new Date(2015, 09),
+			// defaultDate: new Date(2015, 09),
 			beforeShowDay: function(date) {
 				var date1 = $.datepicker.parseDate($.datepicker._defaults.dateFormat, $("#arrival_date").val());
 				var date2 = $.datepicker.parseDate($.datepicker._defaults.dateFormat, $("#departure_date").val());

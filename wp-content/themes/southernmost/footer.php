@@ -266,7 +266,7 @@ var userFeed = new Instafeed({
     resolution: 'low_resolution',
     userId: 421860270,
     limit: 5,
-    accessToken: '5532366.467ede5.a35264fd4db5467e9535e37af9246a6b'
+    accessToken: '421860270.1677ed0.67c55b3e6a39474892da0645c289882f'
 });
 userFeed.run();
 
