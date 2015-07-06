@@ -57,7 +57,7 @@
 				<!-- they want it to go to reztrip
 				<a class="button2" href="<?php echo get_option('misfit_booking_link'); ?>">Reserve Now</a>
 				-->
-				<a class="button2" href="https://southernmostresorts.reztrip.com">Reserve Now</a>
+				<a class="button2" href="https://southernmostbeachresort.reztrip.com">Reserve Now</a>
 			</div>
 		</div>
 
@@ -89,20 +89,20 @@
 
 				<div class="reservationform">
 
-					<form method="get" action="https://reztrip.com/search?">
+					<form method="get" action="<?php echo get_option('misfit_booking_link'); ?>">
 
 						<span class="calsec">
-							<input type="text" id="date" name="date" placeholder="ARRIVAL" class="calendarsection">
+							<input type="text" id="date" name="arrival_date" placeholder="ARRIVAL" class="calendarsection">
 							<input type="hidden" id="arv">
 						</span>
 						
 						<span class="calsec">
-							<input type="text" id="dater" name="date" placeholder="DEPARTURE" class="calendarsection">
+							<input type="text" id="dater" name="departure_date" placeholder="DEPARTURE" class="calendarsection">
 							<input type="hidden" id="dept">
 						</span>
 						
 						<span class="dropsec">
-							<select name="rooms[]" id="rooms" class="halfsies">
+							<select name="rooms" id="rooms" class="halfsies">
 								<option value="" disabled selected>Total ROOMS</option>
 								<option value="1">1 Room</option>
 								<option value="2">2 Rooms</option>
@@ -110,7 +110,7 @@
 						</span>
 
 						<span class="dropsec">
-							<select name="guests[]" id="guests" class="halfsies">
+							<select name="adults[]" id="guests" class="halfsies">
 								<option value="" disabled selected>Total GUESTS</option>
 								<option value="1">1 Guest</option>
 								<option value="2">2 Guests</option>
