@@ -4949,3 +4949,47 @@ input.wpcf7-form-control.wpcf7-submit {
 }
 
 
+/* Read More ########################################################################################## */
+
+.rm-plus {
+	text-align: center;
+}
+
+.rm-plus span {
+	background-color: #189dac;
+	border-radius: 50%;
+	color: #fff;
+	cursor: pointer;
+	display: inline-block;
+	font-size: 12px;
+	line-height: 24px;
+	width: 24px;
+	
+	transition: all 0.4s ease 0s;
+	-moz-transition: all 0.4s ease 0s;
+	-webkit-transition: all 0.4s ease 0s;
+	-o-transition: all 0.4s ease 0s;
+	-ms-transition: all 0.4s ease 0s;
+}
+	.rm-plus span:hover {
+		background-color: #ff9968;
+	}
+
+.rm-plus.rm-gone {
+	display: none;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

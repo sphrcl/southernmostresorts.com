@@ -407,16 +407,20 @@ $(document).ready(function(){
             $(this).children('span').addClass('toggle-plus'); 
 			$(this).removeClass('activated'); 			
         }
-         
+		
     });
-		
-		
-		//  $("a[rel^='prettyPhoto']").click(function(e) {
-   // var href = $(this).attr('href');
-   // $(href).lightbox_me({
-   //     centered: true, 
-   //     });
-   // e.preventDefault();
-	//});
+	
+	$('#read-more').click(function() {
+		$(this).find('.rm-plus').addClass('rm-gone');
+		$(this).find('.more-read').slideDown();
+	});
+	
+	// $("a[rel^='prettyPhoto']").click(function(e) {
+	// 	var href = $(this).attr('href');
+	// 	$(href).lightbox_me({
+	// 		centered: true, 
+	// 	});
+	// 	e.preventDefault();
+	// });
 
 });
