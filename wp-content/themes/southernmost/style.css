@@ -2109,7 +2109,7 @@ div#specials_list {
   z-index: 9999;
   bottom: 30px;
   left: 30px;
-  color: #fff;
+  color: #333;
   font-family: NewsGothicMT-Bold;
   font-size: 35px;
 }
