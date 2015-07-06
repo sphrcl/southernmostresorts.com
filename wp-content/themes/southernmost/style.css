@@ -2109,9 +2109,10 @@ div#specials_list {
   z-index: 9999;
   bottom: 30px;
   left: 30px;
-  color: #333;
+  color: #fff;
   font-family: NewsGothicMT-Bold;
   font-size: 35px;
+  text-shadow: 0 0 35px #333;
 }
 
 
