@@ -109,7 +109,7 @@
 
 				-->
 
-				<a class="button" style="position: relative; display: inline-block; padding: 20px; margin-right: 10px;" href="http://www.southernmostresorts.com.php53-24.ord1-1.websitetestlink.com/meeting-rfp/"><?php _e('Request for proposal','theme-text'); ?></a>
+				<a class="button" style="position: relative; display: inline-block; padding: 20px; margin-right: 10px;" href="<?php bloginfo('url'); ?>/meeting-rfp/"><?php _e('Request for proposal','theme-text'); ?></a>
 
 				<?php if(get_post_meta($post->ID,'misfit_infosheet',true)) { ?>
 					<a target="_blank" class="button" style="position: relative; display: inline-block; padding: 20px; margin-right: 10px;" href="<?php echo get_post_meta($post->ID,'misfit_infosheet',true); ?>"><?php _e('Catering Menu','theme-text'); ?></a>
