@@ -307,7 +307,7 @@
 	</div>
 
 	<div id="instagram">
-		<h4><a href="<?php echo get_option('misfit_instagram'); ?>">follow us on instagram</a></h4>
+		<h4><a target="_blank" href="<?php echo get_option('misfit_instagram'); ?>">follow us on instagram</a></h4>
 
 		<div id="instafeed"></div>
 
