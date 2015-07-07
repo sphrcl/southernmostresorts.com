@@ -260,4 +260,31 @@ function create_activities_taxonomies() {
 }
 
 
+create_loctype_taxonomies();
+function create_loctype_taxonomies()
+{
+  // Taxonomy for Location
+  $labels = array(
+    'name' => _x( 'Location Type', 'taxonomy general name' ),
+    'singular_name' => _x( 'Location Type', 'taxonomy singular name' ),
+    'search_items' =>  __( 'Search Location Types' ),
+    'all_items' => __( 'All Location Types' ),
+    'parent_item' => __( 'Parent Location Type' ),
+    'parent_item_colon' => __( 'Parent Location Type:' ),
+    'edit_item' => __( 'Edit Location Type' ),
+    'update_item' => __( 'Update Location Type' ),
+    'add_new_item' => __( 'Add New Location Type' ),
+    'new_item_name' => __( 'New Location Type Name' ),
+  );  
+
+  register_taxonomy('loctype', array('locations'), array(
+    'hierarchical' => true,
+    'labels' => $labels,
+    'show_ui' => true,
+    'query_var' => true,
+    'rewrite' => array( 'slug' => 'location-type' ),
+  ));
+
+}
+
 ?>
