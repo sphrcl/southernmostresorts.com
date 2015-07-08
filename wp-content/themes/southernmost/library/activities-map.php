@@ -3,23 +3,13 @@
 <ul id="toggles" class="page-nav">
 
 	<?php 
-
-		$this_post = $post->ID;
-		$query_gallery_single = new wp_query(array(
-			'post_type' => 'page',
-			'post_parent' => $this_post,
-			'posts_per_page'=> 6,
-		)); 
-		$count = 1;
-
-		if($query_gallery_single->have_posts()) : while($query_gallery_single->have_posts()) : $query_gallery_single->the_post(); 
-
+		$terms = get_terms( 'activity_type' );
+			if ( ! is_wp_error( $terms ) ){
+			foreach ( $terms as $term ) {
+				echo '<li><a class="'. $term->slug .'">' . $term->name . '</a></li>';
+			}
+		}
 	?>
-
-		<li class="<?php echo $post->post_name; ?>" <?php if( $count == 1 ) { echo ' class="current"'; } ?>><a class="linkerd active" href="<?php the_permalink(); ?>"><?php the_title(); ?></a></li>
-	
-	
-	<?php $count++; endwhile; endif; wp_reset_query(); ?>	
 			
 </ul>
 
@@ -43,7 +33,7 @@
 
 	?>
 
-		<?php if(get_post_meta($post->ID, 'misfit_lat', true)) { ?>
+		<?php if(get_post_meta($post->ID, 'misfit_lat', true) && get_post_meta($post->ID, 'misfit_long', true)) { ?>
 	  
 			<li class="map-location stater-<?php $shortkly =  get_post_meta($post->ID, 'misfit_statename', true); $strinklg = str_replace(' ', '', $shortkly); $strinklg = preg_replace('/[^A-Za-z0-9\-]/', '', $shortkly); echo $strinklg; ?>" data-jmapping="{id: <?php echo $counter; ?>, point: {lat: <?php echo get_post_meta($post->ID, 'misfit_lat', true); ?>, lng: <?php echo get_post_meta($post->ID, 'misfit_long', true); ?>}, category: 'place', bounded: false, icon: '<?php bloginfo ('template_url'); ?>/images/map-marker2.png'}">
 		   
@@ -70,6 +60,13 @@
 <script src="<?php bloginfo ('template_url'); ?>/js/jquery.jmapping.js" type="text/javascript"></script>
 
 <script type="text/javascript">
+
+	$(document).ready(function(){
+		$('#toggles li a').click(function(e){
+			markerManager.clearMarkers();
+			e.preventDefault();
+		});
+	});
 	
 	$(function() {
 

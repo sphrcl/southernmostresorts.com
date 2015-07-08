@@ -4750,8 +4750,17 @@ input.wpcf7-form-control.wpcf7-submit {
 
 /* MAP AREA ################################################################################################ */
 
+#map-side-bar {
+	display: none;
+}
+
+#toggles {
+	display: none;
+}
+
 #maparea {
   height: 600px !important;
+  display: none;
 }
 
 #maparea #mako small {

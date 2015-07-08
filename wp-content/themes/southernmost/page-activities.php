@@ -24,8 +24,8 @@
 
 <?php //include( TEMPLATEPATH . '/library/activities-map.php'); ?>
 
-<!--
-<div class="mapbox">
+
+<!-- <div class="mapbox">
 
 	<div id="maparea" style="width: 100%; height: 500px;"></div>
 
@@ -52,20 +52,14 @@
 
 	</ul>
 
-</div>
--->
+</div> -->
+
 
 <div id="topbanner">
 
-
-
-	<div class="static-banner" style="background-image: url('/wp-content/uploads/2015/05/Southernmost-Keywest-Sunet.jpg')"></div>
+	<div class="static-banner" style="background-image: url('<?php echo tt($imgsrc[0],1400,755); ?>')"></div>
 
 	<div class="topbanner-overlay"></div>
-
-
-
-
 
 </div>
 
