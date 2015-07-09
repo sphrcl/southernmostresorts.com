@@ -354,6 +354,10 @@ and (max-width: 960px) {
 	.flexslider.meetingcarousel .slides li {
 		height: 170px;
 	}
+
+	.img-logo-2 {
+  		top: 40%;
+	}
 	
 }
 
