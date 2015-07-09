@@ -1031,6 +1031,7 @@ div#topbanner {
   -moz-transition: opacity .5s ease;
   -o-transition: opacity .5s ease;
   transition: opacity .5s ease;
+  opacity:1\9\0;/*Only works in IE9*/
 }
 
 .reservenow {
