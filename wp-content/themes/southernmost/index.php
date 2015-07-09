@@ -92,13 +92,13 @@
 					<form method="get" action="<?php echo get_option('misfit_booking_link'); ?>">
 
 						<span class="calsec">
-							<input type="text" id="date" name="arrival_date" placeholder="ARRIVAL" class="calendarsection">
-							<input type="hidden" id="arv">
+							<input type="text" id="date" placeholder="ARRIVAL" class="calendarsection">
+							<input type="hidden" id="arv" name="arrival_date">
 						</span>
 						
 						<span class="calsec">
-							<input type="text" id="dater" name="departure_date" placeholder="DEPARTURE" class="calendarsection">
-							<input type="hidden" id="dept">
+							<input type="text" id="dater" placeholder="DEPARTURE" class="calendarsection">
+							<input type="hidden" id="dept" name="departure_date">
 						</span>
 						
 						<span class="dropsec">

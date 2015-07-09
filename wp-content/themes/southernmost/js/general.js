@@ -340,9 +340,8 @@ $(document).ready(function(){
 				var date2 = $.datepicker.parseDate($.datepicker._defaults.dateFormat, $("#departure_date").val());
                 var selectedDate = $.datepicker.parseDate($.datepicker._defaults.dateFormat, dateText);
 
-
                 if (!date1 || date2) {
-					$("#arrival_date").val(dateText);
+					$("#arrival_date").val(dateformat);
 					$("#departure_date").val("");
                     $(this).datepicker();
                 } else if( selectedDate < date1 ) {
@@ -386,8 +385,87 @@ $(document).ready(function(){
 		});
 		
 		
-		$( "#date" ).datepicker();
-		$( "#dater" ).datepicker();
+		$( "#date" ).datepicker({
+
+			minDate: 0,
+			altField  : '#arv',
+			beforeShowDay: function(date) {
+				var date1 = $.datepicker.parseDate($.datepicker._defaults.dateFormat, $("#arrival_date").val());
+				var date2 = $.datepicker.parseDate($.datepicker._defaults.dateFormat, $("#departure_date").val());
+				return [true, date1 && ((date.getTime() == date1.getTime()) || (date2 && date >= date1 && date <= date2)) ? "dp-highlight" : ""];
+			},
+			onSelect: function(dateText, inst) {
+				var date1 = $.datepicker.parseDate($.datepicker._defaults.dateFormat, $("#arrival_date").val());
+				var date2 = $.datepicker.parseDate($.datepicker._defaults.dateFormat, $("#departure_date").val());
+                var selectedDate = $.datepicker.parseDate($.datepicker._defaults.dateFormat, dateText);
+
+                function parseDate(dateText) {
+				  var parts = dateText.split('/');
+				  // new Date(year, month [, day [, hours[, minutes[, seconds[, ms]]]]])
+				  return parts[1] + '/' + parts[0] + '/' + parts[2]; // Note: months are 0-based
+				}
+
+                // console.log(parseDate(dateText));
+
+
+                $('#date').val(parseDate(dateText));
+					$("#arrival_date").val(dateText);
+					$("#departure_date").val("");
+					// $("#arv").val(dateText);
+
+    //             if (!date1 || date2) {
+    //             	$('#date').val(parseDate(dateText));
+				// 	$("#arrival_date").val(dateText);
+				// 	$("#departure_date").val("");
+    //             } else if( selectedDate < date1 ) {
+    //                 $("#departure_date").val( $("#arrival_date").val() );
+    //                 $("#dater").val(parseDate(dateText));
+    //             } else {
+				// 	$("#departure_date").val(parseDate(dateText));
+				// 	$("#arv").val(dateText);
+				// }
+			}
+
+		});
+		$( "#dater" ).datepicker({
+
+			minDate: 0,
+			altField  : '#dept',
+			beforeShowDay: function(date) {
+				var date1 = $.datepicker.parseDate($.datepicker._defaults.dateFormat, $("#arrival_date").val());
+				var date2 = $.datepicker.parseDate($.datepicker._defaults.dateFormat, $("#departure_date").val());
+				return [true, date1 && ((date.getTime() == date1.getTime()) || (date2 && date >= date1 && date <= date2)) ? "dp-highlight" : ""];
+			},
+			onSelect: function(dateText, inst) {
+				var date1 = $.datepicker.parseDate($.datepicker._defaults.dateFormat, $("#arrival_date").val());
+				var date2 = $.datepicker.parseDate($.datepicker._defaults.dateFormat, $("#departure_date").val());
+                var selectedDate = $.datepicker.parseDate($.datepicker._defaults.dateFormat, dateText);
+
+                function parseDate(dateText) {
+				  var parts = dateText.split('/');
+				  // new Date(year, month [, day [, hours[, minutes[, seconds[, ms]]]]])
+				  return parts[1] + '/' + parts[0] + '/' + parts[2]; // Note: months are 0-based
+				}
+
+                // console.log(parseDate(dateText));
+
+                $('#dater').val(parseDate(dateText));
+	                $("#departure_date").val(dateText);	
+	                // $("#dept").val(dateText);
+
+    //             if (!date1 || date2) {
+    //             	$('#dater').val(parseDate(dateText));
+	   //              $("#departure_date").val(dateText);	
+    //             } else if( selectedDate < date1 ) {
+    //                 $("#dept").val( $("#arv").val() );
+    //                 $("#dater").val(parseDate(dateText));
+    //             } else {
+				// 	$("#dater").val(parseDate(dateText));
+				// 	$("#dept").val(dateText);
+				// }
+			}
+
+		});
 
 	 	$(".reserve .button1, .slidedown-nav .left a").click(function(e) {
 			e.preventDefault();
