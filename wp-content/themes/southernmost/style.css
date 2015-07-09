@@ -1218,7 +1218,7 @@ div#welcome p {
 
 .calsec input, .dropsec select {
   width: 18%;
-  border: 3px solid rgba(76, 76, 76, 0.2);
+  border: 3px solid rgba(76, 76, 76, 0.5);
   padding: 15px 10px;
   font-family: NewsGothicMT-Bold;
   font-size: 15px;
@@ -1231,16 +1231,16 @@ div#welcome p {
 }
 
 ::-webkit-input-placeholder {
-   color: rgba(76, 76, 76, 0.2);
+   color: rgba(76, 76, 76, 0.8);
 }
 :-moz-placeholder { /* Firefox 18- */
-   color: rgba(76, 76, 76, 0.2);
+   color: rgba(76, 76, 76, 0.8);
 }
 ::-moz-placeholder {  /* Firefox 19+ */
-   color: rgba(76, 76, 76, 0.2);
+   color: rgba(76, 76, 76, 0.8);
 }
 :-ms-input-placeholder {
-   color: rgba(76, 76, 76, 0.2);
+   color: rgba(76, 76, 76, 0.8);
 }
 
 input#date {
