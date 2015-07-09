@@ -2934,7 +2934,7 @@ ul.subnavigation li.current::after {
 
 .post-list .post-content h3 {
     color: #727272;
-    font-size: 25px;
+    font-size: 23px;
     margin-bottom: 20px;
 }
 
@@ -2942,6 +2942,7 @@ ul.subnavigation li.current::after {
     color: #888;
     font-size: 14px;
     line-height: 1.6;
+    min-height: 125px;
 }
 
 
