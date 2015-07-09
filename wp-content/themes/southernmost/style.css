@@ -1218,13 +1218,13 @@ div#welcome p {
 
 .calsec input, .dropsec select {
   width: 18%;
-  border: 3px solid rgba(76, 76, 76, 0.5);
+  border: 3px solid rgba(76, 76, 76, 0.2);
   padding: 15px 10px;
   font-family: NewsGothicMT-Bold;
   font-size: 15px;
   line-height: 22px;
   letter-spacing: 0.04em;
-  color: rgba(76, 76, 76, 0.2);
+  color: rgba(76, 76, 76, 0.5);
   text-transform: uppercase;
   cursor: pointer;
   border-radius: 0;
