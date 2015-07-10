@@ -1232,16 +1232,16 @@ div#welcome p {
 }
 
 ::-webkit-input-placeholder {
-   color: rgba(76, 76, 76, 0.8);
+   color: rgba(76, 76, 76, 0.5);
 }
 :-moz-placeholder { /* Firefox 18- */
-   color: rgba(76, 76, 76, 0.8);
+   color: rgba(76, 76, 76, 0.9);
 }
 ::-moz-placeholder {  /* Firefox 19+ */
-   color: rgba(76, 76, 76, 0.8);
+   color: rgba(76, 76, 76, 0.9);
 }
 :-ms-input-placeholder {
-   color: rgba(76, 76, 76, 0.8);
+   color: rgba(76, 76, 76, 0.5);
 }
 
 input#date {
