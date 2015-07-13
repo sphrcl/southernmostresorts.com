@@ -340,8 +340,9 @@ $(document).ready(function(){
 				var date2 = $.datepicker.parseDate($.datepicker._defaults.dateFormat, $("#departure_date").val());
                 var selectedDate = $.datepicker.parseDate($.datepicker._defaults.dateFormat, dateText);
 
+
                 if (!date1 || date2) {
-					$("#arrival_date").val(dateformat);
+					$("#arrival_date").val(dateText);
 					$("#departure_date").val("");
                     $(this).datepicker();
                 } else if( selectedDate < date1 ) {
@@ -358,11 +359,11 @@ $(document).ready(function(){
 		$(".datepickermob").datepicker({
 			minDate: 0,
 			defaultDate: new Date(2015, 09),
-			beforeShowDay: function(date) {
-				var date1 = $.datepicker.parseDate($.datepicker._defaults.dateFormat, $("#arrival_date").val());
-				var date2 = $.datepicker.parseDate($.datepicker._defaults.dateFormat, $("#departure_date").val());
-				return [true, date1 && ((date.getTime() == date1.getTime()) || (date2 && date >= date1 && date <= date2)) ? "dp-highlight" : ""];
-			},
+			// beforeShowDay: function(date) {
+			// 	var date1 = $.datepicker.parseDate($.datepicker._defaults.dateFormat, $("#arrival_date").val());
+			// 	var date2 = $.datepicker.parseDate($.datepicker._defaults.dateFormat, $("#departure_date").val());
+			// 	return [true, date1 && ((date.getTime() == date1.getTime()) || (date2 && date >= date1 && date <= date2)) ? "dp-highlight" : ""];
+			// },
 			onSelect: function(dateText, inst) {
 				var date1 = $.datepicker.parseDate($.datepicker._defaults.dateFormat, $("#arrival_date").val());
 				var date2 = $.datepicker.parseDate($.datepicker._defaults.dateFormat, $("#departure_date").val());
@@ -388,12 +389,12 @@ $(document).ready(function(){
 		$( "#date" ).datepicker({
 
 			minDate: 0,
-			altField  : '#arv',
-			beforeShowDay: function(date) {
-				var date1 = $.datepicker.parseDate($.datepicker._defaults.dateFormat, $("#arrival_date").val());
-				var date2 = $.datepicker.parseDate($.datepicker._defaults.dateFormat, $("#departure_date").val());
-				return [true, date1 && ((date.getTime() == date1.getTime()) || (date2 && date >= date1 && date <= date2)) ? "dp-highlight" : ""];
-			},
+			altField  : '#arvv',
+			// beforeShowDay: function(date) {
+			// 	var date1 = $.datepicker.parseDate($.datepicker._defaults.dateFormat, $("#arrival_date").val());
+			// 	var date2 = $.datepicker.parseDate($.datepicker._defaults.dateFormat, $("#departure_date").val());
+			// 	return [true, date1 && ((date.getTime() == date1.getTime()) || (date2 && date >= date1 && date <= date2)) ? "dp-highlight" : ""];
+			// },
 			onSelect: function(dateText, inst) {
 				var date1 = $.datepicker.parseDate($.datepicker._defaults.dateFormat, $("#arrival_date").val());
 				var date2 = $.datepicker.parseDate($.datepicker._defaults.dateFormat, $("#departure_date").val());
@@ -430,7 +431,7 @@ $(document).ready(function(){
 		$( "#dater" ).datepicker({
 
 			minDate: 0,
-			altField  : '#dept',
+			altField  : '#deptt',
 			beforeShowDay: function(date) {
 				var date1 = $.datepicker.parseDate($.datepicker._defaults.dateFormat, $("#arrival_date").val());
 				var date2 = $.datepicker.parseDate($.datepicker._defaults.dateFormat, $("#departure_date").val());

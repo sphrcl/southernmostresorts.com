@@ -93,12 +93,12 @@
 
 						<span class="calsec">
 							<input type="text" id="date" placeholder="ARRIVAL" class="calendarsection">
-							<input type="hidden" id="arv" name="arrival_date">
+							<input type="hidden" id="arvv" name="arrival_date">
 						</span>
 						
 						<span class="calsec">
 							<input type="text" id="dater" placeholder="DEPARTURE" class="calendarsection">
-							<input type="hidden" id="dept" name="departure_date">
+							<input type="hidden" id="deptt" name="departure_date">
 						</span>
 						
 						<span class="dropsec">
