@@ -467,7 +467,7 @@ $(document).ready(function(){
 
 		});
 
-	 	$(".reserve .button1, .slidedown-nav .left a").click(function(e) {
+	 	$(".reserve .button1").click(function(e) {
 			e.preventDefault();
 			$(".ressys").addClass("dropit");
 			$(".overlay").addClass("doit");

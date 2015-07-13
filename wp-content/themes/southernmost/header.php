@@ -95,7 +95,7 @@
 
 								<div class="left">
 									<h3>Rooms</h3>
-									<a href="#">See All</a>									
+									<a href="<?php echo get_page_link(433); ?>">See All</a>									
 								</div>
 
 								<a class="btn next right"><i class="fa fa-angle-right"></i></a>
