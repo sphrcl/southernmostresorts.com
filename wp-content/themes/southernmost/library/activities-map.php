@@ -17,20 +17,20 @@
 
 	<li style="display: none;" class="map-location" data-icon="<?php bloginfo ('template_url'); ?>/images/henry1.png" data-jmapping="{id: 2, point: {lat: 24.548293, lng: -81.796583}, category: 'amen', bounded: true, icon: '<?php bloginfo ('template_url'); ?>/images/map-marker.png'}">
 		<a href="#" class="map-link us" rel="us">US</a>
-		<div class="info-box">
+		<!--<div class="info-box">
 			<h3>Good Ol USA</h3>
-		</div>
+		</div>-->
 	</li>
 						      
 	<?php 
 
 		$counter = 500; query_posts(array(
-			'post_type' => 'activities',
+			'post_type' => 'locations',
 			'posts_per_page' => -1,
 		)); 
 
 		if(have_posts()) : while(have_posts()) : the_post(); $imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "Full"); 
-
+		$imgsrcs = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "Full");
 	?>
 
 		<?php if(get_post_meta($post->ID, 'misfit_lat', true) && get_post_meta($post->ID, 'misfit_long', true)) { ?>
@@ -40,8 +40,8 @@
 		    	<a href="#" class="map-link <?php $shorty =  get_post_meta($post->ID, 'misfit_neighborhood', true); $string = str_replace(' ', '', $shorty); echo $string; ?>" rel="<?php $shorty =  get_post_meta($post->ID, 'misfit_neighborhood', true); $string = str_replace(' ', '', $shorty); echo $string; ?>"><?php echo get_post_meta($post->ID, 'misfit_neighborhood', true); ?></a>
 
 		        <div class="info-box">
-		        	<span class="specialid">infocontainer</span>        	
-			        <h3><?php the_title(); ?></h3>	        
+		        	<!--<div class="marker-img-ft"><img src="<?php echo tt($imgsrcs[0],160,110); ?>"></div>    --> 	
+			        <h3><?php the_title(); ?></h3>        
 		       	</div>
 	       	
 			</li>

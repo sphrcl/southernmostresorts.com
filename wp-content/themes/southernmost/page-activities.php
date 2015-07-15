@@ -22,12 +22,12 @@
 	});
 </script>
 
-<?php //include( TEMPLATEPATH . '/library/activities-map.php'); ?>
+<?php include( TEMPLATEPATH . '/library/activities-map.php'); ?>
 
 
-<!-- <div class="mapbox">
+ <div class="mapbox">
 
-	<div id="maparea" style="width: 100%; height: 500px;"></div>
+	<div id="maparea" style="width: 100%;"></div>
 
 	 <ul id="toggles" class="page-nav">
 
@@ -52,7 +52,7 @@
 
 	</ul>
 
-</div> -->
+</div> 
 
 
 <div id="topbanner">

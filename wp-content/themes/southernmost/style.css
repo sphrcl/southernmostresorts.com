@@ -692,7 +692,9 @@ div#topbanner {
   /*margin-bottom: 75px;*/
 }
 
-
+.page-template-page-activities #topbanner {
+    display: none;
+}
 
 /* Slide Down Nav ############################################################################################################## */
 
@@ -4752,17 +4754,21 @@ input.wpcf7-form-control.wpcf7-submit {
 
 /* MAP AREA ################################################################################################ */
 
-#map-side-bar {
+/**#map-side-bar {
 	display: none;
 }
 
 #toggles {
 	display: none;
 }
-
+**/
 #maparea {
-  height: 600px !important;
-  display: none;
+ /** height: 600px !important;
+  display: none;**/
+}
+
+#map-side-bar{
+  display:none;
 }
 
 #maparea #mako small {
@@ -4773,6 +4779,20 @@ input.wpcf7-form-control.wpcf7-submit {
   width: 41px;
   display: block;
   list-style: none;
+}
+
+.gm-style-iw{
+  left: 25px!important;
+}
+
+.marker-img-ft {
+    margin-top: 20px;
+    padding-bottom: 10px;
+}
+
+.gm-style-iw h3 {
+    font-family: NewsGothicMT;
+    text-align: center;
 }
 
 #infoBox,
