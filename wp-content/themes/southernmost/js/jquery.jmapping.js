@@ -223,7 +223,7 @@
                 iwindow.close();
               }
 
-              map.setCenter(marker.getPosition());
+              // map.setCenter(marker.getPosition());
               
            	var bitsofit = $info_window_elm.find("span").html();
            	$(".infocontainer").removeClass("boooyah");
