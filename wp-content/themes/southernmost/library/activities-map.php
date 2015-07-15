@@ -15,6 +15,13 @@
 
 <ul id="map-side-bar">
 
+	<li style="display: none;" class="map-location" data-icon="<?php bloginfo ('template_url'); ?>/images/henry1.png" data-jmapping="{id: 1, point: {lat: 24.566094, lng: -81.776405}, category: 'amen', bounded: true}">
+		<a href="#" class="map-link us" rel="us">US</a>
+		<!--<div class="info-box">
+			<h3>Good Ol USA</h3>
+		</div>-->
+	</li>
+
 	<li style="display: none;" class="map-location" data-icon="<?php bloginfo ('template_url'); ?>/images/henry1.png" data-jmapping="{id: 2, point: {lat: 24.548293, lng: -81.796583}, category: 'amen', bounded: true, icon: '<?php bloginfo ('template_url'); ?>/images/map-marker.png'}">
 		<a href="#" class="map-link us" rel="us">US</a>
 		<!--<div class="info-box">
@@ -71,7 +78,7 @@
 	$(function() {
 
 		var mapOptions = {
-		    zoom: 15,
+		    zoom: 14,
 		    minZoom: 12,
 		    scrollwheel: false,
 			draggable: true,
@@ -83,7 +90,7 @@
 
 		$('#maparea').jMapping({
 			// force_zoom_level: 13,
-			default_zoom_level: 15,
+			default_zoom_level: 14,
 		    category_icon_options: function(category){
 		      if (category.charAt(0).match(/[a-c]/i)){
 		        return new google.maps.MarkerImage($(this).attr('data-icon'));
