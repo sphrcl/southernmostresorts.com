@@ -358,12 +358,13 @@ $(document).ready(function(){
 		
 		$(".datepickermob").datepicker({
 			minDate: 0,
-			defaultDate: new Date(2015, 09),
-			// beforeShowDay: function(date) {
-			// 	var date1 = $.datepicker.parseDate($.datepicker._defaults.dateFormat, $("#arrival_date").val());
-			// 	var date2 = $.datepicker.parseDate($.datepicker._defaults.dateFormat, $("#departure_date").val());
-			// 	return [true, date1 && ((date.getTime() == date1.getTime()) || (date2 && date >= date1 && date <= date2)) ? "dp-highlight" : ""];
-			// },
+			numberOfMonths: [1,1],
+			// defaultDate: new Date(2015, 09),
+			beforeShowDay: function(date) {
+				var date1 = $.datepicker.parseDate($.datepicker._defaults.dateFormat, $("#arrival_date").val());
+				var date2 = $.datepicker.parseDate($.datepicker._defaults.dateFormat, $("#departure_date").val());
+				return [true, date1 && ((date.getTime() == date1.getTime()) || (date2 && date >= date1 && date <= date2)) ? "dp-highlight" : ""];
+			},
 			onSelect: function(dateText, inst) {
 				var date1 = $.datepicker.parseDate($.datepicker._defaults.dateFormat, $("#arrival_date").val());
 				var date2 = $.datepicker.parseDate($.datepicker._defaults.dateFormat, $("#departure_date").val());
