@@ -4337,14 +4337,14 @@ body .ui-tooltip {
 
 
 
-.datepicker, .datepickermob {
+.datepicker, .datepickermob, .datepickermoby {
   width: 100%;
   position: relative;
   z-index: 3;
   background: transparent;
 }
 
-.datepickermob {
+.datepickermob, .datepickermoby {
   display: none;
 }
 

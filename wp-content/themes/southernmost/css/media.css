@@ -794,11 +794,11 @@ and (max-width: 599px) {
 		padding: 16px 15px;
 	}
 	
-	.datepickermob {
+	.datepickermob, .datepickermoby {
 		display: block;
 	}
 	
-	.datepickermob .ui-datepicker {
+	.datepickermob .ui-datepicker, .datepickermoby .ui-datepicker {
 		padding: 0.2em 2% 0;
 		position: relative;
 		width: 96%;
@@ -812,7 +812,7 @@ and (max-width: 599px) {
 		background: none no-repeat scroll 0 0 transparent;
 	}
 	
-	.datepickermob .ui-datepicker .ui-datepicker-next {
+	.datepickermob .ui-datepicker .ui-datepicker-next, .datepickermoby .ui-datepicker .ui-datepicker-next {
 		right: 2%;
 	}
 	

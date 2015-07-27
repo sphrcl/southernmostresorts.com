@@ -3,6 +3,16 @@
  * The template for displaying the footer.
  *
 **/
+
+	if ( file_exists( TEMPLATEPATH . '/library/Mobile_Detect.php' ) ) {
+
+		require_once TEMPLATEPATH . '/library/Mobile_Detect.php';
+		$detect = new Mobile_Detect;
+
+		$mobile = $detect->isMobile(); 
+
+	}
+
 ?>
 
 
@@ -221,24 +231,47 @@
 	<div class="whippapeal">
 		<div class="formfields">
 			<div class="reservationform">
-				<form method="get" action="<?php echo get_option('misfit_booking_link'); ?>">
+
+				<?php if($mobile) { ?>
+
+					<form method="get" action="https://southernmostbeachresort.reztripmobile.com/rt/m/results">
+										
+						<input type="hidden" id="propertyId" name="propertyId" class="calendarsection" value="729" />
+						<input type="hidden" id="sub" name="sub" class="calendarsection" value="southernmostbeachresort" />
+						<input type="hidden" id="locale" name="locale" class="calendarsection" value="en-us" />
+						<input type="hidden" id="numChildren" name="numChildren" class="calendarsection" value="0" />
+						<input type="hidden" id="numAdults" name="numAdults" class="calendarsection" value="2" />
+
+						<input type="hidden"  id="arrival" name="arrival" class="calendarsection" />
+						<input type="hidden" id="departure" name="departure" class="calendarsection" />
+
+						<div class="calendars">
+							<div class="datepickermob"></div>
+						</div>
+						
+						<button class="button" type="submit">View Availability</button>
+						<div class="btn1 toosmall"><i class="fa fa-times"></i></div>
+
+					</form>
+
+				<?php } else { ?>
+
+					<form method="get" action="<?php echo get_option('misfit_booking_link'); ?>">
 									
-					<input type="hidden"  id="arrival_date" name="arrival_date" class="calendarsection" />
-					<input type="hidden"  id="arv">
+						<input type="hidden"  id="arrival_date" name="arrival_date" class="calendarsection" />
+						<input type="hidden" id="departure_date" name="departure_date" class="calendarsection" />
 
-					<input type="hidden" id="departure_date" name="departure_date" class="calendarsection" />
-					<input type="hidden" id="dep">
+						<div class="calendars">
+							<div class="datepicker"></div>
+							<div class="datepickermoby"></div>
+						</div>
+						
+						<button class="button" type="submit">View Availability</button>
+						<div class="btn1 toosmall"><i class="fa fa-times"></i></div>
 
+					</form>
 
-					<div class="calendars">
-						<div class="datepicker"></div>
-						<div class="datepickermob"></div>
-					</div>
-					
-					<button class="button" type="submit">View Availability</button>
-					<div class="btn1 toosmall"><i class="fa fa-times"></i></div>
-
-				</form>
+				<?php } ?>
 
 			</div><!-- end reservation form -->
 

@@ -359,7 +359,40 @@ $(document).ready(function(){
 		$(".datepickermob").datepicker({
 			minDate: 0,
 			numberOfMonths: [1,1],
-			// defaultDate: new Date(2015, 09),
+			dateFormat: "yy-mm-dd",
+			beforeShowDay: function(date) {
+				var date1 = $.datepicker.parseDate("yy-mm-dd", $("#arrival").val());
+				var date2 = $.datepicker.parseDate("yy-mm-dd", $("#departure").val());
+				return [true, date1 && ((date.getTime() == date1.getTime()) || (date2 && date >= date1 && date <= date2)) ? "dp-highlight" : ""];
+			},
+			onSelect: function(dateText, inst) {
+				var date1 = $.datepicker.parseDate("yy-mm-dd", $("#arrival").val());
+				var date2 = $.datepicker.parseDate("yy-mm-dd", $("#departure").val());
+                var selectedDate = $.datepicker.parseDate("yy-mm-dd", dateText);
+                // var seldate = dateText.split('/');
+                // console.log(seldate[0]);
+
+
+                if (!date1 || date2) {
+					$("#arrival").val(dateText);
+					$("#departure").val("");
+                    $(this).datepicker();
+                } else if( selectedDate < date1 ) {
+                    $("#departure").val( $("#arrival").val() );
+                    $("#arrival").val(sedateText);
+                    $(this).datepicker();
+                } else {
+					$("#departure").val(dateText);
+                    $(this).datepicker();
+				}
+			}
+		});
+
+		
+
+		$(".datepickermoby").datepicker({
+			minDate: 0,
+			numberOfMonths: [1,1],
 			beforeShowDay: function(date) {
 				var date1 = $.datepicker.parseDate($.datepicker._defaults.dateFormat, $("#arrival_date").val());
 				var date2 = $.datepicker.parseDate($.datepicker._defaults.dateFormat, $("#departure_date").val());
