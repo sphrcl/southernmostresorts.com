@@ -221,7 +221,7 @@
 	<div class="whippapeal">
 		<div class="formfields">
 			<div class="reservationform">
-				<form method="get" action="<?php echo get_option('misfit_booking_link'); ?>" target="_blank">
+				<form method="get" action="<?php echo get_option('misfit_booking_link'); ?>">
 									
 					<input type="hidden"  id="arrival_date" name="arrival_date" class="calendarsection" />
 					<input type="hidden"  id="arv">
