@@ -71,7 +71,7 @@
 			</ul>
 		</div>
 
-		<!-- save the children 
+		<!-- save the children -->
 
 		<div class="footcolumn">
 

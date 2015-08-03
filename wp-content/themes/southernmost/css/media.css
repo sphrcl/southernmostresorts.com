@@ -258,6 +258,21 @@ and (max-width: 1024px) {
 		padding: 25px 50px;
 	}
 
+	/* ======================== SAVE THE CHILDREN ======================== */
+
+	.save-the-children .button {
+	    position: relative;
+	    top: -5px;
+	    float: left;
+	    left: 5%;
+	}
+
+	p.save {
+	    width: 100%;
+	    font-size: 12px;
+	    line-height: 22px;
+	}
+
 }
 
 
@@ -746,6 +761,21 @@ and (max-width: 640px) {
 	.page-template-page-activities .page-nav {
 		display: none;
 	}
+
+	/* ======================== SAVE THE CHILDREN ======================== */
+
+	img.left, img.alignleft  {
+	    float: left;
+	    margin: 0 10px 0px 0;
+	    width: 170px;
+	}
+
+.save-the-children .button {
+    position: relative;
+    top: -5px;
+    float: left;
+    left: 25%;
+}	
 
 }
 
