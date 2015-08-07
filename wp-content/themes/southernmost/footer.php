@@ -55,6 +55,15 @@
 
 			<div class="footright">
 				<?php echo get_option('misfit_footer_paragraph'); ?>
+				<!-- NAVIS -->
+					<div class="Phone">
+					 To book your stay, please call <span id="NavisTFN">(866) 999-9999</span>
+					 right now, and we’ll help you out.
+						 <script type="text/javascript">
+						 SetElementToNavisNCPhoneNumber("NavisTFN");
+						 </script>
+					 </div>				
+				<!-- / NAVIS -->
 			</div>
 
 		</div>
