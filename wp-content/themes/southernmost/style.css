@@ -4975,9 +4975,13 @@ input.wpcf7-form-control.wpcf7-submit {
 }
 
 .img-logo-2 {
-  position: absolute;
+ /** position: absolute;
   top: 35%;
-  left: 40%;
+  left: 40%;**/
+}
+
+.contact-info {
+    width: 60%;
 }
 
 
