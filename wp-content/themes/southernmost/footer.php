@@ -38,7 +38,7 @@
 			<div class="footmiddle">
 
 				<div class="footerlogo">
-					<a href="index.html"><img src="<?php bloginfo ('template_url'); ?>/images/logo-footer.png" alt="Southernmost"></a>
+					<a href="http://www.southernmostbeachresort.com"><img src="<?php bloginfo ('template_url'); ?>/images/logo-footer.png" alt="Southernmost"></a>
 				</div>
 
 				<div class="socialmedia">
