@@ -429,6 +429,10 @@ $(document).ready(function(){
 			// 	var date2 = $.datepicker.parseDate($.datepicker._defaults.dateFormat, $("#departure_date").val());
 			// 	return [true, date1 && ((date.getTime() == date1.getTime()) || (date2 && date >= date1 && date <= date2)) ? "dp-highlight" : ""];
 			// },
+			onClose: function( selectedDate ) {
+ 				$( "#dater" ).datepicker( "option", "minDate", selectedDate+' 1d' );
+  			},
+
 			onSelect: function(dateText, inst) {
 				var date1 = $.datepicker.parseDate($.datepicker._defaults.dateFormat, $("#arrival_date").val());
 				var date2 = $.datepicker.parseDate($.datepicker._defaults.dateFormat, $("#departure_date").val());
@@ -440,11 +444,13 @@ $(document).ready(function(){
 				  return parts[1] + '/' + parts[0] + '/' + parts[2]; // Note: months are 0-based
 				}
 
+
+
                 // console.log(parseDate(dateText));
 
 
-                $('#date').val(parseDate(dateText));
-					$("#arrival_date").val(dateText);
+                //$('#date').val(parseDate(dateText));
+					//$("#arrival_date").val(dateText);
 					$("#departure_date").val("");
 					// $("#arv").val(dateText);
 
@@ -471,6 +477,10 @@ $(document).ready(function(){
 				var date2 = $.datepicker.parseDate($.datepicker._defaults.dateFormat, $("#departure_date").val());
 				return [true, date1 && ((date.getTime() == date1.getTime()) || (date2 && date >= date1 && date <= date2)) ? "dp-highlight" : ""];
 			},
+
+			onClose: function( selectedDate ) {
+				$( "#date" ).datepicker( "option", "maxDate", selectedDate );
+  			},
 			onSelect: function(dateText, inst) {
 				var date1 = $.datepicker.parseDate($.datepicker._defaults.dateFormat, $("#arrival_date").val());
 				var date2 = $.datepicker.parseDate($.datepicker._defaults.dateFormat, $("#departure_date").val());
@@ -484,8 +494,8 @@ $(document).ready(function(){
 
                 // console.log(parseDate(dateText));
 
-                $('#dater').val(parseDate(dateText));
-	                $("#departure_date").val(dateText);	
+                //$('#dater').val(parseDate(dateText));
+	                //$("#departure_date").val(dateText);	
 	                // $("#dept").val(dateText);
 
     //             if (!date1 || date2) {
