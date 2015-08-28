@@ -324,7 +324,7 @@ $(document).ready(function(){
 	
 	
 	// Datepicker
-		$.datepicker._defaults.dateFormat = 'dd/mm/yy';
+		$.datepicker._defaults.dateFormat = 'mm/dd/yy';
 
 		$(".datepicker").datepicker({
 			minDate: 0,
@@ -451,7 +451,7 @@ $(document).ready(function(){
 
                 //$('#date').val(parseDate(dateText));
 					//$("#arrival_date").val(dateText);
-					$("#departure_date").val("");
+					//$("#departure_date").val("");
 					// $("#arv").val(dateText);
 
     //             if (!date1 || date2) {
