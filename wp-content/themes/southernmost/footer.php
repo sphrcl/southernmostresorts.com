@@ -25,33 +25,12 @@
 
 				<p>Sign up for Special Offers from the Hotel</p>
 				<div class="newsletter">
-					<!--<form name="mc-embedded-subscribe-form" action="//southernmostbeachresort.us11.list-manage.com/subscribe/post?u=460fa6a5eb9df58afbf4034e7&amp;id=e32f6bb766" method="post" class="validate" target="_blank" novalidate>
+					<form name="mc-embedded-subscribe-form" action="//southernmostbeachresort.us11.list-manage.com/subscribe/post?u=460fa6a5eb9df58afbf4034e7&amp;id=e32f6bb766" method="post" class="validate" target="_blank" novalidate>
 						<input type="text" name="FNAME" value="" placeholder="Your Name" >
 						<input type="text" name="EMAIL" value="" placeholder="Your Email" >
 						<div style="position: absolute; left: -5000px;"><input type="text" name="b_460fa6a5eb9df58afbf4034e7_e32f6bb766" tabindex="-1" value=""></div>
 						<input type="submit" value="Submit">
-					</form>-->
-
-					<form method="post" action="http://www.data2gold.com/cc3/safeandsecure.wow?6O521I55494X2X2G6G1O0L216R693Q5H3Z5E" class="eClub" target="_blank" onsubmit="return validateForm();">
-		           		<input type="text" size="40" name="FIRSTNAME" maxlength="40" value="" placeholder="First Name">
-		         		<input type="text" size="40" name="LASTNAME" maxlength="40" value="" placeholder="Last Name">
-		         		<input type="text" size="40" name="EMAIL" maxlength="150" value="" placeholder="Email Address">
-					  	<input type="submit" 								value="Join Our List" />
-					  	<input type="HIDDEN" name="PEA"					value="jayme@digital-alchemy.com" />
-					 	<input type="HIDDEN" name="PEACC" 				value="" />
-					 	<input type="HIDDEN" name="PEABC"					value="" />
-					 	<input type="HIDDEN" name="PEASUBJECT" 			value="LOOKUP" />
-					  	<INPUT TYPE="HIDDEN" NAME="NewUser" 				VALUE="1">
-					  	<INPUT TYPE="HIDDEN" NAME="PrThanksPage" 			VALUE="1">
-					  	<INPUT TYPE="HIDDEN" NAME="ftpbox" 				VALUE="01613">
-					 	<INPUT TYPE="HIDDEN" NAME="PRThanksTemplate"		VALUE="EMAS">
-					 	<input type="hidden" name="sys_formtype" 			value="eClub">
-						<input type="hidden" name="hv_preftype" 			value="eClub" />
-					 	<INPUT TYPE="HIDDEN" NAME="WelcomeLetterTemplate" VALUE="EWELCOME">
-					  	<INPUT TYPE="HIDDEN" NAME="WelcomeLetter"			VALUE="1">
-					  	<input type="hidden" name="ECWT" 			        value="EMAS" />
 					</form>
-
 				</div>
 
 			</div>
@@ -101,7 +80,7 @@
 			</ul>
 		</div>
 
-		<!-- save the children -->
+		<!-- save the children 
 
 		<div class="footcolumn">
 
