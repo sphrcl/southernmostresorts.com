@@ -25,11 +25,10 @@
 
 				<p>Sign up for Special Offers from the Hotel</p>
 				<div class="newsletter">
-					<form name="mc-embedded-subscribe-form" action="//southernmostbeachresort.us11.list-manage.com/subscribe/post?u=460fa6a5eb9df58afbf4034e7&amp;id=e32f6bb766" method="post" class="validate" target="_blank" novalidate>
-						<input type="text" name="FNAME" value="" placeholder="Your Name" >
-						<input type="text" name="EMAIL" value="" placeholder="Your Email" >
-						<div style="position: absolute; left: -5000px;"><input type="text" name="b_460fa6a5eb9df58afbf4034e7_e32f6bb766" tabindex="-1" value=""></div>
-						<input type="submit" value="Submit">
+					<form method="get" action="http://www.data2gold.com/gallery/highgate/southernmost/eClub.html">
+		           		<input type="text" size="40" name="FIRSTNAME" maxlength="40" placeholder="First Name">
+		         		<input type="text" size="40" name="EMAIL" maxlength="150" placeholder="Email Address">
+					  	<input type="submit" 								value="Join Our List" />
 					</form>
 				</div>
 
