@@ -574,4 +574,33 @@ $(document).ready(function(){
 	// 	e.preventDefault();
 	// });
 
+	// Validation
+	$('#eclubCheck').validate({
+	    rules: {
+	        // The e-mail address field (aptly ID'd as "email_address")
+	        // is required to have content and must also be a valid e-mail.
+	        FIRSTNAME: "required",
+	        LASTNAME: "required",
+	        email: {
+	            required: true,
+	            email: true
+	        }
+	    },
+	    messages: {
+
+			FIRSTNAME: "Please specify your first name",
+			LASTNAME: "Please specify your last name",
+			email: {
+				required: "We need your email address to contact you",
+				email: "Your email address must be in the format of name@domain.com"
+			}
+
+	    },
+	    submitHandler: function(form) { // <- pass 'form' argument in
+	        $("#form_submit").attr("disabled", true);
+	        $("#form_submit").attr("value", "Submitting");
+			return true;
+	    }
+	});
+
 });

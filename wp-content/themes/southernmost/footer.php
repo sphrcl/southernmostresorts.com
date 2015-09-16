@@ -14,9 +14,6 @@
 	}
 
 ?>
-
-
-
 	<div id="footer">
 		<div class="footaddress"><?php echo get_option('misfit_footer_address'); ?></div>
 
@@ -24,11 +21,26 @@
 			<div class="footleft">
 
 				<p>Sign up for Special Offers from the Hotel</p>
+				<!-- http://www.data2gold.com/gallery/highgate/southernmost/eClub.html -->
 				<div class="newsletter">
-					<form method="get" action="http://www.data2gold.com/gallery/highgate/southernmost/eClub.html">
-		           		<input type="text" size="40" name="FIRSTNAME" maxlength="40" placeholder="First Name">
-		         		<input type="text" size="40" name="EMAIL" maxlength="150" placeholder="Email Address">
-					  	<input type="submit" 								value="Join Our List" />
+					<form id="eclubCheck" method="post" action="http://www.data2gold.com/cc3/safeandsecure.wow?6O521I55494X2X2G6G1O0L216R693Q5H3Z5E" class="eClub" target="_blank">
+		           		<input id="firstname" type="text" size="40" name="FIRSTNAME" maxlength="40" placeholder="First Name" required="required">
+		           		<input id="lastname" type="text" size="40" name="LASTNAME" maxlength="40" placeholder="Last Name" required="required">
+		         		<input id="email" type="text" size="40" name="email" maxlength="150" placeholder="Email Address" required="required">
+					  	<input id="form_submit" type="submit" value="Join Our List" />
+
+						<input type="HIDDEN" name="PEA"					value="jayme@digital-alchemy.com" />
+						<input type="HIDDEN" name="PEACC" 				value="" />
+						<input type="HIDDEN" name="PEABC"					value="" />
+						<input type="HIDDEN" name="PEASUBJECT" 			value="LOOKUP" />
+						<INPUT TYPE="HIDDEN" NAME="NewUser" 				VALUE="1">
+						<INPUT TYPE="HIDDEN" NAME="PrThanksPage" 			VALUE="1">
+						<INPUT TYPE="HIDDEN" NAME="ftpbox" 				VALUE="01613">
+						<INPUT TYPE="HIDDEN" NAME="PRThanksTemplate"		VALUE="ETHANKS">
+						<input type="hidden" name="sys_formtype" 			value="eClub">
+						<input type="hidden" name="hv_preftype" 			value="eClub" />
+						<input type="hidden" name="ECWT" 			        value="EWELCOME" />
+
 					</form>
 				</div>
 
@@ -336,7 +348,13 @@ $(window).load(function() {
 	});
 });
 </script>
+
 <script type="text/javascript" src="<?php bloginfo ('template_url'); ?>/js/jquery.flexslider-min.js"></script>
+
+<!-- Validation -->
+<script type="text/javascript" src="<?php bloginfo ('template_url'); ?>/js/jquery.validate.min.js"></script>
+<script type="text/javascript" src="<?php bloginfo ('template_url'); ?>/js/additional-methods.min.js"></script>
+
 <script type="text/javascript" src="<?php bloginfo ('template_url'); ?>/js/general.js"></script>
 
 <script type="text/javascript" src="<?php bloginfo('template_url'); ?>/js/owl-carousel/owl.carousel.min.js"></script>

@@ -5067,7 +5067,18 @@ a.donate-btn {
 
 
 
+/* Validation */
 
 
-
-
+label.error {
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    color: #ff712d;
+    display: block;
+    padding-bottom: 10px;
+    padding-right: 10px;
+    position: relative;
+    text-align: right;
+    width: 100%;
+}
