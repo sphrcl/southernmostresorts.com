@@ -23,22 +23,26 @@
 
 
 
+						<div id="pagecontent">
+							<div class="container">
+								<div class="contenttitle"></br>
 
 
-	       		<h2 class="subheading"><?php _e('Well, now...this is awkward','misfitlang'); ?></h2>
+			     				<h1 class="title"><?php _e("404","misfitlang"); ?></h1>
 
-
-			     <h1 class="bigheading" style="max-width: 80%; margin: auto; font-size: 140px; line-height: 120px;"><?php _e("404","misfitlang"); ?></h1>
-
-
+								</div>
 
 
 
-	       	<div class="postcopy" style="min-height: 300px;">
+								<div class="content">
+	       					<!-- <div class="postcopy" style="min-height: 300px;"> -->
 
-		       			<p><?php _e('Sorry, friend, if you have found this page and it means the internet has failed you... or that you will have to try your search again. ', 'cebolang'); ?><?php _e('Head over to our ', 'cebolang'); ?><a href="<?php bloginfo('url'); ?>"><?php _e('home page ', 'cebolang'); ?></a><?php _e('or you can visit any of the links below.', 'cebolang'); ?></p><br>
-
-
+		       				<p><?php _e('Sorry, friend, if you have found this page and it means the internet has failed you... or that you will have to try your search again. ', 'cebolang'); ?><?php _e('Head over to our ', 'cebolang'); ?><a href="<?php bloginfo('url'); ?>"><?php _e('home page ', 'cebolang'); ?></a><?php _e('or you can visit any of the links below.', 'cebolang'); ?></p><br>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- </div> -->
 		       		<div class="socializer" style="position: relative;">
 							<ul>
 								<?php if(get_option('misfit_facebook')) { ?>
