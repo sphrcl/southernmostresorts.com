@@ -78,8 +78,8 @@
 										// <!-- file in a text editor, for instance Notepad.-->
 										// Set the BaseURL to the url of your Web server
 
-										var BaseURL = "http://66.184.211.231/";
-										var BaseURLFF = "http://root:pass@66.184.211.231/";
+										var BaseURL = "http://162.251.177.90/";
+										var BaseURLFF = "http://root:pass@162.251.177.90/";
 																			
 										// DisplayWidth & DisplayHeight specifies the displayed width & height of the image.
 										// You may change these numbers, the effect will be a stretched or a shrunk image
@@ -134,7 +134,7 @@
 										}
 										document.write(output);
 										document.Player1.MediaUsername = "root"
-										document.Player1.MediaPassword = "pass"
+										document.Player1.MediaPassword = "s0cks"
 										document.Player1.ToolbarConfiguration = "play,+snapshot,+fullscreen"
 										// Remove the // below to use the code for Motion Detection. // document.Player.UIMode = "MDConfig";
 										// document.Player.MotionConfigURL = "/axis-cgi/operator/param.cgi?ImageSource=0"
