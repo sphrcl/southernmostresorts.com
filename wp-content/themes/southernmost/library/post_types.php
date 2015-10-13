@@ -186,7 +186,7 @@ function dining_items()
     'publicly_queryable' => true,
     'show_ui' => true,
     'query_var' => true,
-    'rewrite' => array( 'slug' => 'dining' ),
+    'rewrite' => array( 'slug' => 'key-west-restaurants' ),
     'capability_type' => 'post',
     'menu_icon' => 'dashicons-carrot',
     'hierarchical' => false,
@@ -197,6 +197,25 @@ function dining_items()
 }
 
 
+function add_custom_rewrite_rule() {
+
+
+    if( ($current_rules = get_option('rewrite_rules')) ) {
+
+
+        foreach($current_rules as $key => $val) {
+            if(strpos($key, 'dining') !== false) {
+                add_rewrite_rule(str_ireplace('dining', 'key-west-restaurants', $key), $val, 'top');   
+            } // end if
+        } // end foreach
+
+    } // end if/else
+
+    // ...and we flush the rules
+    flush_rewrite_rules();
+
+} // end add_custom_rewrite_rule
+add_action('init', 'add_custom_rewrite_rule');
 
 add_action('init', 'activity_items');
 
