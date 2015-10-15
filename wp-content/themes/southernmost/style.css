@@ -733,9 +733,16 @@ div#topbanner {
     background-size: cover;
 }
 
+/*
 .slidedown-nav .owl-carousel .owl-item {
     margin: 0 10px;
 }
+*/
+
+.slidedown-nav .owl-carousel .owl-item .item {
+    margin: 0 10px;
+}
+
   .slidedown-nav .owl-carousel .owl-item:hover {
     opacity: .8;
   }
