@@ -336,7 +336,9 @@
 					
 				<?php endwhile; endif; wp_reset_query(); ?>	
 
-			</ul>			
+			</ul>	
+
+			<?php the_content(); ?>			
 
 		</div>
 
