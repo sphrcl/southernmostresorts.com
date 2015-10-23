@@ -706,6 +706,7 @@ div#topbanner {
     position: fixed;
     top: 51px;
     visibility: hidden;
+	display: none;
     width: 100%;
     transition: all 0.1s ease;
   -moz-transition: all 0.1s ease;
@@ -714,10 +715,12 @@ div#topbanner {
   -ms-transition: all 0.1s ease;
 }
 
-.topnavigation > li.ahoy .slidedown-nav {
+.topnavigation li.ahoy .slidedown-nav {
     opacity: 1;
     top: 51px;
     visibility: visible;
+	z-index: 1;
+	display: block;
 }
 
 .slidedown-nav .owl-carousel {
