@@ -224,10 +224,20 @@
 					
 				</div>
 
+				<div class="mobileicon">
+					<a href="tel:8003544455"><img src="http://www.southernmostbeachresort.com/wp-content/uploads/2015/10/phoneiconmobile.png"></a>
+				</div>
+				
 				<div class="hamburger">
 					<a class="cheese" href="#"><img src="<?php bloginfo ('template_url'); ?>/images/hamburger-button.png" alt="menu"/></a>
-					
+				
 				</div>
+				<div class="phone">
+					<img src="http://www.southernmostbeachresort.com/wp-content/uploads/2015/10/phoneicon.png"><span id="ptext"><a href="tel:8003544455">(800)354-4455</a></span>
+				</div>
+
+
+
 
 			</div>
 	

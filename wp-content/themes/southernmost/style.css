@@ -387,8 +387,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#bfffffff', e
 
 .navigation {
   position: absolute;
-  right: 23%;
-  right: 19%;
+  right: 30%;
   top: 27px;
 }
 
@@ -5082,3 +5081,53 @@ label.error {
     text-align: right;
     width: 100%;
 }
+
+
+/*PHONE */
+.phone{
+    display: inline-block;
+    position: absolute;
+    top: 0;
+    right: -265px;
+}
+
+#ptext a{
+  color: #000;
+  font-family: "GothamBold";
+  font-size: 17px;
+  font-weight: 500;
+}
+
+#ptext a:hover{
+  color: #179dab;
+}
+
+.phone img {
+  margin-right:8px;
+  vertical-align: center;
+}
+.mobileicon
+{
+  display:none;
+}
+
+@media only screen and (max-width: 767px) {
+      /* For portrait layouts only */
+   #header  .phone{
+    display: none;
+            }
+
+   #header .mobileicon
+      {
+    display:block;
+    position:absolute;
+    right: -75px;
+    margin-top:-5px;
+      }
+
+      .hamburger
+      {
+        right:-20px !important;
+      }
+
+    }
