@@ -233,11 +233,15 @@
 				
 				</div>
 				<div class="phone">
-					<img src="http://www.southernmostbeachresort.com/wp-content/uploads/2015/10/phoneicon.png"><span id="ptext"><a href="tel:8003544455">(800)354-4455</a></span>
+					<img src="http://www.southernmostbeachresort.com/wp-content/uploads/2015/10/phoneicon.png"><span id="ptext"><a href="tel:8003544455"><span id="NavisTFN2">(800)354-4455 </span></a></span>
 				</div>
 
-
-
+				<!-- NAVIS -->
+						 <script type="text/javascript">
+						 SetElementToNavisNCPhoneNumber("NavisTFN2");
+						 </script>
+					
+				<!-- / NAVIS -->
 
 			</div>
 	
