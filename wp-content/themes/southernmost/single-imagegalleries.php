@@ -336,7 +336,18 @@
 					
 				<?php endwhile; endif; wp_reset_query(); ?>	
 
-			</ul>			
+			</ul>	
+
+			<?php 
+				$galleryinfo = get_the_ID();
+
+				if ($galleryinfo == 1099){ ?>
+
+				<p><br /><br />Wanting to add extra sizzle to your stay? Choose from our list of special gifts to make your visit at the Southernmost Beach Resort extraordinary!</p>
+
+				<p>Please call us at <a href="tel:1800-354-4455">800-354-4455</a>, or <a href="mailto:guestrelations@southernmostresorts.com">email</a> us directly to add any of the above items to your stay. For more information and prices, click <a href="http://www.southernmostbeachresort.com/hotel-amenities/add-ons/">here.</a></p>
+
+			 <?php } ?>			
 
 		</div>
 

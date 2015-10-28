@@ -22,7 +22,7 @@
 		</div>-->
 	</li>
 
-	<li style="display: none;" class="map-location" data-icon="<?php bloginfo ('template_url'); ?>/images/henry1.png" data-jmapping="{id: 2, point: {lat: 24.548293, lng: -81.796583}, category: 'amen', bounded: true, icon: '<?php bloginfo ('template_url'); ?>/images/map-marker.png'}">
+	<li style="display: none;" class="map-location" data-icon="<?php bloginfo ('template_url'); ?>/images/henry1.png" data-jmapping="{id: 2, point: {lat: 24.548293, lng: -81.796583}, category: 'amen', bounded: true, icon: '<?php bloginfo ('template_url'); ?>/images/map-marker-new.png'}">
 		<a href="#" class="map-link us" rel="us">US</a>
 		<!--<div class="info-box">
 			<h3>Good Ol USA</h3>
