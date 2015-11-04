@@ -106,8 +106,11 @@
 
 									<?php 
 										$query_slidedown_rooms = new wp_query(array(
-											'post_type' => 'rooms',
-											'posts_per_page' => -1
+											'post_type' => 'page',
+											'posts_per_page' => -1,
+											'post__in' => array(1139,1142,1146,1153),
+											'orderby' => 'menu_order',
+											'order'   => 'ASC'
 										)); 
 										if($query_slidedown_rooms->have_posts()) : while($query_slidedown_rooms->have_posts()) : $query_slidedown_rooms->the_post();
 										$imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "Full"); 
@@ -116,6 +119,7 @@
 											<a href="<?php the_permalink(); ?>"><div class="slide-image" style="background-image: url(<?php echo tt($imgsrc[0],340,270); ?>);"></div></a>
 											<a href="<?php the_permalink(); ?>"><h3><?php the_title(); ?></h3></a>
 										</div>
+										
 									<?php endwhile; endif; wp_reset_query(); ?>
 
 								</div>
@@ -233,7 +237,7 @@
 				
 				</div>
 				<div class="phone">
-					<img src="http://www.southernmostbeachresort.com/wp-content/uploads/2015/10/phoneicon.png"><span id="ptext"><a href="tel:8003544455"><span id="NavisTFN2">(800)354-4455 </span></a></span>
+					<img src="http://www.southernmostbeachresort.com/wp-content/uploads/2015/10/phoneicon.png"><span id="ptext"><a href="tel:8003544455"><span id="NavisTFN2" style="font-family:GothamBold;">(800)354-4455 </span></a></span>
 				</div>
 
 				<!-- NAVIS -->
@@ -242,7 +246,6 @@
 						 </script>
 					
 				<!-- / NAVIS -->
-
 			</div>
 	
 			<div class="reserve">

@@ -375,8 +375,8 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#bfffffff', e
   top: 10px;
   padding: 5px;
   background: transparent;
-    width: 200px;
-  z-index: 1;
+  width: 200px;
+  z-index: 2;
 
 }
 
@@ -5092,8 +5092,6 @@ label.error {
     width: 100%;
 }
 
-<<<<<<< HEAD
-
 /*PHONE */
 .phone{
     display: inline-block;
@@ -5123,27 +5121,25 @@ label.error {
 }
 
 @media only screen and (max-width: 767px) {
-      /* For portrait layouts only */
-   #header  .phone{
-    display: none;
-            }
-
-   #header .mobileicon
-      {
-    display:block;
-    position:absolute;
-    right: -75px;
-    margin-top:-5px;
-      }
-
-      .hamburger
-      {
-        right:-20px !important;
-      }
-
+    /* For portrait layouts only */
+   #header  .phone {
+		display: none;
     }
-=======
+
+   #header .mobileicon {
+		display:block;
+		position:absolute;
+		right: -75px;
+		margin-top:-5px;
+    }
+
+    .hamburger {
+        right:-20px !important;
+    }
+
+}
+
 .galleryid-1099 {
     display: none;
 }
->>>>>>> cee9906d57de43e9e86a6f7088f9196e41392c87
+

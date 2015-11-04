@@ -64,12 +64,12 @@ function create_type_taxonomies()
     'new_item_name' => __( 'New Room Type Name' ),
   ); 	
 
-  register_taxonomy('type', array('project'), array(
+  register_taxonomy('roomtype', array('rooms'), array(
     'hierarchical' => true,
     'labels' => $labels,
     'show_ui' => true,
     'query_var' => true,
-    'rewrite' => array( 'slug' => 'portfolio-type' ),
+    'rewrite' => array( 'slug' => 'room-type' ),
   ));
 
 }
