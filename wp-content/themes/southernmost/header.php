@@ -108,7 +108,7 @@
 										$query_slidedown_rooms = new wp_query(array(
 											'post_type' => 'page',
 											'posts_per_page' => -1,
-											'post__in' => array(1139,1142,1146,1153),
+											'post__in' => array(1139,1142,1146,1153,1176),
 											'orderby' => 'menu_order',
 											'order'   => 'ASC'
 										)); 
