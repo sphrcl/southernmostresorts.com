@@ -91,6 +91,8 @@
 
 					<form method="get" action="<?php echo get_option('misfit_booking_link'); ?>">
 
+						<input type="hidden" value="1" name="rooms">
+						
 						<span class="calsec">
 							<input type="text" id="date" placeholder="ARRIVAL" class="calendarsection">
 							<input type="hidden" id="arvv" name="arrival_date">

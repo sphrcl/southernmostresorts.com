@@ -295,6 +295,8 @@
 
 					<form method="get" action="<?php echo get_option('misfit_booking_link'); ?>">
 									
+						<input type="hidden" value="1" name="rooms">
+						
 						<input type="hidden"  id="arrival_date" name="arrival_date" class="calendarsection" />
 						<input type="hidden" id="departure_date" name="departure_date" class="calendarsection" />
 
