@@ -281,8 +281,8 @@
 						<input type="hidden" id="numChildren" name="numChildren" class="calendarsection" value="0" />
 						<input type="hidden" id="numAdults" name="numAdults" class="calendarsection" value="2" />
 
-						<input type="hidden"  id="arrival" name="arrival" class="calendarsection" />
-						<input type="hidden" id="departure" name="departure" class="calendarsection" />
+						<input type="hidden"  id="arrival_date" name="arrival_date" class="calendarsection" />
+						<input type="hidden" id="departure_date" name="departure_date" class="calendarsection" />
 
 						<div class="calendars">
 							<div class="datepickermob"></div>
