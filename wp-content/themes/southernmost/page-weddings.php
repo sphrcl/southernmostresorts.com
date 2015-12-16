@@ -102,7 +102,7 @@
 				<?php } ?>
 				
 				<?php if(get_post_meta($post->ID,'misfit_infosheet',true)) { ?>
-					<a target="_blank" class="button" style="position: relative; display: inline-block; padding: 20px; margin-right: 10px;" href="<?php echo get_post_meta($post->ID,'misfit_infosheet',true); ?>"><?php _e('Catering Menu','theme-text'); ?></a>
+					<a target="_blank" class="button" style="position: relative; display: inline-block; padding: 20px; margin-right: 10px;" href="<?php echo get_post_meta($post->ID,'misfit_infosheet',true); ?>"><?php _e('Wedding Brochure','theme-text'); ?></a>
 				<?php } ?>	
 
 				<?php if(get_post_meta($post->ID,'misfit_wedding_package',true)) { ?>
