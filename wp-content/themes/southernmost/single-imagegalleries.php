@@ -161,8 +161,8 @@
 										// <!-- file in a text editor, for instance Notepad.-->
 										// Set the BaseURL to the url of your Web server
 
-										var BaseURL = "http://72.243.112.72/";
-										var BaseURLFF = "http://root:pass@72.243.112.72/";
+										var BaseURL = "http://162.251.177.85/";
+										var BaseURLFF = "http://root:pass@162.251.177.85/";
 																		
 										// DisplayWidth & DisplayHeight specifies the displayed width & height of the image.
 										// You may change these numbers, the effect will be a stretched or a shrunk image
