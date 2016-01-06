@@ -92,7 +92,7 @@
 		</div>
 
 		<!-- save the children -->
-
+		<!--
 		<div class="footcolumn">
 
 			<div class="save-the-children">
@@ -108,7 +108,7 @@
 			</div>
 
 		</div>
-
+		-->
 		<!-- / save the children -->
 
 	</div>
