@@ -68,15 +68,15 @@
 					
 							<div class="bigcam">
 							
-								<div id="HTMLBlock1854" class="HTMLBlock">
+								<!-- <div id="HTMLBlock1854" class="HTMLBlock">
 									
 									<script language="JavaScript"> 
 										// <!-- Cut from here to the end of image display comment -->
 										
-										// <!-- Note: If you do not see a JavaScript below in the view source window you must -->
-										// <!-- first save the html file from your browser, then open the saved -->
-										// <!-- file in a text editor, for instance Notepad.-->
-										// Set the BaseURL to the url of your Web server
+								<!--		// <!-- Note: If you do not see a JavaScript below in the view source window you must -->
+								<!--		// <!-- first save the html file from your browser, then open the saved -->
+								<!--		// <!-- file in a text editor, for instance Notepad.-->
+								<!--		// Set the BaseURL to the url of your Web server
 
 										var BaseURL = "http://162.251.177.90/";
 										var BaseURLFF = "http://root:pass@162.251.177.90/";
@@ -145,7 +145,7 @@
 
 								</div>
 
-							</div>
+							</div> -->
 										
 										
 							<div class="smallcams">
@@ -230,14 +230,14 @@
 
 								</div>
 										
-								<div id="HTMLBlock2077" class="HTMLBlock">
+								<!--<div id="HTMLBlock2077" class="HTMLBlock">
 										
 									<script language="JavaScript"> 
 										//<!-- Cut from here to the end of image display comment -->
-										// <!-- Note: If you do not see a JavaScript below in the view source window you must -->
-										// <!-- first save the html file from your browser, then open the saved -->
-										// <!-- file in a text editor, for instance Notepad.-->
-										// Set the BaseURL to the url of your Web server
+									<!--	// <!-- Note: If you do not see a JavaScript below in the view source window you must -->
+									<!--	// <!-- first save the html file from your browser, then open the saved -->
+									<!--	// <!-- file in a text editor, for instance Notepad.-->
+									<!--	// Set the BaseURL to the url of your Web server
 
 										var BaseURL = "http://72.243.112.71/";
 										var BaseURLFF = "http://root:pass@72.243.112.71/";
@@ -301,11 +301,11 @@
 										// document.Player.MotionConfigURL = "/axis-cgi/operator/param.cgi?ImageSource=0"
 										// document.Player.MotionDataURL = "/axis-cgi/motion/motiondata.cgi";
 										// <!-- End of image display part  -->
-									</script>
+								<!--	</script>
 									
 									<p>OCEANFRONT TANNING BEACH AND PRIVATE PIER</p>
 
-								</div>
+								</div> -->
 									
 									
 									
