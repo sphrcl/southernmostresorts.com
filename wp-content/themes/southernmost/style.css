@@ -5143,3 +5143,25 @@ label.error {
     display: none;
 }
 
+
+.tribe-events-list-separator-month span{
+color:#179dab !important;
+}
+a.tribe-events-read-more{
+
+float:right;
+
+}
+ul.tribe-bar-views-list > li {
+    list-style: outside none none !important;
+    margin-left: 1px !important;
+}
+#tribe-events .tribe-events-button, .tribe-events-button {
+background-color:#ff9968;
+}
+
+#tribe-events .tribe-events-button:hover,.tribe-events-button:hover{
+background-color:#179dab !important;
+background:#179dab !important;
+opacity:0.9;
+}
