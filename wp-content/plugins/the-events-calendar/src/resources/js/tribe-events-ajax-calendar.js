@@ -155,6 +155,12 @@
 
 			data.has_events = $date.hasClass( 'tribe-events-has-events' );
 
+			// Backwards compatibility
+			// @todo "Check if we can remove this check"
+			if ( data.has_events ) {
+				data.date_name = '';
+			}
+
 			$triggers.removeClass( 'mobile-active' )
 				// If full_date_name is empty then default to highlighting the first day of the current month
 				.filter( _active ).addClass( 'mobile-active' );
@@ -174,7 +180,7 @@
 
 			var $today = $wrapper.find( '.tribe-events-present' ),
 				$mobile_trigger = $wrapper.find( '.mobile-trigger' ),
-				$tribe_grid = $wrapper.find( document.getElementById( 'tribe-events-content' ) ).find( '.tribe-events-calendar'  );
+				$tribe_grid = $wrapper.find( '#tribe-events-content > .tribe-events-calendar' );
 
 			if ( !$( '#tribe-mobile-container' ).length ) {
 				$( '<div id="tribe-mobile-container" />' ).insertAfter( $tribe_grid );
@@ -358,11 +364,11 @@
 			tribe_events_bar_calendar_ajax_actions( e );
 		} );
 
-		$( te ).on( 'tribe_ev_runAjax', function() {
+		$( te ).on( "tribe_ev_runAjax", function() {
 			tribe_events_calendar_ajax_post();
 		} );
 
-		$( te ).on( 'tribe_ev_updatingRecurrence', function() {
+		$( te ).on( "tribe_ev_updatingRecurrence", function() {
 			ts.date = $( '#tribe-events-header' ).data( "date" );
 			if ( ts.filter_cats ) {
 				td.cur_url = $( '#tribe-events-header' ).data( 'baseurl' ) + ts.date + '/';
@@ -402,12 +408,11 @@
 					eventDate: ts.date
 				};
 
-				ts.url_params = {};
-
 				if ( ts.category ) {
-					ts.params.tribe_event_category = ts.category;
-					ts.url_params.tribe_events_cat = ts.category;
+					ts.params['tribe_event_category'] = ts.category;
 				}
+
+				ts.url_params = {};
 
 				if ( td.default_permalinks ) {
 					if( !ts.url_params.hasOwnProperty( 'post_type' ) ){
@@ -425,7 +430,7 @@
 
 				$( te ).trigger( 'tribe_ev_collectParams' );
 
-				if ( ts.pushcount > 0 || ts.filters || td.default_permalinks || ts.category ) {
+				if ( ts.pushcount > 0 || ts.filters || td.default_permalinks ) {
 					ts.do_string = true;
 					ts.pushstate = false;
 				}

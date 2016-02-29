@@ -23,17 +23,17 @@ class Tribe__Events__Importer__File_Importer_Events extends Tribe__Events__Impor
 		// When trying to find matches for all day events, the comparison should only be against the date
 		// component only since a) the time is irrelevant and b) the time may have been adjusted to match
 		// the eod cutoff setting
-		if ( Tribe__Date_Utils::is_all_day( $all_day ) ) {
+		if ( Tribe__Events__Date_Utils::is_all_day( $all_day ) ) {
 			$meta_query = array(
 				array(
 					'key'     => '_EventStartDate',
 					'value'   => $this->get_event_start_date( $record, true ),
-					'compare' => 'LIKE',
+					'compare' => 'LIKE'
 				),
 				array(
 					'key'     => '_EventAllDay',
-					'value'   => 'yes',
-				),
+					'value'   => 'yes'
+				)
 			);
 		// For regular, non-all day events, use the full date *and* time in the start date comparison
 		} else {
@@ -88,8 +88,8 @@ class Tribe__Events__Importer__File_Importer_Events extends Tribe__Events__Impor
 		}
 
 		$start_date = $date_only
-			? date( Tribe__Date_Utils::DBDATEFORMAT, strtotime( $start_date ) )
-			: date( Tribe__Date_Utils::DBDATETIMEFORMAT, strtotime( $start_date ) );
+			? date( Tribe__Events__Date_Utils::DBDATEFORMAT, strtotime( $start_date ) )
+			: date( Tribe__Events__Date_Utils::DBDATETIMEFORMAT, strtotime( $start_date ) );
 
 		return $start_date;
 	}
@@ -130,7 +130,7 @@ class Tribe__Events__Importer__File_Importer_Events extends Tribe__Events__Impor
 		$event = array(
 			'post_type'             => Tribe__Events__Main::POSTTYPE,
 			'post_title'            => $this->get_value_by_key( $record, 'event_name' ),
-			'post_status'           => Tribe__Events__Importer__Options::get_default_post_status( 'csv' ),
+			'post_status'           => Tribe__Events__Main::getOption( 'imported_post_status', 'publish' ),
 			'post_content'          => $this->get_value_by_key( $record, 'event_description' ),
 			'EventStartDate'        => date( 'Y-m-d', $start_date ),
 			'EventStartHour'        => date( 'h', $start_date ),
@@ -146,8 +146,6 @@ class Tribe__Events__Importer__File_Importer_Events extends Tribe__Events__Impor
 			'EventAllDay'           => $this->get_boolean_value_by_key( $record, 'event_all_day', 'yes' ),
 			'EventHideFromUpcoming' => $this->get_value_by_key( $record, 'event_hide' ),
 			'EventURL'              => $this->get_value_by_key( $record, 'event_website' ),
-			'EventCurrencySymbol'   => $this->get_value_by_key( $record, 'event_currency_symbol' ),
-			'EventCurrencyPosition' => $this->get_value_by_key( $record, 'event_currency_position' ),
 		);
 
 		if ( $organizer_id = $this->find_matching_organizer_id( $record ) ) {
@@ -160,22 +158,6 @@ class Tribe__Events__Importer__File_Importer_Events extends Tribe__Events__Impor
 
 		if ( $cats = $this->get_value_by_key( $record, 'event_category' ) ) {
 			$event['tax_input'][ Tribe__Events__Main::TAXONOMY ] = $this->translate_terms_to_ids( explode( ',', $cats ) );
-		}
-
-		if ( $tags = $this->get_value_by_key( $record, 'event_tags' ) ) {
-			$event['tax_input']['post_tag'] = $tags;
-		}
-
-		// don't create the _EventHideFromUpcoming meta key/value pair if it doesn't need to be created
-		if ( ! $event['EventHideFromUpcoming'] ) {
-			unset( $event['EventHideFromUpcoming'] );
-		}
-
-		$additional_fields = apply_filters( 'tribe_events_csv_import_event_additional_fields', array() );
-		if ( ! empty ( $additional_fields ) ) {
-			foreach ( $additional_fields as $key => $csv_column ) {
-				$event[ $key ] = $this->get_value_by_key( $record, $key );
-			}
 		}
 
 		return $event;

@@ -27,7 +27,7 @@ class Tribe__Events__List_Widget extends WP_Widget {
 		$widget_options = array_merge(
 			array(
 				'classname'   => 'tribe-events-list-widget',
-				'description' => esc_html__( 'A widget that displays upcoming events.', 'the-events-calendar' ),
+				'description' => __( 'A widget that displays upcoming events.', 'tribe-events-calendar' ),
 			),
 			$widget_options
 		);
@@ -35,7 +35,7 @@ class Tribe__Events__List_Widget extends WP_Widget {
 		$control_options = array_merge( array( 'id_base' => 'tribe-events-list-widget' ), $control_options );
 
 		$id_base = empty( $id_base ) ? 'tribe-events-list-widget' : $id_base;
-		$name    = empty( $name ) ? esc_html__( 'Events List', 'the-events-calendar' ) : $name;
+		$name    = empty( $name ) ? __( 'Events List', 'tribe-events-calendar' ) : $name;
 
 		parent::__construct( $id_base, $name, $widget_options, $control_options );
 	}
@@ -106,7 +106,6 @@ class Tribe__Events__List_Widget extends WP_Widget {
 				'tribe_events_list_widget_query_args', array(
 					'eventDisplay'   => 'list',
 					'posts_per_page' => self::$limit,
-					'tribe_render_context' => 'widget',
 				)
 			)
 		);
@@ -150,7 +149,6 @@ class Tribe__Events__List_Widget extends WP_Widget {
 	 */
 	public function update( $new_instance, $old_instance ) {
 		$instance = $old_instance;
-		$new_instance = $this->default_instance_args( $new_instance );
 
 		/* Strip tags (if needed) and update the widget settings. */
 		$instance['title']              = strip_tags( $new_instance['title'] );
@@ -168,24 +166,14 @@ class Tribe__Events__List_Widget extends WP_Widget {
 	 * @return string The output for the admin widget form.
 	 */
 	public function form( $instance ) {
-		$instance  = $this->default_instance_args( $instance );
-		$tribe_ecp = Tribe__Events__Main::instance();
-		include( $tribe_ecp->pluginPath . 'src/admin-views/widget-admin-list.php' );
-	}
-
-	/**
-	 * Accepts and returns the widget's instance array - ensuring any missing
-	 * elements are generated and set to their default value.
-	 *
-	 * @param array $instance
-	 *
-	 * @return array
-	 */
-	protected function default_instance_args( array $instance ) {
-		return wp_parse_args( $instance, array(
-			'title'              => esc_html__( 'Upcoming Events', 'the-events-calendar' ),
+		/* Set up default widget settings. */
+		$defaults  = array(
+			'title'              => __( 'Upcoming Events', 'tribe-events-calendar' ),
 			'limit'              => '5',
 			'no_upcoming_events' => false,
-		) );
+		);
+		$instance  = wp_parse_args( (array) $instance, $defaults );
+		$tribe_ecp = Tribe__Events__Main::instance();
+		include( $tribe_ecp->pluginPath . 'src/admin-views/widget-admin-list.php' );
 	}
 }

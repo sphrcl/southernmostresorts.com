@@ -55,10 +55,6 @@ if ( class_exists( 'Tribe__Events__Main' ) ) {
 				$organizer_ids[] = $event_id;
 			} else {
 				$organizer_ids = tribe_get_event_meta( $event_id, '_EventOrganizerID', false );
-
-				// for some reason we store a blank "0" element in this array.
-				// let's scrub this garbage out
-				$organizer_ids = array_filter( (array) $organizer_ids );
 			}
 		}
 		return apply_filters( 'tribe_get_organizer_ids', $organizer_ids, $event_id );
@@ -72,7 +68,7 @@ if ( class_exists( 'Tribe__Events__Main' ) ) {
 	 * @return string
 	 */
 	function tribe_get_organizer_label_singular() {
-		return apply_filters( 'tribe_organizer_label_singular', esc_html__( 'Organizer', 'the-events-calendar' ) );
+		return apply_filters( 'tribe_organizer_label_singular', __( 'Organizer', 'tribe-events-calendar' ) );
 	}
 
 	/**
@@ -83,7 +79,7 @@ if ( class_exists( 'Tribe__Events__Main' ) ) {
 	 * @return string
 	 */
 	function tribe_get_organizer_label_plural() {
-		return apply_filters( 'tribe_organizer_label_plural', esc_html__( 'Organizers', 'the-events-calendar' ) );
+		return apply_filters( 'tribe_organizer_label_plural', __( 'Organizers', 'tribe-events-calendar' ) );
 	}
 
 	/**
@@ -93,7 +89,7 @@ if ( class_exists( 'Tribe__Events__Main' ) ) {
 	 *
 	 * @return string
 	 */
-	function tribe_get_organizer_label( $singular = true ) {
+	function tribe_get_organizer_label( $singular = TRUE ) {
 		if ( $singular ) {
 			return tribe_get_organizer_label_singular();
 		} else {
@@ -159,33 +155,26 @@ if ( class_exists( 'Tribe__Events__Main' ) ) {
 	 * Returns the event Organizer Name with a link to their single organizer page
 	 *
 	 * @param int  $postId    Can supply either event id or organizer id, if none specified, current post is used
-	 * @param bool $full_link If true outputs a complete HTML <a> link, otherwise only the URL is output
+	 * @param bool $full_link If true displays full html links around organizers name, if false returns just the link without displaying it
 	 * @param bool $echo      If true, echo the link, otherwise return
 	 *
 	 * @return string Organizer Name and Url
 	 */
-	function tribe_get_organizer_link( $postId = null, $full_link = true, $echo = false ) {
-
-		// As of TEC 4.0 this argument is deprecated
-		// If needed precede the call to this function with echo
-		if ( $echo != false ) _deprecated_argument( __FUNCTION__, '4.0' );
-
-		$org_id = tribe_get_organizer_id( $postId );
+	function tribe_get_organizer_link( $postId = null, $full_link = true, $echo = true ) {
+		$postId = Tribe__Events__Main::postIdHelper( $postId );
 		if ( class_exists( 'Tribe__Events__Pro__Main' ) ) {
-			$url = esc_url_raw( get_permalink( $org_id ) );
+			$url = esc_url_raw( get_permalink( tribe_get_organizer_id( $postId ) ) );
 			if ( $full_link ) {
-				$name = tribe_get_organizer( $org_id );
-				$attr_title = the_title_attribute( array( 'post' => $org_id, 'echo' => false ) );
-				$link = ! empty( $url ) && ! empty( $name ) ? '<a href="' . esc_url( $url ) . '" title="'.$attr_title.'"">' . $name . '</a>' : false;
+				$name = tribe_get_organizer( $postId );
+				$link = ! empty( $url ) && ! empty( $name ) ? '<a href="' . esc_url( $url ) . '">' . $name . '</a>' : false;
+				$link = apply_filters( 'tribe_get_organizer_link', $link, $postId, $echo, $url, $name );
 			} else {
 				$link = $url;
 			}
-
-			// Remove this in or before 5.x to fully deprecate the echo arg
 			if ( $echo ) {
-				echo apply_filters( 'tribe_get_organizer_link', $link, $postId, $echo, $url );
+				echo $link;
 			} else {
-				return apply_filters( 'tribe_get_organizer_link', $link, $postId, $full_link, $url );
+				return $link;
 			}
 		}
 	}
@@ -218,7 +207,7 @@ if ( class_exists( 'Tribe__Events__Main' ) ) {
 	if ( ! function_exists( 'tribe_get_organizer_website_url' ) ) { // wrapped in if function exists to maintain compatibility with community events 3.0.x. wrapper not needed after 3.1.x.
 		function tribe_get_organizer_website_url( $postId = null ) {
 			$postId = Tribe__Events__Main::postIdHelper( $postId );
-			$output = esc_url( esc_html( tribe_get_event_meta( tribe_get_organizer_id( $postId ), '_OrganizerWebsite', true ) ) );
+			$output = esc_url( tribe_get_event_meta( tribe_get_organizer_id( $postId ), '_OrganizerWebsite', true ) );
 
 			return apply_filters( 'tribe_get_organizer_website_url', $output );
 		}
@@ -247,9 +236,9 @@ if ( class_exists( 'Tribe__Events__Main' ) ) {
 			}
 			$html = sprintf(
 				'<a href="%s" target="%s">%s</a>',
-				esc_attr( esc_url( $url ) ),
-				apply_filters( 'tribe_get_organizer_website_link_target', '_self' ),
-				apply_filters( 'tribe_get_organizer_website_link_label', esc_html( $label ) )
+				esc_url( $url ),
+				apply_filters( 'tribe_get_organizer_website_link_target', 'self' ),
+				apply_filters( 'tribe_get_organizer_website_link_label', $label )
 			);
 		} else {
 			$html = '';

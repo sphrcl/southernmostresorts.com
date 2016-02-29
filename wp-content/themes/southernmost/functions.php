@@ -160,9 +160,7 @@ class ctUp_ads extends WP_Widget {
 <?php
     }
 }
- 
- 
-
+/*
 add_action( 'init', 'add_new_rules' );
 function add_new_rules() { 
     add_rewrite_rule(
@@ -170,5 +168,5 @@ function add_new_rules() {
         "index.php?post_type=tribe_events",
         "top");
     
-}
+}*/
 ?>

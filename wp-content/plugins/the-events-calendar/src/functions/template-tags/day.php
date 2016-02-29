@@ -64,6 +64,7 @@ if ( ! function_exists( 'tribe_the_day_link' ) ) {
 	 * @param string $date 'previous day', 'next day', 'yesterday', 'tomorrow', or any date string that strtotime() can parse
 	 * @param string $text text for the link
 	 *
+	 * @return void
 	 **/
 	function tribe_the_day_link( $date = null, $text = null ) {
 		$html = '';
@@ -76,8 +77,8 @@ if ( ! function_exists( 'tribe_the_day_link' ) ) {
 			$date = tribe_get_the_day_link_date( $date );
 			$link = tribe_get_day_link( $date );
 
-			$earliest = tribe_events_earliest_date( Tribe__Date_Utils::DBDATEFORMAT );
-			$latest   = tribe_events_latest_date( Tribe__Date_Utils::DBDATEFORMAT );
+			$earliest = tribe_events_earliest_date( Tribe__Events__Date_Utils::DBDATEFORMAT );
+			$latest   = tribe_events_latest_date( Tribe__Events__Date_Utils::DBDATEFORMAT );
 
 			if ( $date >= $earliest && $date <= $latest ) {
 				$html = '<a href="' . esc_url( $link ) . '" data-day="' . $date . '" rel="prev">' . $text . '</a>';
@@ -101,15 +102,15 @@ if ( ! function_exists( 'tribe_get_the_day_link_label' ) ) {
 	function tribe_get_the_day_link_label( $date_description ) {
 		switch ( strtolower( $date_description ) ) {
 			case null :
-				return esc_html__( 'Today', 'the-events-calendar' );
+				return __( 'Today', 'tribe-events-calendar' );
 			case 'previous day' :
-				return '<span>&laquo;</span> ' . esc_html__( 'Previous Day', 'the-events-calendar' );
+				return __( '<span>&laquo;</span> Previous Day', 'tribe-events-calendar' );
 			case 'next day' :
-				return esc_html__( 'Next Day', 'the-events-calendar' ) . ' <span>&raquo;</span>';
+				return __( 'Next Day <span>&raquo;</span>', 'tribe-events-calendar' );
 			case 'yesterday' :
-				return esc_html__( 'Yesterday', 'the-events-calendar' );
+				return __( 'Yesterday', 'tribe-events-calendar' );
 			case 'tomorrow' :
-				return esc_html__( 'Tomorrow', 'the-events-calendar' );
+				return __( 'Tomorrow', 'tribe-events-calendar' );
 			default :
 				return date_i18n( 'Y-m-d', strtotime( $date_description ) );
 		}
@@ -154,10 +155,11 @@ if ( ! function_exists( 'tribe_get_next_day_date' ) ) {
 	function tribe_get_next_day_date( $start_date ) {
 		if ( PHP_INT_SIZE <= 4 ) {
 			if ( date( 'Y-m-d', strtotime( $start_date ) ) > '2037-12-30' ) {
-				throw new OverflowException( esc_html__( 'Date out of range.', 'the-events-calendar' ) );
+				throw new OverflowException( __( 'Date out of range.', 'tribe-events-calendar' ) );
 			}
 		}
 		$date = date( 'Y-m-d', strtotime( $start_date . ' +1 day' ) );
+
 		return $date;
 	}
 }
@@ -175,10 +177,11 @@ if ( ! function_exists( 'tribe_get_previous_day_date' ) ) {
 	function tribe_get_previous_day_date( $start_date ) {
 		if ( PHP_INT_SIZE <= 4 ) {
 			if ( date( 'Y-m-d', strtotime( $start_date ) ) < '1902-01-02' ) {
-				throw new OverflowException( esc_html__( 'Date out of range.', 'the-events-calendar' ) );
+				throw new OverflowException( __( 'Date out of range.', 'tribe-events-calendar' ) );
 			}
 		}
 		$date = date( 'Y-m-d', strtotime( $start_date . ' -1 day' ) );
+
 		return $date;
 	}
 }

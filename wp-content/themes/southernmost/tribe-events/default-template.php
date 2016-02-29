@@ -14,7 +14,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	die( '-1' );
 }
 
-get_header(); ?>
+get_header('events'); ?>
 
 	<?php wp_reset_query(); if ( has_post_thumbnail()) : // Check if thumbnail exists ?>
 		<?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), '' ); ?>
@@ -40,18 +40,11 @@ get_header(); ?>
 	
 	<!--<div class="block-top"></div>-->
 	
-	<div id="wrapper">
-		<div class="container">
-			<div class="content">
-			
-				<h1 class="title pagetitle">Events</h1>
-			</div>
-		</div>
-	</div>
+ 
 
 	<div id="tribe-events-pg-template">
 		<?php tribe_events_before_html(); ?>
 		<?php tribe_get_view(); ?>
 		<?php tribe_events_after_html(); ?>
 	</div> <!-- #tribe-events-pg-template -->
-<?php get_footer(); ?>
+<?php get_footer('events'); ?>

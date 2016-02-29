@@ -5,7 +5,7 @@
  */
 class Tribe__Events__Backcompat {
 
-	private static $instance = null;
+	private static $instance = NULL;
 
 	public static function init() {
 		self::instance()->add_hooks();

@@ -15,31 +15,29 @@ class Tribe__Events__Importer__File_Importer_Venues extends Tribe__Events__Impor
 	}
 
 	protected function update_post( $post_id, array $record ) {
-		$venue = $this->build_venue_array( $post_id, $record );
+		$venue = $this->build_venue_array( $record );
 		Tribe__Events__API::updateVenue( $post_id, $venue );
 	}
 
 	protected function create_post( array $record ) {
-		$venue = $this->build_venue_array( false, $record );
+		$venue = $this->build_venue_array( $record );
 		$id    = Tribe__Events__API::createVenue( $venue );
 
 		return $id;
 	}
 
-	private function build_venue_array( $venue_id, array $record ) {
+	private function build_venue_array( array $record ) {
 		$venue_address = trim( $this->get_value_by_key( $record, 'venue_address' ) . ' ' . $this->get_value_by_key( $record, 'venue_address2' ) );
 		$venue         = array(
-			'Venue'       => $this->get_value_by_key( $record, 'venue_name' ),
-			'Address'     => $venue_address,
-			'City'        => $this->get_value_by_key( $record, 'venue_city' ),
-			'Country'     => $this->get_value_by_key( $record, 'venue_country' ),
-			'Province'    => $this->get_value_by_key( $record, 'venue_state' ),
-			'State'       => $this->get_value_by_key( $record, 'venue_state' ),
-			'Zip'         => $this->get_value_by_key( $record, 'venue_zip' ),
-			'Phone'       => $this->get_value_by_key( $record, 'venue_phone' ),
-			'URL'         => $this->get_value_by_key( $record, 'venue_url' ),
-			'ShowMap'     => $venue_id ? get_post_meta( $venue_id, '_VenueShowMap', true ) : 'true',
-			'ShowMapLink' => $venue_id ? get_post_meta( $venue_id, '_VenueShowMapLink', true ) : 'true',
+			'Venue'    => $this->get_value_by_key( $record, 'venue_name' ),
+			'Address'  => $venue_address,
+			'City'     => $this->get_value_by_key( $record, 'venue_city' ),
+			'Country'  => $this->get_value_by_key( $record, 'venue_country' ),
+			'Province' => $this->get_value_by_key( $record, 'venue_state' ),
+			'State'    => $this->get_value_by_key( $record, 'venue_state' ),
+			'Zip'      => $this->get_value_by_key( $record, 'venue_zip' ),
+			'Phone'    => $this->get_value_by_key( $record, 'venue_phone' ),
+			'URL'      => $this->get_value_by_key( $record, 'venue_url' ),
 		);
 		if ( empty( $venue['Country'] ) ) {
 			$venue['Country'] = 'United States';

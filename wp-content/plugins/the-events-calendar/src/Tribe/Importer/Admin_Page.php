@@ -9,93 +9,15 @@ class Tribe__Events__Importer__Admin_Page {
 	private $messages = array();
 	private $errors = array();
 
-	/**
-	 * Static Singleton Holder
-	 * @var Tribe__Settings|null
-	 */
-	private static $instance;
-
-	/**
-	 * Static Singleton Factory Method
-	 *
-	 * @return Tribe__Settings
-	 */
-	public static function instance() {
-		if ( empty( self::$instance ) ) {
-			self::$instance = new self();
-		}
-
-		return self::$instance;
-	}
-
-	/**
-	 * Admin page for the importer URL, relative to `admin_url()`
-	 * @var null|string
-	 */
-	public $admin_page_url = null;
-
-	/**
-	 * The actual Page Slug used
-	 * @var null|string
-	 */
-	public $admin_page_slug = null;
-
-	public function __construct() {
-		$this->admin_page_url = 'edit.php?post_type=' . Tribe__Events__Main::POSTTYPE;
-		$this->admin_page_slug = 'events-importer';
-	}
-
-	/**
-	 * Returns the main admin settings URL.
-	 *
-	 * @return string
-	 */
-	public function get_url( array $args = array() ) {
-		$defaults = array(
-			'page' => $this->admin_page_slug,
-		);
-
-		// Allow the link to be "changed" on the fly
-		$args = wp_parse_args( $args, $defaults );
-		$url = admin_url( $this->admin_page_url );
-
-		return esc_url( apply_filters( 'tribe_importer_url', add_query_arg( $args, $url ), $args, $url ) );
-	}
-
 	public function register_admin_page() {
 		add_submenu_page(
-			$this->admin_page_url,
-			esc_html__( 'Import', 'the-events-calendar' ),
-			esc_html__( 'Import', 'the-events-calendar' ),
+			'edit.php?post_type='.Tribe__Events__Main::POSTTYPE,
+			__( 'Import', 'tribe-events-calendar' ),
+			__( 'Import', 'tribe-events-calendar' ),
 			'import',
-			$this->admin_page_slug,
+			'events-importer',
 			array( $this, 'render_admin_page_contents' )
 		);
-	}
-
-	public function add_settings_fields( $fields = array() ) {
-		$newfields = array(
-			'csv-title' => array(
-				'type' => 'html',
-				'html' => '<h3>' . esc_html__( 'CSV Import Settings', 'the-events-calendar' ) . '</h3>',
-			),
-			'csv-form-content-start' => array(
-				'type' => 'html',
-				'html' => '<div class="tribe-settings-form-wrap">',
-			),
-			'imported_post_status[csv]' => array(
-				'type' => 'dropdown',
-				'label' => __( 'Default status to use for imported events', 'the-events-calendar' ),
-				'options' => Tribe__Events__Importer__Options::get_possible_stati(),
-				'validation_type' => 'options',
-				'parent_option' => Tribe__Events__Main::OPTIONNAME,
-			),
-			'csv-form-content-end' => array(
-				'type' => 'html',
-				'html' => '</div>',
-			),
-		);
-		return array_merge( $fields, $newfields );
 	}
 
 	public function render_admin_page_contents() {
@@ -112,24 +34,7 @@ class Tribe__Events__Importer__Admin_Page {
 
 			default:
 				include Tribe__Events__Importer__Plugin::path( 'src/io/csv/admin-views/header.php' );
-				if ( has_action( 'tribe-import-render-tab-' . $tab ) ) {
-					/**
-					 * Remove this Action on 4.3
-					 * @deprecated
-					 */
-					_doing_it_wrong(
-						'tribe-import-render-tab-' . $tab,
-						sprintf(
-							esc_html__( 'This Action has been deprecated, to comply with WordPress Standards we are now using Underscores (_) instead of Dashes (-). From: "%s" To: "%s"', 'the-events-calendar' ),
-							'tribe-import-render-tab-' . $tab,
-							'tribe_import_render_tab_' . $tab
-						),
-						'4.0'
-					);
-					do_action( 'tribe-import-render-tab-' . $tab );
-				}
-
-				do_action( 'tribe_import_render_tab_' . $tab );
+				do_action( 'tribe-import-render-tab-' . $tab );
 				include Tribe__Events__Importer__Plugin::path( 'src/io/csv/admin-views/footer.php' );
 				break;
 		}
@@ -146,7 +51,7 @@ class Tribe__Events__Importer__Admin_Page {
 				try {
 					$file = new Tribe__Events__Importer__File_Reader( Tribe__Events__Importer__File_Uploader::get_file_path() );
 				} catch ( RuntimeException $e ) {
-					$this->errors[] = esc_html__( 'The file went away. Please try again.', 'the-events-calendar' );
+					$this->errors[] = __( 'The file went away. Please try again.', 'tribe-events-calendar' );
 					$this->state = '';
 					return $this->render_admin_page_contents();
 				}
@@ -187,28 +92,11 @@ class Tribe__Events__Importer__Admin_Page {
 
 	public function get_available_tabs() {
 		$tabs = array(
-			esc_html__( 'Import Settings', 'the-events-calendar' ) => 'general',
-			esc_html__( 'CSV', 'the-events-calendar' ) => 'csv-importer',
+			__( 'General', 'tribe-events-calendar' ) => 'general',
+			__( 'Import: CSV', 'tribe-events-calendar' ) => 'csv-importer',
 		);
 
-		if ( has_filter( 'tribe-import-tabs' ) ) {
-			/**
-			 * Remove this Filter on 4.3
-			 * @deprecated
-			 */
-			_doing_it_wrong(
-				'tribe-import-tabs',
-				sprintf(
-					esc_html__( 'This Filter has been deprecated, to comply with WordPress Standards we are now using Underscores (_) instead of Dashes (-). From: "%s" To: "%s"', 'the-events-calendar' ),
-					'tribe-import-tabs',
-					'tribe_import_tabs'
-				),
-				'4.0'
-			);
-			$tabs = apply_filters( 'tribe-import-tabs', $tabs );
-		}
-
-		return apply_filters( 'tribe_import_tabs', $tabs );
+		return apply_filters( 'tribe-import-tabs', $tabs );
 	}
 
 	public function handle_submission() {
@@ -262,7 +150,7 @@ class Tribe__Events__Importer__Admin_Page {
 		$this->state = 'map';
 
 		if ( empty( $_POST['import_type'] ) || empty( $_FILES['import_file']['name'] ) ) {
-			$this->errors[] = esc_html__( 'We were unable to process your request. Please try again.', 'the-events-calendar' );
+			$this->errors[] = __( 'We were unable to process your request. Please try again.', 'tribe-events-calendar' );
 			$this->state = '';
 			return;
 		}
@@ -289,32 +177,32 @@ class Tribe__Events__Importer__Admin_Page {
 	private function handle_column_mapping() {
 		// Deconstruct mapping.
 		if ( empty( $_POST['column_map'] ) ) {
-			return false;
+			return FALSE;
 		}
 		$column_mapping = $_POST['column_map'];
 
 		try {
 			$importer = $this->get_importer();
 		} catch ( RuntimeException $e ) {
-			$this->errors[] = esc_html__( 'The file went away. Please try again.', 'the-events-calendar' );
-			return false;
+			$this->errors[] = __( 'The file went away. Please try again.', 'tribe-events-calendar' );
+			return FALSE;
 		}
 		$required_fields = $importer->get_required_fields();
 		$missing = array_diff( $required_fields, $column_mapping );
 		if ( ! empty( $missing ) ) {
 			$mapper = new Tribe__Events__Importer__Column_Mapper( get_option( 'tribe_events_import_type' ) );
-			$message = '<p>' . esc_html__( 'The following fields are required for a successful import:', 'the-events-calendar' ) . '</p>';
+			$message = __( '<p>The following fields are required for a successful import:</p>', 'tribe-events-calendar' );
 			$message .= '<ul style="list-style-type: disc; margin-left: 1.5em;">';
 			foreach ( $missing as $key ) {
 				$message .= '<li>' . $mapper->get_column_label( $key ) . '</li>';
 			}
 			$message .= '</ul>';
 			$this->errors[] = $message;
-			return false;
+			return FALSE;
 		}
 
 		update_option( 'tribe_events_import_column_mapping', $column_mapping );
-		return true;
+		return TRUE;
 	}
 
 	private function begin_import() {

@@ -43,11 +43,12 @@ if ( class_exists( 'Tribe__Events__Main' ) ) {
 		$link = sprintf(
 			'<a class="tribe-events-gmap" href="%s" title="%s" target="_blank">%s</a>',
 			esc_url( tribe_get_map_link( $postId ) ),
-			esc_html__( 'Click to view a Google Map', 'the-events-calendar' ),
-			esc_html__( '+ Google Map', 'the-events-calendar' )
+			__( 'Click to view a Google Map', 'tribe-events-calendar' ),
+			__( '+ Google Map', 'tribe-events-calendar' )
 		);
 
-		return apply_filters( 'tribe_get_map_link_html', $link );
+		// @todo remove tribe_event_meta_gmap_link in 3.7
+		return apply_filters( 'tribe_get_map_link_html', apply_filters( 'tribe_event_meta_gmap_link', $link ) );
 	}
 
 	/**

@@ -19,6 +19,7 @@ if ( class_exists( 'Tribe__Events__Main' ) ) {
 	 *
 	 * @param bool|string $anchor link text. Use %title% to place the post title in your string.
 	 *
+	 * @return void
 	 * @see tribe_get_prev_event_link()
 	 */
 	function tribe_the_prev_event_link( $anchor = false ) {
@@ -111,9 +112,10 @@ if ( class_exists( 'Tribe__Events__Main' ) ) {
 	 * @return string URL
 	 */
 	function tribe_get_events_link() {
-		$plugin = Tribe__Events__Main::instance();
+		$tribe_ecp = Tribe__Events__Main::instance();
+		$output    = $tribe_ecp->getLink( 'home' );
 
-		return apply_filters( 'tribe_get_events_link', $plugin->getLink( 'home' ) );
+		return apply_filters( 'tribe_get_events_link', $output );
 	}
 
 	/**
@@ -255,31 +257,34 @@ if ( class_exists( 'Tribe__Events__Main' ) ) {
 	}
 
 	/**
+	 * Single Event Link (Display)
+	 *
+	 * Display link to a single event
+	 *
+	 * @param null|int $post Optional post ID
+	 *
+	 * @return string Link html
+	 */
+	function tribe_event_link( $post = null ) {
+		// pass in whole post object to retain start date
+		echo apply_filters( 'tribe_event_link', tribe_get_event_link( $post ) );
+	}
+
+	/**
 	 * Single Event Link
 	 *
 	 * Get link to a single event
 	 *
-	 * @param int $postId Optional post ID
-	 * @param bool $full_link If true outputs a complete HTML <a> link, otherwise only the URL is output
+	 * @param int $event Optional post ID
 	 *
 	 * @return string
 	 */
-	function tribe_get_event_link( $postId = null, $full_link = false ) {
-
-		$url = Tribe__Events__Main::instance()->getLink( 'single', $postId );
-
-		if ( '' != get_option( 'permalink_structure' ) ) $url = trailingslashit( $url );
-
-		if ( $full_link ) {
-			$title_args = array( 'post' => $postId, 'echo' => false );
-			$name = the_title( $title_args );
-			$attr_title = the_title_attribute( $title_args );
-			$link = ! empty( $url ) && ! empty( $name ) ? '<a href="' . esc_url( $url ) . '" title="'.$attr_title.'"">' . $name . '</a>' : false;
+	function tribe_get_event_link( $event = null ) {
+		if ( '' == get_option( 'permalink_structure' ) ) {
+			return apply_filters( 'tribe_get_event_link', Tribe__Events__Main::instance()->getLink( 'single', $event ), $event );
 		} else {
-			$link = $url;
+			return trailingslashit( apply_filters( 'tribe_get_event_link', Tribe__Events__Main::instance()->getLink( 'single', $event ), $event ) );
 		}
-
-		return apply_filters( 'tribe_get_event_link', $link, $postId, $full_link, $url );
 	}
 
 	/**
@@ -297,7 +302,7 @@ if ( class_exists( 'Tribe__Events__Main' ) ) {
 			$html  = sprintf(
 				'<a href="%s" target="%s">%s</a>',
 				esc_url( $url ),
-				apply_filters( 'tribe_get_event_website_link_target', '_self' ),
+				apply_filters( 'tribe_get_event_website_link_target', 'self' ),
 				apply_filters( 'tribe_get_event_website_link_label', $label )
 			);
 		} else {

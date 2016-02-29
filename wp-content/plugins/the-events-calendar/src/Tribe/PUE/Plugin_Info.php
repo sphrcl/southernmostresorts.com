@@ -80,23 +80,14 @@ if ( ! class_exists( 'Tribe__Events__PUE__Plugin_Info' ) ) {
 			// as those returned by the native WordPress.org API. These can be assigned directly.
 
 			$sameFormat = array(
-				'name',
-				'slug',
-				'version',
-				'requires',
-				'tested',
-				'rating',
-				'upgrade_notice',
-				'num_ratings',
-				'downloaded',
-				'homepage',
-				'last_updated',
+				'name', 'slug', 'version', 'requires', 'tested', 'rating', 'upgrade_notice',
+				'num_ratings', 'downloaded', 'homepage', 'last_updated',
 			);
 			foreach ( $sameFormat as $field ) {
 				if ( isset( $this->$field ) ) {
 					$info->$field = $this->$field;
 				} else {
-					$info->$field = null;
+					$info->$field = NULL;
 				}
 			}
 
