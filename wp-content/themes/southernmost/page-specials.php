@@ -56,6 +56,7 @@
 
 			<div class="content">
 				<!-- the_content(); -->
+				<?php the_content(); ?>	
 			</div>
 
 		</div>

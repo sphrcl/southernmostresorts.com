@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 /* Template Name: Weddings */
  get_header(); ?>
@@ -12,22 +12,22 @@
 	<!-- <h1 class="roomtits"><?php the_title(); ?></h1> -->
 	<a class="button roomtitties" href="<?php echo get_option('misfit_booking_link'); ?>">See Availability</a>
 	  <ul class="slides">
-	  
-	  
-		 <?php $galleryImages = get_post_gallery_imagess(); 
+
+
+		 <?php $galleryImages = get_post_gallery_imagess();
 			           $imagesCount = count($galleryImages); ?>
-			           
+
         		<?php if ($imagesCount > 0) : ?>
               	<?php for ($i = 0; $i < $imagesCount; $i++): ?>
                 <?php if (!empty($galleryImages[$i])) :?>
-                
-				
-				
+
+
+
 				<li style="background-image: url(<?php echo $galleryImages[$i]['full'][0];?>);"></li>
-				
-				
-				
-				
+
+
+
+
 				<?php endif; ?>
     			<?php endfor; ?>
 				<?php endif; ?>		<!-- items mirrored twice, total of 12 -->
@@ -35,33 +35,33 @@
 	</div>
 	<div class="flexslider meetingcarousel">
 	  <ul class="slides">
-		 <?php $galleryImages = get_post_gallery_imagess(); 
+		 <?php $galleryImages = get_post_gallery_imagess();
 			           $imagesCount = count($galleryImages); ?>
-			           
+
         		<?php if ($imagesCount > 0) : ?>
               	<?php for ($i = 0; $i < $imagesCount; $i++): ?>
                 <?php if (!empty($galleryImages[$i])) :?>
-                
-				
-				
+
+
+
 				<li style="background-image: url(<?php echo $galleryImages[$i]['full'][0];?>);"></li>
-				
-				
-				
-				
+
+
+
+
 				<?php endif; ?>
     			<?php endfor; ?>
 				<?php endif; ?>
 	  </ul>
 	</div>
-	<?php endwhile; endif; wp_reset_query(); ?>	
+	<?php endwhile; endif; wp_reset_query(); ?>
 </div>
 
 <!--
 <ul class="page-nav">
 
 	<?php wp_nav_menu( array( 'theme_location' => 'wedding_nav' ,  'items_wrap' => '%3$s', 'container' => '', 'menu_class' => 'navitem' ) ); ?>
-			
+
 </ul>
 -->
 
@@ -69,8 +69,8 @@
 
 <div id="pagecontent">
 	<?php if(have_posts()) : while(have_posts()) : the_post(); ?>
-	
-	
+
+
 	<div class="container">
 
 		<div class="contenttitle">
@@ -96,41 +96,41 @@
 				<?php the_content(); ?>
 			</div>
 			<div class="right">
-				
+
 				<?php if(get_post_meta($post->ID,'misfit_external_booking',true)) { ?>
 					<a class="button" style="position: relative; display: inline-block; padding: 20px; margin-right: 10px;" href="<?php echo get_post_meta($post->ID,'misfit_external_booking',true); ?>"><?php _e('Request for Proposal','theme-text'); ?></a>
 				<?php } ?>
-				
+
 				<?php if(get_post_meta($post->ID,'misfit_infosheet',true)) { ?>
-					<a target="_blank" class="button" style="position: relative; display: inline-block; padding: 20px; margin-right: 10px;" href="<?php echo get_post_meta($post->ID,'misfit_infosheet',true); ?>"><?php _e('Catering Menu','theme-text'); ?></a>
-				<?php } ?>	
+					<a target="_blank" class="button" style="position: relative; display: inline-block; padding: 20px; margin-right: 10px;" href="<?php echo get_post_meta($post->ID,'misfit_infosheet',true); ?>"><?php _e('Wedding Brochure','theme-text'); ?></a>
+				<?php } ?>
 
 				<?php if(get_post_meta($post->ID,'misfit_wedding_package',true)) { ?>
-					<a class="button" style="position: relative; display: inline-block; padding: 20px; margin-right: 10px;" href="<?php echo get_post_meta($post->ID,'misfit_wedding_package',true); ?>"><?php _e('Ceremony Package','theme-text'); ?></a>
-				<?php } ?>							
+					<a class="button" style="position: relative; display: inline-block; padding: 20px; margin-right: 10px;" href="<?php echo get_post_meta($post->ID,'misfit_wedding_package',true); ?>"><?php _e('Intimate Ceremony Package','theme-text'); ?></a>
+				<?php } ?>
 
 			</div>
 		</div>
 
 		<ul class="post-list">
-				
-			<?php 
+
+			<?php
 				$this_post = $post->ID;
 				$query_activities = new wp_query(array(
 					'post_parent' => $this_post,
 					'post_type' => 'page',
 					'posts_per_page' => 10,
 					'post__not_in' => array(108,102),
-				)); 
+				));
 				if($query_activities->have_posts()) : while($query_activities->have_posts()) : $query_activities->the_post();
-				$imgsrcs = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "Full"); 
+				$imgsrcs = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "Full");
 		    ?>
-			           
+
         		<li class="flexslider">
-        			
-					<?php 
-						$galleryImages = get_post_gallery_imagess(); 
-						$imagesCount = count($galleryImages); 
+
+					<?php
+						$galleryImages = get_post_gallery_imagess();
+						$imagesCount = count($galleryImages);
 					?>
 					<?php if ($imagesCount > 1) { ?>
 						<ul class="slides">
@@ -157,14 +157,14 @@
         			</div>
 
         		</li>
-				
-			<?php endwhile; endif; wp_reset_query(); ?>	
+
+			<?php endwhile; endif; wp_reset_query(); ?>
 
 		</ul>
 
 	</div>
-	
-	<?php endwhile; endif; wp_reset_query(); ?>	
+
+	<?php endwhile; endif; wp_reset_query(); ?>
 
 </div>
 

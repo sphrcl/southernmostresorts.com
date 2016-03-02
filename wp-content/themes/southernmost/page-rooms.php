@@ -77,8 +77,10 @@
 	        				<h3><?php the_title(); ?></h3>
 	        				<p><?php echo excerpt(50); ?></p>
 	        				
-	        				<a class="button" href="<?php echo get_post_meta($post->ID,'misfit_reservation',true); ?>">Reserve</a>&nbsp;&nbsp;&nbsp;&nbsp;&bull;&nbsp;&nbsp;
-	        				<a class="" href="<?php the_permalink(); ?>">Details</a>
+	        				<a class="button" href="<?php echo get_post_meta($post->ID,'misfit_reservation',true); ?>">Reserve</a>
+	        				<br />
+	        				<br />
+	        				<a class="details" href="<?php the_permalink(); ?>">Details</a>
 
 	        			</div>
 

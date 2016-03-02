@@ -91,22 +91,24 @@
 			</ul>
 		</div>
 
-		<!-- save the children 
-
+		<!-- save the children -->
+		<!--
 		<div class="footcolumn">
 
 			<div class="save-the-children">
 				
 					<img class="left" width="270px" src="http://www.southernmostbeachresort.com/wp-content/themes/southernmost/images/save-the-children-logo.png">
 					
-					<p class="save">Join us in supporting Save the Children, internationally recognized for giving children a healthy start, the opportunity to learn and protection from harm.100% of your donation benefits Save the Children. Thank you for your support.</p>
+					<p class="save">Join us in supporting Save the Children, internationally recognized for giving children a healthy start, the opportunity to learn and protection from harm. 100% of your donation benefits Save the Children. Thank you for your support.</p>
 
-					<a class="button" target="_blank" href="https://secure.savethechildren.org/site/c.8rKLIXMGIpI4E/b.6239401/k.C01C/Global_Action_Fund/apps/ka/sd/donor.asp?msource=cpkhhgaf1214&utm_source=Highgate2014&utm_medium=link&utm_campaign=highgatehotels1214">donate now</a>
+					<a class="button" target="_blank" href="https://secure.savethechildren.org/site/c.8rKLIXMGIpI4E/b.6239401/k.C01C/Global_Action_Fund/apps/ka/sd/donor.asp?msource=cpkhhgaf1214&utm_source=Highgate2014&utm_medium=link&utm_campaign=highgatehotels1214
+
+">donate now</a>
 
 			</div>
 
 		</div>
-
+		-->
 		<!-- / save the children -->
 
 	</div>
@@ -279,8 +281,8 @@
 						<input type="hidden" id="numChildren" name="numChildren" class="calendarsection" value="0" />
 						<input type="hidden" id="numAdults" name="numAdults" class="calendarsection" value="2" />
 
-						<input type="hidden"  id="arrival" name="arrival" class="calendarsection" />
-						<input type="hidden" id="departure" name="departure" class="calendarsection" />
+						<input type="hidden"  id="arrival_date" name="arrival_date" class="calendarsection" />
+						<input type="hidden" id="departure_date" name="departure_date" class="calendarsection" />
 
 						<div class="calendars">
 							<div class="datepickermob"></div>
@@ -361,6 +363,12 @@ $(window).load(function() {
 
 <script type="text/javascript" src="<?php bloginfo('template_url'); ?>/js/owl-carousel/owl.carousel.min.js"></script>
 <script type="text/javascript">
+
+ function resizeIframe(iframe) {
+    iframe.height = iframe.contentWindow.document.body.scrollHeight + "px";
+     
+  }
+
 	$(document).ready(function() {
 
 		var owl = $("#owl"),

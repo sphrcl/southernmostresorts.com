@@ -1,0 +1,324 @@
+<?php 
+	
+
+get_header(); ?>
+
+
+
+
+
+
+
+<div id="vt_nav">
+	<a id="menu" href="javascript:void(0);">menu</a>
+	<a id="menu_less" class="hide" href="javascript:void(0);">menu</a>
+</div>
+
+
+<div id="main_con" class="cl">
+
+<script>
+$(document).ready(function(){
+    $(this).scrollTop(0);
+	setTimeout(function() {
+		var currentCoverBgLeft	=	parseInt($('#page1_cover_bg').css('left')) != 0?parseInt($('#page1_cover_bg').css('left')):-2000;
+		$('#page1_cover_bg').animate({left:currentCoverBgLeft+600+'px'},3000);
+	}, 4000);
+});
+</script>
+<style>
+body{
+overflow-y:hidden;
+}
+</style>
+
+		<?php include (TEMPLATEPATH . '/library/sub-navigation.php'); ?>  
+
+		<div class="cl"></div>
+	
+<!-- Thumbnail page -->
+						<div id="list_body">
+				<div class="detail content_8 content">
+                	
+						<div class="logo" style="width:29% !important;"><a href="/"><img src="<?php bloginfo('template_url'); ?>/images/logo.png"  style="width:100%;height:100%;"/></a></div>                    
+					
+					<?php if(have_posts()) : while(have_posts()) : the_post(); ?>
+
+				<div class="listName">
+					<h1><?php the_title(); ?></h1>
+					<h2>172 beautifully appointed Bedrooms and Suites</h2>
+				</div>
+
+			<?php endwhile; endif; wp_reset_query(); ?>	 
+
+
+					<div class="events_body">
+											
+										</div>
+					<div class="cl"></div>
+
+
+					<div class="list">
+
+						<dl id="webbg_list">
+
+							<?php if(have_posts()) : while(have_posts()) : the_post(); $imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "Full"); ?>
+
+								<dt id="webbg_1">
+									<div id="promo_1" class="room_gallery">
+
+										<?php $galleryImages = get_post_gallery_imagess(); 
+										  $imagesCount = count($galleryImages);
+						       			 ?>
+						        		<?php if ($imagesCount > 0) : ?>
+					              		<?php for ($i = 0; $i < $imagesCount; $i++): ?>
+					                  	<?php if (!empty($galleryImages[$i])) :?>
+									
+											<div class="magnify">
+									
+												<a href="<?php echo $galleryImages[$i]['full'][0];?>" title="WestHouse Hotel New York">
+												<span class="sign">plus sign</span>
+									
+								 				<img id="" src="<?php echo $galleryImages[$i]['full'][0];?>" width="532" height="358"  alt="WestHouse NYC Queen Guestroom" title="WestHouse NYC Queen Guestroom" /></a>
+							 	
+											</div>
+																											
+										<?php endif; ?>
+					  					<?php endfor; ?>
+										<?php endif; ?>
+							
+					
+									</div>
+
+									<h2 style="color:#FFF; font-size:17px; text-transform: uppercase;">
+
+									<?php the_title(); ?>
+															
+										<?php if( get_post_meta($post->ID,'cebo_booklink',true) ) { ?>
+
+											<a class="btn2"  href="<?php echo get_post_meta($post->ID,'cebo_booklink',true); ?>" name="omni_rooms_WestHouse-Luxe-Queen">Reserve</a>
+
+										<?php } ?>
+								
+										<?php
+									        $gallery = get_post_gallery();
+									
+									        $content = strip_shortcode_gallery( get_the_content() );                                        
+									        $content = str_replace( ']]>', ']]&gt;', apply_filters( 'the_content', $content ) ); 
+									        echo $content;
+									
+									        ?>
+					        
+					        
+					        
+							</dt>
+
+							<?php endwhile; endif; wp_reset_query(); ?>	 
+													
+							<?php
+
+							$room_not_in = get_the_ID();
+
+							$get_term = get_the_terms($post->ID,'roomer'); 
+
+							if ( $get_term && ! is_wp_error( $get_term ) ) : 
+
+								$term_links = array();
+
+								foreach ( $get_term as $term ) {
+									$term_links[] = $term->slug;
+							} 
+
+							$termslug = join( ", ", $term_links );
+
+							endif;
+
+							if( $termslug == 'bedroom' ) {
+
+								$query = new wp_query(
+									array(
+										'post_type' => 'rooms',
+										'roomer' => 'bedroom',
+										'posts_per_page' => -1,
+										'post__not_in' => array($room_not_in),
+									)
+								);
+
+							} elseif( $termslug == 'suite' ) {
+
+								$query = new wp_query(
+									array(
+										'post_type' => 'rooms',
+										'roomer' => 'suite',
+										'posts_per_page' => -1,
+										'post__not_in' => array($room_not_in),
+									)
+								);
+
+							} 
+
+							// else {
+
+							// 	$query = new wp_query(
+							// 		array(
+							// 			'post_type' => 'rooms',
+							// 			'roomer' => 'bedroom',
+							// 			'posts_per_page' => -1,
+							// 			'post__not_in' => array($room_not_in),
+							// 		)
+							// 	);
+
+							// }
+							
+
+							// $i = 2;
+							$count = 2;
+
+							if($query->have_posts()) : while($query->have_posts()) : $query->the_post(); // $i++;
+							$imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "Full");
+
+						?>
+						
+			<dt id="webbg_<?php echo $count; ?>" <?php if($count == 1) { ?><?php } else { ?>style="display: none;"<?php } ?>>
+				<div id="promo_<?php echo $count; ?>" class="room_gallery">
+
+							<?php $galleryImages = get_post_gallery_imagess(); 
+							  $imagesCount = count($galleryImages);
+			       			 ?>
+			        		<?php if ($imagesCount > 0) : ?>
+		              		<?php for ($i = 0; $i < $imagesCount; $i++): ?>
+		                  	<?php if (!empty($galleryImages[$i])) :?>
+						
+						<div class="magnify">
+							
+							<a href="<?php echo $galleryImages[$i]['full'][0];?>" title="WestHouse Hotel New York">
+							<span class="sign">plus sign</span>
+						
+					 		<img id="" src="<?php echo $galleryImages[$i]['full'][0];?>" width="532" height="358"  alt="WestHouse NYC Queen Guestroom" title="WestHouse NYC Queen Guestroom" /></a>
+					 	
+						</div>
+																									
+					<?php endif; ?>
+  					<?php endfor; ?>
+					<?php endif; ?>
+					
+					
+				</div>
+
+				<h2 style="color:#FFF; font-size:17px; text-transform: uppercase;">
+					<?php the_title(); ?>
+											<a class="btn2"  href="<?php the_permalink(); ?>" name="omni_rooms_WestHouse-Luxe-Queen">More Info</a>
+														</h2>
+				
+<?php
+					        $gallery = get_post_gallery();
+					
+					        $content = strip_shortcode_gallery( get_the_content() );                                        
+					        $content = str_replace( ']]>', ']]&gt;', apply_filters( 'the_content', $content ) ); 
+					        echo $content;
+					
+					        ?>
+					        
+					        
+					        
+							</dt>
+												<!-- start:Detail large image area, need to change these ids:webbg_1,readMore_1,readLess_1,moreText_1 -->
+												
+												
+												
+			<?php $count++; endwhile; endif; wp_reset_query(); ?>										
+												
+					
+					<dd id="web_thumbnail_list">
+
+						<?php if(have_posts()) : while(have_posts()) : the_post(); $imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "Full"); ?>
+
+							<div id="web_thumbnail_1" onClick="javascript:displayLargeImage(1,'w');" class="sml hide">
+																																				
+			                    <img id="" src="<?php echo $imgsrc[0]; ?>" width="327" height="209"  alt="WestHouse NYC Queen Guestroom" title="WestHouse NYC Queen Guestroom" />
+			            
+			    				<p style="text-transform: uppercase;"><?php echo the_title(); ?></p>
+    				
+							</div>
+
+						<?php endwhile; endif; wp_reset_query(); ?>	
+
+
+
+					<?php
+
+							$room_not_in = get_the_ID();
+
+							$get_term = get_the_terms($post->ID,'roomer'); 
+
+							if ( $get_term && ! is_wp_error( $get_term ) ) : 
+
+								$term_links = array();
+
+								foreach ( $get_term as $term ) {
+									$term_links[] = $term->slug;
+							} 
+
+							$termslug = join( ", ", $term_links );
+
+							endif;
+
+							$room_not_in = get_the_ID();
+
+							if( $termslug == 'bedroom' ) {
+
+								$args = array(
+										'post_type' => 'rooms',
+										'roomer' => 'bedroom',
+										'posts_per_page' => -1,
+										'post__not_in' => array($room_not_in),
+									);
+
+							} elseif ( $termslug == 'suite' ) {
+
+								$args = array(
+										'post_type' => 'rooms',
+										'roomer' => 'suite',
+										'posts_per_page' => -1,
+										'post__not_in' => array($room_not_in),
+									);
+
+							} 
+							
+							$query_roomthumb = new wp_query( $args ); 
+							// $i = 2;
+							$counter = 2;
+
+							if($query_roomthumb->have_posts()) : while($query_roomthumb->have_posts()) : $query_roomthumb->the_post();  $imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "Full");
+
+						?>
+					
+				<div id="web_thumbnail_<?php echo $counter; ?>" onClick="javascript:displayLargeImage(<?php echo $counter; ?>,'w');" class="sml<?php if($counter == 1) { ?> hide<?php } ?>">
+																																		
+                    <img id="" src="<?php echo $imgsrc[0]; ?>" width="327" height="209"  alt="WestHouse NYC Queen Guestroom" title="WestHouse NYC Queen Guestroom" />
+            
+    				<p style="text-transform: uppercase;"><?php echo the_title(); ?></p>
+    				
+				</div>
+
+				<?php $counter++; endwhile; endif; wp_reset_query(); ?>	
+				
+		</dd>
+	</dl>
+</div>				</div>
+			</div>
+		</div>
+    <div class="cover_bg" id="page1_cover_bg"></div>
+    
+    
+    
+    
+    
+    
+    
+    
+<div class="footer cl" style="height: 145px;">
+	<?php include (TEMPLATEPATH . '/library/footer-part.php'); ?>
+</div>
+
+<?php get_footer(); ?>

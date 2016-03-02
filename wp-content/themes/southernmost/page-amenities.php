@@ -1,8 +1,8 @@
-<?php 
+<?php
 
 	/* Template Name: Amenities */
 
-	get_header(); 
+	get_header();
 
 
 ?>
@@ -20,18 +20,18 @@
 
 <div id="topbanner">
 	<?php if(have_posts()) : while(have_posts()) : the_post(); $imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "Full"); ?>
-		
+
 		<?php if(get_post_meta($post->ID,'misfit_banner_title',true)) { ?>
 			<div class="banner-title"><h2><?php echo get_post_meta($post->ID,'misfit_banner_title',true); ?></h2></div>
 		<?php } ?>
-		
+
 		<div class="static-banner short" style="background-image: url('<?php echo tt($imgsrc[0],1400,755); ?>')"></div>
 
 		<?php if(get_post_meta($post->ID,'misfit_banner_title',true)) { ?>
 			<div class="topbanner-overlay"></div>
 		<?php } ?>
-		
-	<?php endwhile; endif; wp_reset_query(); ?>	
+
+	<?php endwhile; endif; wp_reset_query(); ?>
 
 </div>
 
@@ -40,18 +40,18 @@
 <ul class="page-nav">
 
 	<?php wp_nav_menu( array( 'theme_location' => 'amenities_nav' ,  'items_wrap' => '%3$s', 'container' => '', 'menu_class' => 'navitem' ) ); ?>
-			
+
 </ul>
 
 <!-- end sub navigation -->
 
-	
+
 <div class="innerpage wrapper">
 	<div id="pagecontent">
 		<div class="container">
-			
+
 			<?php if(have_posts()) : while(have_posts()) : the_post(); $imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "Full"); ?>
-				
+
 				<div class="post-meta-area">
 					<div class="contenttitle">
 						<h1 class="title"><?php the_title(); ?></h1>
@@ -68,41 +68,41 @@
 							<?php if(get_option('misfit_tripadvisor')) { ?><li><a href="<?php echo get_option('misfit_tripadvisor'); ?>" target="_blank"><i class="fa fa-tripadvisor"></i></a></li><?php } ?>
 						</ul>
 					</div>
-					
+
 					<div class="content">
 						<?php the_content(); ?>
 					</div>
 				</div>
-			
+
 			<?php endwhile; endif; wp_reset_query(); ?>
-			
-			<ul id="toggle-view">				
-				<?php 
+
+			<ul id="toggle-view">
+				<?php
 					$query_amenities = new wp_query(array(
 						'post_type' => 'samenities'
-					)); 
+					));
 					if($query_amenities->have_posts()) : while($query_amenities->have_posts()) : $query_amenities->the_post();
-					$imgsrcs = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "Full"); 
+					$imgsrcs = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "Full");
 			    ?>
-					
+
 					<li>
 						<h3><?php the_title(); ?></h3>
-						
+
 						<div class="panel">
-							
+
 							<div class="halfsie">
 								<?php the_content(); ?>
 							</div>
-							
+
 							<div class="rhalfsie">
 								<div class="prices">
-									
+
 									<?php
 										$images = get_post_meta($post->ID, 'misfit_commalist', true);
 										//check that we have a custom field
-										
+
 										if ($images != "") {
-											
+
 											// Separate our comma separated list into an array
 											$images = explode(",", $images);
 											//loop through our new array
@@ -111,17 +111,17 @@
 											}
 										}
 									?>
-									
+
 								</div>
 							</div>
-							
+
 							<div class="clear"></div>
-						
+
 						</div>
 					</li>
-					
-				<?php endwhile; endif; wp_reset_query(); ?>	
-				
+
+				<?php endwhile; endif; wp_reset_query(); ?>
+
 			</ul>
 		</div>
 	</div>

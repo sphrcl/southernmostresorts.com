@@ -36,16 +36,14 @@
 }
 
 .nivo-lightbox-theme-default .nivo-lightbox-close {
-    background: rgba(0, 0, 0, 0.8) url("close.png") no-repeat scroll 10px 10px;
-    display: block;
-    height: 16px;
-    opacity: 0.5;
-    padding: 10px;
-    text-indent: -9999px;
-    top: 3%;
-    width: 16px;
+	display: block;
+	background: url(close.png) no-repeat 5px 5px;
+	width: 16px;
+	height: 16px;
+	text-indent: -9999px;
+	padding: 5px;
+	opacity: 0.5;
 }
-
 .nivo-lightbox-theme-default .nivo-lightbox-close:hover { opacity: 1; }
 
 .nivo-lightbox-theme-default .nivo-lightbox-title-wrap { bottom: -7%; }

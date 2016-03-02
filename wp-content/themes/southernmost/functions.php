@@ -159,5 +159,4 @@ class ctUp_ads extends WP_Widget {
 
 <?php
     }
-}
-?>
+} ?>

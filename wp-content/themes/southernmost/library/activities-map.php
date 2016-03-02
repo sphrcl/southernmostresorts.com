@@ -16,10 +16,6 @@
 <ul id="map-side-bar">
 
 	<li style="display: none;" class="map-location" data-icon="<?php bloginfo ('template_url'); ?>/images/henry1.png" data-jmapping="{id: 1, point: {lat: 24.566094, lng: -81.776405}, category: 'amen', bounded: true}">
-		<a href="#" class="map-link us" rel="us">US</a>
-		<!--<div class="info-box">
-			<h3>Good Ol USA</h3>
-		</div>-->
 	</li>
 
 	<li style="display: none;" class="map-location" data-icon="<?php bloginfo ('template_url'); ?>/images/henry1.png" data-jmapping="{id: 2, point: {lat: 24.548293, lng: -81.796583}, category: 'amen', bounded: true, icon: '<?php bloginfo ('template_url'); ?>/images/map-marker-new.png'}">
@@ -85,7 +81,8 @@
 		    center: new google.maps.LatLng(<?php echo get_option('misfit_mapcenter'); ?>),
 		    mapTypeId: google.maps.MapTypeId.ROADMAP,
 		    disableDefaultUI: false,
-		    scaleControl: true
+		    scaleControl: true,
+		    disableAutoPan: true
 		};
 
 		$('#maparea').jMapping({

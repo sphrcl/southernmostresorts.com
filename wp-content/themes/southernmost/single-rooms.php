@@ -10,7 +10,7 @@
 <?php if(have_posts()) : while(have_posts()) : the_post(); ?>
 
 <div class="flexslider meetingslider">
-<!-- 	<h1 class="roomtits"><?php the_title(); ?></h1> -->
+	<!-- <h1 class="roomtits"><?php the_title(); ?></h1> -->
 	<a class="button roomtitties" href="<?php echo get_post_meta($post->ID,'misfit_reservation',true); ?>">See Availability</a>
 	  <ul class="slides">
 
