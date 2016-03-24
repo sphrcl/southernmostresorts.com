@@ -230,7 +230,7 @@
 
 								</div>
 										
-								<!--<div id="HTMLBlock2077" class="HTMLBlock">
+								<div id="HTMLBlock2077" class="HTMLBlock">
 										
 									<script language="JavaScript"> 
 										//<!-- Cut from here to the end of image display comment -->
@@ -239,8 +239,8 @@
 									<!--	// <!-- file in a text editor, for instance Notepad.-->
 									<!--	// Set the BaseURL to the url of your Web server
 
-										var BaseURL = "http://72.243.112.71/";
-										var BaseURLFF = "http://root:pass@72.243.112.71/";
+										var BaseURL = "http://162.251.177.84/";
+										var BaseURLFF = "http://root:pass@162.251.177.84/";
 																			
 										// DisplayWidth & DisplayHeight specifies the displayed width & height of the image.
 										// You may change these numbers, the effect will be a stretched or a shrunk image
@@ -301,11 +301,11 @@
 										// document.Player.MotionConfigURL = "/axis-cgi/operator/param.cgi?ImageSource=0"
 										// document.Player.MotionDataURL = "/axis-cgi/motion/motiondata.cgi";
 										// <!-- End of image display part  -->
-								<!--	</script>
+									</script>
 									
 									<p>OCEANFRONT TANNING BEACH AND PRIVATE PIER</p>
 
-								</div> -->
+								</div> 
 									
 									
 									
