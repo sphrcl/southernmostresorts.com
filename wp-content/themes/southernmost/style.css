@@ -5192,3 +5192,6 @@ p.second_linec a{
     color: #000;
     padding-left: 5px;
 }
+p.second_linec{
+  text-align: left;
+}
