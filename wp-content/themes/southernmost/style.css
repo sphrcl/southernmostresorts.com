@@ -5165,3 +5165,30 @@ background-color:#179dab !important;
 background:#179dab !important;
 opacity:0.9;
 }
+.conde_image{
+  float: left;
+    width: 25%;
+}
+.conde_desc{
+  float: right;
+    width: 75%;
+}
+
+p.first_linec {
+    font-size: 13px;
+    line-height: 20px;
+    text-align: left;
+    padding-top: 15px;
+    margin-bottom: 0px;
+    padding-bottom: 0px;
+    padding-left: 5px;
+}
+
+p.second_linec a{
+    font-size: 12px;
+    line-height: 20px;
+    font-weight: bold;
+    text-align: left;
+    color: #000;
+    padding-left: 5px;
+}
