@@ -63,7 +63,7 @@
 				
 				<?php 
 					$query_activities = new wp_query(array(
-						'post_type' => 'rooms',
+						'post_type' => 'post',
 						'posts_per_page' => 15
 					)); 
 					if($query_activities->have_posts()) : while($query_activities->have_posts()) : $query_activities->the_post();
