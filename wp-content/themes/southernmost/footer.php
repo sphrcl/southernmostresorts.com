@@ -75,6 +75,12 @@
 						 </script>
 					 </div>				
 				<!-- / NAVIS -->
+           <div class="conde_holder">
+					 <div class="conde_image"><p><img  style="width:100%" src="<?php bloginfo('template_url'); ?>/images/Conde-Nast-Award.png"><p></div>
+		             <div class="conde_desc"><p class="first_linec">Our Hotel has been selected to be in<br>Conde Nast Choice Award</p><p class="second_linec"><a href="http://www.cntraveler.com/vote">Vote and see the full list of hotels here ></a></p></div>
+
+				</div>
+
 			</div>
 
 		</div>
