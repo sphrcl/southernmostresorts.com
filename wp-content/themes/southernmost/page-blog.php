@@ -62,11 +62,9 @@
 			<ul class="post-list">
 				
 				<?php 
-					$paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
 					$query_activities = new wp_query(array(
 						'post_type' => 'post',
-						'paged' => $paged,
-						'posts_per_page' => 10
+						'posts_per_page' => 15
 					)); 
 					if($query_activities->have_posts()) : while($query_activities->have_posts()) : $query_activities->the_post();
 					$imgsrcs = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "Full"); 
@@ -76,33 +74,19 @@
 	        			
 	        			<div class="post-image left" style="background-image: url('<?php echo tt($imgsrcs[0],550,330); ?>');" ><a href="<?php the_permalink(); ?>" class="dropanchor"></a></div>
 	        			<div class="post-content right">
-
 	        				<h3><?php the_title(); ?></h3>
-
-	        				<div class="post-meta">
-	        					<span class="post-author">by <?php the_author(); ?></span>
-	        					<span><?php the_time('m/d/y') ?></span>
-	        				</div>
-
 	        				<p><?php echo excerpt(50); ?></p>
 	        				
-	        				<a class="read-more" href="<?php the_permalink(); ?>">Read More</a>
+	        				<a class="button" href="<?php the_permalink(); ?>">Read More</a>
+	        				<br />
+	        				<br />
+	        	 
 
 	        			</div>
 
 	        		</li>
 					
-				<?php endwhile; ?>
-
-					<div class="navigation">
-                        <div class="alignleft"><?php next_posts_link('&laquo;' .   __(' Older Entries' , 'cebolang')) ?></div>
-                        <div class="alignright"><?php previous_posts_link( __('Newer Entries ', 'cebolang') .  '&raquo;') ?></div>
-                        <div class="clear"></div>
-                    </div>
-
-				<?php endif; wp_reset_query(); ?>
-
-
+				<?php endwhile; endif; wp_reset_query(); ?>	
 
 			</ul>
 
