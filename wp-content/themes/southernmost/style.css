@@ -5200,3 +5200,23 @@ p.second_linec{
 .test{
   display: none;
 }
+
+.single-post .innerpage #pagecontent h2,
+.single-post .innerpage #pagecontent h3,
+.single-post .innerpage #pagecontent h4 {
+    margin-bottom: 14px;
+}
+
+.single-post .innerpage #pagecontent h3 {
+    color: #000;
+    font-weight: normal;
+}
+
+.single-post .innerpage #pagecontent h4 a {
+    font-family: 'NewsGothicMT';
+}
+
+.single-post .innerpage #pagecontent img {
+    max-width: 100%;
+    height: auto;
+}
