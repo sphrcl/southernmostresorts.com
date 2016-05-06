@@ -5225,6 +5225,7 @@ p.second_linec{
     position: absolute;
     top: 10%;
     z-index: 6;
+    text-align: center;
 }
 
 #popup{
