@@ -143,7 +143,7 @@
 							</div>
 						</li>
 						<li>
-							<a href="<?php bloginfo('url');?>/photo-gallery-2/">Gallery</a>
+							<a href="<?php bloginfo('url');?>/photo-gallery/">Gallery</a>
 							<div class="slidedown-nav">
 
 								<div class="left">
@@ -207,7 +207,7 @@
 							</div>
 						</li>
 						<li>
-							<a href="<?php bloginfo('url');?>/dining-2/">Restaurant & Bars</a>
+							<a href="<?php bloginfo('url');?>/key-west-restaurants/">Restaurant & Bars</a>
 							<div class="slidedown-nav">
 
 								<div class="left">
