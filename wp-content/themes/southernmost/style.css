@@ -5220,19 +5220,21 @@ p.second_linec{
 
 /* open table */
 
+.pops {
+    width: 100%;
+    position: absolute;
+    top: 10%;
+    z-index: 6;
+}
+
 #popup{
-position:absolute;
-display:hidden;
-top:160px;
-left:50%;
-width:500px;
-height:auto;
-margin-left:-250px;
-background-color:white;
-z-index:6;
-padding:20px;
-border:solid 5px #333333;
-border-radius:5px;
+    display: hidden;
+    top: 160px;
+    width: 12%;
+    height: auto;
+    margin: auto;
+    z-index: 6;
+
 }
 #popup h1{
 font-size:16px;
