@@ -5224,19 +5224,22 @@ p.second_linec{
 
 /* open table */
 
+.pops {
+    width: 100%;
+    position: absolute;
+    top: 10%;
+    z-index: 6;
+    text-align: center;
+}
+
 #popup{
-position:absolute;
-display:hidden;
-top:160px;
-left:50%;
-width:500px;
-height:auto;
-margin-left:-250px;
-background-color:white;
-z-index:6;
-padding:20px;
-border:solid 5px #333333;
-border-radius:5px;
+    display: hidden;
+    top: 160px;
+    width: 12%;
+    height: auto;
+    margin: auto;
+    z-index: 6;
+
 }
 #popup h1{
 font-size:16px;
@@ -5260,15 +5263,7 @@ margin:0;
 padding:5px;
 text-align:justify;
 }
-#popup a{
  
-font-size:12px;
-color:#666666;
-margin:0;
-padding:5px;
-text-align:right;
-float:right;
-}
 #overlay-back {
 position: absolute;
 top: 0;
@@ -5288,4 +5283,9 @@ position:relative;
 top:-15px;
 right: -15px;
 height: 20px;
+}
+
+.OT_wrapper #datepicker {
+    height: auto !important;
+    overflow: overlay;
 }
