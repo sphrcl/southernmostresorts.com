@@ -5231,7 +5231,7 @@ p.second_linec{
 #popup{
     display: hidden;
     top: 160px;
-    width: 12%;
+    width: 169px;
     height: auto;
     margin: auto;
     z-index: 20000000;
@@ -5275,7 +5275,7 @@ display: none
 .close-image{
 display: block;
     float: right;
-    position: relative;
+    position: fixed;
     top: 20px;
     right: 30px;
     height: 20px;
