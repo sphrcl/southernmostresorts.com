@@ -475,12 +475,13 @@ $(window).load(function() {
 	});
 
  $(document).ready(function(){
-         $('#overlay-back').fadeIn(500,function(){
+         $('#overlay-back').fadeIn(100,function(){
             $('#popup').show();
          });
  
          $(".close-image").on('click', function() {
             $('#popup').hide();
+            $(".close-image").fadeOut(500);
             $('#overlay-back').fadeOut(500);
          });
       });
