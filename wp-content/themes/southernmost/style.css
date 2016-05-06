@@ -5226,6 +5226,7 @@ p.second_linec{
     top: 25%;
     z-index: 20000000;
     text-align: center;
+    display: none;
 }
 
 #popup{
@@ -5292,4 +5293,24 @@ display: block;
 }
 .white_pop{
   display: none;
+}
+
+.reserve{
+      background: #ff9968;
+    /* width: 164px; */
+    /* height: 72px; */
+    display: block;
+    font-family: NewsGothicMT-Bold;
+    font-size: 16px;
+    line-height: 45px;
+    color: #fff;
+    text-transform: uppercase;
+    top: 0px;
+    text-align: center;
+    padding: 0 35px;
+}
+
+.reserve:hover {
+    background: #179dab;
+    color: #fff;
 }
