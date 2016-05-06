@@ -273,7 +273,7 @@
 			</div>
 	
 			<div class="reserve">
-				<a class="button1 opentable" href="javascript:void(0);">reserve</a>
+				<a class="opentable" href="javascript:void(0);">reserve</a>
 			</div>
 	
 		</div>
