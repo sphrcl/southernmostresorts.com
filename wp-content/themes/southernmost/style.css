@@ -5222,8 +5222,8 @@ p.second_linec{
 
 .pops {
     width: 100%;
-    position: absolute;
-    top: 10%;
+    position: fixed;
+    top: 25%;
     z-index: 20000000;
     text-align: center;
 }
