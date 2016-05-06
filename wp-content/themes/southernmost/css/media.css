@@ -1500,3 +1500,76 @@ and (max-height: 320px) {
 
 
 }
+
+/* Landscape */
+@media only screen 
+  and (min-device-width: 320px) 
+  and (max-device-width: 480px)
+  and (orientation: landscape) {
+
+  	.pops {
+    width: 100%;
+    position: fixed;
+    top: 0%;
+    z-index: 20000000;
+    text-align: center;
+    overflow: scroll;
+    height: 100%;
+}
+
+}
+
+
+/* Landscape */
+@media only screen 
+  and (min-device-width: 320px) 
+  and (max-device-width: 568px)
+  and (orientation: landscape) {
+
+  		.pops {
+    width: 100%;
+    position: fixed;
+    top: 0%;
+    z-index: 20000000;
+    text-align: center;
+    overflow: scroll;
+    height: 100%;
+}
+
+}
+
+
+@media only screen 
+  and (min-device-width: 375px) 
+  and (max-device-width: 667px) 
+  and (orientation: landscape) { 
+
+  		.pops {
+    width: 100%;
+    position: fixed;
+    top: 0%;
+    z-index: 20000000;
+    text-align: center;
+    overflow: scroll;
+    height: 100%;
+}
+
+}
+
+
+@media only screen 
+  and (min-device-width: 414px) 
+  and (max-device-width: 736px) 
+  and (orientation: landscape) { 
+
+  		.pops {
+    width: 100%;
+    position: fixed;
+    top: 0%;
+    z-index: 20000000;
+    text-align: center;
+    overflow: scroll;
+    height: 100%;
+}
+
+}
