@@ -5270,7 +5270,7 @@ background: #000;
 opacity: 0.75;
 filter: alpha(opacity=75);
 z-index: 2000000;
-display: none
+display: none;
 }
 .close-image{
 display: block;
@@ -5283,9 +5283,13 @@ display: block;
     font-family: GothamBold;
     color: #ffffff;
     cursor: pointer;
+    display: none;
 }
 
 .OT_wrapper #datepicker {
     height: auto !important;
     overflow: overlay;
+}
+.white_pop{
+  display: none;
 }

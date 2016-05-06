@@ -475,10 +475,21 @@ $(window).load(function() {
 	});
 
  $(document).ready(function(){
-         $('#overlay-back').fadeIn(100,function(){
+
+         $(".opentable").click(function(){
+
+         	 $('#overlay-back').fadeIn(100,function(){
             $('#popup').show();
-         });
+             $(".close-image").fadeIn(500);
+            $('#overlay-back').fadeIn(500);
+            $(".white_pop").fadeIn(500);
+             });
  
+
+
+         }) ;
+
+        
          $(".close-image").on('click', function() {
             $('#popup').hide();
             $(".close-image").fadeOut(500);

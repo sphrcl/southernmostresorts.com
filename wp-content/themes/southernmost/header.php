@@ -273,7 +273,7 @@
 			</div>
 	
 			<div class="reserve">
-				<a class="button1" href="<?php echo get_option('misfit_booking_link'); ?>">reserve</a>
+				<a class="button1 opentable" href="javascript:void(0);">reserve</a>
 			</div>
 	
 		</div>
