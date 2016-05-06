@@ -5278,14 +5278,15 @@ display: none
 }
 .close-image{
 display: block;
-float:right;
-position:relative;
-top:-15px;
-right: -15px;
-height: 20px;
-z-index: 20000000;
-font-family: GothamBold;
-color:#ffffff;
+    float: right;
+    position: relative;
+    top: 20px;
+    right: 30px;
+    height: 20px;
+    z-index: 20000000;
+    font-family: GothamBold;
+    color: #ffffff;
+    cursor: pointer;
 }
 
 .OT_wrapper #datepicker {
