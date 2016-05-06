@@ -5299,8 +5299,8 @@ display: block;
   display: none;
 }
 
-.reserve{
-      background: #ff9968;
+.opentable{
+      background: #ffopentable9968;
     /* width: 164px; */
     /* height: 72px; */
     display: block;
@@ -5314,7 +5314,7 @@ display: block;
     padding: 0 35px;
 }
 
-.reserve:hover {
+.opentable:hover {
     background: #179dab;
     color: #fff;
 }
