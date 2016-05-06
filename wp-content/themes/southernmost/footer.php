@@ -483,6 +483,7 @@ $(window).load(function() {
             $('#popup').hide();
             $(".close-image").fadeOut(500);
             $('#overlay-back').fadeOut(500);
+            $(".white_pop").fadeOut(500);
          });
       });
 </script>
