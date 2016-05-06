@@ -5267,8 +5267,8 @@ left: 0;
 width: 100%;
 height: 100%;
 background: #000;
-opacity: 0.6;
-filter: alpha(opacity=60);
+opacity: 0.75;
+filter: alpha(opacity=75);
 z-index: 2000000;
 display: none
 }
