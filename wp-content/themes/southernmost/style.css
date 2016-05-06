@@ -5226,9 +5226,9 @@ p.second_linec{
 
 .pops {
     width: 100%;
-    position: absolute;
-    top: 10%;
-    z-index: 6;
+    position: fixed;
+    top: 25%;
+    z-index: 20000000;
     text-align: center;
 }
 
@@ -5238,7 +5238,7 @@ p.second_linec{
     width: 12%;
     height: auto;
     margin: auto;
-    z-index: 6;
+    z-index: 20000000;
 
 }
 #popup h1{
@@ -5273,7 +5273,7 @@ height: 100%;
 background: #000;
 opacity: 0.6;
 filter: alpha(opacity=60);
-z-index: 5;
+z-index: 2000000;
 display: none
 }
 .close-image{
@@ -5283,6 +5283,9 @@ position:relative;
 top:-15px;
 right: -15px;
 height: 20px;
+z-index: 20000000;
+font-family: GothamBold;
+color:#ffffff;
 }
 
 .OT_wrapper #datepicker {
