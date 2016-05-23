@@ -55,7 +55,7 @@ $activities_boxer = array(
  		,
  		array( 
               "name" => "Short Description",
-	          "desc" => "Short Description ",
+	          "desc" => "",
 	          "id" => $prefix."_shortdesc",
 	          "type" => "textarea",
 	          "std" => ""
