@@ -12,11 +12,6 @@ get_header(); ?>
 
 <?php if($post->ID==2479) { ?>
 
-<?php 
-	if(have_posts()) : while(have_posts()) : the_post(); 
-	$imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "Full"); 
-?>
- 
 <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/js/nivo/nivo-lightbox.css" type="text/css" />
 <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/js/nivo/themes/default/default.css" type="text/css" />
 <script src="<?php bloginfo('template_url'); ?>/js/nivo/nivo-lightbox.min.js"></script>
@@ -36,19 +31,27 @@ get_header(); ?>
  <div class="mapbox">
 
 	<div id="maparea" style="width: 100%;"></div>
+ 
 
-	 
 </div> 
 
 
-<div id="topbanner">
+ <div id="topbanner">
+<?php 
+	if(have_posts()) : while(have_posts()) : the_post(); 
+	$imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "Full"); 
+?>
 
 	<div class="static-banner" style="background-image: url('<?php echo tt($imgsrc[0],1400,755); ?>')"></div>
 
 	<div class="topbanner-overlay"></div>
 
-</div>
 
+<?php endwhile; endif; wp_reset_query(); ?>	
+
+
+</div>
+	
 <div class="innerpage wrapper specials_page">
 	<div id="pagecontent">
 
@@ -113,6 +116,7 @@ get_header(); ?>
 					<h4><?php echo excerpt(20); ?></h4>
 				</div>
 				<div class="specialbuttons">
+				 
 					<a class="button7" href="<?php the_permalink(); ?>">Details</a>
 				</div>
 			</div>
@@ -124,8 +128,6 @@ get_header(); ?>
 		
 	</div>
 </div>
-
-<?php endwhile; endif; wp_reset_query(); ?>
 
 
 <?php
