@@ -119,7 +119,8 @@ get_header(); ?>
 				'tax_query' => array(
                    array(
                         'taxonomy' => 'loctype',
-                        'term' => 'neighborhood', 
+                        'field' => 'slug',
+                        'term' => 'neighborhood'
                         )
                 ),
 				'posts_per_page' => -1
