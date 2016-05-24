@@ -44,7 +44,14 @@ $meta_boxer = array(
 	'context' => 'normal',
 	'priority' => 'high',
 	'fields' => array(
-	
+		array( 
+              "name" => "External Link",
+	          "desc" => "External URL Link",
+	          "id" => $prefix."_external",
+	          "type" => "text",
+	          "std" => ""
+              )
+ 		,
 		array( 
               "name" => "Location Short Name (US, UK etc)",
 	          "desc" => "The big tagline over the top. The shorter, the better.",
