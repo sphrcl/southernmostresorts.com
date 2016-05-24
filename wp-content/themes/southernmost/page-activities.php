@@ -63,7 +63,7 @@
 
 </div>
 
-<div class="innerpage wrapper specials_page">
+<div class="innerpage wrapper">
 	<div id="pagecontent">
 
 		<div class="container">
@@ -95,48 +95,36 @@
 
 			</div>
 
-		 
-		</div>
+			<ul class="post-list">
 
-	</div>
-
-
-	<div id="specials_list">
-	
-	
-	<?php 
-
+				<?php
 					$query_activities = new wp_query(array(
 						'post_type' => 'activities',
 						'posts_per_page' => 10
 					));
 					if($query_activities->have_posts()) : while($query_activities->have_posts()) : $query_activities->the_post();
 					$imgsrcs = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "Full");
+			    ?>
 
-		?>
-		
-		
-		<div class="specialsbox" style="background-image: url(<?php echo tt($imgsrcs[0],1400,755); ?>);">
-		
-			
-			<div class="specialscontent">
-				<div class="specialtitle">
-					<h3><?php the_title(); ?></h3>
-					<h4><?php echo excerpt(50); ?></h4>
-				</div>
-				<div class="specialbuttons">
-					<a class="button6" href="<?php echo get_post_meta($post->ID,'misfit_externallink',true); ?>">Book</a>
-					<a class="button7" href="<?php the_permalink(); ?>">Details</a>
-				</div>
-			</div>
+	        		<li>
+
+	        			<div class="post-image left" style="background-image: url('<?php echo tt($imgsrcs[0],550,330); ?>');" ><a href="<?php the_permalink(); ?>" class="dropanchor"></a></div>
+	        			<div class="post-content right">
+	        				<h3><?php the_title(); ?></h3>
+	        				<p><?php echo excerpt(50); ?></p>
+
+	        				<a class="button" href="<?php the_permalink(); ?>">Details</a>
+	        			</div>
+
+	        		</li>
+
+				<?php endwhile; endif; wp_reset_query(); ?>
+
+			</ul>
+
 		</div>
 
-		<?php endwhile; endif; wp_reset_query(); ?>	
-		
-		
-		
 	</div>
-
 </div>
 
 <?php endwhile; endif; wp_reset_query(); ?>
