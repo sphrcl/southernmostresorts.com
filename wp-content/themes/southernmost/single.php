@@ -9,12 +9,13 @@ Basic Single Post Template
 
 get_header(); ?>
 
+
+<?php if($post->ID==2479) { ?>
+
 <?php 
 	if(have_posts()) : while(have_posts()) : the_post(); 
 	$imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "Full"); 
 ?>
-
-<?php if($post->ID==2479) { ?>
 
 
 <div id="topbanner">
@@ -102,6 +103,12 @@ get_header(); ?>
 
 <?php
 }else{ ?>
+
+<?php 
+	if(have_posts()) : while(have_posts()) : the_post(); 
+	$imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "Full"); 
+?>
+
 
 	<div id="topbanner">
 
