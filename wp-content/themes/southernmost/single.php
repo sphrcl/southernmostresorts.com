@@ -37,29 +37,7 @@ get_header(); ?>
 
 	<div id="maparea" style="width: 100%;"></div>
 
-	 <ul id="toggles" class="page-nav">
-
-		<?php
-
-			$this_post = $post->ID;
-			$query_gallery_single = new wp_query(array(
-				'post_type' => 'page',
-				'post_parent' => $this_post,
-				'posts_per_page'=> 6,
-			));
-			$count = 1;
-
-			if($query_gallery_single->have_posts()) : while($query_gallery_single->have_posts()) : $query_gallery_single->the_post();
-
-		?>
-
-			<li class="<?php echo $post->post_name; ?>" <?php if( $count == 1 ) { echo ' class="current"'; } ?>><a class="linkerd active" href="<?php the_permalink(); ?>"><?php the_title(); ?></a></li>
-
-
-		<?php $count++; endwhile; endif; wp_reset_query(); ?>
-
-	</ul>
-
+	 
 </div> 
 
 
@@ -114,15 +92,9 @@ get_header(); ?>
 	
 	
 	<?php 
+
 			$dining = new WP_Query(array(
 				'post_type' => 'locations',
-				'tax_query' => array(
-                   array(
-                        'taxonomy' => 'loctype',
-                        'field' => 'slug',
-                        'term' => 'neighborhood'
-                        )
-                ),
 				'posts_per_page' => -1
 			));
 
@@ -132,7 +104,9 @@ get_header(); ?>
 		?>
 		
 		
-		<div class="specialsbox" style="background-image: url(<?php echo tt($imgsrc[0],1400,755); ?>);">	
+		<div class="specialsbox" style="background-image: url(<?php echo tt($imgsrc[0],1400,755); ?>);">
+		
+			
 			<div class="specialscontent">
 				<div class="specialtitle">
 					<h3><?php the_title(); ?></h3>
