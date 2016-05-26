@@ -54,6 +54,21 @@ $activities_boxer = array(
               )
  		,
  		array( 
+              "name" => "Short Description",
+	          "desc" => "",
+	          "id" => $prefix."_shortdesc",
+	          "type" => "textarea",
+	          "std" => ""
+              )
+ 		,array( 
+              "name" => "External URL",
+	          "desc" => "External Link Url ",
+	          "id" => $prefix."_externallink",
+	          "type" => "text",
+	          "std" => ""
+              )
+ 		,
+ 		array( 
               "name" => "Location Latitude of Activity",
 	          "desc" => "EX: 43.042798",
 	          "id" => $prefix."_lat",
