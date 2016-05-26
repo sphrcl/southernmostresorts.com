@@ -10,7 +10,7 @@ Basic Single Post Template
 get_header(); ?>
 
 
-<?php if($post->ID==2479) { ?>
+<?php if($post->ID==2579) { ?>
 
 <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/js/nivo/nivo-lightbox.css" type="text/css" />
 <link rel="stylesheet" href="<?php bloginfo('template_url'); ?>/js/nivo/themes/default/default.css" type="text/css" />
