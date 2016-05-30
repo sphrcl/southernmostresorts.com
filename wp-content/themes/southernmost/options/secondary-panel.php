@@ -54,14 +54,14 @@ $meta_box = array(
               )
        	,
        	array( 
-              "name" => "Room or Specials Code",
+              "name" => "Rooms or Specials Code",
 	          "desc" => "used to get rates from API",
 	          "id" => $prefix."_code",
 	          "type" => "text",
 	          "std" => ""
               )
        	,
-       	  	array( 
+       	array( 
               "name" => "Room Map",
 	          "desc" => "upload map image ",
 	          "id" => $prefix."_roommap",
@@ -69,8 +69,7 @@ $meta_box = array(
 	          "std" => ""
               )
        	,
-       		
-		array( 
+       	array( 
               "name" => "Shortname/Subtitle",
 	          "desc" => "If you want to shorten the name of the room or add subtitle to special",
 	          "id" => $prefix."_shortname",
