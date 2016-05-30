@@ -61,6 +61,14 @@ $meta_box = array(
 	          "std" => ""
               )
        	,
+       	  	array( 
+              "name" => "Room Map",
+	          "desc" => "upload map image ",
+	          "id" => $prefix."_roommap",
+	          "type" => "upload",
+	          "std" => ""
+              )
+       	,
        		
 		array( 
               "name" => "Shortname/Subtitle",

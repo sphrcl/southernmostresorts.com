@@ -145,6 +145,10 @@
 
 		        <?php } ?>
 
+		            <?php if(get_post_meta($post->ID,'misfit_roommap', true)) { ?>
+	   					 <div class="map_room"><img src="<?php echo get_post_meta($post->ID,'misfit_roommap', true); ?>" style="width: 100%;"></div>
+			        <?php } ?>
+
 				    <!-- book now button -->
 
 				    <?php if(get_post_meta($post->ID,'misfit_reservation', true)) { ?>

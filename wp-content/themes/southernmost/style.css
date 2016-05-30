@@ -5318,3 +5318,16 @@ display: block;
     background: #179dab;
     color: #fff;
 }
+
+.map_room {
+    display: inline-block;
+    float: right;
+    width: 60%;
+    clear: both;
+    vertical-align: text-top;
+    margin-top: -40px;
+}
+
+.content ul{
+  display: inline-block;
+}
