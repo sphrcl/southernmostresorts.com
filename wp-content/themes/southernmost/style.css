@@ -5166,6 +5166,10 @@ background-color:#179dab !important;
 background:#179dab !important;
 opacity:0.9;
 }
+
+.conde_holder {
+    display: none;
+}
  
  .conde_image{
   float: left;
