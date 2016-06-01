@@ -264,9 +264,7 @@
 				<!-- / NAVIS -->
 			</div>
 	
-			<div class="reserve">
-				<a class="opentable" href="javascript:void(0);">reserve</a>
-			</div>
+			<a class="button1" href="<?php echo get_option('misfit_booking_link'); ?>">reserve</a>
 	
 		</div>
 	
