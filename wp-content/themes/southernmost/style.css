@@ -5224,5 +5224,16 @@ p.second_linec{
 .single-post .innerpage #pagecontent img {
     max-width: 100%;
     height: auto;
+} 
+.map_room {
+    display: inline-block;
+    float: right;
+    width: 60%;
+    clear: both;
+    vertical-align: text-top;
+    margin-top: -40px;
 }
- 
+
+.content ul{
+  display: inline-block;
+}
