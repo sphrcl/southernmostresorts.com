@@ -5202,6 +5202,10 @@ p.second_linec{
   text-align: left;
 }
 
+.test{
+  display: none;
+}
+
 .single-post .innerpage #pagecontent h2,
 .single-post .innerpage #pagecontent h3,
 .single-post .innerpage #pagecontent h4 {
@@ -5220,4 +5224,114 @@ p.second_linec{
 .single-post .innerpage #pagecontent img {
     max-width: 100%;
     height: auto;
+}
+
+/* open table */
+
+.pops {
+    width: 100%;
+    position: fixed;
+    top: 25%;
+    z-index: 20000000;
+    text-align: center;
+    display: none;
+}
+
+#popup{
+    display: hidden;
+    top: 160px;
+    width: 169px;
+    height: auto;
+    margin: auto;
+    z-index: 20000000;
+
+}
+#popup h1{
+font-size:16px;
+color:#3F5C9A;
+border-bottom:1px #3F5C9A solid;
+margin:0;
+padding:0;
+}
+#popup h3{
+font-size:14px;
+color:#666666;
+margin:0;
+padding:5px 0;
+text-align:left;
+}
+#popup p{
+ 
+font-size:12px;
+color:#666666;
+margin:0;
+padding:5px;
+text-align:justify;
+}
+ 
+#overlay-back {
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background: #000;
+opacity: 0.75;
+filter: alpha(opacity=75);
+z-index: 2000000;
+display: none;
+}
+.close-image{
+display: block;
+    float: right;
+    position: fixed;
+    top: 20px;
+    right: 30px;
+    height: 20px;
+    z-index: 20000000;
+    font-family: GothamBold;
+    color: #ffffff;
+    cursor: pointer;
+    display: none;
+}
+
+.OT_wrapper #datepicker {
+    height: auto !important;
+    overflow: overlay;
+}
+.white_pop{
+  display: none;
+}
+
+.opentable{
+      background: #ff9968;
+    /* width: 164px; */
+    /* height: 72px; */
+    display: block;
+    font-family: NewsGothicMT-Bold;
+    font-size: 16px;
+    line-height: 45px;
+    color: #fff;
+    text-transform: uppercase;
+    top: 0px;
+    text-align: center;
+    padding: 0 35px;
+}
+
+.opentable:hover {
+    background: #179dab;
+    color: #fff;
+}
+
+.map_room {
+    display: inline-block;
+    float: right;
+    width: 60%;
+    clear: both;
+    vertical-align: text-top;
+    margin-top: -40px;
+}
+
+.content ul{
+  display: inline-block;
 }

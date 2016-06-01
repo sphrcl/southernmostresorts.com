@@ -87,8 +87,7 @@ get_header(); ?>
 			        array(
 			            'taxonomy' => 'loctype',
 			            'field' => 'slug',
-			            'terms' => 'neighborhood-guide',
-
+			            'terms' => 'neighborhood-guide'
 			       )),	
 				'posts_per_page' => -1
 			));
