@@ -97,6 +97,10 @@
 			</ul>
 		</div>
 
+		<div class="highgate">
+			<a href="http:///www.highgate.com"><img src="<?php bloginfo('template_url'); ?>/images/highgate-logo.png"></a>
+		</div>
+
 		<!-- save the children -->
 		<!--
 		<div class="footcolumn">

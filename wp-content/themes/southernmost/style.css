@@ -1679,6 +1679,7 @@ div#footer {
   border-top: 1px solid #f2edde;
   padding-top: 40px;
   clear: both;
+  position: relative;
 }
 
 .footaddress {
@@ -5236,4 +5237,16 @@ p.second_linec{
 
 .content ul{
   display: inline-block;
+}
+
+/* HIGHGATE LOGO */
+
+.highgate {
+  position: absolute;
+  bottom: 40px;
+  left: 13%;
+}
+
+.highgate img{
+  height: 50px;
 }
