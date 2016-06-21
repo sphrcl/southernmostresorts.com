@@ -118,7 +118,7 @@
 			
 			<div class="specialscontent">
 				<div class="specialtitle">
-					<h3><?php echo $content2->post_title; ?> </h3>>
+					<h3><?php echo $content2->post_title; ?> </h3>
 					<h4><?php echo get_post_meta($content2->ID,'misfit_shortname',true); ?></h4>
 				</div>
 				 
