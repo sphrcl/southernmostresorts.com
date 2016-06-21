@@ -97,61 +97,61 @@
 
 <?php $content1=get_page(445); 
 	  $imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $content1->ID ), "Full");
-  ?>	
+  ?>	<a href="<?php echo get_the_permalink($content1->ID); ?>">
 		<div class="specialsbox" style="background-image: url(<?php echo tt($imgsrc[0],1400,755); ?>);">
 			
 			<div class="specialscontent">
 				<div class="specialtitle">
-					<a href="<?php echo get_the_permalink($content1->ID); ?>"><h3><?php echo $content1->post_title; ?> </h3></a>
+					<h3><?php echo $content1->post_title; ?> </h3>
 					<h4><?php echo get_post_meta($content1->ID,'misfit_shortname',true); ?></h4>
 				</div>
 				 
 			</div>
 		</div>
- 
+         </a>
 		
 <?php //$content2=get_page(2579); 
       $content2=get_page(2488);
 	  $imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $content2->ID ), "Full");
-  ?>	
+  ?>	<a href="<?php echo get_the_permalink($content2->ID); ?>">
 		<div class="specialsbox" style="background-image: url(<?php echo tt($imgsrc[0],1400,755); ?>);">
 			
 			<div class="specialscontent">
 				<div class="specialtitle">
-					<a href="<?php echo get_the_permalink($content2->ID); ?>"><h3><?php echo $content2->post_title; ?> </h3></a>
+					<h3><?php echo $content2->post_title; ?> </h3>>
 					<h4><?php echo get_post_meta($content2->ID,'misfit_shortname',true); ?></h4>
 				</div>
 				 
 			</div>
-		</div>
+		</div></a>
  		
 <?php $content3=get_page(2486); 
 	  $imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $content3->ID ), "Full");
-  ?>	
+  ?>	<a href="<?php echo get_the_permalink($content3->ID); ?>">
 		<div class="specialsbox" style="background-image: url(<?php echo tt($imgsrc[0],1400,755); ?>);">
 			
 			<div class="specialscontent">
 				<div class="specialtitle">
-					<a href="<?php echo get_the_permalink($content3->ID); ?>"><h3><?php echo $content3->post_title; ?> </h3></a>
+					<h3><?php echo $content3->post_title; ?> </h3>
 					<h4><?php echo get_post_meta($content3->ID,'misfit_shortname',true); ?></h4>
 				</div>
 				 
 			</div>
-		</div>
+		</div></a>
   		
 <?php $content4=get_page(1285); 
 	  $imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $content4->ID ), "Full");
-  ?>	
+  ?>	<a href="<?php echo get_the_permalink($content4->ID); ?>">
 		<div class="specialsbox" style="background-image: url(<?php echo tt($imgsrc[0],1400,755); ?>);">
 			
 			<div class="specialscontent">
 				<div class="specialtitle">
-					<a href="<?php echo get_the_permalink($content4->ID); ?>"><h3>Events Calendar</h3></a>
+					<h3>Events Calendar</h3>
 					<h4><?php echo get_post_meta($content4->ID,'misfit_shortname',true); ?></h4>
 				</div>
 				 
 			</div>
-		</div>
+		</div></a>
  
 		
 		
