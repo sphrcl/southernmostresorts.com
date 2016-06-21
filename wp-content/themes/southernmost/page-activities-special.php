@@ -22,7 +22,7 @@
 	});
 </script>
 
-<?php include( TEMPLATEPATH . '/library/activities-map.php'); ?>
+<?php //include( TEMPLATEPATH . '/library/activities-map.php'); ?>
 
 
  <div class="mapbox">
@@ -53,6 +53,14 @@
 	</ul>
 
 </div> 
+
+<div id="topbanner">
+
+	<div class="static-banner" style="background-image: url('<?php echo tt($imgsrc[0],1400,755); ?>')"></div>
+
+	<div class="topbanner-overlay"></div>
+
+</div>
 
  
 
