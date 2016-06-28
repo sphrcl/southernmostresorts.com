@@ -899,7 +899,7 @@ div#topbanner {
 /* secondright nav */
 
 .secondrightnav {
-  display: none;
+  display: block;
   background: url('images/logo-footer.png') no-repeat scroll center center #fff;
   background-size: 240px auto;
   overflow: scroll;
@@ -5330,4 +5330,20 @@ display: block;
 
 .content ul{
   display: inline-block;
+}
+
+.activitiespress i{
+      font-size: 18px !important;
+    line-height: 27px !important;
+    width: 33px !important;
+    cursor: pointer !important;
+    text-align: center!important;
+    margin: 5px !important;
+    background-color: #fff !important;
+    color: rgba(0, 0, 0, 0.5) !important;
+    height: calc(100% - 10px) !important;
+  
+    position: absolute;
+    right: 0px !important;
+    top: 0px !important;
 }
