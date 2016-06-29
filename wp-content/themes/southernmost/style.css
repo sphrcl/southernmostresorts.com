@@ -899,7 +899,7 @@ div#topbanner {
 /* secondright nav */
 
 .secondrightnav {
-  display: block;
+  display: none;
   background: url('images/logo-footer.png') no-repeat scroll center center #fff;
   background-size: 240px auto;
   overflow: scroll;

@@ -138,9 +138,13 @@ $(document).ready(function(){
 		$('.ibox i').removeClass('active');
 		$('.srnlist ul').fadeOut(500);
 		$('.srnlist ul').removeClass('active');
+		
+
 	});
 	
 	$('.ibox').click(function() {
+
+		
 		var findi = $(this).find('i');
 		var iboxclass = $(this).attr('class').replace('ibox ', '').replace(' active', '');
 		
@@ -159,18 +163,24 @@ $(document).ready(function(){
 			findi.removeClass('fa-plus');
 			findi.addClass('fa-minus');
 			findi.addClass('active');
+
+		
 		} else {
 			findi.addClass('fa-plus');
 			findi.removeClass('fa-minus');
 			findi.removeClass('active');
+ 
+			 
 		}
 		
 		// open .secondarynav if box is clicked
 
 		if ($('.ibox i').hasClass('fa-minus')) {
 			$('.secondrightnav').addClass('open');
+			
 		} else {
 			$('.secondrightnav').removeClass('open');
+
 		}
 		
 		// fadein and fadeout functions
@@ -178,6 +188,7 @@ $(document).ready(function(){
 		if ($('.srnlist ' + '.' + iboxclass).hasClass('active')) {
 			
 			// reset if user click the same box
+			$('.secondrightnav').fadeOut(100);
 			
 			findi.addClass('fa-plus');
 			findi.removeClass('fa-minus');
@@ -189,6 +200,7 @@ $(document).ready(function(){
 			$('.srnlist ul').removeClass('active');
 			
 		} else {
+			 $('.secondrightnav').fadeIn(100);
 			$('.srnlist ul').fadeOut(500);
 			$('.srnlist ul').removeClass('active');
 			
