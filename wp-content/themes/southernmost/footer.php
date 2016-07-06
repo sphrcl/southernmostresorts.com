@@ -172,7 +172,7 @@
 					<ul class="activitiespress">
 						
 						 <?php $content1=get_page(445); 
-	                        $imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $content1->ID ), "Full");
+	                        $imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $content1->ID ), "Medium");
                           ?>	
 						
 						<li>
@@ -185,7 +185,7 @@
 
 
 						 <?php $content2=get_page(2488);
-	                      $imgsrc2 = wp_get_attachment_image_src( get_post_thumbnail_id( $content2->ID ), "Full");
+	                      $imgsrc2 = wp_get_attachment_image_src( get_post_thumbnail_id( $content2->ID ), "Medium");
                           ?>	
 						
 						<li>
@@ -198,7 +198,7 @@
 
 
 						 <?php $content3=get_page(2486); 
-	  $imgsrc3 = wp_get_attachment_image_src( get_post_thumbnail_id( $content3->ID ), "Full");
+	  $imgsrc3 = wp_get_attachment_image_src( get_post_thumbnail_id( $content3->ID ), "Medium");
                           ?>	
 						
 						<li>
@@ -210,7 +210,7 @@
 
 
 						 <?php   $content4=get_page(1285); 
-	  $imgsrc4 = wp_get_attachment_image_src( get_post_thumbnail_id( $content4->ID ), "Full");
+	  $imgsrc4 = wp_get_attachment_image_src( get_post_thumbnail_id( $content4->ID ), "Medium");
                           ?>	
 						
 						<li>
@@ -233,7 +233,7 @@
 								'posts_per_page' => -1
 							)); 
 							if($query_slidedown_rooms->have_posts()) : while($query_slidedown_rooms->have_posts()) : $query_slidedown_rooms->the_post();
-							$imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "Full"); 
+							$imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "Medium"); 
 						?>
 						
 						<li>
@@ -255,7 +255,7 @@
 								'posts_per_page' => -1
 							)); 
 							if($query_slidedown_gallery->have_posts()) : while($query_slidedown_gallery->have_posts()) : $query_slidedown_gallery->the_post();
-							$imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "Full"); 
+							$imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "Medium"); 
 						?>
 						
 						<li>
@@ -277,7 +277,7 @@
 								'posts_per_page' => -1
 							)); 
 							if($query_slidedown_gallery->have_posts()) : while($query_slidedown_gallery->have_posts()) : $query_slidedown_gallery->the_post();
-							$imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "Full"); 
+							$imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "Medium"); 
 						?>
 						
 						<li>
@@ -299,7 +299,7 @@
 								'posts_per_page' => -1
 							)); 
 							if($query_slidedown_gallery->have_posts()) : while($query_slidedown_gallery->have_posts()) : $query_slidedown_gallery->the_post();
-							$imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "Full"); 
+							$imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "Medium"); 
 						?>
 						
 						<li>
