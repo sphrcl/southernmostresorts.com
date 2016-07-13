@@ -170,6 +170,64 @@
 				<div class="srnlist">
 					
 					<div class="srnclose"><i class="fa fa-close"></i></div>
+
+					
+
+					<ul class="activitiespress">
+						
+						 <?php $content1=get_page(445); 
+	                        $imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $content1->ID ), "Medium");
+                          ?>	
+						
+						<li>
+							<a href="<?php echo get_the_permalink($content1->ID); ?>">
+								<div style="background-image: url(<?php echo tt($imgsrc[0],320,240); ?>);"></div>
+								<h3><?php echo $content1->post_title; ?> </h3>
+							</a>
+						</li>
+
+
+
+						 <?php $content2=get_page(2488);
+	                      $imgsrc2 = wp_get_attachment_image_src( get_post_thumbnail_id( $content2->ID ), "Medium");
+                          ?>	
+						
+						<li>
+							<a href="<?php echo get_the_permalink($content2->ID); ?>">
+								<div style="background-image: url(<?php echo tt($imgsrc2[0],320,240); ?>);"></div>
+								<h3><?php echo $content2->post_title; ?> </h3>
+							</a>
+						</li>
+
+
+
+						 <?php $content3=get_page(2486); 
+	  $imgsrc3 = wp_get_attachment_image_src( get_post_thumbnail_id( $content3->ID ), "Medium");
+                          ?>	
+						
+						<li>
+							<a href="<?php echo get_the_permalink($content3->ID); ?>">
+								<div style="background-image: url(<?php echo tt($imgsrc3[0],320,240); ?>);"></div>
+								<h3><?php echo $content3->post_title; ?> </h3>
+							</a>
+						</li>
+
+
+						 <?php   $content4=get_page(1285); 
+	  $imgsrc4 = wp_get_attachment_image_src( get_post_thumbnail_id( $content4->ID ), "Medium");
+                          ?>	
+						
+						<li>
+							<a href="<?php echo get_the_permalink($content4->ID); ?>">
+								<div style="background-image: url(<?php echo tt($imgsrc4[0],320,240); ?>);"></div>
+								<h3><?php echo $content4->post_title; ?> </h3>
+							</a>
+						</li>
+						
+					 
+						
+					</ul>
+					
 					
 					<ul class="pressroom">
 						
@@ -179,7 +237,7 @@
 								'posts_per_page' => -1
 							)); 
 							if($query_slidedown_rooms->have_posts()) : while($query_slidedown_rooms->have_posts()) : $query_slidedown_rooms->the_post();
-							$imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "Full"); 
+							$imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "Medium"); 
 						?>
 						
 						<li>
@@ -201,7 +259,7 @@
 								'posts_per_page' => -1
 							)); 
 							if($query_slidedown_gallery->have_posts()) : while($query_slidedown_gallery->have_posts()) : $query_slidedown_gallery->the_post();
-							$imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "Full"); 
+							$imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "Medium"); 
 						?>
 						
 						<li>
@@ -223,7 +281,7 @@
 								'posts_per_page' => -1
 							)); 
 							if($query_slidedown_gallery->have_posts()) : while($query_slidedown_gallery->have_posts()) : $query_slidedown_gallery->the_post();
-							$imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "Full"); 
+							$imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "Medium"); 
 						?>
 						
 						<li>
@@ -245,7 +303,7 @@
 								'posts_per_page' => -1
 							)); 
 							if($query_slidedown_gallery->have_posts()) : while($query_slidedown_gallery->have_posts()) : $query_slidedown_gallery->the_post();
-							$imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "Full"); 
+							$imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "Medium"); 
 						?>
 						
 						<li>

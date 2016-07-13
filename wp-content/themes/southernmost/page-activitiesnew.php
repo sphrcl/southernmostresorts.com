@@ -95,6 +95,21 @@
 		<div id="specials_list">
 
 
+ <?php $content3=get_page(2486); 
+	  $imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $content3->ID ), "Full");
+  ?>	<a href="<?php echo get_the_permalink($content3->ID); ?>">
+		<div class="specialsbox" style="background-image: url(<?php echo tt($imgsrc[0],1400,755); ?>);">
+			
+			<div class="specialscontent">
+				<div class="specialtitle">
+					<h3><?php echo $content3->post_title; ?> </h3>
+					 
+				</div>
+				 
+			</div>
+		</div></a>		
+
+
 <?php $content1=get_page(445); 
 	  $imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $content1->ID ), "Full");
   ?>	<a href="<?php echo get_the_permalink($content1->ID); ?>">
@@ -110,8 +125,11 @@
 		</div>
          </a>
 		
-<?php $content2=get_page(2579); 
-      //$content2=get_page(2488);
+
+
+
+<?php //$content2=get_page(2579); 
+      $content2=get_page(2488);
 	  $imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $content2->ID ), "Full");
   ?>	<a href="<?php echo get_the_permalink($content2->ID); ?>">
 		<div class="specialsbox" style="background-image: url(<?php echo tt($imgsrc[0],1400,755); ?>);">
@@ -124,21 +142,7 @@
 				 
 			</div>
 		</div></a>
- 		
-<?php $content3=get_page(2665); 
-	  $imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $content3->ID ), "Full");
-  ?>	<a href="<?php echo get_the_permalink($content3->ID); ?>">
-		<div class="specialsbox" style="background-image: url(<?php echo tt($imgsrc[0],1400,755); ?>);">
-			
-			<div class="specialscontent">
-				<div class="specialtitle">
-					<h3><?php echo $content3->post_title; ?> </h3>
-					 
-				</div>
-				 
-			</div>
-		</div></a>
-  		
+
 <?php $content4=get_page(1285); 
 	  $imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $content4->ID ), "Full");
   ?>	<a href="<?php echo get_the_permalink($content4->ID); ?>">

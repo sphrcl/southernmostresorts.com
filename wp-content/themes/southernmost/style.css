@@ -5171,7 +5171,7 @@ opacity:0.9;
 .conde_holder {
     display: none;
 }
- 
+
  .conde_image{
   float: left;
     width: 25%;
@@ -5225,7 +5225,7 @@ p.second_linec{
 .single-post .innerpage #pagecontent img {
     max-width: 100%;
     height: auto;
-} 
+}
 .map_room {
     display: inline-block;
     float: right;
@@ -5239,6 +5239,7 @@ p.second_linec{
   display: inline-block;
 }
 
+
 /* HIGHGATE LOGO */
 
 .highgate {
@@ -5249,4 +5250,20 @@ p.second_linec{
 
 .highgate img{
   height: 50px;
+}
+.activitiespress i{
+      font-size: 18px !important;
+    line-height: 27px !important;
+    width: 33px !important;
+    cursor: pointer !important;
+    text-align: center!important;
+    margin: 5px !important;
+    background-color: #fff !important;
+    color: rgba(0, 0, 0, 0.5) !important;
+    height: calc(100% - 10px) !important;
+
+    position: absolute;
+    right: 0px !important;
+    top: 0px !important;
+
 }
