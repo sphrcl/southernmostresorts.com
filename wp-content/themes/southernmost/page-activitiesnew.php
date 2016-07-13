@@ -95,7 +95,7 @@
 		<div id="specials_list">
 
 
- <?php $content3=get_page(2486); 
+ <?php $content3=get_page(2665); 
 	  $imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $content3->ID ), "Full");
   ?>	<a href="<?php echo get_the_permalink($content3->ID); ?>">
 		<div class="specialsbox" style="background-image: url(<?php echo tt($imgsrc[0],1400,755); ?>);">
@@ -124,12 +124,10 @@
 			</div>
 		</div>
          </a>
-		
 
-
-
-<?php //$content2=get_page(2579); 
       $content2=get_page(2488);
+<?php $content2=get_page(2579); 
+      //$content2=get_page(2488);
 	  $imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $content2->ID ), "Full");
   ?>	<a href="<?php echo get_the_permalink($content2->ID); ?>">
 		<div class="specialsbox" style="background-image: url(<?php echo tt($imgsrc[0],1400,755); ?>);">
