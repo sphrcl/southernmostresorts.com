@@ -125,7 +125,6 @@
 		</div>
          </a>
 
-      $content2=get_page(2488);
 <?php $content2=get_page(2579); 
       //$content2=get_page(2488);
 	  $imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $content2->ID ), "Full");
