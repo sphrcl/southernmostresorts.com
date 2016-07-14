@@ -170,6 +170,19 @@
 					
 
 					<ul class="activitiespress">
+
+						
+						 <?php $content3=get_page(2486); 
+	  $imgsrc3 = wp_get_attachment_image_src( get_post_thumbnail_id( $content3->ID ), "Medium");
+                          ?>	
+						
+						<li>
+							<a href="<?php echo get_the_permalink($content3->ID); ?>">
+								<div style="background-image: url(<?php echo tt($imgsrc3[0],320,240); ?>);"></div>
+								<h3><?php echo $content3->post_title; ?> </h3>
+							</a>
+						</li>
+
 						
 						 <?php $content1=get_page(445); 
 	                        $imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $content1->ID ), "Medium");
@@ -196,17 +209,6 @@
 						</li>
 
 
-
-						 <?php $content3=get_page(2486); 
-	  $imgsrc3 = wp_get_attachment_image_src( get_post_thumbnail_id( $content3->ID ), "Medium");
-                          ?>	
-						
-						<li>
-							<a href="<?php echo get_the_permalink($content3->ID); ?>">
-								<div style="background-image: url(<?php echo tt($imgsrc3[0],320,240); ?>);"></div>
-								<h3><?php echo $content3->post_title; ?> </h3>
-							</a>
-						</li>
 
 
 						 <?php   $content4=get_page(1285); 
