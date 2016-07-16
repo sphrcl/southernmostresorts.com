@@ -179,7 +179,7 @@
 						<li>
 							<a href="<?php echo get_the_permalink($content3->ID); ?>">
 								<div style="background-image: url(<?php echo tt($imgsrc3[0],320,240); ?>);"></div>
-								<h3><?php echo $content3->post_title; ?> </h3>
+								<h3><?php echo get_post_meta($content3->ID,'misfit_banner_title',true); ?> </h3>
 							</a>
 						</li>
 
@@ -191,7 +191,7 @@
 						<li>
 							<a href="<?php echo get_the_permalink($content1->ID); ?>">
 								<div style="background-image: url(<?php echo tt($imgsrc[0],320,240); ?>);"></div>
-								<h3><?php echo $content1->post_title; ?> </h3>
+								<h3><?php echo get_post_meta($content1->ID,'misfit_venuename',true); ?></h3>
 							</a>
 						</li>
 
@@ -204,7 +204,7 @@
 						<li>
 							<a href="<?php echo get_the_permalink($content2->ID); ?>">
 								<div style="background-image: url(<?php echo tt($imgsrc2[0],320,240); ?>);"></div>
-								<h3><?php echo $content2->post_title; ?> </h3>
+								<h3><?php echo get_post_meta($content2->ID,'misfit_venuename',true); ?></h3>
 							</a>
 						</li>
 
@@ -218,7 +218,7 @@
 						<li>
 							<a href="<?php echo get_the_permalink($content4->ID); ?>">
 								<div style="background-image: url(<?php echo tt($imgsrc4[0],320,240); ?>);"></div>
-								<h3><?php echo $content4->post_title; ?> </h3>
+								<h3><?php echo get_post_meta($content4->ID,'misfit_venuename',true); ?></h3>
 							</a>
 						</li>
 						
