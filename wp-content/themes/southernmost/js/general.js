@@ -45,7 +45,7 @@ $document.scroll(function() {
 $(document).ready(function(){
 
 
- 
+    $("#menu-side-nav li:first .tnbox").append('<span class="ibox activitiespress"><i class="fa fa-plus"></i></span>');
 	
 	$(".hamburger a").click(function(e){
 		e.preventDefault();
