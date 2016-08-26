@@ -97,6 +97,10 @@
 			</ul>
 		</div>
 
+		<div class="highgate">
+			<a target="_blank" href="http:///www.highgate.com"><img src="<?php bloginfo('template_url'); ?>/images/highgate-logo.png"></a>
+		</div>
+
 		<!-- save the children -->
 		<!--
 		<div class="footcolumn">
@@ -167,8 +171,21 @@
 					
 					<div class="srnclose"><i class="fa fa-close"></i></div>
 
-					
+	               <ul class="activitiespress">
 
+						
+						 <?php $content3=get_page(2665); 
+	  $imgsrc3 = wp_get_attachment_image_src( get_post_thumbnail_id( $content3->ID ), "Medium");
+                          ?>	
+						
+						<li>
+							<a href="<?php echo get_the_permalink($content3->ID); ?>">
+								<div style="background-image: url(<?php echo tt($imgsrc3[0],320,240); ?>);"></div>
+								<h3><?php echo get_post_meta($content3->ID,'misfit_banner_title',true); ?> </h3>
+							</a>
+						</li>
+
+<<<<<<< HEAD
 					<ul class="activitiespress">
 
 						
@@ -183,6 +200,8 @@
 							</a>
 						</li>
 
+=======
+>>>>>>> gil-remove-local-attraction
 						
 						 <?php $content1=get_page(445); 
 	                        $imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $content1->ID ), "Medium");
@@ -197,7 +216,7 @@
 
 
 
-						 <?php $content2=get_page(2488);
+						 <?php $content2=get_page(2579);
 	                      $imgsrc2 = wp_get_attachment_image_src( get_post_thumbnail_id( $content2->ID ), "Medium");
                           ?>	
 						
@@ -225,7 +244,6 @@
 					 
 						
 					</ul>
-					
 					
 					<ul class="pressroom">
 						

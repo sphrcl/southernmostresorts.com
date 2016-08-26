@@ -102,7 +102,7 @@
 					$query_activities = new wp_query(array(
 						'post_type' => 'activities',
 						'posts_per_page' => 10,
-				        'post__not_in' => array(445,2488,1285)
+				        'post__not_in' => array(445,2488,1285,2579)
 					));
 					if($query_activities->have_posts()) : while($query_activities->have_posts()) : $query_activities->the_post();
 					$imgsrcs = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "Full");
