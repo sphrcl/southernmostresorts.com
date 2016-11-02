@@ -41,6 +41,9 @@
 	<link rel="stylesheet" type="text/css" media="all" href="<?php bloginfo ('template_url'); ?>/style-events.css" />
 	
 	<!-- responsive style -->
+
+	<!-- Wanderful script -->
+	<script id="gtsgig-boot" data-hotel-id="southernmostbeachresort" src="https://widgets.gtsgig.com/boot.js" async defer></script>
 	 
 
 	 

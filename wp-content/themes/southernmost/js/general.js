@@ -339,7 +339,7 @@ $(document).ready(function(){
 	
 	
 	// Datepicker
-		$.datepicker._defaults.dateFormat = 'dd/mm/yy';
+		$.datepicker._defaults.dateFormat = 'yy-mm-dd';
 
 		$(".datepicker").datepicker({
 			minDate: 0,
