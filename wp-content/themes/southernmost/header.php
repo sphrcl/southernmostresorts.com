@@ -43,6 +43,9 @@
 	<!-- responsive style -->
 	<link rel="stylesheet" type="text/css" href="<?php bloginfo ('template_url'); ?>/css/media.css">
 
+	<!-- Wanderful script -->
+	<script id="gtsgig-boot" data-hotel-id="southernmostbeachresort" src="https://widgets.gtsgig.com/boot.js" async defer></script>
+
 	<!-- NAVIS script -->
 	<script language="javascript" src="http://www.navistechnologies.info/JavascriptPhoneNumber/js.aspx?account=15278&jspass=84ajbd9wo80x2tb00sbo&dflt=8003544455"></script>
 	<script language="javascript">ProcessNavisNCKeyword();</script>
