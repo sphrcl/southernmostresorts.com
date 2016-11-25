@@ -1556,6 +1556,7 @@ h5.discovertext {
 .flexslider.discoverdining {
 	width: calc(50% - 1px);
 	float: left;
+	display: none;
 }
 
 .flexslider.discoverdining .slides li {
@@ -1578,7 +1579,7 @@ h5.discovertext {
 }
 
 .flexslider.discoverweddings {
-	width: calc(50% - 1px);
+	width: 100%;
 	float: right;
 }
 
