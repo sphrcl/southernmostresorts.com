@@ -33,6 +33,10 @@ and (max-width: 1499px) {
 		top: 10px;
 	}
 
+	.footmentions {
+		left: 50px;
+	}
+
 }
 
 
@@ -81,7 +85,24 @@ and (min-width: 1025px) {
 		top: -25px;
 	}
 	
-	
+}
+
+
+
+/* ============================================================  1279 - 0000  ============================================================ */
+
+@media only screen and (max-width: 1279px) {
+
+
+	.footmentions {
+		text-align: center;
+		padding-top: 20px;
+
+		position: relative;
+		left: auto;
+		bottom: auto;
+	}
+
 }
 
 
@@ -284,16 +305,16 @@ and (max-width: 1024px) {
 	/* ======================== SAVE THE CHILDREN ======================== */
 
 	.save-the-children .button {
-	    position: relative;
-	    top: -5px;
-	    float: left;
-	    left: 5%;
+		position: relative;
+		top: -5px;
+		float: left;
+		left: 5%;
 	}
 
 	p.save {
-	    width: 100%;
-	    font-size: 12px;
-	    line-height: 22px;
+		width: 100%;
+		font-size: 12px;
+		line-height: 22px;
 	}
 
 }
@@ -394,7 +415,7 @@ and (max-width: 960px) {
 	}
 
 	.img-logo-2 {
-  		top: 40%;
+		top: 40%;
 	}
 	
 }
@@ -517,10 +538,10 @@ and (max-width: 799px) {
 	.footleft { 
 		/*display: none;*/
 		float: left;
- 		width: 100%;
-  		text-align: center;
+		width: 100%;
+		text-align: center;
 		margin: 0 0 20px;
-  	}
+	}
 	
 	.footmiddle {
 		width: 100%;
@@ -771,22 +792,14 @@ and (max-width: 767px) {
 	}	
 
 	.map_room {
-    display: inline-block;
-    float: initial;
-    width: 100%;
-    clear: both;
-    vertical-align: text-top;
-    margin-top: 0px;
-    margin-bottom: 10px;
-     }
-
-    .highgate {
-		position: relative;
-		bottom: 0;
-		left: 0;
-		text-align: center;
-		padding-top: 15px;
-	}
+	display: inline-block;
+	float: initial;
+	width: 100%;
+	clear: both;
+	vertical-align: text-top;
+	margin-top: 0px;
+	margin-bottom: 10px;
+	 }
 
 }
 
@@ -806,16 +819,16 @@ and (max-width: 640px) {
 	/* ======================== SAVE THE CHILDREN ======================== */
 
 	img.left, img.alignleft  {
-	    float: left;
-	    margin: 0 10px 0px 0;
-	    width: 170px;
+		float: left;
+		margin: 0 10px 0px 0;
+		width: 170px;
 	}
 
 .save-the-children .button {
-    position: relative;
-    top: -5px;
-    float: left;
-    left: 25%;
+	position: relative;
+	top: -5px;
+	float: left;
+	left: 25%;
 }	
 
 }
@@ -1525,14 +1538,14 @@ and (max-height: 320px) {
   and (max-device-width: 480px)
   and (orientation: landscape) {
 
-  	.pops {
-    width: 100%;
-    position: fixed;
-    top: 0%;
-    z-index: 20000000;
-    text-align: center;
-    overflow: scroll;
-    height: 100%;
+	.pops {
+	width: 100%;
+	position: fixed;
+	top: 0%;
+	z-index: 20000000;
+	text-align: center;
+	overflow: scroll;
+	height: 100%;
 }
 
 }
@@ -1544,14 +1557,14 @@ and (max-height: 320px) {
   and (max-device-width: 568px)
   and (orientation: landscape) {
 
-  		.pops {
-    width: 100%;
-    position: fixed;
-    top: 0%;
-    z-index: 20000000;
-    text-align: center;
-    overflow: scroll;
-    height: 100%;
+		.pops {
+	width: 100%;
+	position: fixed;
+	top: 0%;
+	z-index: 20000000;
+	text-align: center;
+	overflow: scroll;
+	height: 100%;
 }
 
 }
@@ -1562,14 +1575,14 @@ and (max-height: 320px) {
   and (max-device-width: 667px) 
   and (orientation: landscape) { 
 
-  		.pops {
-    width: 100%;
-    position: fixed;
-    top: 0%;
-    z-index: 20000000;
-    text-align: center;
-    overflow: scroll;
-    height: 100%;
+		.pops {
+	width: 100%;
+	position: fixed;
+	top: 0%;
+	z-index: 20000000;
+	text-align: center;
+	overflow: scroll;
+	height: 100%;
 }
 
 }
@@ -1580,14 +1593,14 @@ and (max-height: 320px) {
   and (max-device-width: 736px) 
   and (orientation: landscape) { 
 
-  		.pops {
-    width: 100%;
-    position: fixed;
-    top: 0%;
-    z-index: 20000000;
-    text-align: center;
-    overflow: scroll;
-    height: 100%;
+		.pops {
+	width: 100%;
+	position: fixed;
+	top: 0%;
+	z-index: 20000000;
+	text-align: center;
+	overflow: scroll;
+	height: 100%;
 }
 
 }
