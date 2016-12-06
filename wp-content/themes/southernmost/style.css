@@ -5031,10 +5031,11 @@ input.wpcf7-form-control.wpcf7-submit {
 /* SAVE THE CHILDREN ########################################################################################## */
 
 .save-the-children {
-	width: 100%;
+	width: 90%;
 	margin: 0 auto;
 	position: relative;
-			margin-top: 30px;
+	margin-top: 0px;
+	clear: both;
 }
 
 p.save-the-children {
@@ -5072,7 +5073,7 @@ a.donate-btn {
 
 .save-the-children .button {
 		position: relative;
-		top: -77px;
+		top: -60px;
 		float: right;
 }
 
@@ -5261,8 +5262,8 @@ p.second_linec{
 /* FOOTER MENTIONS LOGO */
 
 .footmentions {
-	position: absolute;
-	bottom: 40px;
+	position: relative;
+	bottom: 45px;
 	left: 13%;
 }
 

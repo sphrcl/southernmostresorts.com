@@ -20,6 +20,7 @@
 
 		<div class="footcolumn">
 
+
 			<div class="footleft">
 
 				<p>Sign up for Special Offers from the Hotel</p>
@@ -100,6 +101,16 @@
 			<a class="footmentions-condenast" target="_blank" href="http://www.cntraveler.com/"><img src="http://localhost/southernmostresorts.com/wp-content/themes/southernmost/images/florida-keys-finalist.png"></a>
 			<a class="footmentions-highgate" target="_blank" href="http:///www.highgate.com/"><img src="<?php bloginfo('template_url'); ?>/images/highgate-logo.png"></a>
 		</div>
+
+		<div class="save-the-children">
+			
+				<img class="left" width="270px" src="http://www.southernmostbeachresort.com/wp-content/themes/southernmost/images/save-the-children-logo.png">
+				
+				<p class="save">Join us in supporting Save the Children, internationally recognized for giving children a healthy start, the opportunity to learn and protection from harm. 100% of your donation benefits Save the Children. Thank you for your support.</p>
+				<a class="button" target="_blank" href="https://secure.savethechildren.org/site/c.8rKLIXMGIpI4E/b.6239401/k.C01C/Global_Action_Fund/apps/ka/sd/donor.asp?msource=cpkhhgaf1214&utm_source=Highgate2014&utm_medium=link&utm_campaign=highgatehotels1214
+">donate now</a>
+		</div>
+
 
 	</div>
 
