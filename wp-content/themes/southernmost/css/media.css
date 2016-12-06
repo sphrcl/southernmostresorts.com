@@ -93,14 +93,13 @@ and (min-width: 1025px) {
 
 @media only screen and (max-width: 1279px) {
 
-
 	.footmentions {
 		text-align: center;
 		padding-top: 20px;
-
 		position: relative;
 		left: auto;
 		bottom: auto;
+		margin-bottom: 30px;
 	}
 
 }
@@ -304,11 +303,18 @@ and (max-width: 1024px) {
 
 	/* ======================== SAVE THE CHILDREN ======================== */
 
+	.save-the-children {
+		text-align: center;
+	}
+
 	.save-the-children .button {
 		position: relative;
-		top: -5px;
-		float: left;
-		left: 5%;
+		margin: 0 auto;
+		float: none;
+		left: 0;
+		top: auto;
+		display: inline-block;
+		right: 0;
 	}
 
 	p.save {
