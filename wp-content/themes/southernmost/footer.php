@@ -18,6 +18,7 @@
 		<div class="footaddress"><?php echo get_option('misfit_footer_address'); ?></div>
 
 		<div class="footcolumn">
+
 			<div class="footleft">
 
 				<p>Sign up for Special Offers from the Hotel</p>
@@ -101,25 +102,17 @@
 			<a target="_blank" href="http:///www.highgate.com"><img src="<?php bloginfo('template_url'); ?>/images/highgate-logo.png"></a>
 		</div>
 
-		<!-- save the children -->
-		<!--
-		<div class="footcolumn">
-
 			<div class="save-the-children">
 				
-					<img class="left" width="270px" src="http://www.southernmostbeachresort.com/wp-content/themes/southernmost/images/save-the-children-logo.png">
-					
-					<p class="save">Join us in supporting Save the Children, internationally recognized for giving children a healthy start, the opportunity to learn and protection from harm. 100% of your donation benefits Save the Children. Thank you for your support.</p>
+				<img class="left" width="270px" src="http://www.southernmostbeachresort.com/wp-content/themes/southernmost/images/save-the-children-logo.png">
+				
+				<p class="save">Join us in supporting Save the Children, internationally recognized for giving children a healthy start, the opportunity to learn and protection from harm. 100% of your donation benefits Save the Children. Thank you for your support.</p>
 
-					<a class="button" target="_blank" href="https://secure.savethechildren.org/site/c.8rKLIXMGIpI4E/b.6239401/k.C01C/Global_Action_Fund/apps/ka/sd/donor.asp?msource=cpkhhgaf1214&utm_source=Highgate2014&utm_medium=link&utm_campaign=highgatehotels1214
-
-">donate now</a>
+				<a class="button" target="_blank" href="https://secure.savethechildren.org/site/c.8rKLIXMGIpI4E/b.6239401/k.C01C/Global_Action_Fund/apps/ka/sd/donor.asp?msource=cpkhhgaf1214&utm_source=Highgate2014&utm_medium=link&utm_campaign=highgatehotels1214">donate now</a>
 
 			</div>
 
 		</div>
-		-->
-		<!-- / save the children -->
 
 	</div>
 
@@ -184,24 +177,6 @@
 								<h3><?php echo get_post_meta($content3->ID,'misfit_banner_title',true); ?> </h3>
 							</a>
 						</li>
-
-<<<<<<< HEAD
-					<ul class="activitiespress">
-
-						
-						 <?php $content3=get_page(2486); 
-	  $imgsrc3 = wp_get_attachment_image_src( get_post_thumbnail_id( $content3->ID ), "Medium");
-                          ?>	
-						
-						<li>
-							<a href="<?php echo get_the_permalink($content3->ID); ?>">
-								<div style="background-image: url(<?php echo tt($imgsrc3[0],320,240); ?>);"></div>
-								<h3><?php echo get_post_meta($content3->ID,'misfit_banner_title',true); ?> </h3>
-							</a>
-						</li>
-
-=======
->>>>>>> gil-remove-local-attraction
 						
 						 <?php $content1=get_page(445); 
 	                        $imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $content1->ID ), "Medium");
