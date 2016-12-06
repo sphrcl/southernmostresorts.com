@@ -98,7 +98,7 @@
 		</div>
 
 		<div class="footmentions">
-			<a class="footmentions-condenast" target="_blank" href="http://www.cntraveler.com/"><img src="http://localhost/southernmostresorts.com/wp-content/themes/southernmost/images/florida-keys-finalist.png"></a>
+			<a class="footmentions-condenast" target="_blank" href="http://www.cntraveler.com/"><img src="<?php bloginfo('template_url'); ?>/southernmostresorts.com/wp-content/themes/southernmost/images/florida-keys-finalist.png"></a>
 			<a class="footmentions-highgate" target="_blank" href="http:///www.highgate.com/"><img src="<?php bloginfo('template_url'); ?>/images/highgate-logo.png"></a>
 		</div>
 

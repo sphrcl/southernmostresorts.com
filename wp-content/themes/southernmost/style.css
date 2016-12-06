@@ -5072,9 +5072,9 @@ a.donate-btn {
 }
 
 .save-the-children .button {
-		position: relative;
-		top: -60px;
-		float: right;
+	position: absolute;
+	top: 1%;
+	right: 2%;
 }
 
 
