@@ -34,6 +34,7 @@ and (max-width: 1499px) {
 	}
 
 	.footmentions {
+		display: inline-block;
 		left: 50px;
 	}
 

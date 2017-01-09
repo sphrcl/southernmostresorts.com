@@ -5036,6 +5036,7 @@ input.wpcf7-form-control.wpcf7-submit {
 	position: relative;
 	margin-top: 0px;
 	clear: both;
+	display: none;
 }
 
 p.save-the-children {
