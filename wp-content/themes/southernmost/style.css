@@ -1,3 +1,4 @@
+
 /*
 	Theme Name: Southernmost Hostel
 	Theme URI: http://misfit.co
@@ -5036,6 +5037,7 @@ input.wpcf7-form-control.wpcf7-submit {
 	position: relative;
 	margin-top: 0px;
 	clear: both;
+	display: none;
 }
 
 p.save-the-children {
@@ -5072,9 +5074,9 @@ a.donate-btn {
 }
 
 .save-the-children .button {
-		position: relative;
-		top: -60px;
-		float: right;
+	position: absolute;
+	top: 1%;
+	right: 2%;
 }
 
 
