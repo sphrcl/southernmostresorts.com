@@ -101,15 +101,6 @@
 			<a class="footmentions-highgate" target="_blank" href="http:///www.highgate.com/"><img src="<?php bloginfo('template_url'); ?>/images/highgate-logo.png"></a>
 		</div>
 
-<<<<<<< HEAD
-			<div class="save-the-children">
-				
-				<img class="left" width="270px" src="http://www.southernmostbeachresort.com/wp-content/themes/southernmost/images/save-the-children-logo.png">
-				
-				<p class="save">Join us in supporting Save the Children, internationally recognized for giving children a healthy start, the opportunity to learn and protection from harm. 100% of your donation benefits Save the Children. Thank you for your support.</p>
-
-				<a class="button" target="_blank" href="https://secure.savethechildren.org/site/c.8rKLIXMGIpI4E/b.6239401/k.C01C/Global_Action_Fund/apps/ka/sd/donor.asp?msource=cpkhhgaf1214&utm_source=Highgate2014&utm_medium=link&utm_campaign=highgatehotels1214">donate now</a>
-=======
 		<!-- <div class="save-the-children">
 			
 				<a href="https://goo.gl/OJexpZ" target="_blank"><img class="left" width="270px" src="http://www.southernmostbeachresort.com/wp-content/themes/southernmost/images/save-the-children-logo.png"></a>
@@ -130,7 +121,6 @@
 		</div>
 
 		<div class="spacer"><img src="<?php bloginfo ('template_url'); ?>/images/logo-white.png" /></div>
->>>>>>> refs/remotes/origin/master
 
 		<div id="navmenumob">
 			<div class="slidedown-navmob">
@@ -247,126 +237,6 @@
 					<?php endwhile; endif; wp_reset_postdata(); ?>
 
 				</ul>
-<<<<<<< HEAD
-			</div>
-			
-		</section><!-- end right nav -->
-		
-		<section class="secondrightnav">
-			<div class="srnbox">
-				<div class="srnlist">
-					
-					<div class="srnclose"><i class="fa fa-close"></i></div>
-
-	               <ul class="activitiespress">
-
-						
-						 <?php $content3=get_page(2665); 
-	  $imgsrc3 = wp_get_attachment_image_src( get_post_thumbnail_id( $content3->ID ), "Medium");
-                          ?>	
-						
-						<li>
-							<a href="<?php echo get_the_permalink($content3->ID); ?>">
-								<div style="background-image: url(<?php echo tt($imgsrc3[0],320,240); ?>);"></div>
-								<h3><?php echo get_post_meta($content3->ID,'misfit_banner_title',true); ?> </h3>
-							</a>
-						</li>
-						
-						 <?php $content1=get_page(445); 
-	                        $imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $content1->ID ), "Medium");
-                          ?>	
-						
-						<li>
-							<a href="<?php echo get_the_permalink($content1->ID); ?>">
-								<div style="background-image: url(<?php echo tt($imgsrc[0],320,240); ?>);"></div>
-								<h3><?php echo get_post_meta($content1->ID,'misfit_venuename',true); ?></h3>
-							</a>
-						</li>
-
-
-
-						 <?php $content2=get_page(2579);
-	                      $imgsrc2 = wp_get_attachment_image_src( get_post_thumbnail_id( $content2->ID ), "Medium");
-                          ?>	
-						
-						<li>
-							<a href="<?php echo get_the_permalink($content2->ID); ?>">
-								<div style="background-image: url(<?php echo tt($imgsrc2[0],320,240); ?>);"></div>
-								<h3><?php echo get_post_meta($content2->ID,'misfit_venuename',true); ?></h3>
-							</a>
-						</li>
-
-
-
-
-						 <?php   $content4=get_page(1285); 
-	  $imgsrc4 = wp_get_attachment_image_src( get_post_thumbnail_id( $content4->ID ), "Medium");
-                          ?>	
-						
-						<li>
-							<a href="<?php echo get_the_permalink($content4->ID); ?>">
-								<div style="background-image: url(<?php echo tt($imgsrc4[0],320,240); ?>);"></div>
-								<h3><?php echo get_post_meta($content4->ID,'misfit_venuename',true); ?></h3>
-							</a>
-						</li>
-						
-					 
-						
-					</ul>
-					
-					<ul class="pressroom">
-						
-						<?php 
-							$query_slidedown_rooms = new wp_query(array(
-								'post_type' => 'rooms',
-								'posts_per_page' => -1
-							)); 
-							if($query_slidedown_rooms->have_posts()) : while($query_slidedown_rooms->have_posts()) : $query_slidedown_rooms->the_post();
-							$imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "Medium"); 
-						?>
-						
-						<li>
-							<a href="<?php the_permalink(); ?>">
-								<div style="background-image: url(<?php echo tt($imgsrc[0],320,240); ?>);"></div>
-								<h3><?php the_title(); ?></h3>
-							</a>
-						</li>
-						
-						<?php endwhile; endif; wp_reset_query(); ?>
-						
-					</ul>
-					
-					<ul class="pressphot">
-						
-						<?php 
-							$query_slidedown_gallery = new wp_query(array(
-								'post_type' => 'imagegalleries',
-								'posts_per_page' => -1
-							)); 
-							if($query_slidedown_gallery->have_posts()) : while($query_slidedown_gallery->have_posts()) : $query_slidedown_gallery->the_post();
-							$imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "Medium"); 
-						?>
-						
-						<li>
-							<a href="<?php the_permalink(); ?>">
-								<div style="background-image: url(<?php echo tt($imgsrc[0],320,240); ?>);"></div>
-								<h3><?php the_title(); ?></h3>
-							</a>
-						</li>
-						
-						<?php endwhile; endif; wp_reset_query(); ?>
-						
-					</ul>
-					
-					<ul class="pressvaca">
-						
-						<?php 
-							$query_slidedown_gallery = new wp_query(array(
-								'post_type' => 'sspecials',
-								'posts_per_page' => -1
-							)); 
-							if($query_slidedown_gallery->have_posts()) : while($query_slidedown_gallery->have_posts()) : $query_slidedown_gallery->the_post();
-=======
 
 				<ul class="pressphot">
 
@@ -379,7 +249,6 @@
 
 						if ( $query_slidedown_gallery->have_posts() ) : while ( $query_slidedown_gallery->have_posts() ) : $query_slidedown_gallery->the_post();
 
->>>>>>> refs/remotes/origin/master
 							$imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "Medium"); 
 					?>
 
