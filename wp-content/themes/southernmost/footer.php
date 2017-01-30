@@ -337,13 +337,13 @@
 
 					<?php if($mobile) { ?>
 
-						<form method="get" action="https://southernmostbeachresort.reztripmobile.com/rt/m/results">
+						<form method="get" action="https://southernmostbeachresort.reztrip.com">
 											
 							<input type="hidden" id="propertyId" name="propertyId" class="calendarsection" value="729" />
 							<input type="hidden" id="sub" name="sub" class="calendarsection" value="southernmostbeachresort" />
 							<input type="hidden" id="locale" name="locale" class="calendarsection" value="en-us" />
-							<input type="hidden" id="numChildren" name="numChildren" class="calendarsection" value="0" />
-							<input type="hidden" id="numAdults" name="numAdults" class="calendarsection" value="2" />
+							<input type="hidden" id="numChildren" name="children" class="calendarsection" value="0" />
+							<input type="hidden" id="numAdults" name="adults" class="calendarsection" value="2" />
 
 							<input type="hidden"  id="arrival_date" name="arrival_date" class="calendarsection" />
 							<input type="hidden" id="departure_date" name="departure_date" class="calendarsection" />
