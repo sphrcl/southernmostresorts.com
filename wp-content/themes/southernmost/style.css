@@ -5265,6 +5265,7 @@ p.second_linec{
 
 .footmentions {
 	position: relative;
+	display: inline-block;
 	bottom: 45px;
 	left: 13%;
 }
