@@ -101,6 +101,7 @@ and (min-width: 1025px) {
 		left: auto;
 		bottom: auto;
 		margin-bottom: 30px;
+		width: 100%;
 	}
 
 }
