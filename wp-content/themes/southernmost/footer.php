@@ -172,7 +172,7 @@
 					<li>
 						<a href="<?php echo get_the_permalink($content3->ID); ?>">
 							<div style="background-image: url(<?php echo tt($imgsrc3[0],320,240); ?>);"></div>
-							<h3><?php echo get_post_meta($content3->ID,'misfit_banner_title',true); ?> </h3>
+							<span><?php echo get_post_meta($content3->ID,'misfit_banner_title',true); ?> </span>
 						</a>
 					</li>
 
@@ -184,7 +184,7 @@
 					<li>
 						<a href="<?php echo get_the_permalink($content1->ID); ?>">
 							<div style="background-image: url(<?php echo tt($imgsrc[0],320,240); ?>);"></div>
-							<h3><?php echo get_post_meta($content1->ID,'misfit_venuename',true); ?></h3>
+							<span><?php echo get_post_meta($content1->ID,'misfit_venuename',true); ?></span>
 						</a>
 					</li>
 
@@ -196,7 +196,7 @@
 					<li>
 						<a href="<?php echo get_the_permalink($content2->ID); ?>">
 							<div style="background-image: url(<?php echo tt($imgsrc2[0],320,240); ?>);"></div>
-							<h3><?php echo get_post_meta($content2->ID,'misfit_venuename',true); ?></h3>
+							<span><?php echo get_post_meta($content2->ID,'misfit_venuename',true); ?></span>
 						</a>
 					</li>
 
@@ -208,7 +208,7 @@
 					<li>
 						<a href="<?php echo get_the_permalink($content4->ID); ?>">
 							<div style="background-image: url(<?php echo tt($imgsrc4[0],320,240); ?>);"></div>
-							<h3><?php echo get_post_meta($content4->ID,'misfit_venuename',true); ?></h3>
+							<span><?php echo get_post_meta($content4->ID,'misfit_venuename',true); ?></span>
 						</a>
 					</li>
 
@@ -231,7 +231,7 @@
 					<li>
 						<a href="<?php the_permalink(); ?>">
 							<div style="background-image: url(<?php echo tt($imgsrc[0],320,240); ?>);"></div>
-							<h3><?php the_title(); ?></h3>
+							<span><?php the_title(); ?></span>
 						</a>
 					</li>
 
@@ -256,7 +256,7 @@
 					<li>
 						<a href="<?php the_permalink(); ?>">
 							<div style="background-image: url(<?php echo tt($imgsrc[0],320,240); ?>);"></div>
-							<h3><?php the_title(); ?></h3>
+							<span><?php the_title(); ?></span>
 						</a>
 					</li>
 
@@ -281,7 +281,7 @@
 					<li>
 						<a href="<?php the_permalink(); ?>">
 							<div style="background-image: url(<?php echo tt($imgsrc[0],320,240); ?>);"></div>
-							<h3><?php the_title(); ?></h3>
+							<span><?php the_title(); ?></span>
 						</a>
 					</li>
 
@@ -306,7 +306,7 @@
 					<li>
 						<a href="<?php the_permalink(); ?>">
 							<div style="background-image: url(<?php echo tt($imgsrc[0],320,240); ?>);"></div>
-							<h3><?php the_title(); ?></h3>
+							<span><?php the_title(); ?></span>
 						</a>
 					</li>
 

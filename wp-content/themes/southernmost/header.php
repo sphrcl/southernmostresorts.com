@@ -110,7 +110,7 @@
 							<div class="slidedown-nav">
 
 								<div class="left">
-									<h3>Rooms</h3>
+									<span>Rooms</span>
 									<a href="<?php echo get_page_link(433); ?>">See All</a>									
 								</div>
 
@@ -131,7 +131,7 @@
 								    ?>
 										<div class="item">
 											<a href="<?php the_permalink(); ?>"><div class="slide-image" style="background-image: url(<?php echo tt($imgsrc[0],340,270); ?>);"></div></a>
-											<a href="<?php the_permalink(); ?>"><h3><?php the_title(); ?></h3></a>
+											<a href="<?php the_permalink(); ?>"><span><?php the_title(); ?></span></a>
 										</div>
 										
 									<?php endwhile; endif; wp_reset_query(); ?>
@@ -147,7 +147,7 @@
 							<div class="slidedown-nav">
 
 								<div class="left">
-									<h3>Gallery</h3>
+									<span>Gallery</span>
 								</div>
 
 								<a class="btn next1 right"><i class="fa fa-angle-right"></i></a>
@@ -164,7 +164,7 @@
 								    ?>
 										<div class="item">
 											<a href="<?php the_permalink(); ?>"><div class="slide-image" style="background-image: url(<?php echo tt($imgsrc[0],340,270); ?>);"></div></a>
-											<a href="<?php the_permalink(); ?>"><h3><?php the_title(); ?></h3></a>
+											<a href="<?php the_permalink(); ?>"><span><?php the_title(); ?></span></a>
 										</div>
 									<?php endwhile; endif; wp_reset_query(); ?>
 
@@ -179,7 +179,7 @@
 							<div class="slidedown-nav">
 
 								<div class="left">
-									<h3>Specials</h3>
+									<span>Specials</span>
 								</div>
 
 								<a class="btn next2 right"><i class="fa fa-angle-right"></i></a>
@@ -196,7 +196,7 @@
 								    ?>
 										<div class="item">
 											<a href="<?php the_permalink(); ?>"><div class="slide-image" style="background-image: url(<?php echo tt($imgsrc[0],340,270); ?>);"></div></a>
-											<a href="<?php the_permalink(); ?>"><h3><?php the_title(); ?></h3></a>
+											<a href="<?php the_permalink(); ?>"><span><?php the_title(); ?></span></a>
 										</div>
 									<?php endwhile; endif; wp_reset_query(); ?>
 
@@ -211,7 +211,7 @@
 							<div class="slidedown-nav">
 
 								<div class="left">
-									<h3>Restaurant & Bars</h3>
+									<span>Restaurant & Bars</span>
 								</div>
 
 								<a class="btn next3 right"><i class="fa fa-angle-right"></i></a>
@@ -228,7 +228,7 @@
 								    ?>
 										<div class="item">
 											<a href="<?php the_permalink(); ?>"><div class="slide-image" style="background-image: url(<?php echo tt($imgsrc[0],340,270); ?>);"></div></a>
-											<a href="<?php the_permalink(); ?>"><h3><?php the_title(); ?></h3></a>
+											<a href="<?php the_permalink(); ?>"><span><?php the_title(); ?></span></a>
 										</div>
 									<?php endwhile; endif; wp_reset_query(); ?>
 
