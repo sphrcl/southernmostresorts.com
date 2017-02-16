@@ -202,7 +202,8 @@ img.right, img.alignright {float: right;margin: 0 0 7px 15px;}
 .page li > a,
 .slidedown-nav,
 .slidedown-nav .btn i,
-.slidedown-nav .left h3 {
+.slidedown-nav .left h3,
+.slidedown-nav .left span {
 		-webkit-transition: all .5s ease;
 		-moz-transition: all .5s ease;
 		-o-transition: all .5s ease;
@@ -755,12 +756,17 @@ div#topbanner {
 		opacity: .8;
 	}
 
-.slidedown-nav .item h3 {
+.slidedown-nav .item h3,
+.slidedown-nav .item span {
 		color: #79797b;
 		font-size: 16px;
 		font-weight: bold;
 		margin-top: 10px;
 		text-transform: uppercase;
+}
+
+.slidedown-nav .item span {
+	display: block;
 }
 
 .slidedown-nav .btn {
@@ -795,7 +801,8 @@ div#topbanner {
 		left: 22.5%;
 }
 
-.slidedown-nav .left h3 {
+.slidedown-nav .left h3,
+.slidedown-nav .left span {
 		color: #5e5e5e;
 		font-family: NewsGothicMT;
 		font-size: 40px;
@@ -803,9 +810,14 @@ div#topbanner {
 		line-height: 1.3;
 		text-transform: uppercase;
 }
-	.slidedown-nav .left h3:hover {
+	.slidedown-nav .left h3:hover,
+	.slidedown-nav .left span:hover {
 		color: #555;
 	}
+
+.slidedown-nav .left span {
+	display: block;
+}
 
 .slidedown-nav .left {
 		transform: translateY(-50%);
@@ -949,7 +961,8 @@ div#topbanner {
 	height: 160px;
 }
 
-.srnlist a h3 {
+.srnlist a h3,
+.srnlist a span {
 	background-color: #189dac;
 	color: #fff;
 	font-size: 14px;
@@ -958,6 +971,10 @@ div#topbanner {
 	padding: 8px;
 	text-align: center;
 	text-transform: uppercase;
+}
+
+.srnlist a span {
+	display: block;
 }
 
 .srnclose {
@@ -1331,12 +1348,17 @@ div#rooms-section {
 	padding: 10px 20px;
 }
 
-.room-caption h3 {
+.room-caption h3,
+.room-caption span {
 	color: #fff;
 	font-size: 42px;
 	font-family: NewsGothicMT;
 	margin-bottom: 20px;
 	text-shadow: 0 0 35px #333;
+}
+
+.room-caption span {
+	display: block;
 }
 
 .room-linkopen {
@@ -1355,12 +1377,17 @@ div#rooms-section {
 	-o-transition: all 0.4s ease 0s;
 }
 
-.room-linkopen h3 {
+.room-linkopen h3,
+.room-linkopen span {
 	color: #fff;
 	font-family: NewsGothicMT;
 	font-size: 38px;
 	line-height: 1;
 	margin: 40px 0 20px;
+}
+
+.room-linkopen span {
+	display: block;
 }
 
 .room-linkopen ul {
@@ -1535,7 +1562,8 @@ div#discover {
 	overflow: hidden;
 }
 
-div#discover h4 {
+div#discover h4,
+div#discover h2 {
 	color: #179dab;
 	font-size: 32px;
 	font-family: NewsGothicMT;
@@ -1544,7 +1572,8 @@ div#discover h4 {
 	text-transform: uppercase;
 }
 
-h5.discovertext {
+h5.discovertext,
+h3.discovertext {
 	position: absolute;
 	bottom: 20px;
 	z-index: 3;
@@ -1580,7 +1609,8 @@ h5.discovertext {
 	width: auto;
 }
 
-.flexslider.discoverweddings h5.discovertext {
+.flexslider.discoverweddings h5.discovertext,
+.flexslider.discoverweddings h3.discovertext {
 	right: 20px;
 }
 
@@ -1616,7 +1646,8 @@ div#instagram {
 	overflow: hidden;
 }
 
-div#instagram h4 {
+div#instagram h4,
+div#instagram span {
 	color: #179dab;
 	font-size: 17px;
 	font-family: NewsGothicMT;
@@ -1626,8 +1657,13 @@ div#instagram h4 {
 		letter-spacing: 0.04em;
 }
 
-div#instagram h4 a {
+div#instagram h4 a,
+div#instagram span a {
 	font-family: NewsGothicMT;
+}
+
+div#instagram span {
+	display: block;
 }
 
 ul.instapics {
