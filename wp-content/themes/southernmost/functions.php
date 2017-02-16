@@ -105,6 +105,40 @@ function ctup_wdscript() {
     wp_enqueue_script('ads_script', get_template_directory_uri() . '/js/widget.js', false, '1.0', true);
 }
 
+add_action('wpseo_head', 'wpSEO_relNextPrev', 21);
+function wpSEO_relNextPrev() {
+
+    // HOMEPAGE: remove rel next
+    if ( is_front_page() && is_home() ) {
+        add_filter( 'wpseo_next_rel_link', '__return_false' );
+    }
+
+
+    // BLOG PAGE: add/remove rel next/prev
+    if ( is_page_template('page-blog.php') ) {
+
+        global $paged;
+
+        $blogNextPrev_query = new WP_Query(array(
+            'post_type' => 'post',
+            'posts_per_page' => 15,
+        ));
+
+        if ( ! $paged ) {
+            $paged = 1;
+        }
+
+        if ( $paged > 1 ) {
+            echo '<link rel="prev" href="' . get_pagenum_link( (int)$paged - 1 ) . "\" />\n";
+        }
+
+        if ( $paged < $blogNextPrev_query->max_num_pages ) {
+            echo '<link rel="next" href="' . get_pagenum_link( (int)$paged + 1 ) . "\" />\n";
+        }
+    }
+
+}
+
 // widget class
 class ctUp_ads extends WP_Widget {
 
