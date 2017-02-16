@@ -140,7 +140,7 @@
 		  
 			<li style="background-image: url(<?php echo $imgsrc[0]; ?>);">
 				<div class="room-caption">
-					<h3><?php the_title(); ?></h3>
+					<span><?php the_title(); ?></span>
 					<?php if(get_post_meta($post->ID, 'misfit_reservation', true)) { ?>
 						<a class="button4" href="<?php echo get_post_meta($post->ID, 'misfit_reservation', true); ?>">Reserve Now</a><br/>
 					<?php } ?>
@@ -149,7 +149,7 @@
 				</div>
 				<div class="room-linkopen">
 					
-					<h3><?php the_title(); ?></h3>
+					<span><?php the_title(); ?></span>
 					
 					<?php
 						$content = get_the_content();
@@ -225,7 +225,7 @@
 
 	<div id="discover">
 
-		<h4>discover southernmost beach resort</h4>
+		<h2>discover southernmost beach resort</h2>
 		
 		<?php if(get_option('misfit_discover')) { ?>
 		
@@ -274,7 +274,7 @@
 			
 			<?php query_posts('post_type=page&p=100'); if(have_posts()) : while(have_posts()) : the_post(); ?>
 
-			<h5 class="discovertext"><?php the_title(); ?></h5>
+			<h3 class="discovertext"><?php the_title(); ?></h3>
 			
 			<a href="<?php the_permalink(); ?>" class="dropanchor"></a>
 
@@ -309,7 +309,7 @@
 	</div>
 
 	<div id="instagram">
-		<h4><a target="_blank" href="<?php echo get_option('misfit_instagram'); ?>">follow us on instagram</a></h4>
+		<span><a target="_blank" href="<?php echo get_option('misfit_instagram'); ?>">follow us on instagram</a></span>
 
 		<div id="instafeed"></div>
 
