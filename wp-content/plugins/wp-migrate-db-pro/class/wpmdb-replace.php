@@ -8,13 +8,18 @@ final class WPMDB_Replace {
 	protected $intent;
 	protected $base_domain;
 	protected $site_domain;
+	protected $site_details;
+	protected $source_protocol;
+	protected $destination_protocol;
+	protected $destination_url;
+	protected $is_protocol_mismatch = false;
 
 	private $table;
 	private $column;
 	private $row;
 
 	function __construct( $args ) {
-		$keys = array( 'table', 'search', 'replace', 'intent', 'base_domain', 'site_domain', 'wpmdb' );
+		$keys = array( 'table', 'search', 'replace', 'intent', 'base_domain', 'site_domain', 'wpmdb', 'site_details' );
 
 		if ( ! is_array( $args ) ) {
 			throw new InvalidArgumentException( 'WPMDB_Replace constructor expects the argument to be an array' );
@@ -26,13 +31,17 @@ final class WPMDB_Replace {
 			}
 		}
 
-		$this->table       = $args['table'];
-		$this->search      = $args['search'];
-		$this->replace     = $args['replace'];
-		$this->intent      = $args['intent'];
-		$this->base_domain = $args['base_domain'];
-		$this->site_domain = $args['site_domain'];
-		$this->wpmdb       = $args['wpmdb'];
+		$this->table        = $args['table'];
+		$this->search       = $args['search'];
+		$this->replace      = $args['replace'];
+		$this->intent       = $args['intent'];
+		$this->base_domain  = $args['base_domain'];
+		$this->site_domain  = $args['site_domain'];
+		$this->wpmdb        = $args['wpmdb'];
+		$this->site_details = $args['site_details'];
+
+		// Detect a protocol mismatch between the remote and local sites involved in the migration
+		$this->detect_protocol_mismatch();
 	}
 
 	/**
@@ -42,11 +51,28 @@ final class WPMDB_Replace {
 	 */
 	function is_subdomain_replaces_on() {
 		if ( ! isset( $this->subdomain_replaces_on ) ) {
-			$this->subdomain_replaces_on = ( is_multisite() && is_subdomain_install() && apply_filters( 'wpmdb_subdomain_replace', true ) );
+			$this->subdomain_replaces_on = ( is_multisite() && is_subdomain_install() && ! $this->has_same_base_domain() && apply_filters( 'wpmdb_subdomain_replace', true ) );
 		}
 
 		return $this->subdomain_replaces_on;
 	}
+
+
+	/**
+	 * Determine if the replacement has the same base domain as the search. Produces doubled replacement strings
+	 * otherwise.
+	 *
+	 * @return bool
+	 */
+	function has_same_base_domain() {
+		$destination_url = isset( $this->destination_url ) ? $this->destination_url : $this->site_details['local']['site_url'];
+		if ( stripos( $destination_url, $this->site_domain ) ) {
+			return true;
+		}
+
+		return false;
+	}
+
 
 	/**
 	 * Automatically replace URLs for subdomain based multisite installations
@@ -70,6 +96,84 @@ final class WPMDB_Replace {
 	}
 
 	/**
+	 * Detect a protocol mismatch between the remote and local sites involved in the migration
+	 *
+	 * @return bool
+	 */
+	function detect_protocol_mismatch() {
+		if ( ! isset( $this->site_details['remote'] ) ) {
+			return false;
+		}
+
+		/**
+		 * Filters the site_urls used to check if there is a protocol mismatch.
+		 *
+		 * @param array
+		 */
+		$wpmdb_home_urls = apply_filters( 'wpmdb_replace_site_urls', array(
+				// TODO: rewrite unit tests that only pass site_url so that we can rely on home_url's existence
+				'local'  => isset( $this->site_details['local']['home_url'] ) ? $this->site_details['local']['home_url'] : $this->site_details['local']['site_url'],
+				'remote' => isset( $this->site_details['remote']['home_url'] ) ? $this->site_details['remote']['home_url'] : $this->site_details['remote']['site_url'],
+			)
+		);
+
+		$local_url_is_https  = false === stripos( $wpmdb_home_urls['local'], 'https' ) ? false : true;
+		$remote_url_is_https = false === stripos( $wpmdb_home_urls['remote'], 'https' ) ? false : true;
+		$local_protocol      = $local_url_is_https ? 'https' : 'http';
+		$remote_protocol     = $remote_url_is_https ? 'https' : 'http';
+
+		if ( ( $local_url_is_https && ! $remote_url_is_https ) || ( ! $local_url_is_https && $remote_url_is_https ) ) {
+			$this->is_protocol_mismatch = true;
+		}
+
+		if ( 'push' === $this->intent ) {
+			$this->destination_protocol = $remote_protocol;
+			$this->source_protocol      = $local_protocol;
+			$this->destination_url      = $wpmdb_home_urls['remote'];
+		} else {
+			$this->destination_protocol = $local_protocol;
+			$this->source_protocol      = $remote_protocol;
+			$this->destination_url      = $wpmdb_home_urls['local'];
+		}
+
+		return $this->is_protocol_mismatch;
+	}
+
+	/**
+	 *
+	 * Handles replacing the protocol if the local and destination don't have matching protocols (http > https and
+	 * vice-versa).
+	 *
+	 * Can be filtered to disable entirely.
+	 *
+	 * @param $new
+	 *
+	 * @return mixed
+	 */
+	function do_protocol_replace( $new ) {
+		/**
+		 * Filters $do_protocol_replace, return false to prevent protocol replacement.
+		 *
+		 * @param bool   true                   If the replace should be skipped.
+		 * @param string $this->destination_url The URL of the target site.
+		 */
+		$do_protocol_replace = apply_filters( 'wpmdb_replace_destination_protocol', true, $this->destination_url );
+
+		if ( true !== $do_protocol_replace ) {
+			return $new;
+		}
+
+		$parsed_destination = wp_parse_url( $this->destination_url );
+		unset( $parsed_destination['scheme'] );
+
+		$protocol_search      = $this->source_protocol . '://' . implode( '', $parsed_destination );
+		$protocol_replace     = $this->destination_url;
+		$new                  = str_ireplace( $protocol_search, $protocol_replace, $new, $count );
+
+		return $new;
+	}
+
+	/**
 	 * Applies find/replace pairs to a given string.
 	 *
 	 * @param string $subject
@@ -82,6 +186,10 @@ final class WPMDB_Replace {
 			$new = $this->subdomain_replaces( $new );
 		}
 
+		if ( true === $this->is_protocol_mismatch ) {
+			$new = $this->do_protocol_replace( $new );
+		}
+
 		return $new;
 	}
 
@@ -91,22 +199,30 @@ final class WPMDB_Replace {
 	 *
 	 * Mostly from https://github.com/interconnectit/Search-Replace-DB
 	 *
-	 * @param mixed $data              Used to pass any subordinate arrays back to in.
-	 * @param bool  $serialized        Does the array passed via $data need serialising.
-	 * @param bool  $parent_serialized Passes whether the original data passed in was serialized
+	 * @param mixed $data Used to pass any subordinate arrays back to in.
+	 * @param bool $serialized Does the array passed via $data need serialising.
+	 * @param bool $parent_serialized Passes whether the original data passed in was serialized
+	 * @param bool $filtered Should we apply before and after filters successively
 	 *
 	 * @return mixed    The original array with all elements replaced as needed.
 	 */
-	function recursive_unserialize_replace( $data, $serialized = false, $parent_serialized = false ) {
+	function recursive_unserialize_replace( $data, $serialized = false, $parent_serialized = false, $filtered = true ) {
 		$pre = apply_filters( 'wpmdb_pre_recursive_unserialize_replace', false, $data, $this );
 		if ( false !== $pre ) {
 			return $pre;
 		}
 
-		$is_json = false;
+		$is_json           = false;
+		$before_fired      = false;
+		$successive_filter = $filtered;
+
+		if ( true === $filtered ) {
+			list( $data, $before_fired, $successive_filter ) = apply_filters( 'wpmdb_before_replace_custom_data', array( $data, $before_fired, $successive_filter ), $this );
+		}
+
 		// some unserialized data cannot be re-serialized eg. SimpleXMLElements
 		try {
-			if ( is_string( $data ) && ( $unserialized = @unserialize( $data ) ) !== false ) {
+			if ( is_string( $data ) && ( $unserialized = WPMDB_Utils::unserialize( $data, __METHOD__ ) ) !== false ) {
 				// PHP currently has a bug that doesn't allow you to clone the DateInterval / DatePeriod classes.
 				// We skip them here as they probably won't need data to be replaced anyway
 				if ( is_object( $unserialized ) ) {
@@ -114,11 +230,11 @@ final class WPMDB_Replace {
 						return $data;
 					}
 				}
-				$data = $this->recursive_unserialize_replace( $unserialized, true, true );
+				$data = $this->recursive_unserialize_replace( $unserialized, true, true, $successive_filter );
 			} elseif ( is_array( $data ) ) {
 				$_tmp = array();
 				foreach ( $data as $key => $value ) {
-					$_tmp[ $key ] = $this->recursive_unserialize_replace( $value, false, $parent_serialized );
+					$_tmp[ $key ] = $this->recursive_unserialize_replace( $value, false, $parent_serialized, $successive_filter );
 				}
 
 				$data = $_tmp;
@@ -131,7 +247,7 @@ final class WPMDB_Replace {
 					if ( is_int( $key ) ) {
 						continue;
 					}
-					$_tmp->$key = $this->recursive_unserialize_replace( $value, false, $parent_serialized );
+					$_tmp->$key = $this->recursive_unserialize_replace( $value, false, $parent_serialized, $successive_filter );
 				}
 
 				$data = $_tmp;
@@ -141,7 +257,7 @@ final class WPMDB_Replace {
 				$data = json_decode( $data, true );
 
 				foreach ( $data as $key => $value ) {
-					$_tmp[ $key ] = $this->recursive_unserialize_replace( $value, false, $parent_serialized );
+					$_tmp[ $key ] = $this->recursive_unserialize_replace( $value, false, $parent_serialized, $successive_filter );
 				}
 
 				$data = $_tmp;
@@ -155,22 +271,22 @@ final class WPMDB_Replace {
 				}
 			}
 
-			if ( $serialized ) {
-				if ( $is_json ) {
-					return serialize( json_encode( $data ) );
-				} else {
-					return serialize( $data );
-				}
+			if ( $is_json ) {
+				$data = json_encode( $data );
 			}
 
-			if ( $is_json ) {
-				return json_encode( $data );
+			if ( $serialized ) {
+				$data = serialize( $data );
 			}
 		} catch ( Exception $error ) {
 			$error_msg     = __( 'Failed attempting to do the recursive unserialize replace. Please contact support.', 'wp-migrate-db' );
 			$error_details = $error->getMessage() . "\n\n";
 			$error_details .= var_export( $data, true );
 			$this->wpmdb->log_error( $error_msg, $error_details );
+		}
+
+		if ( true === $filtered ) {
+			$data = apply_filters( 'wpmdb_after_replace_custom_data', $data, $before_fired, $this );
 		}
 
 		return $data;
@@ -228,7 +344,8 @@ final class WPMDB_Replace {
 	 *
 	 * $is_posts = $this->table_is( 'posts' );
 	 *
-	 * @param  string  $desired_table Name of the desired table, table prefix omitted.
+	 * @param  string $desired_table Name of the desired table, table prefix omitted.
+	 *
 	 * @return boolean                Whether or not the desired table is the table currently being processed.
 	 */
 	public function table_is( $desired_table ) {
