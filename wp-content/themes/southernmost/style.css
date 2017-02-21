@@ -204,10 +204,10 @@ img.right, img.alignright {float: right;margin: 0 0 7px 15px;}
 .slidedown-nav .btn i,
 .slidedown-nav .left h3,
 .slidedown-nav .left span {
-		-webkit-transition: all .5s ease;
-		-moz-transition: all .5s ease;
-		-o-transition: all .5s ease;
-		transition: all .5s ease;
+	-webkit-transition: all .5s ease;
+	-moz-transition: all .5s ease;
+	-o-transition: all .5s ease;
+	transition: all .5s ease;
 }
 
 a,
@@ -228,9 +228,9 @@ a,
 .footleft input[type="submit"],
 .slidedown-nav .owl-carousel .owl-item {
 	-webkit-transition: all .4s ease;
-		-moz-transition: all .4s ease;
-		-o-transition: all .4s ease;
-		transition: all .4s ease;
+	-moz-transition: all .4s ease;
+	-o-transition: all .4s ease;
+	transition: all .4s ease;
 }
 
 
@@ -758,11 +758,11 @@ div#topbanner {
 
 .slidedown-nav .item h3,
 .slidedown-nav .item span {
-		color: #79797b;
-		font-size: 16px;
-		font-weight: bold;
-		margin-top: 10px;
-		text-transform: uppercase;
+	color: #79797b;
+	font-size: 16px;
+	font-weight: bold;
+	margin-top: 10px;
+	text-transform: uppercase;
 }
 
 .slidedown-nav .item span {
@@ -803,17 +803,18 @@ div#topbanner {
 
 .slidedown-nav .left h3,
 .slidedown-nav .left span {
-		color: #5e5e5e;
-		font-family: NewsGothicMT;
-		font-size: 40px;
-		font-weight: normal;
-		line-height: 1.3;
-		text-transform: uppercase;
+	color: #5e5e5e;
+	font-family: NewsGothicMT;
+	font-size: 40px;
+	font-weight: normal;
+	line-height: 1.3;
+	text-transform: uppercase;
 }
-	.slidedown-nav .left h3:hover,
-	.slidedown-nav .left span:hover {
-		color: #555;
-	}
+
+.slidedown-nav .left h3:hover,
+.slidedown-nav .left span:hover {
+	color: #555;
+}
 
 .slidedown-nav .left span {
 	display: block;
