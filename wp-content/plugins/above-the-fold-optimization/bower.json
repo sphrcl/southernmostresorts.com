@@ -1,0 +1,14 @@
+{
+  "name": "abovethefold",
+  "version": "2.7.10",
+  "ignore": [
+    ".jshintrc",
+    "**/*.txt"
+  ],
+  "dependencies": {
+    "loadcss": "1.2.0",
+    "selectize": "0.12.3",
+    "codemirror": "5.18.2"
+  },
+  "devDependencies": {}
+}
