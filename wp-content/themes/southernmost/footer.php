@@ -389,7 +389,7 @@
 
 
 
-	<script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.1/jquery-ui.min.js'></script>
+	<script type='text/javascript' src='<?php bloginfo ('template_url'); ?>/js/jqueryui/1.11.1/jquery-ui.min.js'></script>
 
 	<!-- JavaScripts -->
 	<script type="text/javascript" src="<?php bloginfo ('template_url'); ?>/js/instafeed.min.js"></script>
