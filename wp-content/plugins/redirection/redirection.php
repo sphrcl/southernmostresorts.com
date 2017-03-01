@@ -3,9 +3,11 @@
 Plugin Name: Redirection
 Plugin URI: http://urbangiraffe.com/plugins/redirection/
 Description: Manage all your 301 redirects and monitor 404 errors
-Version: 2.3.16
+Version: 2.5
 Author: John Godley
 Author URI: http://urbangiraffe.com
+Text Domain: redirection
+Domain Path: /locale
 ============================================================================================================
 This software is provided "as is" and any express or implied warranties, including, but not limited to, the
 implied warranties of merchantibility and fitness for a particular purpose are disclaimed. In no event shall
@@ -19,7 +21,7 @@ For full license details see license.txt
 ============================================================================================================
 */
 
-define( 'REDIRECTION_VERSION', '2.3.1' );     // DB schema version. Only change if DB needs changing
+define( 'REDIRECTION_VERSION', '2.3.2' );     // DB schema version. Only change if DB needs changing
 define( 'REDIRECTION_FILE', __FILE__ );
 
 include dirname( __FILE__ ).'/models/module.php';
@@ -34,18 +36,19 @@ function red_get_options() {
 	if ( $options === false )
 		$options = array();
 
-	$defaults = array(
+	$defaults = apply_filters( 'red_default_options', array(
 		'support'         => false,
 		'token'           => md5( uniqid() ),
 		'monitor_post'    => 0,
 		'auto_target'     => '',
 		'expire_redirect' => 7,
 		'expire_404'      => 7,
-	);
+		'modules'         => array(),
+	) );
 
-	foreach ( $defaults AS $key => $value ) {
-		if ( !isset( $options[$key] ) )
-			$options[$key] = $value;
+	foreach ( $defaults as $key => $value ) {
+		if ( ! isset( $options[ $key ] ) )
+			$options[ $key ] = $value;
 	}
 
 	$options['lookup'] = apply_filters( 'red_lookup_ip', 'http://urbangiraffe.com/map/?ip=' );

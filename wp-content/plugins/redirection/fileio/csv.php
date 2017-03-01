@@ -13,20 +13,25 @@ class Red_Csv_File extends Red_FileIO {
 
 		fputcsv( $stdout, array( 'source', 'target', 'regex', 'type', 'code', 'match', 'hits', 'title' ) );
 
-		foreach ( $items AS $line ) {
+		foreach ( $items as $line ) {
 			$csv = array(
-				$line->url,
-				$line->action_data,
-				$line->regex,
-				$line->action_type,
-				$line->action->action_code,
-				$line->match->action->type,
-				$line->last_count,
-				$line->title,
+				$line->get_url(),
+				$line->get_action_data(),
+				$line->is_regex(),
+				$line->get_action_type(),
+				$line->get_action_code(),
+				$line->get_action_type(),
+				$line->get_hits(),
+				$line->get_title(),
 			);
 
-			fputcsv( $stdout, $csv );
+			$csv = array_map( array( $this, 'escape_csv' ), $csv );
+			fwrite( $stdout, join( $csv, ',') );
 		}
+	}
+
+	private function escape_csv( $item ) {
+		return '"'.str_replace( '"', '""', $item ).'"';
 	}
 
 	function load( $group, $data, $filename = '' ) {
@@ -35,14 +40,14 @@ class Red_Csv_File extends Red_FileIO {
 
 		if ( $file ) {
 			while ( ( $csv = fgetcsv( $file, 1000, ',' ) ) ) {
-				if ( $csv[0] != 'source' && $csv[1] != 'target') {
+				if ( $csv[0] !== 'source' && $csv[1] !== 'target' ) {
 					Red_Item::create( array(
 						'source' => trim( $csv[0] ),
 						'target' => trim( $csv[1] ),
 						'regex'  => $this->is_regex( $csv[0] ),
-						'group'  => $group,
+						'group_id'  => $group,
 						'match'  => 'url',
-						'red_action' => 'url'
+						'red_action' => 'url',
 					) );
 
 					$count++;
