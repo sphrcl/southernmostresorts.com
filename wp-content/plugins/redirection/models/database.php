@@ -73,16 +73,6 @@ class RE_Database {
 			  KEY `module_id` (`module_id`)
 			) $charset_collate",
 
-		 	"CREATE TABLE IF NOT EXISTS `{$wpdb->prefix}redirection_modules`(
-			  `id` int(11) unsigned NOT NULL auto_increment,
-			  `type` varchar(20) NOT NULL default '',
-			  `name` varchar(50) NOT NULL default '',
-			  `options` mediumtext,
-		  	PRIMARY KEY ( `id`),
-			  KEY `name` (`name`),
-			  KEY `type` (`type`)
-			) $charset_collate",
-
 			"CREATE TABLE IF NOT EXISTS `{$wpdb->prefix}redirection_404` (
 			  `id` int(11) unsigned NOT NULL AUTO_INCREMENT,
 			  `created` datetime NOT NULL,
@@ -95,22 +85,16 @@ class RE_Database {
 			  KEY `url` (`url`),
 			  KEY `ip` (`ip`),
 			  KEY `referrer` (`referrer`)
-			) $charset_collate;"
+		  	) $charset_collate;",
 		);
 
-		foreach ( $create AS $sql ) {
+		foreach ( $create as $sql ) {
 			if ( $wpdb->query( $sql ) === false )
 				return false;
 		}
 
-		// Modules
-		if ( $wpdb->get_var( "SELECT COUNT(*) FROM {$wpdb->prefix}redirection_modules" ) == 0 ) {
-			$wpdb->insert( $wpdb->prefix.'redirection_modules', array( 'type' => 'wp', 'name' => __( 'WordPress', 'redirection' ), 'options' => '' ) );
-			$wpdb->insert( $wpdb->prefix.'redirection_modules', array( 'type' => 'apache', 'name' => __( 'Apache', 'redirection' ), 'options' => '' ) );
-		}
-
 		// Groups
-		if ( $wpdb->get_var( "SELECT COUNT(*) FROM {$wpdb->prefix}redirection_groups" ) == 0 ) {
+		if ( intval( $wpdb->get_var( "SELECT COUNT(*) FROM {$wpdb->prefix}redirection_groups", 10 ) ) === 0 ) {
 			$wpdb->insert( $wpdb->prefix.'redirection_groups', array( 'name' => __( 'Redirections' ), 'module_id' => 1, 'position' => 0 ) );
 			$wpdb->insert( $wpdb->prefix.'redirection_groups', array( 'name' => __( 'Modified Posts' ), 'module_id' => 1, 'position' => 1 ) );
 
@@ -132,21 +116,24 @@ class RE_Database {
 			$success = $this->install();
 		else {
 			// Try and upgrade from a previous version
-			if ( $current == '2.0' )
+			if ( $current === '2.0' )
 				$this->upgrade_from_20();
-			elseif ( $current == '2.0.1' )
+			elseif ( $current === '2.0.1' )
 				$this->upgrade_from_21();
-			elseif ( $current == '2.0.2' )
+			elseif ( $current === '2.0.2' )
 				$this->upgrade_from_22();
 
-			if ( version_compare( $current, '2.1.16' ) == -1 )
+			if ( version_compare( $current, '2.1.16' ) === -1 )
 				$this->upgrade_to_216();
 
-			if ( version_compare( $current, '2.2' ) == -1 )
+			if ( version_compare( $current, '2.2' ) === -1 )
 				$this->upgrade_to_220();
 
-			if ( version_compare( $current, '2.3.1' ) == -1 )
+			if ( version_compare( $current, '2.3.1' ) === -1 )
 				$this->upgrade_to_231();
+
+			if ( version_compare( $current, '2.3.2' ) === -1 )
+				$this->upgrade_to_232();
 
 			$success = true;
 		}
@@ -179,6 +166,12 @@ class RE_Database {
   			  KEY `ip` (`ip`,`id`),
 			  KEY `referrer` (`referrer`)
 			) $charset_collate;" );
+	}
+
+	private function upgrade_to_232() {
+		global $wpdb;
+
+		$wpdb->query( "DROP TABLE IF EXISTS {$wpdb->prefix}redirection_modules;" );
 	}
 
 	private function upgrade_from_20() {
