@@ -46,18 +46,13 @@
 		</div>
 
 		<div class="topbanner-overlay"></div>
-		<!-- removed
-		<div class="arrow bounce"></div>
-		-->
-		<div class="topbannercontent">
-			<div class="logo-white">
-				<img src="<?php bloginfo ('template_url'); ?>/images/logo-white.png" alt="*" />
+
+		<div class="topbannercontent" tabindex="0" aria-label="Press Enter to open the booking widget">
+			<div class="logo-white" tabindex="0">
+				<img src="<?php bloginfo ('template_url'); ?>/images/logo-white.png" alt="Southernmost Beach Resort Logo" aria-label="Southernmost Beach Resort Logo - Press Enter to open the booking widget"/>
 			</div>
-			<div class="reservenow">
-				<!-- they want it to go to reztrip
-				<a class="button2" href="<?php echo get_option('misfit_booking_link'); ?>">Reserve Now</a>
-				-->
-				<a class="button2" href="https://southernmostbeachresort.reztrip.com">Reserve Now</a>
+			<div class="reservenow" tabindex="0">
+				<a class="button2" href="https://southernmostbeachresort.reztrip.com" role="button" aria-label="Reserve now button - Press Enter to open the booking widget">Reserve Now</a>
 			</div>
 		</div>
 
