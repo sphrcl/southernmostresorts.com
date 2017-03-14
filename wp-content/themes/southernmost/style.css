@@ -3960,6 +3960,7 @@ body .ui-tooltip {
 	font-weight: bold;
 	color: #636363;
 	padding: 12px 10.5px;
+	border: 1px solid #fff;
 }
 .ui-state-default a,
 .ui-state-default a:link,
