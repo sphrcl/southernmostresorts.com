@@ -452,35 +452,27 @@ $(document).ready(function(){
                 $("#dater").datepicker("option", "minDate", dateText);
 
                 function parseDate(dateText) {
-				  var parts = dateText.split('/');
+				  var parts = dateText.split('-');
 				  // new Date(year, month [, day [, hours[, minutes[, seconds[, ms]]]]])
 				  return parts[1] + '/' + parts[0] + '/' + parts[2]; // Note: months are 0-based
 				}
 
-                // console.log(parseDate(dateText));
+	       		$('#date').val(parseDate(dateText));
+				$("#arrival_date").val(dateText);
+				$("#departure_date").val("");
 
+			},
 
-               $('#date').val(parseDate(dateText));
-					$("#arrival_date").val(dateText);
-					$("#departure_date").val("");
-					// $("#arv").val(dateText);
-
-    //             if (!date1 || date2) {
-    //             	$('#date').val(parseDate(dateText));
-				// 	$("#arrival_date").val(dateText);
-				// 	$("#departure_date").val("");
-    //             } else if( selectedDate < date1 ) {
-    //                 $("#departure_date").val( $("#arrival_date").val() );
-    //                 $("#dater").val(parseDate(dateText));
-    //             } else {
-				// 	$("#departure_date").val(parseDate(dateText));
-				// 	$("#arv").val(dateText);
-				// }
+			onClose: function(){
+				$(this).parent().next().find('input.hasDatepicker').datepicker('show');
 			}
 
 			
 
 		});
+
+
+
 		$( "#dater" ).datepicker({
 
 			minDate: 0,
@@ -496,27 +488,16 @@ $(document).ready(function(){
                 var selectedDate = $.datepicker.parseDate($.datepicker._defaults.dateFormat, dateText);
 
                 function parseDate(dateText) {
-				  var parts = dateText.split('/');
-				  // new Date(year, month [, day [, hours[, minutes[, seconds[, ms]]]]])
+				  var parts = dateText.split('-');
 				  return parts[1] + '/' + parts[0] + '/' + parts[2]; // Note: months are 0-based
 				}
 
-                // console.log(parseDate(dateText));
+				$('#dater').val(parseDate(dateText));
+				$("#departure_date").val(dateText);	
+			},
 
-                $('#dater').val(parseDate(dateText));
-	                $("#departure_date").val(dateText);	
-	                // $("#dept").val(dateText);
-
-    //             if (!date1 || date2) {
-    //             	$('#dater').val(parseDate(dateText));
-	   //              $("#departure_date").val(dateText);	
-    //             } else if( selectedDate < date1 ) {
-    //                 $("#dept").val( $("#arv").val() );
-    //                 $("#dater").val(parseDate(dateText));
-    //             } else {
-				// 	$("#dater").val(parseDate(dateText));
-				// 	$("#dept").val(dateText);
-				// }
+			onClose: function(){
+				$(this).parent().next().find('select').focus();
 			}
 
 		});

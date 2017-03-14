@@ -46,11 +46,15 @@ var calendar_cell_today_class,
 
 $(document).ready(function() {
 
-	$('.topbannercontent, .topbannercontent a, .topbannercontent img').keydown(function(event){
-
+	$('.topbannercontent, .topbannercontent a, .topbannercontent img, .logo a, .reserve a').keydown(function(event){
+		
 		if(event.keyCode == 13){
 			event.preventDefault();
-	        $('#date').focus();
+			$('html, body').animate({
+		        scrollTop: $("#date").offset().top - 300
+		    }, 100, function(){
+		    	$('#date').focus();
+		    });
 	    }
 
 	});
