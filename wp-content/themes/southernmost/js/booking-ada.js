@@ -46,11 +46,15 @@ var calendar_cell_today_class,
 
 $(document).ready(function() {
 
-	$('.topbannercontent, .topbannercontent a, .topbannercontent img').keydown(function(event){
-
+	$('.topbannercontent, .topbannercontent a, .topbannercontent img, .logo a, .reserve a').keydown(function(event){
+		
 		if(event.keyCode == 13){
 			event.preventDefault();
-	        $('#date').focus();
+			$('html, body').animate({
+		        scrollTop: $("#date").offset().top - 300
+		    }, 100, function(){
+		    	$('#date').focus();
+		    });
 	    }
 
 	});
@@ -153,9 +157,8 @@ function datePickHandler() {
 
 	container.setAttribute('role', 'application');
 	container.setAttribute('aria-label', 'Calendar date-picker');
-	container.setAttribute('tabindex', 0);
 	table.setAttribute('summary', 'A datepicker calendar application to set your booking dates. The week in this calendar starts on a Sunday. Your current position is today. Press right to highlight tomorrow.');
-	table.setAttribute('tabindex', 0);
+	// table.setAttribute('tabindex', 0);
 
 	// the top controls:
 	var prev = $(calendar_wrap_id + ' ' + prev_class)[0],

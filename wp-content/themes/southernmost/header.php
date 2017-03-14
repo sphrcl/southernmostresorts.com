@@ -97,8 +97,8 @@
 	
 		<div id="header">
 	
-			<div class="logo">
-				<a href="<?php bloginfo ('url'); ?>"><img src="<?php bloginfo ('template_url'); ?>/images/logo-footer.png" alt="Southernmost"></a>
+			<div class="logo" tabindex="0">
+				<a href="<?php bloginfo ('url'); ?>" aria-label="Southernmost Beach Resort Logo - Press Enter to open the booking widget"><img src="<?php bloginfo ('template_url'); ?>/images/logo-footer.png" alt="Southernmost Beach Resort Top Logo"></a>
 			</div>
 	
 			<div class="navigation">
@@ -262,8 +262,8 @@
 				<!-- / NAVIS -->
 			</div>
 	
-			<div class="reserve">
-				<a class="button1" href="<?php echo get_option('misfit_booking_link'); ?>">reserve</a>
+			<div class="reserve" tabindex="0">
+				<a class="button1" href="<?php echo get_option('misfit_booking_link'); ?>" role="button" aria-label="Reserve button - Press Enter to open the booking widget">reserve</a>
 			</div>
 	
 		</div>
