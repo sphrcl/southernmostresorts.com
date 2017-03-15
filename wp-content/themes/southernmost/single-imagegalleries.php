@@ -46,7 +46,9 @@
 
 	?>
 
-		<li <?php if( $this_post == $post->ID ) { echo ' class="current"'; } ?>><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></li>
+		<li <?php if( $this_post == $post->ID ) { echo ' class="current"'; } ?>>
+			<a href="<?php the_permalink(); ?>"><?php if( $this_post == $post->ID ) echo '<h1>' ?><?php the_title(); ?><?php if( $this_post == $post->ID ) echo '</h1>' ?></a>
+		</li>
 	
 	
 	<?php $count++; endwhile; endif; wp_reset_query(); ?>	
