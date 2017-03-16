@@ -2993,6 +2993,14 @@ ul.subnavigation li.current::after {
 			 /* color: #3E87BE; */
 		}
 
+.page-nav li.current > a {
+	padding: 0 !important;
+}
+
+.page-nav li > a > h1 {
+	font-size: 16px;
+	padding: 25px 0;
+}
 
 
 

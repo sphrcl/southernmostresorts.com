@@ -48,7 +48,9 @@
 
 	?>
 
-		<li <?php if( $count == 1 ) { echo ' class="current"'; } ?>><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></li>
+		<li <?php if( $count == 1 ) { echo ' class="current"'; } ?>>
+			<a href="<?php the_permalink(); ?>"><?php if( $count == 1 ) echo '<h1>' ?><?php the_title(); ?><?php if( $count == 1 ) echo '</h1>' ?></a>
+		</li>
 	
 	
 	<?php $count++; endwhile; endif; wp_reset_query(); ?>	
