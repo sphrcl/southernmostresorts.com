@@ -68,6 +68,16 @@ if ( ! class_exists( 'Tribe__Events__Pro__Templates__Week' ) ) {
 		 */
 		const AJAX_HOOK = 'tribe_week';
 
+		/**
+		 * The path to the template file used for the view.
+		 * This value is used in Shortcodes/Tribe_Events.php to
+		 * locate the correct template file for each shortcode
+		 * view.
+		 *
+		 * @var string
+		 */
+		public $view_path = 'pro/week/content';
+
 
 		/**
 		 * __construct()
@@ -353,7 +363,7 @@ if ( ! class_exists( 'Tribe__Events__Pro__Templates__Week' ) ) {
 					}
 				}
 
-				$display_format  = apply_filters( 'tribe_events_pro_week_header_date_format', tribe_get_option( 'weekDayFormat', 'D jS' ) );
+				$display_format  = apply_filters( 'tribe_events_pro_week_header_date_format', tribe_get_date_option( 'weekDayFormat', 'D jS' ) );
 				$formatted_date  = date_i18n( $display_format, strtotime( $date ) );
 				$timestamp_date  = strtotime( $date );
 				$timestamp_today = strtotime( current_time( 'Y-m-d' ) );
@@ -656,6 +666,7 @@ if ( ! class_exists( 'Tribe__Events__Pro__Templates__Week' ) ) {
 					'post_status'  => $post_status,
 					'eventDate'    => $_POST['eventDate'],
 					'eventDisplay' => 'week',
+					'featured'     => tribe( 'tec.featured_events' )->featured_events_requested(),
 				);
 
 				if ( isset( $_POST['tribe_event_category'] ) ) {
