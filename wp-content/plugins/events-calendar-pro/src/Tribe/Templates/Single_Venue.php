@@ -30,23 +30,11 @@ if ( ! class_exists( 'Tribe__Events__Pro__Templates__Single_Venue' ) ) {
 
 			add_action( 'tribe_events_single_venue_before_upcoming_events', array( $this, 'setup_upcoming_events' ) );
 
-			add_filter( 'tribe_get_template_part_templates', array( $this, 'remove_list_navigation' ), 10, 3 );
+			add_filter( 'tribe_get_template_part_path_list/nav.php', array( $this, 'filter_list_nav' ) );
 
-			// google data markup
-			add_action( 'wp_head', array( $this, 'google_data_markup' ) );
+			// Print JSON-LD markup on the `wp_head`
+			add_action( 'wp_head', array( Tribe__Events__JSON_LD__Venue::instance(), 'markup' ) );
 		}
-
-		/**
-		 * Output JSON-LD for schema.org markup
-		 *
-		 * @see 'wp_head'
-		 */
-		public function google_data_markup() {
-			$venue_markup = new Tribe__Events__Pro__Google_Data_Markup__Venue();
-			$html = apply_filters( 'tribe_google_data_markup_json', $venue_markup->script_block() );
-			echo $html;
-		}
-
 
 		/**
 		 * Setup meta display in this template
@@ -110,30 +98,21 @@ if ( ! class_exists( 'Tribe__Events__Pro__Templates__Single_Venue' ) ) {
 		 * @return void
 		 **/
 		public function setup_upcoming_events() {
-
 			// include the list view class for upcoming events
 			tribe_initialize_view( 'list' );
-			tribe_set_the_meta_visibility( 'tribe_event_venue_name', false );
-			tribe_set_the_meta_visibility( 'tribe_event_venue_address', false );
-
 		}
 
 		/**
-		 * Remove navigation from the list view included.
+		 * Filters the nav template to use when displaying the single venue view.
 		 *
-		 * @param array  $templates The templates to include.
-		 * @param string $slug      The slug referencing the template.
-		 * @param string $name      The name of the specific template.
+		 * @param string $file
 		 *
-		 * @return array The new array of templates to include.
+		 * @return string $template
 		 */
-		public function remove_list_navigation( $templates, $slug, $name ) {
-			if ( $slug == 'list/nav' ) {
-				$templates = array();
-			}
+		public function filter_list_nav( $file ) {
+			$file = Tribe__Events__Templates::getTemplateHierarchy( 'pro/list/venue-nav' );
 
-			return $templates;
+			return $file;
 		}
-
 	}
 }

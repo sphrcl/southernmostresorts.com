@@ -15,6 +15,7 @@
  * your functions.php. In order to modify or extend a single filter, please see our
  * readme on templates hooks and filters (TO-DO)
  *
+ * @version 4.4
  * @return string
  *
  * @package TribeEventsCalendar
@@ -25,6 +26,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 $events_label_plural = tribe_get_event_label_plural();
+$events_label_plural_lowercase = tribe_get_event_label_plural_lowercase();
 
 $posts = tribe_get_list_widget_events();
 
@@ -38,6 +40,34 @@ if ( $posts ) : ?>
 			setup_postdata( $post );
 			?>
 			<li class="tribe-events-list-widget-events <?php tribe_events_event_classes() ?>">
+				<?php
+				if (
+					tribe( 'tec.featured_events' )->is_featured( get_the_ID() )
+					&& get_post_thumbnail_id( $post )
+				) {
+					/**
+					 * Fire an action before the list widget featured image
+					 */
+					do_action( 'tribe_events_list_widget_before_the_event_image' );
+
+					/**
+					 * Allow the default post thumbnail size to be filtered
+					 *
+					 * @param $size
+					 */
+					$thumbnail_size = apply_filters( 'tribe_events_list_widget_thumbnail_size', 'post-thumbnail' );
+					?>
+					<div class="tribe-event-image">
+						<?php the_post_thumbnail( $thumbnail_size ); ?>
+					</div>
+					<?php
+
+					/**
+					 * Fire an action after the list widget featured image
+					 */
+					do_action( 'tribe_events_list_widget_after_the_event_image' );
+				}
+				?>
 
 				<?php do_action( 'tribe_events_list_widget_before_the_event_title' ); ?>
 				<!-- Event Title -->
@@ -68,6 +98,6 @@ if ( $posts ) : ?>
 <?php
 // No events were found.
 else : ?>
-	<p><?php printf( esc_html__( 'There are no upcoming %s at this time.', 'the-events-calendar' ), strtolower( $events_label_plural ) ); ?></p>
+	<p><?php printf( esc_html__( 'There are no upcoming %s at this time.', 'the-events-calendar' ), $events_label_plural_lowercase ); ?></p>
 <?php
 endif;

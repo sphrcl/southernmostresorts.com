@@ -10,16 +10,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 $events_label_singular = tribe_get_event_label_singular();
 $events_label_plural = tribe_get_event_label_plural();
-
-if ( class_exists( 'Eventbrite_for_TribeEvents' ) ) {
-	?>
-	<style type="text/css">
-		.eventBritePluginPlug {
-			display: none;
-		}
-	</style>
-	<?php
-}
+$events_label_singular_lowercase = tribe_get_event_label_singular_lowercase();
+$events_label_plural_lowercase = tribe_get_event_label_plural_lowercase();
 ?>
 <div id="eventIntro">
 	<div id="tribe-events-post-error" class="tribe-events-error error"></div>
@@ -63,68 +55,101 @@ if ( class_exists( 'Eventbrite_for_TribeEvents' ) ) {
 		<tr>
 			<td colspan="2">
 				<table class="eventtable">
+					<?php
+					/**
+					 * Don't Remove the <colgroup> it's important to avoid
+					 * recurrence meta changing it's width when the Description changes
+					 */
+					?>
+					<colgroup>
+						<col style="width:15%">
+						<col style="width:85%">
+					</colgroup>
 					<tr id="recurrence-changed-row">
-						<td colspan='2'><?php printf( esc_html__( 'You have changed the recurrence rules of this %1$s.  Saving the %1$s will update all future %2$s.  If you did not mean to change all %2$s, then please refresh the page.', 'the-events-calendar' ), strtolower( $events_label_singular ), strtolower( $events_label_plural ) ); ?></td>
+						<td colspan='2'><?php printf( esc_html__( 'You have changed the recurrence rules of this %1$s.  Saving the %1$s will update all future %2$s.  If you did not mean to change all %2$s, then please refresh the page.', 'the-events-calendar' ), $events_label_singular_lowercase, $events_label_plural_lowercase ); ?></td>
 					</tr>
 					<tr>
-						<td><?php printf( esc_html__( 'All Day %s:', 'the-events-calendar' ), $events_label_singular ); ?></td>
-						<td>
-							<input tabindex="<?php tribe_events_tab_index(); ?>" type="checkbox" id="allDayCheckbox" name="EventAllDay" value="yes" <?php echo esc_html( $isEventAllDay ); ?> />
-						</td>
-					</tr>
-					<tr>
-						<td style="width:175px;"><?php esc_html_e( 'Start Date &amp; Time:', 'the-events-calendar' ); ?></td>
-						<td id="tribe-event-datepickers" data-startofweek="<?php echo get_option( 'start_of_week' ); ?>">
-							<input autocomplete="off" tabindex="<?php tribe_events_tab_index(); ?>" type="text" class="tribe-datepicker" name="EventStartDate" id="EventStartDate" value="<?php echo esc_attr( $EventStartDate ) ?>" />
-
+						<td class="tribe-datetime-label"><?php esc_html_e( 'Start/End:', 'the-events-calendar' ); ?></td>
+						<td class="tribe-datetime-block">
+							<input
+								autocomplete="off"
+								tabindex="<?php tribe_events_tab_index(); ?>"
+								type="text"
+								class="tribe-datepicker tribe-field-start_date"
+								name="EventStartDate"
+								id="EventStartDate"
+								value="<?php echo esc_attr( $EventStartDate ) ?>"
+							/>
 							<span class="helper-text hide-if-js"><?php esc_html_e( 'YYYY-MM-DD', 'the-events-calendar' ) ?></span>
-							<span class="timeofdayoptions">
-								<?php echo tribe_get_datetime_separator(); ?>
-								<select tabindex="<?php tribe_events_tab_index(); ?>" name="EventStartHour">
-									<?php echo $startHourOptions; ?>
-								</select>
-								<select tabindex="<?php tribe_events_tab_index(); ?>" name="EventStartMinute">
-									<?php echo $startMinuteOptions; ?>
-								</select>
-								<?php if ( ! Tribe__View_Helpers::is_24hr_format() ) : ?>
-									<select tabindex="<?php tribe_events_tab_index(); ?>" name="EventStartMeridian">
-										<?php echo $startMeridianOptions; ?>
-									</select>
-								<?php endif; ?>
-							</span>
-						</td>
-					</tr>
-					<tr>
-						<td><?php esc_html_e( 'End Date &amp; Time:', 'the-events-calendar' ); ?></td>
-						<td>
-							<input autocomplete="off" type="text" class="tribe-datepicker" name="EventEndDate" id="EventEndDate" value="<?php echo esc_attr( $EventEndDate ); ?>" />
-							<span class="helper-text hide-if-js"><?php _e( 'YYYY-MM-DD', 'the-events-calendar' ) ?></span>
-							<span class="timeofdayoptions">
-								<?php echo tribe_get_datetime_separator(); ?>
-								<select class="tribeEventsInput" tabindex="<?php tribe_events_tab_index(); ?>" name="EventEndHour">
-									<?php echo $endHourOptions; ?>
-								</select>
-								<select tabindex="<?php tribe_events_tab_index(); ?>" name="EventEndMinute">
-									<?php echo $endMinuteOptions; ?>
-								</select>
-								<?php if ( ! Tribe__View_Helpers::is_24hr_format() ) : ?>
-									<select tabindex="<?php tribe_events_tab_index(); ?>" name="EventEndMeridian">
-										<?php echo $endMeridianOptions; ?>
-									</select>
-								<?php endif; ?>
-							</span>
-						</td>
-					</tr>
-					<tr class="event-timezone">
-						<td class="label">
-							<label for="event-timezone">
-								<?php esc_html_e( 'Timezone:', 'the-events-calendar' ); ?>
-							</label>
-						</td>
-						<td>
-							<select tabindex="<?php tribe_events_tab_index(); ?>" name="EventTimezone" id="event-timezone" class="chosen">
+
+							<input
+								autocomplete="off"
+								tabindex="<?php tribe_events_tab_index(); ?>"
+								type="text"
+								class="tribe-timepicker tribe-field-start_time"
+								name="EventStartTime"
+								id="EventStartTime"
+								<?php echo Tribe__View_Helpers::is_24hr_format() ? 'data-format="H:i"' : '' ?>"
+								data-step="<?php echo esc_attr( $start_timepicker_step ); ?>"
+								data-round="<?php echo esc_attr( $timepicker_round ); ?>"
+								value="<?php echo esc_attr( $metabox->is_auto_draft() ? $start_timepicker_default : $EventStartTime ) ?>"
+							/>
+							<span class="helper-text hide-if-js"><?php esc_html_e( 'HH:MM', 'the-events-calendar' ) ?></span>
+
+							<span class="tribe-datetime-separator"> <?php echo esc_html_x( 'to', 'Start Date Time "to" End Date Time', 'the-events-calendar' ); ?> </span>
+
+							<input
+								autocomplete="off"
+								type="text"
+								class="tribe-timepicker tribe-field-end_time"
+								name="EventEndTime"
+								id="EventEndTime"
+								<?php echo Tribe__View_Helpers::is_24hr_format() ? 'data-format="H:i"' : '' ?>"
+								data-step="<?php echo esc_attr( $end_timepicker_step ); ?>"
+								data-round="<?php echo esc_attr( $timepicker_round ); ?>"
+								value="<?php echo esc_attr( $metabox->is_auto_draft() ? $end_timepicker_default : $EventEndTime ); ?>"
+							/>
+							<span class="helper-text hide-if-js"><?php esc_html_e( 'HH:MM', 'the-events-calendar' ) ?></span>
+
+							<input
+								autocomplete="off"
+								type="text"
+								class="tribe-datepicker tribe-field-end_date"
+								name="EventEndDate"
+								id="EventEndDate"
+								value="<?php echo esc_attr( $EventEndDate ); ?>"
+							/>
+							<span class="helper-text hide-if-js"><?php esc_html_e( 'YYYY-MM-DD', 'the-events-calendar' ) ?></span>
+
+							<select
+								tabindex="<?php tribe_events_tab_index(); ?>"
+								name="EventTimezone"
+								id="event-timezone"
+								class="tribe-field-timezone tribe-dropdown hide-if-js"
+								data-timezone-label="<?php esc_attr_e( 'Timezone:', 'the-events-calendar' ) ?>"
+								data-timezone-value="<?php echo esc_attr( Tribe__Events__Timezones::get_event_timezone_string() ) ?>"
+							>
 								<?php echo wp_timezone_choice( Tribe__Events__Timezones::get_event_timezone_string() ); ?>
 							</select>
+
+							<p class="tribe-allday">
+								<input
+									tabindex="<?php tribe_events_tab_index(); ?>"
+									type="checkbox"
+									id="allDayCheckbox"
+									name="EventAllDay"
+									value="yes"
+									<?php echo esc_html( $isEventAllDay ); ?>
+								/>
+								<label for="allDayCheckbox"><?php esc_html_e( 'All Day Event', 'the-events-calendar' ); ?></label>
+							</p>
+						</td>
+					</tr>
+					<tr class="event-dynamic-helper">
+						<td class="label">
+						</td>
+						<td>
+							<div class="event-dynamic-helper-text"></div>
 						</td>
 					</tr>
 					<?php
@@ -141,53 +166,8 @@ if ( class_exists( 'Eventbrite_for_TribeEvents' ) ) {
 			</td>
 		</tr>
 	</table>
-	<table id="event_venue" class="eventtable">
-		<tr>
-			<td colspan="2" class="tribe_sectionheader">
-				<h4><?php esc_html_e( 'Location', 'the-events-calendar' ); ?></h4></td>
-		</tr>
-		<?php
-		/**
-		 * Fires just after the "Location" header that appears above the venue entry form when creating & editing events in the admin
-		 * HTML outputted here should be wrapped in a table row (<tr>) that contains 2 cells (<td>s)
-		 *
-		 * @param int $event->ID the event currently being edited, will be 0 if creating a new event
-		 */
-		do_action( 'tribe_venue_table_top', $event->ID );
-		$venue_meta_box_template = apply_filters( 'tribe_events_venue_meta_box_template', $tribe->pluginPath . 'src/admin-views/venue-meta-box.php' );
-		if ( $venue_meta_box_template ) {
-			include $venue_meta_box_template;
-		}
-		?>
-	</table>
-	<?php
-	/**
-	 * Fires after the venue entry form when creating & editing events in the admin
-	 * HTML outputted here should be wrapped in a table row (<tr>) that contains 2 cells (<td>s)
-	 *
-	 * @param int $event->ID the event currently being edited, will be 0 if creating a new event
-	 */
-	do_action( 'tribe_after_location_details', $event->ID );
-	?>
-	<table id="event_organizer" class="eventtable">
-		<thead>
-			<tr>
-				<td colspan="2" class="tribe_sectionheader">
-					<h4><?php echo tribe_get_organizer_label_plural(); ?></h4></td>
-			</tr>
-			<?php
-			/**
-			 * Fires just after the header that appears above the organizer entry form when creating & editing events in the admin
-			 * HTML outputted here should be wrapped in a table row (<tr>) that contains 2 cells (<td>s)
-			 *
-			 * @param int $event->ID the event currently being edited, will be 0 if creating a new event
-			 */
-			do_action( 'tribe_organizer_table_top', $event->ID );
-			?>
-		</thead>
-		<?php $organizer_meta_box = new Tribe__Events__Admin__Organizer_Chooser_Meta_Box( $event ); ?>
-		<?php $organizer_meta_box->render(); ?>
-	</table>
+
+	<?php Tribe__Events__Linked_Posts::instance()->render_meta_box_sections( $event ); ?>
 
 	<table id="event_url" class="eventtable">
 		<tr>
@@ -231,8 +211,21 @@ if ( class_exists( 'Eventbrite_for_TribeEvents' ) ) {
 			<tr>
 				<td><?php esc_html_e( 'Currency Symbol:', 'the-events-calendar' ); ?></td>
 				<td>
-					<input tabindex="<?php tribe_events_tab_index(); ?>" type='text' id='EventCurrencySymbol' name='EventCurrencySymbol' size='2' value='<?php echo isset( $_EventCurrencySymbol ) ? esc_attr( $_EventCurrencySymbol ) : tribe_get_option( 'defaultCurrencySymbol', '$' ); ?>' />
-					<select tabindex="<?php tribe_events_tab_index(); ?>" id="EventCurrencyPosition" name="EventCurrencyPosition">
+					<input
+						tabindex="<?php tribe_events_tab_index(); ?>"
+						type='text'
+						id='EventCurrencySymbol'
+						name='EventCurrencySymbol'
+						size='2'
+						value='<?php echo isset( $_EventCurrencySymbol ) ? esc_attr( $_EventCurrencySymbol ) : tribe_get_option( 'defaultCurrencySymbol', '$' ); ?>'
+						class='alignleft'
+					/>
+					<select
+						tabindex="<?php tribe_events_tab_index(); ?>"
+						id="EventCurrencyPosition"
+						name="EventCurrencyPosition"
+						class="tribe-dropdown"
+					>
 						<?php
 						if ( isset( $_EventCurrencyPosition ) && 'suffix' === $_EventCurrencyPosition ) {
 							$suffix = true;
@@ -260,7 +253,7 @@ if ( class_exists( 'Eventbrite_for_TribeEvents' ) ) {
 			<tr>
 				<td></td>
 				<td>
-					<small><?php printf( esc_html__( 'Enter a 0 for %s that are free or leave blank to hide the field.', 'the-events-calendar' ), strtolower( $events_label_plural ) ); ?></small>
+					<small><?php printf( esc_html__( 'Enter a 0 for %s that are free or leave blank to hide the field.', 'the-events-calendar' ), $events_label_plural_lowercase ); ?></small>
 				</td>
 			</tr>
 		<?php endif; ?>

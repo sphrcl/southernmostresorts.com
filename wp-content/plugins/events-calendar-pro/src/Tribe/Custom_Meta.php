@@ -110,9 +110,15 @@ class Tribe__Events__Pro__Custom_Meta {
 		if ( ! isset( $tribe_ecp ) ) {
 			$tribe_ecp = Tribe__Events__Main::instance();
 		}
+
+		if ( ! current_user_can( 'edit_tribe_events' ) ) {
+			exit;
+		}
+
 		$options = Tribe__Settings_Manager::get_options();
 		array_splice( $options['custom-fields'], $_POST['field'] - 1, 1 );
 		Tribe__Settings_Manager::set_options( $options, false );
+
 		$wpdb->query( $wpdb->prepare( "DELETE FROM $wpdb->postmeta WHERE meta_key=%s", '_ecp_custom_' . $_POST['field'] ) );
 		die();
 	}
@@ -128,11 +134,12 @@ class Tribe__Events__Pro__Custom_Meta {
 		$pro = Tribe__Events__Pro__Main::instance();
 
 		// Grab the custom fields and append an extra blank row at the end
-		$customFields   = tribe_get_option( 'custom-fields' );
-		$customFields[] = array();
+		$custom_fields = tribe_get_option( 'custom-fields' );
+		$custom_fields = is_scalar( $custom_fields ) ? array() : (array) $custom_fields;
+		$custom_fields[] = array();
 
 		// Counts used to decide whether the "remove field" or "add another" should appear
-		$total = count( $customFields );
+		$total = count( $custom_fields );
 		$count = 0;
 		$add_another  = esc_html( __( 'Add another', 'tribe-events-calendar-pro' ) );
 		$remove_field = esc_html( __( 'Remove', 'tribe-events-calendar-pro' ) );
@@ -183,7 +190,7 @@ class Tribe__Events__Pro__Custom_Meta {
 			if ( ! isset( $custom_field['name'] ) ) {
 				continue;
 			}
-			
+
 			$ordinary_field_name = wp_kses_data( $custom_field['name'] );
 			$searchable_field_name = '_' . $ordinary_field_name;
 
@@ -196,11 +203,11 @@ class Tribe__Events__Pro__Custom_Meta {
 			if ( is_array( $value ) ) {
 				$ordinary_record    = esc_attr( implode( '|', str_replace( '|', '', $value ) ) );
 				$searchable_records = $value;
-			} 
+			}
 			// If we have only a single value we may still need to record an extra entry if the type
 			// of field is multichoice in nature
 			else {
-				
+
 				$searchable_records[] = $ordinary_record = wp_kses(
 					$value,
 					array(
@@ -247,11 +254,18 @@ class Tribe__Events__Pro__Custom_Meta {
 	 */
 	private static function get_value_to_save( $name, $data ) {
 		$value = '';
-		if ( ! empty( $data ) && ! empty( $data[ $name ] ) ) {
-			$value = $data[ $name ];
-		} elseif ( ! empty( $_POST[ $name ] ) ) {
-			$value = $_POST[ $name ];
+
+		// $data takes precedence over $_POST but we want to check both
+		if ( isset( $_POST ) ) {
+			$data = array_merge( $data, $_POST );
 		}
+
+		// Is the field set and non-empty? Note that we make an exception for (string) '0'
+		// which in this case we don't want to treat as being empty
+		if ( isset( $data[ $name ] ) && ( $data[ $name ] === '0' || ! empty( $data[ $name ] ) ) ) {
+			$value = $data[ $name ];
+		}
+
 		return $value;
 	}
 
