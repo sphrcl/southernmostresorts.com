@@ -339,7 +339,7 @@ $(document).ready(function(){
 	
 	
 	// Datepicker
-		$.datepicker._defaults.dateFormat = 'mm-dd-yy';
+		$.datepicker._defaults.dateFormat = 'yy-mm-dd';
 
 		$(".datepicker").datepicker({
 			minDate: 0,
@@ -454,7 +454,7 @@ $(document).ready(function(){
                 function parseDate(dateText) {
 				  var parts = dateText.split('-');
 				  // new Date(year, month [, day [, hours[, minutes[, seconds[, ms]]]]])
-				  return parts[0] + '/' + parts[1] + '/' + parts[2]; // Note: months are 0-based
+				  return parts[2] + '/' + parts[1] + '/' + parts[0]; // Note: months are 0-based
 				}
 
 	       		$('#date').val(parseDate(dateText));
@@ -486,7 +486,7 @@ $(document).ready(function(){
 
                 function parseDate(dateText) {
 				  var parts = dateText.split('-');
-				  return parts[0] + '/' + parts[1] + '/' + parts[2]; // Note: months are 0-based
+				  return parts[2] + '/' + parts[1] + '/' + parts[0]; // Note: months are 0-based
 				}
 
 				$('#dater').val(parseDate(dateText));
