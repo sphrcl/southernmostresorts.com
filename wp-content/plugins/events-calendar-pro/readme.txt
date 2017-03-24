@@ -4,8 +4,8 @@ Contributors: ModernTribe, barry.hughes, bordoni, borkweb, brianjessee, brook-tr
 Tags: events, calendar, event, venue, organizer, dates, date, google maps, conference, workshop, concert, meeting, seminar, summit, class, modern tribe, tribe, widget, pro
 Donate link: http://m.tri.be/29
 Requires at least: 3.9
-Tested up to: 4.4.1
-Stable tag: 4.0.5
+Tested up to: 4.7.3
+Stable tag: 4.4.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -41,11 +41,11 @@ Just getting started? You'll want to watch and read through the <a href="http://
 Remember, to use Events Calendar PRO you need to also be running The Events Calendar. You'll need to follow these steps for both plugins, starting with The Events Calendar.
 
 1. From the dashboard of your site, navigate to Plugins --> Add New.
-1. Select the Upload option and hit "Choose File."
-1. When the popup appears select the the-events-calendar-x.x.zip file or events-calendar-pro-x.x.zip file from your desktop. (The 'x.x' will change depending on the current version number).
-1. Follow the on-screen instructions and wait as the upload completes.
-1. When it's finished, activate the plugin via the prompt. A message will show confirming activation was successful. A link to access the calendar directly on the frontend will be presented here as well.
-1. For access to new updates, make sure you have added your valid License Key under Events --> Settings --> Licenses. You can find your license key on your tri.be account at http://m.tri.be/3u.
+2. Select the Upload option and hit "Choose File."
+3. When the popup appears select the the-events-calendar-x.x.zip file or events-calendar-pro-x.x.zip file from your desktop. (The 'x.x' will change depending on the current version number).
+4. Follow the on-screen instructions and wait as the upload completes.
+5. When it's finished, activate the plugin via the prompt. A message will show confirming activation was successful. A link to access the calendar directly on the frontend will be presented here as well.
+6. For access to new updates, make sure you have added your valid License Key under Events --> Settings --> Licenses. You can find your license key on your tri.be account at http://m.tri.be/3u.
 
 That's it! Just configure your settings as you see fit, and you're on your way to creating events in style.
 
@@ -176,29 +176,7 @@ The plugin is produced by <a href="http://m.tri.be/45">Modern Tribe Inc</a>.
 
 = Translations =
 
-* Bulgarian
-* Chinese (Taiwan)
-* Danish
-* Dutch
-* English (UK)
-* Finnish
-* French (France)
-* German
-* Greek
-* Hungarian
-* Icelandic
-* Italian
-* Lithuanian
-* Polish
-* Portuguese (Portugal)
-* Portuguese (Brazil)
-* Slovak
-* Slovenian
-* Spanish (Spain)
-* Swedish
-* Turkish
-
-Many thanks to all our translators!  You can grab the latest translations or contribute at http://translations.theeventscalendar.com
+Modern Tribe’s premium plugins are translated by volunteers at <a href=“http://m.tri.be/194h”>translations.theeventscalendar.com</a>. There you can find a list of available languages, download translation files, or help update the translations. Thank you to everyone who helps to maintain our translations!
 
 == Add-Ons ==
 
@@ -225,6 +203,182 @@ Our Premium Plugins:
 
 == Changelog ==
 
+= [4.4.4] 2017-03-08 =
+
+* Fix - Photo View - resolved issue with photo view layouts when paging.(Thanks to @martha for the report in our forums) [73731]
+
+= [4.4.3] 2017-02-22 =
+
+* Fix - Ensure that the region and zip/postal code display as expected within the advanced events list widget (thank to @Nick for the original report) [72134]
+* Fix - The /all/ view should now consistently list events in ascending order by start date (thank you @Jim for your forum report) [72605]
+* Fix - Allow editing of recurring event slugs (this one was initialy reported by @brian) [68385]
+* Fix - Improve localization by using WordPress as the source of translated weekday abbreviations [70068]
+
+= [4.4.2] 2017-02-09 =
+
+* Polish - Photo View - Update Isotope for photo view (thanks for @WPExplorer on Twitter) [65542]
+* Fix - Photo View - Fix issue where page doesn't scroll to top after initial load (Thank you @jazzinconcert in our forums) [65341]
+* Fix - Photo View -  Fix Layout Issue in Safari for iOS (Cheersto user: @Pau) [64376]
+* Fix - Prevent PHP 5.2 Strict mode from throwing notices due to usage of `is_a` [72812]
+
+= [4.4.1] 2017-01-26 =
+
+* Tweak - Improve recurrence User Experience, easier interface for types of Rule [71501]
+* Fix - Single Event recurrency on the same day as the original Event will be created properly [68496]
+* Fix - Prevent legacy recurrent events to trigger Notices on front-end
+
+= [4.4] 2017-01-09 =
+
+* Feature - Added the [tribe_event_inline] shortcode to allow rendering of single event data anywhere shortcodes are allowed! [44803]
+* Feature - Add support for featured events [65898]
+* Feature - Allow deleting recurrences and exclusions [67110]
+* Feature - Make it possible to adjust map pins via the theme customizer [65889]
+* Tweak - Improvements to event-related aspects of the theme customizer [67485]
+* Tweak - Consolidated and simplified the UI when creating recurring events [67110, 66713-66716, 67122, 67123, 67143]
+* Tweak - Improved ordering of information in the advanced events list widget [36589]
+* Tweak - Cleanup of the plugin CSS to help make customization easier [33842]
+* Tweak - Added support for featured events to the [tribe_events] shortcode (using featured="on" type syntax) [65901]
+
+= [4.3.4] 2016-12-20 =
+
+* Fix - Taxonomy selections not saving for widgets by checking for a variable and setting a default [68450]
+* Tweak - Updated the template override instructions in a number of templates [68229]
+
+= [4.3.3] 2016-11-16 =
+
+* Fix - Fresh install now have fully functional Week, Photo and Map permalinks [67696]
+* Fix - Category Filter on [tribe_events] shortcode is fully functional [68010]
+* Fix - Widgets Selector for Term Filtering is working again for new Widgets [68541]
+* Fix - Resolve Private Recurring Events Sample Permalink and ALL Page Visibility (thanks @brian for reporting this one in the forums) [68778]
+* Fix - Enable ampersand character in mobile week view titles (thanks @kate for this report) [45409]
+
+= [4.3.2] 2016-11-02 =
+
+* Fix - Prevent notices on wp-login.php page from Customizer Code
+* Fix - Now Tooltip are showing on Week view for Shortcode (thanks to @jacob for this report)[68094]
+* Fix - Make the "Find out more" string in the week mobile view translatable (thanks @saloni for highlighting this in our forums) [67322]
+* Fix - Changes to ensure valid HTML is output from the single venue page (Thanks @Reinhard!)[68440]
+
+= [4.3.1.1] 2016-10-21 =
+
+* Fix - Resolved a Fatal using function return value in write context (5.2 compatibility) [68387]
+
+= [4.3.1] 2016-10-20 =
+
+* Fix - Pagination links on Week view are updating correctly [67977]
+* Tweak - Only load This Week Widget Resources when the widget or shortcode is on a page (props to @stratejusinc) [63921]
+* Tweak - Added AJAX on Select2 for Widgets, improving performance. [66130]
+* Tweak - Added plugin file path constant.
+* Tweak - Registered plugin as active with Tribe Common. [66657]
+* Fix - Allow pagination and control over the posts per page on the single venue view (thanks to @R for reporting this one) [62857]
+* Tweak - Open recurrence exclusion rules by default on reload of admin[64289]
+
+= [4.3] 2016-10-13 =
+
+* Feature - Added the [tribe_events] shortcode to allow for the rendering of event views anywhere shortcodes are allowed! [44800]
+* Feature - Introduces support for enhanced logging [36047]
+* Tweak - Added the "All Events" link on top of all recurring events view
+* Tweak - Made the redirect URL used when a recurring event cannot be found filterable (props: @logoscreative) [64106]
+* Deprecated - Deprecated various disused functions that were built around the Meta Factory [39905]
+* Deprecated - `Tribe__Events__Pro__Templates__Single_Organizer::setup_upcoming_events()` has been deprecated
+
+= [4.2.6] 2016-09-15 =
+
+* Fix - When a queue of recurring events is being processed, ensure the queue status can be detected from other requests (Thanks to our community user  @integrity for getting this issue in front of us in the support forums.)
+
+= [4.2.5] 2016-08-17 =
+
+* Fix - Fixed inconsistent template filtering logic for single event template [62525]
+* Tweak - Restored preview for published events [64874]
+
+= [4.2.4] 2016-08-17 =
+
+Fix - PHP notice when importing events from iCal importer [64747]
+
+= [4.2.3] 2016-07-20 =
+
+* Fix - Change myremove to jQuery Grep to improve compatibility with Black Studio TinyMCE Widget (Thank you @digisavvy for reporting this in the support Forums)
+* Fix - Add check for past events in the mini calendar and event list widget date icon box so it shows the correct information (Initialy reported by @yuryvasilchenko in the support forums. Thanks!)
+
+= [4.2.2.1] 2016-07-11 =
+
+* Fix - Issue that could lead to the generation of infinite recurring events (props to hydeaway and many others)
+
+= [4.2.2] 2016-07-06 =
+
+* Fix - Broken oembedding of content
+* Fix - Recurring event instances happening on the same day are now assigned different post names and guids
+* Tweak - Avoid loading customizer preview scripts when not previewing site in Theme Customizer
+
+= [4.2.1] 2016-06-22 =
+
+* Fix - Fix issue where width of content area in photo view was inheriting styles making it too narrow
+* Fix - Allow '0' to be set as the value of additional fields
+* Fix - Graciously handle malformed recurrence event meta information
+* Tweak - Added helper text near Distance filter to add clarity for Filter Bar users
+* Fix - Fixed an issue where 'All Day' label was displaying on Wednesday rather than the time column
+
+= [4.2] 2016-06-08 =
+
+* Tweak - Advanced List Widget shows the month instead of the day of the week in the date icon when the event is not in the current month
+* Tweak - Improved our JSON-LD output to ensure consistency (Props to @garrettjohnson!)
+* Tweak - Language files in the `wp-content/languages/plugins` path will be loaded before attempting to load internal language files (Thank you to user @aafhhl for bringing this to our attention!)
+* Tweak - Move plugin CSS to PostCSS
+* Fix - Tooltip not was not rendering properly for date recurrence (Thank you @Maciej for reporting this issue!)
+
+= [4.1.3] 2016-05-19 =
+
+* Tweak - restored section heading for Additional Fields
+* Fix - Resolved minor incompatibilities with the Safari browser
+* Fix - Fixed issue where legacy recurrence description fields were not migrated to the new recurrence data structure introduced in 3.12 (props to publiclife on the forums for reporting this!)
+
+= [4.1.2] 2016-04-11 =
+
+* Tweak - Changed the word "Once" in an event's recurring settings because it was pretty confusing for everyone, including us
+* Security - Tightened up security around AJAX calls (props to James Golovich for reporting the problem!)
+
+= [4.1.1] 2016-03-30 =
+
+* Tweak - Change This Widget Widget query filter to a unique name
+* Fix - Resolved issue where the week view was always using UTC rather than the configured timezone when determining the start of the week (props to paulhazon in our forums for pointing out this issue!)
+* Fix - Fixed bug where the first event in a recurring series would not render the start or end times (props to laughmasters for reporting this bug!)
+* Fix - Resolved various capitalization issues with German translations (props to oheinrich in our forums for pointing out this issue!)
+* Fix - Fixed issue where some Theme Customizer headings were not translatable (props to oheinrich in our forums for pointing out this issue as well!)
+
+= [4.1] 2016-03-15 =
+
+* Feature - Added a new "Date" recurrence rule that allows you to set an event to recur on a single (or any number of) individually specified dates (hat-tip to @tonydemarco for the idea!)
+* Tweak - Added support for manual timezone offsets in recurrence exclusion rules
+* Tweak - Improved the support of selected query fields when the "Recurring event instances" checkbox in Events > Settings is checked
+* Tweak - Show an error message when the Google Maps API query limit has been reached
+* Tweak - Improved the handling of addresses in JSON-LD
+* Tweak - Removed deprecated sensor get var for Google Maps API endpoint
+* Tweak - Changed the distance unit label in Settings to be less-specific to maps as it is used elsewhere
+* Tweak - Improved the structure of hierarchical taxonomy terms in List Widget queries (props to Harvard Law for this pull request!)
+* Tweak - Simplified the APM Venue and Organizer filters when the Events list is loaded (props to Jake Kantzer for the pull request!)
+* Fix - Fixed invalid class name when throwing Tribe notices in the Map template
+* Fix - Resolved issue where the Map View slug was not translatable (three cheers for @oheinrich giving us a heads up on this!)
+* Fix - Fixed bug where the wrong class was referenced when setting notices in Map View
+* Fix - Improved compatibility with ACF on the Edit Event page
+
+= [4.0.7] 2016-03-02 =
+
+* Fix - Load venue shortcode when there are no Events on that venue
+* Fix - Default value for `tribe_get_event_website_link_target` is corrected to `_self`
+* Fix - Default values for Venue and Organizers are now fully respected across the add-ons
+
+= [4.0.6] 2016-02-17 =
+
+* Fix - Resolved issue where the list widget was displaying dates in the wrong timezone when sitewide timezones were enabled
+* Fix - Custom Recurring descriptions are now saving as expected
+* Fix - Administration Recurring Exclusion Datepickers are now fully operational with custom formats
+* Fix - Prevent "/all" page to show past events
+* Fix - Ensure Photo view is fully displayed on Mobile
+* Fix - Organizer and Venue URL now respect UTF-8 characters
+* Fix - All of our Permalinks will now allow translations with non-alphanumeric characters
+* Fix - Fixing Fatals on bad Debug Classes for Map View
+* Tweak - "/all" page on Recurring events will be recognized as a `is_archive` template
+
 = [4.0.5] 2016-01-25 =
 
 * Security - Improved escaping within Advanced Post Manager integration (our thanks to Daniel Kudwien for highlighting this)
@@ -242,7 +396,7 @@ Our Premium Plugins:
 
 * Tweak - Avoid notice level errors when advanced events list widget settings are saved (Thank you Johan for the report!)
 * Tweak - Simplify default values logic to ensure that default values are returned regardless of post type (Thank you Karly!)
-* Fix - Fixed bug where recurrence excluses were not always respected (Cheers to inhouse for the help!)
+* Fix - Fixed bug where recurrence exclusions were not always respected (Cheers to inhouse for the help!)
 * Fix - Ensure venue and organizer URLs can be localized even with non-Roman alphabets (Thanks for the report Andreas!)
 * Fix - Ensure the current default venue fields are reflected in the relevant settings screen (Thank you Carly for highlighting this!)
 * Fix - Resolved issue where new recurring events were not targetable by the Recurring APM filter (Props to terrizsolo for the help!)
@@ -271,7 +425,7 @@ Our Premium Plugins:
 * Feature - Add support for an iCal export link for all events in a series of recurring events via: tribe_get_recurrence_ical_link()
 * Tweak - Major tweaks to support the newly genericized tribe-common libraries
 * Tweak - Deprecate old JS event names in favor of a new JS event naming standard. Example: deprecated tribe_ev_runAjax in favor of run-ajax.tribe
-* Tweak - Altered the storage of selected multichoice values for custom fields so they can be queried more effectively
+* Tweak - Altered the storage of selected multi-choice values for custom fields so they can be queried more effectively
 * Tweak - Add JSON-LD markup to single venus and organizers
 * Tweak - Only pre-populate address data for venues when the venue metabox appears on the venue post editor - NOT the event post editor
 * Tweak - Simplify the machine-generated recurrence rule descriptions for simple rules (Thank you jberg1 for the help!)
@@ -730,6 +884,10 @@ Still not happy? Shoot us an email to pro@tri.be or tweet to @moderntribeinc and
 
 == Upgrade Notice ==
 
+= 4.4.3 =
+
+To minimize disruption, please update The Events Calendar to at least version 4.4.3 *before* you update Events Calendar PRO.
+
 = 3.11 and higher =
 
 Please see the changelog for the complete list of changes in this release. Remember to always make a backup of your database and files before updating!
@@ -785,3 +943,4 @@ Please see the changelog for the complete list of changes in this release. Remem
 = 3.0 =
 
 3.x is a HUGE upgrade from Events Calendar PRO 2.x. If you're upgrading from 1.3.3 or any release between 2.0 and 2.0.10, make sure to upgrade to Events Calendar PRO 2.0.11 first. If you're upgrading from Events Calendar PRO 2.0.11, please back up your data BEFORE initiating, and be prepared to manually update your customizations based on changes to the plugin's tempting structure.
+
