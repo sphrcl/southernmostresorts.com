@@ -3,9 +3,10 @@
  * Single Event Meta (Organizer) Template
  *
  * Override this template in your own theme by creating a file at:
- * [your-theme]/tribe-events/modules/meta/details.php
+ * [your-theme]/tribe-events/modules/meta/organizer.php
  *
  * @package TribeEventsCalendar
+ * @version 4.4
  */
 
 $organizer_ids = tribe_get_organizer_ids();
@@ -28,8 +29,9 @@ $website = tribe_get_organizer_website_link();
 			}
 
 			?>
+			<dt style="display:none;"><?php // This element is just to make sure we have a valid HTML ?></dt>
 			<dd class="tribe-organizer">
-				<?php echo tribe_get_organizer( $organizer ) ?>
+				<?php echo tribe_get_organizer_link( $organizer ) ?>
 			</dd>
 			<?php
 		}

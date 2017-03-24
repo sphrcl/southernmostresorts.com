@@ -72,12 +72,33 @@ if ( ! class_exists( 'Tribe__Tickets__Ticket_Object' ) ) {
 		public $provider_class;
 
 		/**
+		 * @var Tribe__Tickets__Tickets
+		 */
+		protected $provider;
+
+		/**
 		 * Amount of tickets of this kind in stock
 		 * Use $this->stock( value ) to set manage and get the value
 		 *
 		 * @var mixed
 		 */
 		protected $stock = 0;
+
+		/**
+		 * The mode of stock handling to be used for the ticket when global stock
+		 * is enabled for the event.
+		 *
+		 * @var string
+		 */
+		protected $global_stock_mode = Tribe__Tickets__Global_Stock::OWN_STOCK_MODE;
+
+		/**
+		 * The maximum permitted number of sales for this ticket when global stock
+		 * is enabled for the event and CAPPED_STOCK_MODE is in effect.
+		 *
+		 * @var int
+		 */
+		protected $global_stock_cap = 0;
 
 		/**
 		 * Amount of tickets of this kind sold
@@ -160,21 +181,31 @@ if ( ! class_exists( 'Tribe__Tickets__Ticket_Object' ) ) {
 		}
 
 		/**
-		 * Determines if the given date is within the ticket's start/end date range
+		 * Get the ticket's start date
 		 *
-		 * @param string $datetime The date/time that we want to determine if it falls within the start/end date range
+		 * @since 4.2
 		 *
-		 * @return boolean Whether or not the provided date/time falls within the start/end date range
+		 * @return string
 		 */
-		public function date_in_range( $datetime ) {
-			if ( is_numeric( $datetime ) ) {
-				$timestamp = $datetime;
-			} else {
-				$timestamp = strtotime( $datetime );
+		public function start_date() {
+			$start_date = null;
+			if ( ! empty( $this->start_date ) ) {
+				$start_date = strtotime( $this->start_date );
 			}
 
+			return $start_date;
+		}
+
+		/**
+		 * Get the ticket's end date
+		 *
+		 * @since 4.2
+		 *
+		 * @return string
+		 */
+		public function end_date() {
 			$end_date = null;
-			if ( ! empty( $this->end_date ) ){
+			if ( ! empty( $this->end_date ) ) {
 				$end_date = strtotime( $this->end_date );
 			} else {
 				$post_id = get_the_ID();
@@ -189,12 +220,104 @@ if ( ! class_exists( 'Tribe__Tickets__Ticket_Object' ) ) {
 				$end_date = strtotime( $end_date );
 			}
 
-			$start_date = null;
-			if ( ! empty( $this->start_date ) ) {
-				$start_date = strtotime( $this->start_date );
+			return $end_date;
+		}
+
+		/**
+		 * Determines if the given date is within the ticket's start/end date range
+		 *
+		 * @param string $datetime The date/time that we want to determine if it falls within the start/end date range
+		 *
+		 * @return boolean Whether or not the provided date/time falls within the start/end date range
+		 */
+		public function date_in_range( $datetime ) {
+			if ( is_numeric( $datetime ) ) {
+				$timestamp = $datetime;
+			} else {
+				$timestamp = strtotime( $datetime );
 			}
 
+			$start_date = $this->start_date();
+			$end_date = $this->end_date();
+
 			return ( empty( $start_date ) || $timestamp > $start_date ) && ( empty( $end_date ) || $timestamp < $end_date );
+		}
+
+		/**
+		 * Determines if the given date is smaller than the ticket's start date
+		 *
+		 * @param string $datetime The date/time that we want to determine if it is smaller than the ticket's start date
+		 *
+		 * @return boolean Whether or not the provided date/time is smaller than the ticket's start date
+		 */
+		public function date_is_earlier( $datetime ) {
+			if ( is_numeric( $datetime ) ) {
+				$timestamp = $datetime;
+			} else {
+				$timestamp = strtotime( $datetime );
+			}
+
+			$start_date = $this->start_date();
+
+			return empty( $start_date ) || $timestamp < $start_date;
+		}
+
+		/**
+		 * Determines if the given date is greater than the ticket's end date
+		 *
+		 * @param string $datetime The date/time that we want to determine if it is smaller than the ticket's start date
+		 *
+		 * @return boolean Whether or not the provided date/time is greater than the ticket's end date
+		 */
+		public function date_is_later( $datetime ) {
+			if ( is_numeric( $datetime ) ) {
+				$timestamp = $datetime;
+			} else {
+				$timestamp = strtotime( $datetime );
+			}
+
+			$end_date = $this->end_date();
+
+			return empty( $end_date ) || $timestamp > $end_date;
+		}
+
+		/**
+		 * Returns ticket availability slug
+		 *
+		 * The availability slug is used for CSS class names and filter helper strings
+		 *
+		 * @since 4.2
+		 *
+		 * @return string
+		 */
+		public function availability_slug( $datetime = null ) {
+			if ( is_numeric( $datetime ) ) {
+				$timestamp = $datetime;
+			} elseif ( $datetime ) {
+				$timestamp = strtotime( $datetime );
+			} else {
+				$timestamp = current_time( 'timestamp' );
+			}
+
+			$slug = 'available';
+
+			if ( $this->date_in_range( $timestamp ) ) {
+				$slug = 'available';
+			} elseif ( $this->date_is_earlier( $timestamp ) ) {
+				$slug = 'availability-future';
+			} elseif ( $this->date_is_later( $timestamp ) ) {
+				$slug = 'availability-past';
+			}
+
+			/**
+			 * Filters the availability slug
+			 *
+			 * @var string Slug
+			 * @var string Datetime string
+			 */
+			$slug = apply_filters( 'event_tickets_availability_slug', $slug, $datetime );
+
+			return $slug;
 		}
 
 		/**
@@ -226,6 +349,11 @@ if ( ! class_exists( 'Tribe__Tickets__Ticket_Object' ) ) {
 
 			// Do the math!
 			$remaining = $this->original_stock() - $this->qty_sold() - $this->qty_pending();
+
+			// Adjust if using global stock with a sales cap
+			if ( Tribe__Tickets__Global_Stock::CAPPED_STOCK_MODE === $this->global_stock_mode() ) {
+				$remaining = min( $remaining, $this->global_stock_cap() );
+			}
 
 			// Prevents Negative
 			return max( $remaining, 0 );
@@ -263,12 +391,49 @@ if ( ! class_exists( 'Tribe__Tickets__Ticket_Object' ) ) {
 		 */
 		public function stock( $value = null ) {
 			// If the Value was passed as numeric value overwrite
-			if ( is_numeric( $value ) ){
+			if ( is_numeric( $value ) ) {
 				$this->stock = $value;
 			}
 
 			// return the new Stock
 			return $this->stock;
+		}
+
+		/**
+		 * Sets or gets the current global stock mode in effect for the ticket.
+		 *
+		 * Typically this is one of the constants provided by Tribe__Tickets__Global_Stock:
+		 *
+		 *     GLOBAL_STOCK_MODE if it should draw on the global stock
+		 *     CAPPED_STOCK_MODE as above but with a limit on the total number of allowed sales
+		 *     OWN_STOCK_MODE if it should behave as if global stock is not in effect
+		 *
+		 * @param string $mode
+		 *
+		 * @return string
+		 */
+		public function global_stock_mode( $mode = null ) {
+			if ( is_string( $mode ) ) {
+				$this->global_stock_mode = $mode;
+			}
+
+			return $this->global_stock_mode;
+		}
+
+		/**
+		 * Sets or gets any cap on sales that might be in effect for this ticket when global stock
+		 * mode is in effect.
+		 *
+		 * @param int $cap
+		 *
+		 * @return int
+		 */
+		public function global_stock_cap( $cap = null ) {
+			if ( is_numeric( $cap ) ) {
+				$this->global_stock_cap = (int) $cap;
+			}
+
+			return (int) $this->global_stock_cap;
 		}
 
 		/**
@@ -279,16 +444,7 @@ if ( ! class_exists( 'Tribe__Tickets__Ticket_Object' ) ) {
 		 * @return int
 		 */
 		public function qty_sold( $value = null ) {
-			// If the Value was passed as numeric value overwrite
-			if ( is_numeric( $value ) ){
-				$this->qty_sold = $value;
-			}
-
-			// Prevents qty_sold from going negative
-			$this->qty_sold = max( (int) $this->qty_sold, 0 );
-
-			// return the new Qty Sold
-			return $this->qty_sold;
+			return $this->qty_getter_setter( $this->qty_sold, $value );
 		}
 
 		/**
@@ -299,16 +455,27 @@ if ( ! class_exists( 'Tribe__Tickets__Ticket_Object' ) ) {
 		 * @return int
 		 */
 		public function qty_pending( $value = null ) {
-			// If the Value was passed as numeric value overwrite
-			if ( is_numeric( $value ) ){
-				$this->qty_pending = $value;
+			return $this->qty_getter_setter( $this->qty_pending, $value );
+		}
+
+		/**
+		 * Method to get/set protected quantity properties, disallowing illegal
+		 * things such as setting a negative value.
+		 *
+		 * @param int      &$property
+		 * @param int|null $value
+		 *
+		 * @return int
+		 */
+		protected function qty_getter_setter( &$property, $value = null ) {
+			if ( is_numeric( $value ) ) {
+				$property = (int) $value;
 			}
 
-			// Prevents qty_pending from going negative
-			$this->qty_pending = max( (int) $this->qty_pending, 0 );
+			// Disallow negative values (and force to zero if one is passed)
+			$property = max( (int) $property, 0 );
 
-			// return the new Qty Pending
-			return $this->qty_pending;
+			return $property;
 		}
 
 		/**
@@ -380,6 +547,41 @@ if ( ! class_exists( 'Tribe__Tickets__Ticket_Object' ) ) {
 			// return the new Qty Cancelled
 			return $this->qty_cancelled;
 		}
-	}
 
+		/**
+		 * Returns an instance of the provider class.
+		 *
+		 * @return Tribe__Tickets__Tickets|null
+		 */
+		public function get_provider() {
+			if ( empty( $this->provider ) ) {
+				if ( empty( $this->provider_class ) || ! class_exists( $this->provider_class ) ) {
+					return null;
+				}
+
+				if ( method_exists( $this->provider_class, 'get_instance' ) ) {
+					$this->provider = call_user_func( array( $this->provider_class, 'get_instance' ) );
+				} else {
+					$this->provider = new $this->provider_class;
+				}
+			}
+
+			return $this->provider;
+		}
+
+		/**
+		 * Returns the ID of the event post this ticket belongs to.
+		 *
+		 * @return WP_Post|null
+		 */
+		public function get_event() {
+			$provider = $this->get_provider();
+
+			if ( null !== $provider ) {
+				return $provider->get_event_for_ticket( $this->ID );
+			}
+
+			return null;
+		}
+	}
 }

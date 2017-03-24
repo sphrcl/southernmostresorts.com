@@ -50,29 +50,6 @@ $generalTabFields = array(
 		'type' => 'html',
 		'html' => '<div class="tribe-settings-form-wrap">',
 	),
-	'tribeEventsDisplayThemeTitle'  => array(
-		'type' => 'html',
-		'html' => '<h3>' . esc_html__( 'General Settings', 'tribe-common' ) . '</h3>',
-	),
-	'defaultCurrencySymbol'         => array(
-		'type'            => 'text',
-		'label'           => esc_html__( 'Default currency symbol', 'tribe-common' ),
-		'tooltip'         => esc_html__( 'Set the default currency symbol for event costs. Note that this only impacts future events, and changes made will not apply retroactively.', 'tribe-common' ),
-		'validation_type' => 'textarea',
-		'size'            => 'small',
-		'default'         => '$',
-	),
-	'reverseCurrencyPosition'       => array(
-		'type'            => 'checkbox_bool',
-		'label'           => esc_html__( 'Currency symbol follows value', 'tribe-common' ),
-		'tooltip'         => esc_html__( 'The currency symbol normally precedes the value. Enabling this option positions the symbol after the value.', 'tribe-common' ),
-		'default'         => false,
-		'validation_type' => 'boolean',
-	),
-	'tribeEventsMiscellaneousTitle' => array(
-		'type' => 'html',
-		'html' => '<h3>' . esc_html__( 'Miscellaneous Settings', 'tribe-common' ) . '</h3>',
-	),
 );
 
 if ( is_super_admin() ) {
@@ -84,7 +61,7 @@ if ( is_super_admin() ) {
 	);
 	$generalTabFields['debugEventsHelper'] = array(
 		'type'        => 'html',
-		'html'        => '<p class="tribe-field-indent tribe-field-description description" style="max-width:400px;">' . sprintf( esc_html__( 'Enable this option to log debug information. By default this will log to your server PHP error log. If you\'d like to see the log messages in your browser, then we recommend that you install the %s and look for the "Tribe" tab in the debug output.', 'tribe-common' ), '<a href="http://wordpress.org/extend/plugins/debug-bar/" target="_blank">' . esc_html__( 'Debug Bar Plugin', 'tribe-common' ) . '</a>' ) . '</p>',
+		'html'        => '<p class="tribe-field-indent tribe-field-description description" style="max-width:400px;">' . sprintf( esc_html__( 'Enable this option to log debug information. By default this will log to your server PHP error log. If you\'d like to see the log messages in your browser, then we recommend that you install the %s and look for the "Tribe" tab in the debug output.', 'tribe-common' ), '<a href="https://wordpress.org/extend/plugins/debug-bar/" target="_blank">' . esc_html__( 'Debug Bar Plugin', 'tribe-common' ) . '</a>' ) . '</p>',
 		'conditional' => ( '' != get_option( 'permalink_structure' ) ),
 	);
 }
