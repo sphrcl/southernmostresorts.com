@@ -21,6 +21,10 @@ if ( ! class_exists( 'Tribe__Date_Utils' ) ) {
 		const DBTIMEFORMAT          = 'H:i:s';
 		const DBYEARMONTHTIMEFORMAT = 'Y-m';
 
+		private static $localized_months_full  = array();
+		private static $localized_months_short = array();
+		private static $localized_weekdays     = array();
+
 		/**
 		 * Get the datepicker format, that is used to translate the option from the DB to a string
 		 *
@@ -134,16 +138,16 @@ if ( ! class_exists( 'Tribe__Date_Utils' ) ) {
 			$dt = array();
 
 			// Now try to match it
-			if ( preg_match( '#^' . $regex . '$#', $date, $dt ) ){
+			if ( preg_match( '#^' . $regex . '$#', $date, $dt ) ) {
 				// Remove unwanted Indexes
-				foreach ( $dt as $k => $v ){
-					if ( is_int( $k ) ){
+				foreach ( $dt as $k => $v ) {
+					if ( is_int( $k ) ) {
 						unset( $dt[ $k ] );
 					}
 				}
 
 				// We need at least Month + Day + Year to work with
-				if ( ! checkdate( $dt['month'], $dt['day'], $dt['year'] ) ){
+				if ( ! checkdate( $dt['month'], $dt['day'], $dt['year'] ) ) {
 					return false;
 				}
 			} else {
@@ -181,14 +185,15 @@ if ( ! class_exists( 'Tribe__Date_Utils' ) ) {
 		}
 
 		/**
-		 * Returns the date only.
+		 * Returns the time only.
 		 *
 		 * @param string $date The date.
 		 *
 		 * @return string The time only in DB format.
 		 */
 		public static function time_only( $date ) {
-			return date( self::DBTIMEFORMAT, strtotime( $date ) );
+			$date = is_numeric( $date ) ? $date : strtotime( $date );
+			return date( self::DBTIMEFORMAT, $date );
 		}
 
 		/**
@@ -199,7 +204,8 @@ if ( ! class_exists( 'Tribe__Date_Utils' ) ) {
 		 * @return string The hour only.
 		 */
 		public static function hour_only( $date ) {
-			return date( self::HOURFORMAT, strtotime( $date ) );
+			$date = is_numeric( $date ) ? $date : strtotime( $date );
+			return date( self::HOURFORMAT, $date );
 		}
 
 		/**
@@ -210,7 +216,8 @@ if ( ! class_exists( 'Tribe__Date_Utils' ) ) {
 		 * @return string The minute only.
 		 */
 		public static function minutes_only( $date ) {
-			return date( self::MINUTEFORMAT, strtotime( $date ) );
+			$date = is_numeric( $date ) ? $date : strtotime( $date );
+			return date( self::MINUTEFORMAT, $date );
 		}
 
 		/**
@@ -221,7 +228,8 @@ if ( ! class_exists( 'Tribe__Date_Utils' ) ) {
 		 * @return string The meridian only in DB format.
 		 */
 		public static function meridian_only( $date ) {
-			return date( self::MERIDIANFORMAT, strtotime( $date ) );
+			$date = is_numeric( $date ) ? $date : strtotime( $date );
+			return date( self::MERIDIANFORMAT, $date );
 		}
 
 		/**
@@ -505,6 +513,159 @@ if ( ! class_exists( 'Tribe__Date_Utils' ) ) {
 
 		}
 
+		/**
+		 * Converts a locally-formatted date to a unix timestamp. This is a drop-in
+		 * replacement for `strtotime()`, except that where strtotime assumes GMT, this
+		 * assumes local time (as described below). If a timezone is specified, this
+		 * function defers to strtotime().
+		 *
+		 * If there is a timezone_string available, the date is assumed to be in that
+		 * timezone, otherwise it simply subtracts the value of the 'gmt_offset'
+		 * option.
+		 *
+		 * @see  strtotime()
+		 * @uses get_option() to retrieve the value of 'gmt_offset'
+		 *
+		 * @param string $string A date/time string. See `strtotime` for valid formats
+		 *
+		 * @return int UNIX timestamp.
+		 */
+		public static function wp_strtotime( $string ) {
+			// If there's a timezone specified, we shouldn't convert it
+			try {
+				$test_date = new DateTime( $string );
+				if ( 'UTC' != $test_date->getTimezone()->getName() ) {
+					return strtotime( $string );
+				}
+			} catch ( Exception $e ) {
+				return strtotime( $string );
+			}
+
+			$tz = get_option( 'timezone_string' );
+			if ( ! empty( $tz ) ) {
+				$date = date_create( $string, new DateTimeZone( $tz ) );
+				if ( ! $date ) {
+					return strtotime( $string );
+				}
+				$date->setTimezone( new DateTimeZone( 'UTC' ) );
+				return $date->format( 'U' );
+			} else {
+				$offset = (float) get_option( 'gmt_offset' );
+				$seconds = intval( $offset * HOUR_IN_SECONDS );
+				$timestamp = strtotime( $string ) - $seconds;
+				return $timestamp;
+			}
+		}
+
+		/**
+		 * Returns an array of localized full month names.
+		 *
+		 * @return array
+		 */
+		public static function get_localized_months_full() {
+			global $wp_locale;
+
+			if ( empty( self::$localized_months_full ) ) {
+				self::$localized_months_full = array(
+					'January'   => $wp_locale->get_month( '01' ),
+					'February'  => $wp_locale->get_month( '02' ),
+					'March'     => $wp_locale->get_month( '03' ),
+					'April'     => $wp_locale->get_month( '04' ),
+					'May'       => $wp_locale->get_month( '05' ),
+					'June'      => $wp_locale->get_month( '06' ),
+					'July'      => $wp_locale->get_month( '07' ),
+					'August'    => $wp_locale->get_month( '08' ),
+					'September' => $wp_locale->get_month( '09' ),
+					'October'   => $wp_locale->get_month( '10' ),
+					'November'  => $wp_locale->get_month( '11' ),
+					'December'  => $wp_locale->get_month( '12' ),
+				);
+			}
+
+			return self::$localized_months_full;
+		}
+
+		/**
+		 * Returns an array of localized short month names.
+		 *
+		 * @return array
+		 */
+		public static function get_localized_months_short() {
+			global $wp_locale;
+
+			if ( empty( self::$localized_months_short ) ) {
+				self::$localized_months_short = array(
+					'Jan' => $wp_locale->get_month_abbrev( $wp_locale->get_month( '01' ) ),
+					'Feb' => $wp_locale->get_month_abbrev( $wp_locale->get_month( '02' ) ),
+					'Mar' => $wp_locale->get_month_abbrev( $wp_locale->get_month( '03' ) ),
+					'Apr' => $wp_locale->get_month_abbrev( $wp_locale->get_month( '04' ) ),
+					'May' => $wp_locale->get_month_abbrev( $wp_locale->get_month( '05' ) ),
+					'Jun' => $wp_locale->get_month_abbrev( $wp_locale->get_month( '06' ) ),
+					'Jul' => $wp_locale->get_month_abbrev( $wp_locale->get_month( '07' ) ),
+					'Aug' => $wp_locale->get_month_abbrev( $wp_locale->get_month( '08' ) ),
+					'Sep' => $wp_locale->get_month_abbrev( $wp_locale->get_month( '09' ) ),
+					'Oct' => $wp_locale->get_month_abbrev( $wp_locale->get_month( '10' ) ),
+					'Nov' => $wp_locale->get_month_abbrev( $wp_locale->get_month( '11' ) ),
+					'Dec' => $wp_locale->get_month_abbrev( $wp_locale->get_month( '12' ) ),
+				);
+			}
+
+			return self::$localized_months_short;
+		}
+
+		/**
+		 * Returns an array of localized full week day names.
+		 *
+		 * @return array
+		 */
+		public static function get_localized_weekdays_full() {
+			if ( empty( self::$localized_weekdays ) ) {
+				self::build_localized_weekdays();
+			}
+
+			return self::$localized_weekdays['full'];
+		}
+
+		/**
+		 * Returns an array of localized short week day names.
+		 *
+		 * @return array
+		 */
+		public static function get_localized_weekdays_short() {
+			if ( empty( self::$localized_weekdays ) ) {
+				self::build_localized_weekdays();
+			}
+
+			return self::$localized_weekdays['short'];
+		}
+
+		/**
+		 * Returns an array of localized week day initials.
+		 *
+		 * @return array
+		 */
+		public static function get_localized_weekdays_initial() {
+			if ( empty( self::$localized_weekdays ) ) {
+				self::build_localized_weekdays();
+			}
+
+			return self::$localized_weekdays['initial'];
+		}
+
+		/**
+		 * Builds arrays of localized full, short and initialized weekdays.
+		 */
+		private static function build_localized_weekdays() {
+			global $wp_locale;
+
+			for ( $i = 0; $i <= 6; $i++ ) {
+				$day = $wp_locale->get_weekday( $i );
+				self::$localized_weekdays['full'][ $i ]    = $day;
+				self::$localized_weekdays['short'][ $i ]   = $wp_locale->get_weekday_abbrev( $day );
+				self::$localized_weekdays['initial'][ $i ] = $wp_locale->get_weekday_initial( $day );
+			}
+		}
+
 		// DEPRECATED METHODS
 		// @codingStandardsIgnoreStart
 		/**
@@ -782,6 +943,23 @@ if ( ! class_exists( 'Tribe__Date_Utils' ) ) {
 			return mktime( 0, 0, 0, $month, $startday + $offset, $year );
 		}
 
+		/**
+		 * Unescapes date format strings to be used in functions like `date`.
+		 *
+		 * Double escaping happens when storing a date format in the database.
+		 *
+		 * @param mixed $date_format A date format string.
+		 *
+		 * @return mixed Either the original input or an unescaped date format string.
+		 */
+		public static function unescape_date_format( $date_format ) {
+			if ( ! is_string( $date_format ) ) {
+				return $date_format;
+			}
+
+			// Why so simple? Let's handle other cases as those come up. We have tests in place!
+			return str_replace( '\\\\', '\\', $date_format );
+		}
 		// @codingStandardsIgnoreEnd
 	}
 

@@ -28,7 +28,6 @@ class Tribe__Settings_Manager {
 		add_action( 'admin_menu', array( $this, 'add_help_admin_menu_item' ), 50 );
 		add_action( 'tribe_settings_do_tabs', array( $this, 'do_setting_tabs' ) );
 		add_action( 'tribe_settings_do_tabs', array( $this, 'do_network_settings_tab' ), 400 );
-		add_action( 'tribe_settings_content_tab_help', array( $this, 'do_help_tab' ) );
 		add_action( 'tribe_settings_validate_tab_network', array( $this, 'save_all_tabs_hidden' ) );
 	}
 
@@ -56,15 +55,6 @@ class Tribe__Settings_Manager {
 		new Tribe__Settings_Tab( 'display', esc_html__( 'Display', 'tribe-common' ), $displayTab );
 
 		$this->do_licenses_tab();
-
-		new Tribe__Settings_Tab(
-			'help',
-			esc_html__( 'Help', 'tribe-common' ),
-			array(
-				'priority'  => 60,
-				'show_save' => false,
-			)
-		);
 	}
 
 	/**
@@ -111,16 +101,16 @@ class Tribe__Settings_Manager {
 	 * @param array $options formatted the same as from get_options()
 	 * @param bool  $apply_filters
 	 *
-	 * @return void
+	 * @return bool
 	 */
 	public static function set_options( $options, $apply_filters = true ) {
 		if ( ! is_array( $options ) ) {
-			return;
+			return false;
 		}
 		if ( $apply_filters == true ) {
 			$options = apply_filters( 'tribe-events-save-options', $options );
 		}
-		update_option( Tribe__Main::OPTIONNAME, $options );
+		return update_option( Tribe__Main::OPTIONNAME, $options );
 	}
 
 	/**
@@ -129,13 +119,13 @@ class Tribe__Settings_Manager {
 	 * @param string $name
 	 * @param mixed  $value
 	 *
-	 * @return void
+	 * @return bool
 	 */
 	public static function set_option( $name, $value ) {
 		$newOption        = array();
 		$newOption[ $name ] = $value;
 		$options          = self::get_options();
-		self::set_options( wp_parse_args( $newOption, $options ) );
+		return self::set_options( wp_parse_args( $newOption, $options ) );
 	}
 
 	/**
@@ -234,12 +224,12 @@ class Tribe__Settings_Manager {
 	 * only if premium addons are detected.
 	 */
 	protected function do_licenses_tab() {
-		$show_tab = ( current_user_can( 'update_plugins' ) && $this->have_addons() );
+		$show_tab = ( current_user_can( 'activate_plugins' ) && $this->have_addons() );
 
 		/**
 		 * Provides an oppotunity to override the decision to show or hide the licenses tab
 		 *
-		 * Normally it will only show if the current user has the "update_plugins" capability
+		 * Normally it will only show if the current user has the "activate_plugins" capability
 		 * and there are some currently-activated premium plugins.
 		 *
 		 * @var bool
@@ -285,21 +275,11 @@ class Tribe__Settings_Manager {
 			return;
 		}
 
-		$parent = Tribe__Settings::$parent_slug;
+		$parent = class_exists( 'Tribe__Events__Main' ) ? Tribe__Settings::$parent_page : Tribe__Settings::$parent_slug;
 		$title  = esc_html__( 'Help', 'tribe-common' );
-		$slug   = esc_url(
-			apply_filters( 'tribe_settings_url',
-				add_query_arg(
-					array(
-						'page'      => 'tribe-common',
-						'tab'       => 'help',
-					),
-					Tribe__Settings::$parent_page
-				)
-			)
-		);
+		$slug   = 'tribe-help';
 
-		add_submenu_page( $parent, $title, $title, 'manage_options', $slug, '' );
+		add_submenu_page( $parent, $title, $title, 'manage_options', $slug, array( $this, 'do_help_tab' ) );
 	}
 
 	/**
@@ -337,13 +317,6 @@ class Tribe__Settings_Manager {
 	 * @return Tribe__Settings_Manager
 	 */
 	public static function instance() {
-		static $instance;
-
-		if ( ! $instance ) {
-			$class_name = __CLASS__;
-			$instance = new $class_name;
-		}
-
-		return $instance;
+		return tribe( 'settings.manager' );
 	}
 }

@@ -13,7 +13,6 @@ if ( ! class_exists( 'Tribe__Settings' ) ) {
 	 *
 	 */
 	class Tribe__Settings {
-
 		/**
 		 * Slug of the parent menu slug
 		 * @var string
@@ -24,7 +23,7 @@ if ( ! class_exists( 'Tribe__Settings' ) ) {
 		 * Page of the parent menu
 		 * @var string
 		 */
-		public static $parent_page = 'admin.php';
+		public static $parent_page = 'edit.php';
 
 		/**
 		 * @var Tribe__Admin__Live_Date_Preview
@@ -71,10 +70,17 @@ if ( ! class_exists( 'Tribe__Settings' ) ) {
 		public $noSaveTabs;
 
 		/**
-		 * the slug used in the admin to generate the settings page
+		 * The slug used in the admin to generate the settings page
 		 * @var string
 		 */
 		public $adminSlug;
+
+		/**
+		 * The slug used in the admin to generate the help page
+		 * @var string
+		 */
+		protected $help_slug;
+
 
 		/**
 		 * the menu name used for the settings page
@@ -125,16 +131,27 @@ if ( ! class_exists( 'Tribe__Settings' ) ) {
 		private static $instance;
 
 		/**
+		 * The settings page URL.
+		 * @var string
+		 */
+		protected $url;
+
+		/**
+		 * An array defining the suite root plugins.
+		 * @var array
+		 */
+		protected $root_plugins = array(
+			'the-events-calendar/the-events-calendar.php',
+			'event-tickets/event-ticket.php',
+		);
+
+		/**
 		 * Static Singleton Factory Method
 		 *
 		 * @return Tribe__Settings
 		 */
 		public static function instance() {
-			if ( empty( self::$instance ) ) {
-				self::$instance = new self();
-			}
-
-			return self::$instance;
+			return tribe( 'settings' );
 		}
 
 		/**
@@ -148,6 +165,7 @@ if ( ! class_exists( 'Tribe__Settings' ) ) {
 			$this->menuName    = apply_filters( 'tribe_settings_menu_name', esc_html__( 'Events', 'tribe-common' ) );
 			$this->requiredCap = apply_filters( 'tribe_settings_req_cap', 'manage_options' );
 			$this->adminSlug   = apply_filters( 'tribe_settings_admin_slug', 'tribe-common' );
+			$this->help_slug   = apply_filters( 'tribe_settings_help_slug', 'tribe-common-help' );
 			$this->errors      = get_option( 'tribe_settings_errors', array() );
 			$this->major_error = get_option( 'tribe_settings_major_error', false );
 			$this->sent_data   = get_option( 'tribe_settings_sent_data', array() );
@@ -155,13 +173,19 @@ if ( ! class_exists( 'Tribe__Settings' ) ) {
 			$this->defaultTab  = null;
 			$this->currentTab  = null;
 
+			$this->hook();
+		}
+
+		/**
+		 * Hooks the actions and filters required for the class to work.
+		 */
+		public function hook() {
 			// run actions & filters
 			add_action( 'admin_menu', array( $this, 'addPage' ) );
 			add_action( 'network_admin_menu', array( $this, 'addNetworkPage' ) );
 			add_action( 'admin_init', array( $this, 'initTabs' ) );
 			add_action( 'tribe_settings_below_tabs', array( $this, 'displayErrors' ) );
 			add_action( 'tribe_settings_below_tabs', array( $this, 'displaySuccess' ) );
-			add_action( 'shutdown', array( $this, 'deleteOptions' ) );
 		}
 
 		/**
@@ -199,13 +223,16 @@ if ( ! class_exists( 'Tribe__Settings' ) ) {
 				if ( post_type_exists( 'tribe_events' ) ) {
 					self::$parent_page = 'edit.php?post_type=tribe_events';
 				} else {
+					self::$parent_page = 'admin.php?page=tribe-common';
+
 					add_menu_page(
 						esc_html__( 'Events', 'tribe-common' ),
 						esc_html__( 'Events', 'tribe-common' ),
 						apply_filters( 'tribe_common_event_page_capability', 'manage_options' ),
-						'tribe-common',
+						self::$parent_slug,
 						null,
-						'dashicons-calendar'
+						'dashicons-calendar',
+						6
 					);
 				}
 
@@ -214,10 +241,9 @@ if ( ! class_exists( 'Tribe__Settings' ) ) {
 					esc_html__( 'Events Settings', 'tribe-common' ),
 					esc_html__( 'Settings', 'tribe-common' ),
 					$this->requiredCap,
-					$this->adminSlug,
+					self::$parent_slug,
 					array( $this, 'generatePage' )
 				);
-
 			}
 		}
 
@@ -227,7 +253,7 @@ if ( ! class_exists( 'Tribe__Settings' ) ) {
 		 * @return void
 		 */
 		public function addNetworkPage() {
-			if ( ! $this->should_setup_pages() ) {
+			if ( ! $this->should_setup_network_pages() ) {
 				return;
 			}
 
@@ -235,6 +261,18 @@ if ( ! class_exists( 'Tribe__Settings' ) ) {
 				'settings.php', esc_html__( 'Events Settings', 'tribe-common' ), esc_html__( 'Events Settings', 'tribe-common' ), $this->requiredCap, $this->adminSlug, array(
 					$this,
 					'generatePage',
+				)
+			);
+
+			$this->admin_page = add_submenu_page(
+				'settings.php',
+				esc_html__( 'Events Help', 'tribe-common' ),
+				esc_html__( 'Events Help', 'tribe-common' ),
+				$this->requiredCap,
+				$this->help_slug,
+				array(
+					tribe( 'settings.manager' ),
+					'do_help_tab',
 				)
 			);
 		}
@@ -247,7 +285,7 @@ if ( ! class_exists( 'Tribe__Settings' ) ) {
 		public function initTabs() {
 			if ( isset( $_GET['page'] ) && $_GET['page'] == $this->adminSlug ) {
 				// Load settings tab-specific helpers and enhancements
-				$this->live_date_preview = new Tribe__Admin__Live_Date_Preview;
+				Tribe__Admin__Live_Date_Preview::instance();
 
 				do_action( 'tribe_settings_do_tabs' ); // this is the hook to use to add new tabs
 				$this->tabs       = (array) apply_filters( 'tribe_settings_tabs', array() );
@@ -529,7 +567,6 @@ if ( ! class_exists( 'Tribe__Settings' ) ) {
 			add_option( 'tribe_settings_major_error', $this->major_error );
 			wp_redirect( esc_url_raw( add_query_arg( array( 'saved' => true ), $this->url ) ) );
 			exit;
-
 		}
 
 		/**
@@ -584,6 +621,9 @@ if ( ! class_exists( 'Tribe__Settings' ) ) {
 				$output  = '<div id="message" class="updated"><p><strong>' . $message . '</strong></p></div>';
 				echo apply_filters( 'tribe_settings_success_message', $output, $this->currentTab );
 			}
+
+			//Delete Temporary Options After Display Errors and Success
+			$this->deleteOptions();
 		}
 
 		/**
@@ -605,11 +645,16 @@ if ( ! class_exists( 'Tribe__Settings' ) ) {
 		public function get_url( array $args = array() ) {
 			$defaults = array(
 				'page' => $this->adminSlug,
+				'parent' => self::$parent_page,
 			);
 
 			// Allow the link to be "changed" on the fly
 			$args = wp_parse_args( $args, $defaults );
-			$url = admin_url( self::$parent_page );
+
+			$url = admin_url( $args['parent'] );
+
+			// keep the resulting URL args clean
+			unset( $args['parent'] );
 
 			return apply_filters( 'tribe_settings_url', add_query_arg( $args, $url ), $args, $url );
 		}
@@ -623,11 +668,57 @@ if ( ! class_exists( 'Tribe__Settings' ) ) {
 			$slug = self::$parent_page;
 
 			// if we don't have an event post type, then we can just use the tribe-common slug
-			if ( 'admin.php' === $slug ) {
+			if ( 'edit.php' === $slug || 'admin.php?page=tribe-common' === $slug ) {
 				$slug = self::$parent_slug;
 			}
 
 			return $slug;
+		}
+
+		/**
+		 * @return string
+		 */
+		public function get_help_slug() {
+			return $this->help_slug;
+		}
+
+		/**
+		 * Determines whether or not the network admin pages should be initialized.
+		 *
+		 * When running in parallel with TEC 3.12.4, TEC should be relied on to handle the admin screens
+		 * that version of TEC (and lower) is tribe-common ignorant. Therefore, tribe-common has to be
+		 * the smarter, more lenient codebase.
+		 * Beyond this at least one of the two "root" plugins (The Events Calendar and Event Tickets)
+		 * should be network activated to add the page.
+		 *
+		 * @return boolean
+		 */
+		public function should_setup_network_pages() {
+			$root_plugin_is_mu_activated = array_sum( array_map( 'is_plugin_active_for_network', $this->root_plugins ) ) >= 1;
+
+			if ( ! $root_plugin_is_mu_activated ) {
+				return false;
+			}
+
+			if ( ! class_exists( 'Tribe__Events__Main' ) ) {
+				return true;
+			}
+
+			if ( version_compare( Tribe__Events__Main::VERSION, '4.0beta', '>=' ) ) {
+				return true;
+			}
+
+			return false;
+
+		}
+
+		/**
+		 * Sets what `common` should consider root plugins.
+		 *
+		 * @param array $root_plugins An array of plugins in the `<folder>/<file.php>` format.
+		 */
+		public function set_root_plugins( array $root_plugins ) {
+			$this->root_plugins = $root_plugins;
 		}
 	} // end class
 } // endif class_exists

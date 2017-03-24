@@ -35,16 +35,16 @@ if ( ! empty( $messages ) ): ?>
 		</ul>
 		<p><?php printf( esc_html__( 'Questions? %sWatch the video%s.', 'the-events-calendar' ), '<a href="http://tri.be/using-the-events-calendars-csv-importer/">', '</a>' ); ?></p>
 	</div>
-	<form method="post" enctype="multipart/form-data">
+	<form method="post" enctype="multipart/form-data" id="import">
 		<table class="form-table">
 			<tr>
 				<td>
 					<label title="Import Type">
 						<?php esc_html_e( 'Import Type:', 'the-events-calendar' ) ?>
 						<select name="import_type" id="events-import-import-type">
-							<option value="venues"><?php esc_html_e( 'Venues', 'the-events-calendar' ) ?></option>
-							<option value="organizers"><?php esc_html_e( 'Organizers', 'the-events-calendar' ) ?></option>
-							<option value="events" selected="selected"><?php esc_html_e( 'Events', 'the-events-calendar' ) ?></option>
+							<?php foreach ( $import_options as $value => $label ) : ?>
+								<option value="<?php echo $value ?>" <?php selected( $value == $default_selected_import_option ); ?>><?php echo $label; ?></option>
+							<?php endforeach; ?>
 						</select>
 					</label>
 				</td>
