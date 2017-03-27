@@ -17,7 +17,7 @@
 				
 					<div class="hi">
 					<a href="<?php bloginfo('url'); ?>">
-					<img src="<?php if(get_option('misfit_logo')) { echo get_option('misfit_logo'); } else { ?><?php bloginfo ('template_url'); ?>/images/logo.png<?php } ?>" alt="<?php bloginfo('description'); ?>">
+					<img src="<?php if(get_option('misfit_logo')) { echo get_option('misfit_logo'); } else { ?><?php bloginfo ('template_url'); ?>/images/logo.png<?php } ?>" alt="navdash logo">
 					</a>
 					</div>
 				

@@ -84,7 +84,7 @@
 	              	<?php for ($i = 0; $i < $imagesCount; $i++): ?>
 	                <?php if (!empty($galleryImages[$i])) :?>
 					                  		
-						<a class="lightbox" href="<?php echo $galleryImages[$i]['full'][0]; ?>" data-lightbox-gallery="<?php echo $post->post_name; ?>"><img src="<?php echo tt($galleryImages[$i]['full'][0],240,220); ?>" alt="Southernmost Gallery Image"></a>
+						<a class="lightbox" href="<?php echo $galleryImages[$i]['full'][0]; ?>" data-lightbox-gallery="<?php echo $post->post_name; ?>"><img src="<?php echo tt($galleryImages[$i]['full'][0],240,220); ?>" alt="<?php echo $galleryImages[$i]['alt']; ?>"></a>
 					
 					<?php endif; endfor; endif; ?>
 					

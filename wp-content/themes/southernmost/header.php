@@ -98,7 +98,7 @@
 		<div id="header">
 	
 			<div class="logo">
-				<a href="<?php bloginfo ('url'); ?>"><img src="<?php bloginfo ('template_url'); ?>/images/logo-footer.png" alt="Southernmost"></a>
+				<a href="<?php bloginfo ('url'); ?>"><img src="<?php bloginfo ('template_url'); ?>/images/logo-footer.png" alt="Southernmost Header Logo"></a>
 			</div>
 	
 			<div class="navigation">
@@ -251,7 +251,7 @@
 				
 				</div>
 				<div class="phone">
-					<img src="http://www.southernmostbeachresort.com/wp-content/uploads/2015/10/phoneicon.png"><span id="ptext"><a href="tel:8003544455"><span id="NavisTFN2" style="font-family:GothamBold;">(800)354-4455 </span></a></span>
+					<img src="http://www.southernmostbeachresort.com/wp-content/uploads/2015/10/phoneicon.png" alt="phoneicon"><span id="ptext"><a href="tel:8003544455"><span id="NavisTFN2" style="font-family:GothamBold;">(800)354-4455 </span></a></span>
 				</div>
 
 				<!-- NAVIS -->

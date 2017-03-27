@@ -69,11 +69,14 @@
 	       			
 	       			
 	       
-	       		<?php $banner = get_post_meta($post->ID, 'misfit_bannerimage',true); ?>
+	       			<?php
+	       				$banner = get_post_meta($post->ID, 'misfit_bannerimage',true);
+	       				$alt_text = $banner ? get_custom_image_thumb_alt_text($banner) : get_custom_image_thumb_alt_text('', $post->ID);
+	       			?>
 	       
 	       			
 	
-	       		<img class="mobileheader mobileadd"<?php if($banner) { ?> src="<?php echo $banner; ?>"<?php } else { ?> src="<?php echo $imgsrc[0]; ?>"<?php } ?> alt="<?php the_title(); ?>" /> 
+	       		<img class="mobileheader mobileadd"<?php if($banner) { ?> src="<?php echo $banner; ?>"<?php } else { ?> src="<?php echo $imgsrc[0]; ?>"<?php } ?> alt="<?php echo $alt_text; ?>" /> 
 					
 					
 					
