@@ -243,7 +243,7 @@
 				</div>
 
 				<div class="mobileicon">
-					<a href="tel:8003544455"><img src="http://www.southernmostbeachresort.com/wp-content/uploads/2015/10/phoneiconmobile.png"></a>
+					<a href="tel:8003544455"><img src="http://www.southernmostbeachresort.com/wp-content/uploads/2015/10/phoneiconmobile.png" alt="phoneicon mobile"></a>
 				</div>
 				
 				<div class="hamburger">
