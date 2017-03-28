@@ -16,7 +16,7 @@
     			
     			<?php } elseif(get_option('misfit_vidlinetwoimage')) { ?>
     		
-    				<img class="overlogo" src="<?php echo get_option('misfit_vidlinetwoimage'); ?>" alt="<?php echo bloginfo('description'); ?>" />
+    				<img class="overlogo" src="<?php echo get_option('misfit_vidlinetwoimage'); ?>" alt="<?php echo get_custom_image_thumb_alt_text(get_option('misfit_vidlinetwoimage')); ?>" />
     		
     			<?php } ?>
     			

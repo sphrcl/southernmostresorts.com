@@ -24,11 +24,11 @@ get_header('events'); ?>
 	<?php if(get_option('misfit_events_page_featured_image')) { ?>
 		<div class="scrollery">
 									
-						<img src="<?php echo get_option('misfit_events_page_featured_image1'); ?>">
+						<img src="<?php echo get_option('misfit_events_page_featured_image1'); ?>" alt="<?php echo get_custom_image_thumb_alt_text(get_option('misfit_events_page_featured_image1')); ?>">
 							
-						<img src="<?php echo get_option('misfit_events_page_featured_image2'); ?>">
+						<img src="<?php echo get_option('misfit_events_page_featured_image2'); ?>" alt="<?php echo get_custom_image_thumb_alt_text(get_option('misfit_events_page_featured_image2')); ?>">
 						
-						<img src="<?php echo get_option('misfit_events_page_featured_image3'); ?>">														
+						<img src="<?php echo get_option('misfit_events_page_featured_image3'); ?>" alt="<?php echo get_custom_image_thumb_alt_text(get_option('misfit_events_page_featured_image3')); ?>">														
 		</div>
 	<?php } else { ?>
 		<div id="eventheader" style="background-image: url('http://www.gateshotelkeywest.com/wp-content/uploads/2015/02/Jump-In1.jpg');"></div>

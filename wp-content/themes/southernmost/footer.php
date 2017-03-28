@@ -50,7 +50,7 @@
 			<div class="footmiddle">
 
 				<div class="footerlogo">
-					<a href="http://www.southernmostbeachresort.com"><img src="<?php bloginfo ('template_url'); ?>/images/logo-footer.png" alt="Southernmost"></a>
+					<a href="http://www.southernmostbeachresort.com"><img src="<?php bloginfo ('template_url'); ?>/images/logo-footer.png" alt="Southernmost Footer Logo"></a>
 				</div>
 
 				<div class="socialmedia">
@@ -83,7 +83,7 @@
 				<!-- / NAVIS -->
 
 				<div class="conde_holder">
-					 <div class="conde_image"><p><img  style="width:100%" src="<?php bloginfo('template_url'); ?>/images/Conde-Nast-Award.png"><p></div>
+					 <div class="conde_image"><p><img  style="width:100%" src="<?php bloginfo('template_url'); ?>/images/Conde-Nast-Award.png" alt="Conde Logo"><p></div>
 					 <div class="conde_desc"><p class="first_linec">Our Hotel has been selected to be in<br>Conde Nast Choice Award</p><p class="second_linec"><a href="http://www.cntraveler.com/vote">Vote and see the full list of hotels here ></a></p></div>
 				</div>
 
@@ -98,8 +98,8 @@
 		</div>
 
 		<div class="footmentions">
-			<a class="footmentions-condenast" target="_blank" href="http://www.cntraveler.com/"><img src="<?php bloginfo('template_url'); ?>/images/florida-keys-finalist.png"></a>
-			<a class="footmentions-highgate" target="_blank" href="http:///www.highgate.com/"><img src="<?php bloginfo('template_url'); ?>/images/highgate-logo.png"></a>
+			<a class="footmentions-condenast" target="_blank" href="http://www.cntraveler.com/"><img src="<?php bloginfo('template_url'); ?>/images/florida-keys-finalist.png" alt="cntraveler Logo"></a>
+			<a class="footmentions-highgate" target="_blank" href="http:///www.highgate.com/"><img src="<?php bloginfo('template_url'); ?>/images/highgate-logo.png" alt="Highgate Logo"></a>
 		</div>
 
 		<!-- <div class="save-the-children">
@@ -121,7 +121,7 @@
 			<a class="royale" href="#">Close Menu</a>
 		</div>
 
-		<div class="spacer"><img src="<?php bloginfo ('template_url'); ?>/images/logo-white.png" /></div>
+		<div class="spacer"><img src="<?php bloginfo ('template_url'); ?>/images/logo-white.png" alt="Spacer"/></div>
 
 		<div id="navmenumob">
 			<div class="slidedown-navmob">
