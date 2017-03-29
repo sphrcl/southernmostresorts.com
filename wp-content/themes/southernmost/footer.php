@@ -396,7 +396,7 @@
 	<script type="text/javascript">
 	var userFeed = new Instafeed({
 		get: 'user',
-		template: '<div class="instabox"><a href="{{link}}" target="_blank"><img src="{{image}}" /><div class="instaimg" style="background-image:url({{image}});"></div></a></div>',
+		template: '<div class="instabox"><a href="{{link}}" target="_blank"><img src="{{image}}" alt="{{caption}}" /><div class="instaimg" style="background-image:url({{image}});"></div></a></div>',
 		resolution: 'low_resolution',
 		userId: 421860270,
 		limit: 5,
