@@ -68,7 +68,7 @@
 	       
 	       			<?php if($imgsrc) { ?>
 	
-	       			<img class="mobileheader mobileadd" src="<?php echo $imgsrc[0]; ?>" alt="<?php the_title(); ?>" />  	        	
+	       			<img class="mobileheader mobileadd" src="<?php echo $imgsrc[0]; ?>" alt="<?php echo get_custom_image_thumb_alt_text('', $post->ID); ?>" />  	        	
 	        			        
 	       			  		
 		       		<?php } ?>

@@ -8,7 +8,7 @@
 	
 		<?php if(get_option('misfit_slideimage')) { ?>
 			
-		<img class="overlogo" src="<?php echo get_option('misfit_slideimage'); ?>" alt="<?php echo bloginfo('description'); ?>" />
+		<img class="overlogo" src="<?php echo get_option('misfit_slideimage'); ?>" alt="<?php echo get_custom_image_thumb_alt_text(get_option('misfit_slideimage')); ?>" />
 		
 		<?php } else { ?>
 

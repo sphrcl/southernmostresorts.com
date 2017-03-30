@@ -48,7 +48,7 @@
               		<?php for ($i = 0; $i < 1; $i++): ?>
                   	<?php if (!empty($galleryImages[$i])) :?>
 	
-	       			<img<?php if(get_post_meta($post->ID, 'misfit_imagecredit', $single = true)) { ?> style="margin-bottom: 55px;" <?php } ?> class="mobileheader mobileadd" src="<?php echo $galleryImages[$i]['full'][0];?>" alt="<?php the_title(); ?>" />  
+	       			<img<?php if(get_post_meta($post->ID, 'misfit_imagecredit', $single = true)) { ?> style="margin-bottom: 55px;" <?php } ?> class="mobileheader mobileadd" src="<?php echo $galleryImages[$i]['full'][0];?>" alt="<?php echo $galleryImages[$i]['alt']; ?>" />  
 	       			  		
 		       		<?php endif; ?>
   					<?php endfor; ?>

@@ -51,7 +51,7 @@
 		-->
 		<div class="topbannercontent">
 			<div class="logo-white">
-				<img src="<?php bloginfo ('template_url'); ?>/images/logo-white.png" alt="*" />
+				<img src="<?php bloginfo ('template_url'); ?>/images/logo-white.png" alt="Logo White" />
 			</div>
 			<div class="reservenow">
 				<!-- they want it to go to reztrip
