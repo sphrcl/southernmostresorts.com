@@ -26,7 +26,7 @@
 				<p>Sign up for Special Offers from the Hotel</p>
 
 				<div class="newsletter">
-					<form id="eclubCheck" method="post" action="http://www.data2gold.com/cc3/safeandsecure.wow?6O521I55494X2X2G6G1O0L216R693Q5H3Z5E" class="eClub" target="_blank">
+					<form id="eclubCheck" method="post" action="//www.data2gold.com/cc3/safeandsecure.wow?6O521I55494X2X2G6G1O0L216R693Q5H3Z5E" class="eClub" target="_blank">
 						<input id="firstname" type="text" size="40" name="FIRSTNAME" maxlength="40" placeholder="First Name" required="required">
 						<input id="lastname" type="text" size="40" name="LASTNAME" maxlength="40" placeholder="Last Name" required="required">
 						<input id="email" type="text" size="40" name="email" maxlength="150" placeholder="Email Address" required="required">
@@ -50,7 +50,7 @@
 			<div class="footmiddle">
 
 				<div class="footerlogo">
-					<a href="http://www.southernmostbeachresort.com"><img src="<?php bloginfo ('template_url'); ?>/images/logo-footer.png" alt="Southernmost Footer Logo"></a>
+					<a href="//www.southernmostbeachresort.com"><img src="<?php bloginfo ('template_url'); ?>/images/logo-footer.png" alt="Southernmost Footer Logo"></a>
 				</div>
 
 				<div class="socialmedia">
@@ -84,7 +84,7 @@
 
 				<div class="conde_holder">
 					 <div class="conde_image"><p><img  style="width:100%" src="<?php bloginfo('template_url'); ?>/images/Conde-Nast-Award.png" alt="Conde Logo"><p></div>
-					 <div class="conde_desc"><p class="first_linec">Our Hotel has been selected to be in<br>Conde Nast Choice Award</p><p class="second_linec"><a href="http://www.cntraveler.com/vote">Vote and see the full list of hotels here ></a></p></div>
+					 <div class="conde_desc"><p class="first_linec">Our Hotel has been selected to be in<br>Conde Nast Choice Award</p><p class="second_linec"><a href="//www.cntraveler.com/vote">Vote and see the full list of hotels here ></a></p></div>
 				</div>
 
 			</div>
@@ -98,13 +98,13 @@
 		</div>
 
 		<div class="footmentions">
-			<a class="footmentions-condenast" target="_blank" href="http://www.cntraveler.com/"><img src="<?php bloginfo('template_url'); ?>/images/florida-keys-finalist.png" alt="cntraveler Logo"></a>
-			<a class="footmentions-highgate" target="_blank" href="http:///www.highgate.com/"><img src="<?php bloginfo('template_url'); ?>/images/highgate-logo.png" alt="Highgate Logo"></a>
+			<a class="footmentions-condenast" target="_blank" href="//www.cntraveler.com/"><img src="<?php bloginfo('template_url'); ?>/images/florida-keys-finalist.png" alt="cntraveler Logo"></a>
+			<a class="footmentions-highgate" target="_blank" href="///www.highgate.com/"><img src="<?php bloginfo('template_url'); ?>/images/highgate-logo.png" alt="Highgate Logo"></a>
 		</div>
 
 		<!-- <div class="save-the-children">
 			
-				<a href="https://goo.gl/OJexpZ" target="_blank"><img class="left" width="270px" src="http://www.southernmostbeachresort.com/wp-content/themes/southernmost/images/save-the-children-logo.png"></a>
+				<a href="https://goo.gl/OJexpZ" target="_blank"><img class="left" width="270px" src="//www.southernmostbeachresort.com/wp-content/themes/southernmost/images/save-the-children-logo.png"></a>
 				
 				<p class="save">Southernmost Beach Resort Key West is a proud supporter of Save the Children, internationally recognized for giving children a healthy start, the opportunity to learn and protection from harm. To donate and make a difference in a child’s life, please click on the link below. 100% of your donation benefits Save the Children. Thank you for your support.</p>
 
@@ -389,7 +389,7 @@
 
 
 
-	<script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.1/jquery-ui.min.js'></script>
+	<script type='text/javascript' src='//ajax.googleapis.com/ajax/libs/jqueryui/1.11.1/jquery-ui.min.js'></script>
 
 	<!-- JavaScripts -->
 	<script type="text/javascript" src="<?php bloginfo ('template_url'); ?>/js/instafeed.min.js"></script>

@@ -114,7 +114,7 @@ get_header( 'shop' ); ?>
 											
 											if ( $count > 0 ) : ?>
 											
-												<div class="woocommerce-product-rating" itemprop="aggregateRating" itemscope itemtype="http://schema.org/AggregateRating">
+												<div class="woocommerce-product-rating" itemprop="aggregateRating" itemscope itemtype="//schema.org/AggregateRating">
 													<div class="star-rating" title="<?php printf( __( 'Rated %s out of 5', 'woocommerce' ), $average ); ?>">
 														<span style="width:<?php echo ( ( $average / 5 ) * 100 ); ?>%">
 															<strong itemprop="ratingValue" class="rating"><?php echo esc_html( $average ); ?></strong> <?php _e( 'out of 5', 'woocommerce' ); ?>
@@ -139,7 +139,7 @@ get_header( 'shop' ); ?>
 									
 										<meta itemprop="price" content="<?php echo $product->get_price(); ?>" />
 										<meta itemprop="priceCurrency" content="<?php echo get_woocommerce_currency(); ?>" />
-										<link itemprop="availability" href="http://schema.org/<?php echo $product->is_in_stock() ? 'InStock' : 'OutOfStock'; ?>" /></h2å>
+										<link itemprop="availability" href="//schema.org/<?php echo $product->is_in_stock() ? 'InStock' : 'OutOfStock'; ?>" /></h2å>
 							
 									
 									<h1><?php the_title(); ?></h1>

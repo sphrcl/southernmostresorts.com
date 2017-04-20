@@ -80,8 +80,8 @@
 								<!--		// <!-- file in a text editor, for instance Notepad.-->
 								<!--		// Set the BaseURL to the url of your Web server
 
-										var BaseURL = "http://162.251.177.90/";
-										var BaseURLFF = "http://root:pass@162.251.177.90/";
+										var BaseURL = "//162.251.177.90/";
+										var BaseURLFF = "//root:pass@162.251.177.90/";
 																			
 										// DisplayWidth & DisplayHeight specifies the displayed width & height of the image.
 										// You may change these numbers, the effect will be a stretched or a shrunk image
@@ -163,8 +163,8 @@
 										// <!-- file in a text editor, for instance Notepad.-->
 										// Set the BaseURL to the url of your Web server
 
-										var BaseURL = "http://162.251.177.85/";
-										var BaseURLFF = "http://root:pass@162.251.177.85/";
+										var BaseURL = "//162.251.177.85/";
+										var BaseURLFF = "//root:pass@162.251.177.85/";
 																		
 										// DisplayWidth & DisplayHeight specifies the displayed width & height of the image.
 										// You may change these numbers, the effect will be a stretched or a shrunk image
@@ -241,8 +241,8 @@
 									<!--	// <!-- file in a text editor, for instance Notepad.-->
 									<!--	// Set the BaseURL to the url of your Web server
 
-										var BaseURL = "http://162.251.177.84/";
-										var BaseURLFF = "http://root:pass@162.251.177.84/";
+										var BaseURL = "//162.251.177.84/";
+										var BaseURLFF = "//root:pass@162.251.177.84/";
 																			
 										// DisplayWidth & DisplayHeight specifies the displayed width & height of the image.
 										// You may change these numbers, the effect will be a stretched or a shrunk image
@@ -347,7 +347,7 @@
 
 				<p><br /><br />Wanting to add extra sizzle to your stay? Choose from our list of special gifts to make your visit at the Southernmost Beach Resort extraordinary!</p>
 
-				<p>Please call us at <a href="tel:1800-354-4455">800-354-4455</a>, or <a href="mailto:guestrelations@southernmostresorts.com">email</a> us directly to add any of the above items to your stay. For more information and prices, click <a href="http://www.southernmostbeachresort.com/hotel-amenities/add-ons/">here.</a></p>
+				<p>Please call us at <a href="tel:1800-354-4455">800-354-4455</a>, or <a href="mailto:guestrelations@southernmostresorts.com">email</a> us directly to add any of the above items to your stay. For more information and prices, click <a href="//www.southernmostbeachresort.com/hotel-amenities/add-ons/">here.</a></p>
 
 			 <?php } ?>			
 
