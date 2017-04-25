@@ -91,8 +91,8 @@ get_header(); ?>
 																							<!-- file in a text editor, for instance Notepad.-->
 																							// Set the BaseURL to the url of your Web server
 														
-																							var BaseURL = "http://66.184.211.231/";
-																							var BaseURLFF = "http://root:pass@66.184.211.231/";
+																							var BaseURL = "//66.184.211.231/";
+																							var BaseURLFF = "//root:pass@66.184.211.231/";
 																							
 														// DisplayWidth & DisplayHeight specifies the displayed width & height of the image.
 														// You may change these numbers, the effect will be a stretched or a shrunk image
@@ -165,8 +165,8 @@ get_header(); ?>
 									<!-- file in a text editor, for instance Notepad.-->
 									// Set the BaseURL to the url of your Web server
 
-									var BaseURL = "http://72.243.112.72/";
-									var BaseURLFF = "http://root:pass@72.243.112.72/";
+									var BaseURL = "//72.243.112.72/";
+									var BaseURLFF = "//root:pass@72.243.112.72/";
 									
 // DisplayWidth & DisplayHeight specifies the displayed width & height of the image.
 // You may change these numbers, the effect will be a stretched or a shrunk image
@@ -242,8 +242,8 @@ document.Player5.ToolbarConfiguration = "play,+snapshot,+fullscreen"
 									<!-- file in a text editor, for instance Notepad.-->
 									// Set the BaseURL to the url of your Web server
 
-									var BaseURL = "http://72.243.112.71/";
-									var BaseURLFF = "http://root:pass@72.243.112.71/";
+									var BaseURL = "//72.243.112.71/";
+									var BaseURLFF = "//root:pass@72.243.112.71/";
 									
 // DisplayWidth & DisplayHeight specifies the displayed width & height of the image.
 // You may change these numbers, the effect will be a stretched or a shrunk image

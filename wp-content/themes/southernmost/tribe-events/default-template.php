@@ -31,7 +31,7 @@ get_header('events'); ?>
 						<img src="<?php echo get_option('misfit_events_page_featured_image3'); ?>" alt="<?php echo get_custom_image_thumb_alt_text(get_option('misfit_events_page_featured_image3')); ?>">														
 		</div>
 	<?php } else { ?>
-		<div id="eventheader" style="background-image: url('http://www.gateshotelkeywest.com/wp-content/uploads/2015/02/Jump-In1.jpg');"></div>
+		<div id="eventheader" style="background-image: url('//www.gateshotelkeywest.com/wp-content/uploads/2015/02/Jump-In1.jpg');"></div>
 	<?php } ?>
 
 	<?php if ( has_post_thumbnail() && 1 == $day['total_events'] ) : ?>

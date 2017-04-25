@@ -13,7 +13,7 @@
 
 	 <section id="intro" class="pagers">
 	 	<div id="topbanner">
-			<div class="static-banner" style="background-image: url('http://www.southernmostbeachresort.com/wp-content/uploads/2015/04/southernmost-hotel-key-west-home-banner2.jpg')"></div>
+			<div class="static-banner" style="background-image: url('//www.southernmostbeachresort.com/wp-content/uploads/2015/04/southernmost-hotel-key-west-home-banner2.jpg')"></div>
 			<div class="topbanner-overlay"></div>
 		</div>
 
@@ -46,10 +46,10 @@
 		       		<div class="socializer" style="position: relative;">
 							<ul>
 								<?php if(get_option('misfit_facebook')) { ?>
-								<li><a href="http://facebook.com/pursuitofeverything" target="_blank" class="flaticon-facebook51"></a></li>
+								<li><a href="//facebook.com/pursuitofeverything" target="_blank" class="flaticon-facebook51"></a></li>
 								<?php } ?>
 								<?php if(get_option('misfit_twitter')) { ?>
-								<li><a href="http://twitter.com/cebocampbell" target="_blank" class="flaticon-twitter44"></a></li>
+								<li><a href="//twitter.com/cebocampbell" target="_blank" class="flaticon-twitter44"></a></li>
 								<?php } ?>
 								<?php if(get_option('misfit_dribbble')) { ?>
 								<li><a href="https://dribbble.com/cebo" target="_blank" class="flaticon-dribbble14"></a></li>
