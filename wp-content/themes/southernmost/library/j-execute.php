@@ -115,7 +115,7 @@ $(window).on('load', function(){
 	  } );
 	</script>
     <script src="<?php bloginfo ('template_url'); ?>/js/jquery-ui.min.js"></script>
-    <script src="http://vjs.zencdn.net/4.0/video.js"></script>
+    <script src="//vjs.zencdn.net/4.0/video.js"></script>
     <!-- BigVideo -->
     <script src="<?php bloginfo ('template_url'); ?>/js/bigvideo.js"></script>
     <!-- Demo -->

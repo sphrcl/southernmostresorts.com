@@ -13,69 +13,82 @@
 // Prevent direct access.
 if ( ! defined( 'BSR_PATH' ) ) exit;
 
+// Determines which tab to display.
+$active_tab = isset( $_GET['tab'] ) ? $_GET['tab'] : 'bsr_search_replace';
+
+switch( $active_tab ) {
+	case 'bsr_settings':
+		$action = 'action="' . get_admin_url() . 'options.php' . '"';
+		break;
+	case 'bsr_help':
+		$action = 'action="' . get_admin_url() . 'admin-post.php' . '"';
+		break;
+	default:
+		$action = '';
+}
+
 ?>
 
 <div class="wrap">
 
-	<h2><?php _e( 'Better Search Replace', 'better-search-replace' ); ?></h2>
-	<?php Better_Search_Replace_Admin::render_result(); ?>
-	<p><?php _e( 'This tool allows you to search and replace text in your database (supports serialized arrays and objects).', 'better-search-replace' ); ?></p>
-	<p><?php _e( 'To get started, use the form below to enter the text to be replaced and select the tables to update.', 'better-search-replace' ); ?></p>
-	<p><?php _e( '<strong>WARNING:</strong> Make sure you backup your database before using this plugin!', 'better-search-replace' ); ?></p>
+	<h1 id="bsr-title"><?php _e( 'Better Search Replace', 'better-search-replace' ); ?></h1>
+	<?php settings_errors(); ?>
 
-	<form action="<?php echo get_admin_url() . 'admin-post.php'; ?>" method="POST">
+	<div id="bsr-error-wrap"></div>
 
-		<table class="form-table">
+	<?php BSR_Admin::render_result(); ?>
 
-			<tr>
-				<td><label for="search_for"><strong><?php _e( 'Search for', 'better-search-replace' ); ?></strong></label></td>
-				<td><input id="search_for" class="regular-text" type="text" name="search_for" value="<?php Better_Search_Replace_Admin::prefill_value( 'search' ); ?>" /></td>
-			</tr>
+	<div id="poststuff" class="bsr-poststuff">
 
-			<tr>
-				<td><label for="replace_with"><strong><?php _e( 'Replace with', 'better-search-replace' ); ?></strong></label></td>
-				<td><input id="replace_with" class="regular-text" type="text" name="replace_with" value="<?php Better_Search_Replace_Admin::prefill_value( 'replace' ); ?>" /></td>
-			</tr>
+		<div id="post-body" class="metabox-holder columns-2">
 
-			<tr>
-				<td><label for="select_tables"><strong><?php _e( 'Select tables', 'better-search-replace' ); ?></strong></label></td>
-				<td>
-					<?php Better_Search_Replace_Admin::load_tables(); ?>
-					<p class="description"><?php _e( 'Select multiple tables with Ctrl-Click for Windows or Cmd-Click for Mac.', 'better-search-replace' ); ?></p>
-				</td>
-			</tr>
+			<div id="post-body-content">
 
-			<tr>
-				<td><label for="case_insensitive"><strong><?php _e( 'Case-Insensitive?', 'better-search-replace' ); ?></strong></label></td>
-				<td>
-					<input id="case_insensitive" type="checkbox" name="case_insensitive" <?php Better_Search_Replace_Admin::prefill_value( 'case_insensitive', 'checkbox' ); ?> />
-					<label for="case_insensitive"><span class="description"><?php _e( 'Searches are case-sensitive by default.', 'revisr' ); ?></span></label>
-				</td>
-			</tr>
+				<h2 id="bsr-nav-tab-wrapper" class="nav-tab-wrapper">
+				    <a href="?page=better-search-replace&tab=bsr_search_replace" class="nav-tab <?php echo $active_tab == 'bsr_search_replace' ? 'nav-tab-active' : ''; ?>"><?php _e( 'Search/Replace', 'better-search-replace' ); ?></a>
+				    <a href="?page=better-search-replace&tab=bsr_settings" class="nav-tab <?php echo $active_tab == 'bsr_settings' ? 'nav-tab-active' : ''; ?>"><?php _e( 'Settings', 'better-search-replace' ); ?></a>
+				    <a href="?page=better-search-replace&tab=bsr_help" class="nav-tab <?php echo $active_tab == 'bsr_help' ? 'nav-tab-active' : ''; ?>"><?php _e( 'Help', 'better-search-replace' ); ?></a>
+				</h2>
 
-			<tr>
-				<td><label for="replace_guids"><strong><?php _e( 'Replace GUIDs<a href="http://codex.wordpress.org/Changing_The_Site_URL#Important_GUID_Note" target="_blank">?</a>', 'better-search-replace' ); ?></strong></label></td>
-				<td>
-					<input id="replace_guids" type="checkbox" name="replace_guids" <?php Better_Search_Replace_Admin::prefill_value( 'replace_guids', 'checkbox' ); ?> />
-					<label for="replace_guids"><span class="description"><?php _e( 'If left unchecked, all database columns titled \'guid\' will be skipped.', 'better-search-replace' ); ?></span></label>
-				</td>
-			</tr>
+				<form class="bsr-action-form" <?php echo $action; ?> method="POST">
 
-			<tr>
-				<td><label for="dry_run"><strong><?php _e( 'Run as dry run?', 'better-search-replace' ); ?></strong></label></td>
-				<td>
-					<input id="dry_run" type="checkbox" name="dry_run" checked />
-					<label for="dry_run"><span class="description"><?php _e( 'If checked, no changes will be made to the database, allowing you to check the results beforehand.', 'better-search-replace' ); ?></span></label>
-				</td>
-			</tr>
+				<?php
+					// Include the correct tab template.
+					$bsr_template = str_replace( '_', '-', $active_tab ) . '.php';
+					if ( file_exists( BSR_PATH . 'templates/' . $bsr_template ) ) {
+						include BSR_PATH . 'templates/' . $bsr_template;
+					} else {
+						include BSR_PATH . 'templates/bsr-search-replace.php';
+					}
+				?>
 
-		</table>
+				</form>
 
-		<br>
-		<?php wp_nonce_field( 'process_search_replace', 'bsr_nonce' ); ?>
-		<input type="hidden" name="action" value="bsr_process_search_replace" />
-		<button id="bsr-submit" type="submit" class="button button-primary"><?php _e( 'Run Search/Replace', 'better-search-replace' ); ?></button>
+			</div><!-- /#post-body-content -->
 
-	</form>
+			<div id="postbox-container-1" class="postbox-container">
+
+					<div class="postbox">
+						<h3><span><?php _e( 'Like this plugin?', 'better-search-replace' ); ?></span></h3>
+						<div class="inside">
+							<ul>
+								<li><a href="https://wordpress.org/support/view/plugin-reviews/better-search-replace?filter=5" target="_blank"><?php _e( 'Rate it on WordPress.org', 'better-search-replace' ); ?></a></li>
+								<li><a href="https://twitter.com/expandedfronts" target="_blank"><?php _e( 'Follow us on Twitter', 'better-search-replace' ); ?></a></li>
+								<li><a href="https://expandedfronts.com/products/better-search-replace-pro/" target="_blank"><?php _e( 'Get the pro version', 'better-search-replace' ); ?></a></li>
+							</ul>
+						</div> <!-- .inside -->
+					</div> <!-- .postbox -->
+
+					<div class="postbox">
+						<div class="inside">
+							<a href="https://expandedfronts.com/products/better-search-replace-pro/"><img src="<?php echo BSR_URL; ?>assets/img/sidebar-upgrade.png" style="width:100%;margin-top:10px;" /></a>
+						</div> <!-- .inside -->
+					</div> <!-- .postbox -->
+
+			</div>
+
+		</div><!-- /#post-body -->
+
+	</div><!-- /#poststuff -->
 
 </div><!-- /.wrap -->

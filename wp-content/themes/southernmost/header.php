@@ -21,7 +21,7 @@
 		}
 	?>
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-	<link rel="profile" href="http://gmpg.org/xfn/11" />
+	<link rel="profile" href="//gmpg.org/xfn/11" />
 	
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 	<?php if (get_option('misfit_custom_favicon')) { ?>
@@ -53,7 +53,7 @@
 	<script id="gtsgig-boot" data-hotel-id="southernmostbeachresort" src="https://widgets.gtsgig.com/boot.js" async defer></script>
 
 	<!-- NAVIS script -->
-	<script language="javascript" src="http://www.navistechnologies.info/JavascriptPhoneNumber/js.aspx?account=15278&jspass=84ajbd9wo80x2tb00sbo&dflt=8003544455"></script>
+	<script language="javascript" src="//www.navistechnologies.info/JavascriptPhoneNumber/js.aspx?account=15278&jspass=84ajbd9wo80x2tb00sbo&dflt=8003544455"></script>
 	<script language="javascript">ProcessNavisNCKeyword();</script>
 	
 	<?php
@@ -74,7 +74,7 @@
 
 	<script type="application/ld+json">
 		{
-		"@context": "http://schema.org",
+		"@context": "//schema.org",
 		"@type": "NewsArticle",
 		"headline": "Article headline",
 		"alternativeHeadline": "The headline of the Article",
@@ -244,7 +244,7 @@
 				</div>
 
 				<div class="mobileicon">
-					<a href="tel:8003544455"><img src="http://www.southernmostbeachresort.com/wp-content/uploads/2015/10/phoneiconmobile.png" alt="phoneicon mobile"></a>
+					<a href="tel:8003544455"><img src="//www.southernmostbeachresort.com/wp-content/uploads/2015/10/phoneiconmobile.png" alt="phoneicon mobile"></a>
 				</div>
 				
 				<div class="hamburger">
@@ -252,7 +252,7 @@
 				
 				</div>
 				<div class="phone">
-					<img src="http://www.southernmostbeachresort.com/wp-content/uploads/2015/10/phoneicon.png" alt="phoneicon"><span id="ptext"><a href="tel:8003544455"><span id="NavisTFN2" style="font-family:GothamBold;">(800)354-4455 </span></a></span>
+					<img src="//www.southernmostbeachresort.com/wp-content/uploads/2015/10/phoneicon.png" alt="phoneicon"><span id="ptext"><a href="tel:8003544455"><span id="NavisTFN2" style="font-family:GothamBold;">(800)354-4455 </span></a></span>
 				</div>
 
 				<!-- NAVIS -->

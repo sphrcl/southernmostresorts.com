@@ -11,11 +11,11 @@
  *
  * @wordpress-plugin
  * Plugin Name:       Better Search Replace
- * Plugin URI:        http://expandedfronts.com/better-search-replace
+ * Plugin URI:        https://bettersearchreplace.com
  * Description:       A small plugin for running a search/replace on your WordPress database.
- * Version:           1.0.6
- * Author:            Expanded Fronts
- * Author URI:        http://expandedfronts.com
+ * Version:           1.2.10
+ * Author:            Delicious Brains
+ * Author URI:        https://bettersearchreplace.com
  * License:           GPL-3.0
  * License URI:       http://www.gnu.org/licenses/gpl-3.0.txt
  * Text Domain:       better-search-replace
@@ -52,8 +52,11 @@ if ( ! defined( 'WPINC' ) ) {
  */
 function run_better_search_replace() {
 
+	// Allows for overriding the capability required to run the plugin.
+	$cap = apply_filters( 'bsr_capability', 'install_plugins' );
+
 	// Only load for admins.
-	if ( current_user_can( 'install_plugins' ) ) {
+	if ( current_user_can( $cap ) ) {
 
 		// Defines the path to the main plugin file.
 		define( 'BSR_FILE', __FILE__ );
@@ -64,14 +67,18 @@ function run_better_search_replace() {
 		// Defines the URL to the plugin.
 		define( 'BSR_URL', plugin_dir_url( BSR_FILE ) );
 
+		// Defines the current version of the plugin.
+		define( 'BSR_VERSION', '1.2.10' );
+
 		/**
 		 * The core plugin class that is used to define internationalization,
 		 * dashboard-specific hooks, and public-facing site hooks.
 		 */
-		require BSR_PATH . 'includes/class-better-search-replace.php';
+		require BSR_PATH . 'includes/class-bsr-main.php';
 		$plugin = new Better_Search_Replace();
 		$plugin->run();
+
 	}
 
 }
-add_action( 'plugins_loaded', 'run_better_search_replace' );
+add_action( 'after_setup_theme', 'run_better_search_replace' );
