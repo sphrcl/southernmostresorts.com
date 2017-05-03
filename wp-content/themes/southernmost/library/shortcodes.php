@@ -262,10 +262,10 @@
 		$output = '</div><div class="videobox"><div class="video-container">';
 		
 		if( $youtube )
-			$output .= '<iframe width="720" height="394" src="http://www.youtube.com/embed/'. esc_attr( $youtube )  .'" allowfullscreen></iframe>';
+			$output .= '<iframe width="720" height="394" src="//www.youtube.com/embed/'. esc_attr( $youtube )  .'" allowfullscreen></iframe>';
 			
 		if($vimeo)	
-			$output .= '<iframe src="http://player.vimeo.com/video/'. esc_attr( $vimeo )  .'" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>';
+			$output .= '<iframe src="//player.vimeo.com/video/'. esc_attr( $vimeo )  .'" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>';
 		
 		if($content)
 			$output .= ''. $content  .'';

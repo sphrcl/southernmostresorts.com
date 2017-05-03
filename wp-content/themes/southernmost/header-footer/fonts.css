@@ -1,0 +1,13 @@
+@font-face {
+  font-family: 'NewsGothicMT';
+  src: url('https://www.southernmostbeachresort.com/wp-content/themes/southernmost/css/fonts/NewsGothicMT.eot?#iefix') format('embedded-opentype'),  url('https://www.southernmostbeachresort.com/wp-content/themes/southernmost/css/fonts/NewsGothicMT.woff') format('woff'), url('https://www.southernmostbeachresort.com/wp-content/themes/southernmost/css/fonts/NewsGothicMT.ttf')  format('truetype'), url('https://www.southernmostbeachresort.com/wp-content/themes/southernmost/css/fonts/NewsGothicMT.svg#NewsGothicMT') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'NewsGothicMT-Bold';
+  src: url('https://www.southernmostbeachresort.com/wp-content/themes/southernmost/css/fonts/NewsGothicMT-Bold.eot?#iefix') format('embedded-opentype'),  url('https://www.southernmostbeachresort.com/wp-content/themes/southernmost/css/fonts/NewsGothicMT-Bold.woff') format('woff'), url('https://www.southernmostbeachresort.com/wp-content/themes/southernmost/css/fonts/NewsGothicMT-Bold.ttf')  format('truetype'), url('https://www.southernmostbeachresort.com/wp-content/themes/southernmost/css/fonts/NewsGothicMT-Bold.svg#NewsGothicMT-Bold') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
