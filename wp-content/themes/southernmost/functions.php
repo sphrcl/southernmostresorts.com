@@ -174,4 +174,33 @@ class ctUp_ads extends WP_Widget {
 
 <?php
 	}
-} ?>
+}
+
+add_filter( 'amp_post_template_file', 'amp_set_custom_footer_template', 10, 2 );
+function amp_set_custom_footer_template( $file, $type ) {
+
+	if ( 'footer' === $type ) {
+
+		$file = TEMPLATEPATH . '/amp/templates/footer.php';
+
+	}
+
+	return $file;
+
+}
+
+add_filter( 'amp_post_template_file', 'amp_set_custom_style_css', 10, 2 );
+function amp_set_custom_style_css( $file, $type ) {
+
+	if ( 'style' === $type ) {
+
+		$file = TEMPLATEPATH . '/amp/templates/style.php';
+
+	}
+
+	return $file;
+
+}
+
+
+?>
