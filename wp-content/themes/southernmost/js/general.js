@@ -470,6 +470,9 @@ $(document).ready(function(){
 			
 
 		});
+
+
+
 		$( "#dater" ).datepicker({
 
 			minDate: 0,
@@ -486,7 +489,7 @@ $(document).ready(function(){
 
                 function parseDate(dateText) {
 				  var parts = dateText.split('-');
-				  return parts[2] + '/' + parts[1] + '/' + parts[0]; // Note: months are 0-based
+				  return parts[1] + '/' + parts[0] + '/' + parts[2]; // Note: months are 0-based
 				}
 
 				$('#dater').val(parseDate(dateText));
