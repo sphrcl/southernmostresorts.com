@@ -1,6 +1,9 @@
-.southernmost-header img {
-  margin: 0 auto;
-  display: block; }
+.southernmost-header {
+  text-align: right;
+  width: 900px;
+  margin: 0 auto; }
+  .southernmost-header img {
+    padding: 20px 30px; }
 
 .socialmedia {
   margin-bottom: 60px; }
