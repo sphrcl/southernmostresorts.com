@@ -87,6 +87,10 @@
 					 <div class="conde_desc"><p class="first_linec">Our Hotel has been selected to be in<br>Conde Nast Choice Award</p><p class="second_linec"><a href="//www.cntraveler.com/vote">Vote and see the full list of hotels here ></a></p></div>
 				</div>
 
+				<div class="save-the-children">
+					<a href="https://secure.savethechildren.org/site/c.8rKLIXMGIpI4E/b.6239401/k.C01C/Global_Action_Fund/apps/ka/sd/donor.asp?msource=cpkhhgaf0417&utm_source=Highgate2017&utm_medium=link&utm_campaign=highgatehotels0417" target="_blank"><img width="90px" src="<?php bloginfo('template_url'); ?>/images/stc-logo2.png"></a>
+				</div>
+
 			</div>
 
 		</div>
@@ -100,17 +104,8 @@
 		<div class="footmentions">
 			<a class="footmentions-condenast" target="_blank" href="//www.cntraveler.com/"><img src="<?php bloginfo('template_url'); ?>/images/florida-keys-finalist.png" alt="cntraveler Logo"></a>
 			<a class="footmentions-highgate" target="_blank" href="///www.highgate.com/"><img src="<?php bloginfo('template_url'); ?>/images/highgate-logo.png" alt="Highgate Logo"></a>
+			<a class="footmentions-stc" href="https://secure.savethechildren.org/site/c.8rKLIXMGIpI4E/b.6239401/k.C01C/Global_Action_Fund/apps/ka/sd/donor.asp?msource=cpkhhgaf0417&utm_source=Highgate2017&utm_medium=link&utm_campaign=highgatehotels0417" target="_blank"><img width="90px" src="<?php bloginfo('template_url'); ?>/images/stc-logo2.png"></a>
 		</div>
-
-		<!-- <div class="save-the-children">
-			
-				<a href="https://goo.gl/OJexpZ" target="_blank"><img class="left" width="270px" src="//www.southernmostbeachresort.com/wp-content/themes/southernmost/images/save-the-children-logo.png"></a>
-				
-				<p class="save">Southernmost Beach Resort Key West is a proud supporter of Save the Children, internationally recognized for giving children a healthy start, the opportunity to learn and protection from harm. To donate and make a difference in a child’s life, please click on the link below. 100% of your donation benefits Save the Children. Thank you for your support.</p>
-
-				<a class="button" target="_blank" href="https://goo.gl/OJexpZ">donate today</a>
-		</div> -->
-
 
 	</div>
 
