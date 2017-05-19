@@ -64,11 +64,6 @@ include(TEMPLATEPATH . '/library/widgets.php');
 define( 'SS_BASE_DIR', TEMPLATEPATH . '/' );
 define( 'SS_BASE_URL', get_template_directory_uri() . '/' );
 
-if (!is_admin()) add_action( 'wp_enqueue_scripts', 'enqueue_footer_scripts', 10 );
-function enqueue_footer_scripts() {
-	wp_enqueue_script('booking-ada', SS_BASE_URL . 'js/booking-ada.js', 'jquery', '', true);
-}
-
 function tt($image,$width,$height){
 	return bloginfo('template_url') . "/library/thumb.php?src=$image&w=$width&h=$height";
 }

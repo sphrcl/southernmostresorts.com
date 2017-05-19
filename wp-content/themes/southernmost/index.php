@@ -46,13 +46,18 @@
 		</div>
 
 		<div class="topbanner-overlay"></div>
-
-		<div class="topbannercontent" tabindex="0" aria-label="Press Enter to open the booking widget">
-			<div class="logo-white" tabindex="0">
-				<img src="<?php bloginfo ('template_url'); ?>/images/logo-white.png" alt="Southernmost Beach Resort Logo" aria-label="Southernmost Beach Resort Logo - Press Enter to open the booking widget"/>
+		<!-- removed
+		<div class="arrow bounce"></div>
+		-->
+		<div class="topbannercontent">
+			<div class="logo-white">
+				<img src="<?php bloginfo ('template_url'); ?>/images/logo-white.png" alt="Logo White" />
 			</div>
-			<div class="reservenow" tabindex="0">
-				<a class="button2" href="https://southernmostbeachresort.reztrip.com" role="button" aria-label="Reserve now button - Press Enter to open the booking widget">Reserve Now</a>
+			<div class="reservenow">
+				<!-- they want it to go to reztrip
+				<a class="button2" href="<?php echo get_option('misfit_booking_link'); ?>">Reserve Now</a>
+				-->
+				<a class="button2" href="https://southernmostbeachresort.reztrip.com">Reserve Now</a>
 			</div>
 		</div>
 
@@ -88,26 +93,26 @@
 
 						<input type="hidden" value="1" name="rooms">
 						
-						<span class="calsec" tabindex="0">
-							<input type="text" id="date" placeholder="ARRIVAL" class="calendarsection" tabindex="0">
+						<span class="calsec">
+							<input type="text" id="date" placeholder="ARRIVAL" class="calendarsection">
 							<input type="hidden" id="arvv" name="arrival_date">
 						</span>
 						
-						<span class="calsec" tabindex="1">
-							<input type="text" id="dater" placeholder="DEPARTURE" class="calendarsection" tabindex="0">
+						<span class="calsec">
+							<input type="text" id="dater" placeholder="DEPARTURE" class="calendarsection">
 							<input type="hidden" id="deptt" name="departure_date">
 						</span>
 						
-						<span class="dropsec" tabindex="2">
-							<select name="rooms" id="rooms" class="halfsies" tabindex="0">
+						<span class="dropsec">
+							<select name="rooms" id="rooms" class="halfsies">
 								<option value="" disabled selected>Total ROOMS</option>
 								<option value="1">1 Room</option>
 								<option value="2">2 Rooms</option>
 							</select>
 						</span>
 
-						<span class="dropsec" tabindex="3">
-							<select name="adults[]" id="guests" class="halfsies" tabindex="0">
+						<span class="dropsec">
+							<select name="adults[]" id="guests" class="halfsies">
 								<option value="" disabled selected>Total GUESTS</option>
 								<option value="1">1 Guest</option>
 								<option value="2">2 Guests</option>

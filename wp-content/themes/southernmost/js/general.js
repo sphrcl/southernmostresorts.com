@@ -470,9 +470,6 @@ $(document).ready(function(){
 			
 
 		});
-
-
-
 		$( "#dater" ).datepicker({
 
 			minDate: 0,

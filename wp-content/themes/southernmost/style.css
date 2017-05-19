@@ -1719,7 +1719,6 @@ div#footer {
 	background-position: bottom center;
 	background-repeat: no-repeat;
 	background-size: 100%;
-	padding-bottom: 40px;
 	border-top: 1px solid #f2edde;
 	padding-top: 40px;
 	clear: both;
@@ -3968,7 +3967,6 @@ body .ui-tooltip {
 	font-weight: bold;
 	color: #636363;
 	padding: 12px 10.5px;
-	border: 1px solid #fff;
 }
 .ui-state-default a,
 .ui-state-default a:link,
@@ -5122,12 +5120,10 @@ input.wpcf7-form-control.wpcf7-submit {
 /* SAVE THE CHILDREN ########################################################################################## */
 
 .save-the-children {
-	width: 90%;
-	margin: 0 auto;
+	width: 100%;
+	margin: 15px auto 0;
 	position: relative;
-	margin-top: 0px;
 	clear: both;
-	display: none;
 }
 
 p.save-the-children {
@@ -5362,11 +5358,22 @@ p.second_linec{
 
 .footmentions a {
 	display: inline-block;
+	vertical-align: middle;
+}
+
+.footmentions .footmentions-stc {
+	margin-left: 8px;
+	display: none;
 }
 
 .footmentions img {
 	display: block;
 	height: 50px;
+}
+
+.footmentions-stc img {
+	height: auto;
+	width: 65px;
 }
 
 .footmentions-condenast {
