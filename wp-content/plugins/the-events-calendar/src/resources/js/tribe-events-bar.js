@@ -116,8 +116,7 @@ var tribe_events_bar_action;
 					autoclose: true
 				};
 
-				$tribedate
-					.bootstrapDatepicker( td.datepicker_opts );
+				$tribedate.bootstrapDatepicker( td.datepicker_opts );
 			}
 		}
 
@@ -201,6 +200,9 @@ var tribe_events_bar_action;
 			}
 		} );
 
+		// Trigger Mobile Change
+		tf.maybe_default_view_change();
+
 		// change views with select (for skeleton styles)
 		$tribebar.on( 'change', '.tribe-bar-views-select', function( e ) {
 			e.preventDefault();
@@ -230,11 +232,19 @@ var tribe_events_bar_action;
 			$( 'form#tribe-bar-form input, form#tribe-bar-form select, #tribeHideRecurrence' ).each( function() {
 				var $this = $( this );
 				if ( $this.is( '#tribe-bar-date' ) ) {
-					if ( $this.val().length ) {
+					var this_val = $this.val();
+
+					if ( this_val.length ) {
 						if ( ts.view === 'month' ) {
 							ts.params[$this.attr( 'name' )] = tribeDateFormat( ts.mdate, "tribeMonthQuery" );
 							ts.url_params[$this.attr( 'name' )] = tribeDateFormat( ts.mdate, "tribeMonthQuery" );
 						}
+						// If this is not month view, but we came from there, the value of #tribe-bar-date will
+						// describe a year and a month: preserve this if so to ensure accuracy of pagination
+						else if ( this_val.match( /[0-9]{4}-[0-9]{2}/ ) ) {
+							ts.params[ $this.attr( 'name') ] = ts.url_params[ $this.attr( 'name' ) ] = this_val;
+						}
+						// In all other cases, pull the date from the datepicker
 						else {
 							ts.params[$this.attr( 'name' )] = tribeDateFormat( $this.bootstrapDatepicker( 'getDate' ), "tribeQuery" );
 							ts.url_params[$this.attr( 'name' )] = tribeDateFormat( $this.bootstrapDatepicker( 'getDate' ), "tribeQuery" );
@@ -312,22 +322,27 @@ var tribe_events_bar_action;
 			$( te ).trigger( 'tribe_ev_preCollectBarParams' );
 			$( te ).trigger( 'pre-collect-bar-params.tribe' );
 
-			$( '#tribe-bar-form input, #tribe-bar-form select' ).each( function() {
-				var $this = $( this );
-				if ( $this.val().length && !$this.hasClass( 'tribe-no-param' ) ) {
-					if ( ts.view !== 'month' && ts.datepicker_format !== '0' && $this.is( $tribedate ) ) {
+			// Select all the required fields
+			// Normal Form + Filter Bar
+			var $forms = $( document.getElementById( 'tribe-bar-form' ) ).add( document.getElementById( 'tribe_events_filters_wrapper' ) ),
+				$inputs = $forms.find( 'input, select' );
 
-						ts.url_params[$this.attr( 'name' )] = tribeDateFormat( $this.bootstrapDatepicker( 'getDate' ), 'tribeQuery' );
+			$inputs.each( function() {
+				var $this = $( this );
+				if ( $this.val() && $this.val().length && !$this.hasClass( 'tribe-no-param' ) ) {
+					if ( ts.view !== 'month' && '0' !== ts.datepicker_format && $this.is( $tribedate ) ) {
+
+						ts.url_params[ $this.attr( 'name' ) ] = tribeDateFormat( $this.bootstrapDatepicker( 'getDate' ), 'tribeQuery' );
 
 					}
 					else {
 						if ( $this.is( ':checkbox' ) ) {
 							if ( $this.is( ':checked' ) ) {
-								ts.url_params[$this.attr( 'name' )] = $this.val();
+								ts.url_params[ $this.attr( 'name' ) ] = $this.val();
 							}
 						}
 						else {
-							ts.url_params[$this.attr( 'name' )] = $this.val();
+							ts.url_params[ $this.attr( 'name' ) ] = $this.val();
 						}
 					}
 				}

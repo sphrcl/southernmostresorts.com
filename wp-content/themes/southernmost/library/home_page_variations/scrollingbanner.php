@@ -26,17 +26,28 @@
 							<div class = 'slider'>
 					                  	
 								<?php
-									              
-							    $gallery = get_post_gallery_images( $post->ID );
-							
-							
-							                        
-							    foreach( $gallery as $image ) {// Loop through each image in each gallery
-							        $image_list .= '<img src="' . str_replace('-150x150','',$image) . '" alt="' . get_the_title() . '">';
-							    }                  
-							    echo $image_list;
-							                     
-							?>	            		
+									$gallery = get_post_gallery(get_the_ID(), false);
+									$args = array( 
+										'post_type'      => 'attachment', 
+										'posts_per_page' => -1, 
+										'post_status'    => 'any', 
+										'post__in'       => explode(',', $gallery['ids']) 
+									); 
+									$attachments = get_posts($args);
+									foreach ($attachments as $attachment) {
+										$image_alt = get_post_meta($attachment->ID, '_wp_attachment_image_alt', true);
+										if (empty($image_alt)) {
+											$image_alt = $attachment->post_title;
+										}
+										if (empty($image_alt)) {
+											$image_alt = $attachment->post_excerpt;
+										}
+										$image_title = $attachment->post_title;
+										$image_url = wp_get_attachment_image_src( $attachment->ID, 'full' );
+										$image_list .= '<li><a rel="prettyPhoto[gal]" href=" ' . str_replace('-150x150','',$image_url[0]) . ' "><img src="' . str_replace('-150x150','',$image_url[0]) . '"  alt="' . $image_alt . '"/></li></a>';
+									}
+									echo $image_list;
+								?>
 				        </div>
 					
 					</div>
@@ -89,11 +100,11 @@
 						
 						<?php if(get_post_meta($post->ID, 'misfit_youtube', $single = true)) { ?>
 									
-						<iframe width="720" height="394" src="http://www.youtube.com/embed/<?php echo get_post_meta($post->ID, 'cebo_youtube', $single = true); ?>" allowfullscreen></iframe>
+						<iframe width="720" height="394" src="//www.youtube.com/embed/<?php echo get_post_meta($post->ID, 'cebo_youtube', $single = true); ?>" allowfullscreen></iframe>
 						
 						<?php } elseif(get_post_meta($post->ID, 'misfit_vimeo', $single = true)) { ?>
 
-						<iframe src="http://player.vimeo.com/video/<?php echo get_post_meta($post->ID, 'misfit_vimeo', $single = true); ?>" width="720" height="394"></iframe>
+						<iframe src="//player.vimeo.com/video/<?php echo get_post_meta($post->ID, 'misfit_vimeo', $single = true); ?>" width="720" height="394"></iframe>
 		
 						<?php } ?>
 						
@@ -148,7 +159,7 @@
 							
 							<a href="https://twitter.com/share?url=<?php the_permalink(); ?>&text=<?php the_title(); ?>&via=<?php echo get_option('misfit_twitter'); ?>" target="_blank"><i class="fa fa-twitter"></i></a>
 
-							<a href="http://www.facebook.com/sharer.php?s= 100&amp;p[title]=<?php the_title(); ?>&amp;p[url]=<?php the_permalink(); ?>&amp;p[images][0]=<?php echo $imgsrc[0]; ?>&amp;p[summary]=<?php echo excerpt(30); ?>" target="_blank"><i class="fa fa-facebook"></i></a>
+							<a href="//www.facebook.com/sharer.php?s= 100&amp;p[title]=<?php the_title(); ?>&amp;p[url]=<?php the_permalink(); ?>&amp;p[images][0]=<?php echo $imgsrc[0]; ?>&amp;p[summary]=<?php echo excerpt(30); ?>" target="_blank"><i class="fa fa-facebook"></i></a>
 								
 							<?php 
 
@@ -161,7 +172,7 @@
 
 							?>
 
-							<a class="pin" href="http://pinterest.com/pin/create/button/?url=http%3A%2F%2F<?php echo $perm; ?>&media=<?php echo $imgsrc[0]; ?>&description=<?php echo excerpt(30); ?>" target="_blank"><i class="fa fa-pinterest"></i></a>
+							<a class="pin" href="//pinterest.com/pin/create/button/?url=http%3A%2F%2F<?php echo $perm; ?>&media=<?php echo $imgsrc[0]; ?>&description=<?php echo excerpt(30); ?>" target="_blank"><i class="fa fa-pinterest"></i></a>
 
 					
 						</div>

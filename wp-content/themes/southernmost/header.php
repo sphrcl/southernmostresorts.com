@@ -1,4 +1,5 @@
 <!DOCTYPE HTML>
+<html <?php language_attributes( 'html' ); ?> >
 <head>
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
 	<title>
@@ -20,7 +21,7 @@
 		}
 	?>
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-	<link rel="profile" href="http://gmpg.org/xfn/11" />
+	<link rel="profile" href="//gmpg.org/xfn/11" />
 	
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 	<?php if (get_option('misfit_custom_favicon')) { ?>
@@ -32,8 +33,8 @@
 	<link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="<?php if ( get_option('cebo_feedburner_url') <> "" ) { echo get_option('cebo_feedburner_url'); } else { echo get_bloginfo_rss('rss2_url'); } ?>" />
 	
 	<!-- Fonts -->
-	<link href='http://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900' rel='stylesheet' type='text/css'>
-	<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+	<link href='//fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
 	<link rel="stylesheet" type="text/css" href="<?php bloginfo ('template_url'); ?>/css/font-awesome.css">
 	<link rel="stylesheet" type="text/css" href="<?php bloginfo ('template_url'); ?>/css/fonts.css">
 
@@ -52,7 +53,7 @@
 	<script id="gtsgig-boot" data-hotel-id="southernmostbeachresort" src="https://widgets.gtsgig.com/boot.js" async defer></script>
 
 	<!-- NAVIS script -->
-	<script language="javascript" src="http://www.navistechnologies.info/JavascriptPhoneNumber/js.aspx?account=15278&jspass=84ajbd9wo80x2tb00sbo&dflt=8003544455"></script>
+	<script language="javascript" src="//www.navistechnologies.info/JavascriptPhoneNumber/js.aspx?account=15278&jspass=84ajbd9wo80x2tb00sbo&dflt=8003544455"></script>
 	<script language="javascript">ProcessNavisNCKeyword();</script>
 	
 	<?php
@@ -73,7 +74,7 @@
 
 	<script type="application/ld+json">
 		{
-		"@context": "http://schema.org",
+		"@context": "//schema.org",
 		"@type": "NewsArticle",
 		"headline": "Article headline",
 		"alternativeHeadline": "The headline of the Article",
@@ -98,7 +99,7 @@
 		<div id="header">
 	
 			<div class="logo">
-				<a href="<?php bloginfo ('url'); ?>"><img src="<?php bloginfo ('template_url'); ?>/images/logo-footer.png" alt="Southernmost"></a>
+				<a href="<?php bloginfo ('url'); ?>"><img src="<?php bloginfo ('template_url'); ?>/images/logo-footer.png" alt="Southernmost Header Logo"></a>
 			</div>
 	
 			<div class="navigation">
@@ -110,7 +111,7 @@
 							<div class="slidedown-nav">
 
 								<div class="left">
-									<h3>Rooms</h3>
+									<span>Rooms</span>
 									<a href="<?php echo get_page_link(433); ?>">See All</a>									
 								</div>
 
@@ -131,7 +132,7 @@
 								    ?>
 										<div class="item">
 											<a href="<?php the_permalink(); ?>"><div class="slide-image" style="background-image: url(<?php echo tt($imgsrc[0],340,270); ?>);"></div></a>
-											<a href="<?php the_permalink(); ?>"><h3><?php the_title(); ?></h3></a>
+											<a href="<?php the_permalink(); ?>"><span><?php the_title(); ?></span></a>
 										</div>
 										
 									<?php endwhile; endif; wp_reset_query(); ?>
@@ -147,7 +148,7 @@
 							<div class="slidedown-nav">
 
 								<div class="left">
-									<h3>Gallery</h3>
+									<span>Gallery</span>
 								</div>
 
 								<a class="btn next1 right"><i class="fa fa-angle-right"></i></a>
@@ -164,7 +165,7 @@
 								    ?>
 										<div class="item">
 											<a href="<?php the_permalink(); ?>"><div class="slide-image" style="background-image: url(<?php echo tt($imgsrc[0],340,270); ?>);"></div></a>
-											<a href="<?php the_permalink(); ?>"><h3><?php the_title(); ?></h3></a>
+											<a href="<?php the_permalink(); ?>"><span><?php the_title(); ?></span></a>
 										</div>
 									<?php endwhile; endif; wp_reset_query(); ?>
 
@@ -179,7 +180,7 @@
 							<div class="slidedown-nav">
 
 								<div class="left">
-									<h3>Specials</h3>
+									<span>Specials</span>
 								</div>
 
 								<a class="btn next2 right"><i class="fa fa-angle-right"></i></a>
@@ -196,7 +197,7 @@
 								    ?>
 										<div class="item">
 											<a href="<?php the_permalink(); ?>"><div class="slide-image" style="background-image: url(<?php echo tt($imgsrc[0],340,270); ?>);"></div></a>
-											<a href="<?php the_permalink(); ?>"><h3><?php the_title(); ?></h3></a>
+											<a href="<?php the_permalink(); ?>"><span><?php the_title(); ?></span></a>
 										</div>
 									<?php endwhile; endif; wp_reset_query(); ?>
 
@@ -211,7 +212,7 @@
 							<div class="slidedown-nav">
 
 								<div class="left">
-									<h3>Restaurant & Bars</h3>
+									<span>Restaurant & Bars</span>
 								</div>
 
 								<a class="btn next3 right"><i class="fa fa-angle-right"></i></a>
@@ -228,7 +229,7 @@
 								    ?>
 										<div class="item">
 											<a href="<?php the_permalink(); ?>"><div class="slide-image" style="background-image: url(<?php echo tt($imgsrc[0],340,270); ?>);"></div></a>
-											<a href="<?php the_permalink(); ?>"><h3><?php the_title(); ?></h3></a>
+											<a href="<?php the_permalink(); ?>"><span><?php the_title(); ?></span></a>
 										</div>
 									<?php endwhile; endif; wp_reset_query(); ?>
 
@@ -243,7 +244,7 @@
 				</div>
 
 				<div class="mobileicon">
-					<a href="tel:8003544455"><img src="http://www.southernmostbeachresort.com/wp-content/uploads/2015/10/phoneiconmobile.png"></a>
+					<a href="tel:8003544455"><img src="//www.southernmostbeachresort.com/wp-content/uploads/2015/10/phoneiconmobile.png" alt="phoneicon mobile"></a>
 				</div>
 				
 				<div class="hamburger">
@@ -251,7 +252,7 @@
 				
 				</div>
 				<div class="phone">
-					<img src="http://www.southernmostbeachresort.com/wp-content/uploads/2015/10/phoneicon.png"><span id="ptext"><a href="tel:8003544455"><span id="NavisTFN2" style="font-family:GothamBold;">(800)354-4455 </span></a></span>
+					<img src="//www.southernmostbeachresort.com/wp-content/uploads/2015/10/phoneicon.png" alt="phoneicon"><span id="ptext"><a href="tel:8003544455"><span id="NavisTFN2" style="font-family:GothamBold;">(800)354-4455 </span></a></span>
 				</div>
 
 				<!-- NAVIS -->

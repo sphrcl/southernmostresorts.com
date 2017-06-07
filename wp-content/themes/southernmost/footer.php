@@ -25,7 +25,7 @@
 				<p>Sign up for Special Offers from the Hotel</p>
 
 				<div class="newsletter">
-					<form id="eclubCheck" method="post" action="http://www.data2gold.com/cc3/safeandsecure.wow?6O521I55494X2X2G6G1O0L216R693Q5H3Z5E" class="eClub" target="_blank">
+					<form id="eclubCheck" method="post" action="//www.data2gold.com/cc3/safeandsecure.wow?6O521I55494X2X2G6G1O0L216R693Q5H3Z5E" class="eClub" target="_blank">
 						<input id="firstname" type="text" size="40" name="FIRSTNAME" maxlength="40" placeholder="First Name" required="required">
 						<input id="lastname" type="text" size="40" name="LASTNAME" maxlength="40" placeholder="Last Name" required="required">
 						<input id="email" type="text" size="40" name="email" maxlength="150" placeholder="Email Address" required="required">
@@ -49,7 +49,7 @@
 			<div class="footmiddle">
 
 				<div class="footerlogo">
-					<a href="http://www.southernmostbeachresort.com"><img src="<?php bloginfo ('template_url'); ?>/images/logo-footer.png" alt="Southernmost"></a>
+					<a href="//www.southernmostbeachresort.com"><img src="<?php bloginfo ('template_url'); ?>/images/logo-footer.png" alt="Southernmost Footer Logo"></a>
 				</div>
 
 				<div class="socialmedia">
@@ -82,8 +82,12 @@
 				<!-- / NAVIS -->
 
 				<div class="conde_holder">
-					 <div class="conde_image"><p><img  style="width:100%" src="<?php bloginfo('template_url'); ?>/images/Conde-Nast-Award.png"><p></div>
-					 <div class="conde_desc"><p class="first_linec">Our Hotel has been selected to be in<br>Conde Nast Choice Award</p><p class="second_linec"><a href="http://www.cntraveler.com/vote">Vote and see the full list of hotels here ></a></p></div>
+					 <div class="conde_image"><p><img  style="width:100%" src="<?php bloginfo('template_url'); ?>/images/Conde-Nast-Award.png" alt="Conde Logo"><p></div>
+					 <div class="conde_desc"><p class="first_linec">Our Hotel has been selected to be in<br>Conde Nast Choice Award</p><p class="second_linec"><a href="//www.cntraveler.com/vote">Vote and see the full list of hotels here ></a></p></div>
+				</div>
+
+				<div class="save-the-children">
+					<a href="https://secure.savethechildren.org/site/c.8rKLIXMGIpI4E/b.6239401/k.C01C/Global_Action_Fund/apps/ka/sd/donor.asp?msource=cpkhhgaf0417&utm_source=Highgate2017&utm_medium=link&utm_campaign=highgatehotels0417" target="_blank"><img width="90px" src="<?php bloginfo('template_url'); ?>/images/stc-logo2.png"></a>
 				</div>
 
 			</div>
@@ -97,19 +101,10 @@
 		</div>
 
 		<div class="footmentions">
-			<a class="footmentions-condenast" target="_blank" href="http://www.cntraveler.com/"><img src="<?php bloginfo('template_url'); ?>/images/florida-keys-finalist.png"></a>
-			<a class="footmentions-highgate" target="_blank" href="http:///www.highgate.com/"><img src="<?php bloginfo('template_url'); ?>/images/highgate-logo.png"></a>
+			<a class="footmentions-condenast" target="_blank" href="//www.cntraveler.com/"><img src="<?php bloginfo('template_url'); ?>/images/florida-keys-finalist.png" alt="cntraveler Logo"></a>
+			<a class="footmentions-highgate" target="_blank" href="///www.highgate.com/"><img src="<?php bloginfo('template_url'); ?>/images/highgate-logo.png" alt="Highgate Logo"></a>
+			<a class="footmentions-stc" href="https://secure.savethechildren.org/site/c.8rKLIXMGIpI4E/b.6239401/k.C01C/Global_Action_Fund/apps/ka/sd/donor.asp?msource=cpkhhgaf0417&utm_source=Highgate2017&utm_medium=link&utm_campaign=highgatehotels0417" target="_blank"><img width="90px" src="<?php bloginfo('template_url'); ?>/images/stc-logo2.png"></a>
 		</div>
-
-		<!-- <div class="save-the-children">
-			
-				<a href="https://goo.gl/OJexpZ" target="_blank"><img class="left" width="270px" src="http://www.southernmostbeachresort.com/wp-content/themes/southernmost/images/save-the-children-logo.png"></a>
-				
-				<p class="save">Southernmost Beach Resort Key West is a proud supporter of Save the Children, internationally recognized for giving children a healthy start, the opportunity to learn and protection from harm. To donate and make a difference in a child’s life, please click on the link below. 100% of your donation benefits Save the Children. Thank you for your support.</p>
-
-				<a class="button" target="_blank" href="https://goo.gl/OJexpZ">donate today</a>
-		</div> -->
-
 
 	</div>
 
@@ -120,7 +115,7 @@
 			<a class="royale" href="#">Close Menu</a>
 		</div>
 
-		<div class="spacer"><img src="<?php bloginfo ('template_url'); ?>/images/logo-white.png" /></div>
+		<div class="spacer"><img src="<?php bloginfo ('template_url'); ?>/images/logo-white.png" alt="Spacer"/></div>
 
 		<div id="navmenumob">
 			<div class="slidedown-navmob">
@@ -171,7 +166,7 @@
 					<li>
 						<a href="<?php echo get_the_permalink($content3->ID); ?>">
 							<div style="background-image: url(<?php echo tt($imgsrc3[0],320,240); ?>);"></div>
-							<h3><?php echo get_post_meta($content3->ID,'misfit_banner_title',true); ?> </h3>
+							<span><?php echo get_post_meta($content3->ID,'misfit_banner_title',true); ?> </span>
 						</a>
 					</li>
 
@@ -183,7 +178,7 @@
 					<li>
 						<a href="<?php echo get_the_permalink($content1->ID); ?>">
 							<div style="background-image: url(<?php echo tt($imgsrc[0],320,240); ?>);"></div>
-							<h3><?php echo get_post_meta($content1->ID,'misfit_venuename',true); ?></h3>
+							<span><?php echo get_post_meta($content1->ID,'misfit_venuename',true); ?></span>
 						</a>
 					</li>
 
@@ -195,7 +190,7 @@
 					<li>
 						<a href="<?php echo get_the_permalink($content2->ID); ?>">
 							<div style="background-image: url(<?php echo tt($imgsrc2[0],320,240); ?>);"></div>
-							<h3><?php echo get_post_meta($content2->ID,'misfit_venuename',true); ?></h3>
+							<span><?php echo get_post_meta($content2->ID,'misfit_venuename',true); ?></span>
 						</a>
 					</li>
 
@@ -207,7 +202,7 @@
 					<li>
 						<a href="<?php echo get_the_permalink($content4->ID); ?>">
 							<div style="background-image: url(<?php echo tt($imgsrc4[0],320,240); ?>);"></div>
-							<h3><?php echo get_post_meta($content4->ID,'misfit_venuename',true); ?></h3>
+							<span><?php echo get_post_meta($content4->ID,'misfit_venuename',true); ?></span>
 						</a>
 					</li>
 
@@ -230,7 +225,7 @@
 					<li>
 						<a href="<?php the_permalink(); ?>">
 							<div style="background-image: url(<?php echo tt($imgsrc[0],320,240); ?>);"></div>
-							<h3><?php the_title(); ?></h3>
+							<span><?php the_title(); ?></span>
 						</a>
 					</li>
 
@@ -255,7 +250,7 @@
 					<li>
 						<a href="<?php the_permalink(); ?>">
 							<div style="background-image: url(<?php echo tt($imgsrc[0],320,240); ?>);"></div>
-							<h3><?php the_title(); ?></h3>
+							<span><?php the_title(); ?></span>
 						</a>
 					</li>
 
@@ -280,7 +275,7 @@
 					<li>
 						<a href="<?php the_permalink(); ?>">
 							<div style="background-image: url(<?php echo tt($imgsrc[0],320,240); ?>);"></div>
-							<h3><?php the_title(); ?></h3>
+							<span><?php the_title(); ?></span>
 						</a>
 					</li>
 
@@ -305,7 +300,7 @@
 					<li>
 						<a href="<?php the_permalink(); ?>">
 							<div style="background-image: url(<?php echo tt($imgsrc[0],320,240); ?>);"></div>
-							<h3><?php the_title(); ?></h3>
+							<span><?php the_title(); ?></span>
 						</a>
 					</li>
 
@@ -388,14 +383,14 @@
 
 
 
-	<script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jqueryui/1.11.1/jquery-ui.min.js'></script>
+	<script type='text/javascript' src='//ajax.googleapis.com/ajax/libs/jqueryui/1.11.1/jquery-ui.min.js'></script>
 
 	<!-- JavaScripts -->
 	<script type="text/javascript" src="<?php bloginfo ('template_url'); ?>/js/instafeed.min.js"></script>
 	<script type="text/javascript">
 	var userFeed = new Instafeed({
 		get: 'user',
-		template: '<div class="instabox"><a href="{{link}}" target="_blank"><img src="{{image}}" /><div class="instaimg" style="background-image:url({{image}});"></div></a></div>',
+		template: '<div class="instabox"><a href="{{link}}" target="_blank"><img src="{{image}}" alt="{{caption}}" /><div class="instaimg" style="background-image:url({{image}});"></div></a></div>',
 		resolution: 'low_resolution',
 		userId: 421860270,
 		limit: 5,

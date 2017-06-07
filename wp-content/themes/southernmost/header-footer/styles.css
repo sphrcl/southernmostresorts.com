@@ -1,0 +1,383 @@
+.southernmost-header {
+  text-align: left;
+  width: 900px;
+  margin: 0 auto; }
+  .southernmost-header img {
+    padding: 20px 30px; }
+
+ul.topnavigation {
+  padding: 0;
+  float: right;
+  position: relative;
+  top: 68px; }
+  ul.topnavigation li {
+    display: inline-block;
+    margin: 0;
+    position: relative; }
+  ul.topnavigation ul {
+    position: relative;
+    position: absolute;
+    margin: 0;
+    left: 0%;
+    top: 0px;
+    width: 300px;
+    background: #fff;
+    opacity: 0;
+    visibility: hidden;
+    padding: 0;
+    margin-left: -68px;
+    -webkit-transition: all .5s ease;
+    -moz-transition: all .5s ease;
+    -o-transition: all .5s ease;
+    transition: all .5s ease; }
+    ul.topnavigation ul:before {
+      width: 0;
+      height: 0;
+      border-left: 5px solid transparent;
+      border-right: 5px solid transparent;
+      top: -5px;
+      position: absolute;
+      left: 50%;
+      margin-left: -2px;
+      content: '';
+      border-bottom: 5px solid #ddd; }
+    ul.topnavigation ul li a {
+      font-size: 12px; }
+  ul.topnavigation li:hover > a {
+    background-color: rgba(255, 255, 255, 0.75); }
+  ul.topnavigation li:hover ul {
+    visibility: visible;
+    opacity: 1;
+    top: 25px; }
+  ul.topnavigation li > a {
+    -webkit-transition: color .5s ease;
+    -moz-transition: color .5s ease;
+    -o-transition: color .5s ease;
+    transition: color .5s ease;
+    text-decoration: none;
+    color: #000;
+    font-family: NewsGothicMT-Bold;
+    font-size: 13px;
+    letter-spacing: 0.08em;
+    line-height: 22px;
+    padding: 5px 12px;
+    text-transform: uppercase; }
+  ul.topnavigation li.ahoy > a,
+  ul.topnavigation li a:hover {
+    color: #179dab; }
+  ul.topnavigation ul li {
+    margin: 0;
+    display: block;
+    text-align: center;
+    padding: 15px;
+    border-top: 1px solid #ddd; }
+    ul.topnavigation ul li:hover {
+      background: #ff9968; }
+
+.socialmedia {
+  margin-bottom: 60px; }
+
+.socialmedia ul {
+  text-align: center;
+  padding: 0; }
+
+.socialmedia ul li {
+  display: inline-block; }
+
+.socialmedia ul li:last-child {
+  top: 12px;
+  position: relative; }
+
+.socialmedia ul li a {
+  color: #5e5e5e;
+  font-size: 24px;
+  display: block;
+  width: 43px;
+  height: 43px;
+  line-height: 43px;
+  border: 2px solid #5e5e5e;
+  -moz-border-radius: 100%;
+  -webkit-border-radius: 100%;
+  border-radius: 100%;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  box-sizing: border-box; }
+
+.socialmedia .fa {
+  line-height: 1.7; }
+
+.socialmedia ul li a .fa.fa-tripadvisor::after, .socialmedia ul li a .fa.fa-tripadvisor::before {
+  background-position: 0 0;
+  background-repeat: no-repeat;
+  background-size: contain;
+  content: "";
+  height: 27px;
+  position: absolute;
+  width: 27px;
+  z-index: 1; }
+
+.socialmedia ul li a .fa.fa-tripadvisor {
+  display: block;
+  top: 6px;
+  position: relative;
+  left: -50%;
+  margin-left: 12px; }
+
+.socialmedia ul li a .fa.fa-tripadvisor:before {
+  background-image: url("https://www.southernmostbeachresort.com/wp-content/themes/southernmost/images/tripadvisor.png"); }
+
+.socialmedia ul li a .fa.fa-tripadvisor:after {
+  background-image: url("https://www.southernmostbeachresort.com/wp-content/themes/southernmost/images/tripadvisor-white.png");
+  opacity: 0; }
+
+.socialmedia ul li:hover a .fa.fa-tripadvisor:after {
+  opacity: 1; }
+
+.socialmedia ul li a:hover {
+  background: #ff9966;
+  color: #fff; }
+
+.formfields {
+  text-align: center; }
+
+.dropsec select {
+  -webkit-appearance: none;
+  appearance: none;
+  border: none; }
+
+.calsec input, .dropsec select {
+  width: 18%;
+  border: 3px solid rgba(76, 76, 76, 0.2);
+  padding: 15px 10px;
+  font-family: NewsGothicMT-Bold;
+  font-size: 15px;
+  line-height: 22px;
+  letter-spacing: 0.04em;
+  color: rgba(76, 76, 76, 0.5);
+  text-transform: uppercase;
+  cursor: pointer;
+  border-radius: 0; }
+
+div#footer {
+  background-image: url(https://www.southernmostbeachresort.com/wp-content/themes/southernmost/images/footer-bg.jpg);
+  background-position: bottom center;
+  background-repeat: no-repeat;
+  background-size: 100%;
+  padding-bottom: 40px;
+  padding-top: 40px;
+  clear: both;
+  position: relative; }
+
+.footaddress {
+  color: #99cc99;
+  font-size: 14px;
+  font-family: NewsGothicMT-Bold;
+  text-align: center;
+  text-transform: uppercase;
+  margin-bottom: 50px; }
+  .footaddress a {
+    color: #99cc99; }
+
+.footcolumn {
+  max-width: 1000px;
+  width: 94%;
+  margin: 0 auto 40px;
+  overflow: hidden; }
+
+.footcolumn p {
+  font-size: 13px;
+  line-height: 20px; }
+
+.footleft, .footmiddle, .footright {
+  float: left;
+  width: 33%; }
+
+.footleft input[type="text"] {
+  width: 90%;
+  border: 2px solid #99cc99;
+  padding: 15px 10px;
+  font-family: NewsGothicMT;
+  font-size: 13px;
+  line-height: 21px;
+  color: #5e5e5e;
+  margin-bottom: 10px; }
+
+.footleft input[type="text"]:focus, .footleft input[type="text"]:hover {
+  border-color: #ff9968; }
+
+.footleft input[type="text"] {
+  width: 90%;
+  border: 2px solid #99cc99;
+  padding: 15px 10px;
+  font-family: NewsGothicMT;
+  font-size: 13px;
+  line-height: 21px;
+  color: #5e5e5e;
+  margin-bottom: 10px; }
+
+.footleft input[type="text"]:focus,
+.footleft input[type="text"]:hover {
+  border-color: #ff9968; }
+
+.footleft input[type="text"] {
+  width: 90%;
+  border: 2px solid #99cc99;
+  padding: 15px 10px;
+  font-family: NewsGothicMT;
+  font-size: 13px;
+  line-height: 21px;
+  color: #5e5e5e;
+  margin-bottom: 10px; }
+
+.footleft input[type="text"]:focus,
+.footleft input[type="text"]:hover {
+  border-color: #ff9968; }
+
+.footleft input[type="text"] {
+  width: 97%;
+  border: 2px solid #99cc99;
+  padding: 15px 10px;
+  font-family: NewsGothicMT;
+  font-size: 13px;
+  line-height: 21px;
+  color: #5e5e5e;
+  margin-bottom: 10px; }
+
+.footleft input[type="text"]:focus, .footleft input[type="text"]:hover {
+  border-color: #ff9968; }
+
+.footleft input[type="text"]::-webkit-input-placeholder {
+  color: #8e9197; }
+
+.footleft input[type="text"]:-moz-placeholder {
+  /* Firefox 18- */
+  color: #8e9197; }
+
+.footleft input[type="text"]::-moz-placeholder {
+  /* Firefox 19+ */
+  color: #8e9197; }
+
+.footleft input[type="text"]:-ms-input-placeholder {
+  color: #8e9197; }
+
+.footleft input[type="submit"] {
+  -webkit-appearance: none;
+  appearance: none;
+  border: none;
+  float: right;
+  background: none;
+  padding: 0 10px;
+  color: #99cc99;
+  font-size: 14px;
+  font-family: NewsGothicMT-Bold;
+  text-transform: uppercase;
+  cursor: pointer; }
+
+.footleft input[type="submit"]:hover {
+  color: #ff9968; }
+
+.footleft input[type="submit"]:hover {
+  color: #ff9968; }
+
+.footleft input[type="submit"]:hover {
+  color: #ff9968; }
+
+.footmiddle {
+  text-align: center; }
+
+.footerlogo {
+  margin-bottom: 20px; }
+
+.footmiddle .socialmedia {
+  margin-bottom: 0; }
+
+.footright {
+  text-align: right; }
+
+ul.footernavigation {
+  text-align: center;
+  padding: 0; }
+
+ul.footernavigation li {
+  display: inline-block;
+  margin: 10px; }
+
+ul.footernavigation li a {
+  color: #99cc99;
+  font-size: 14px;
+  font-family: NewsGothicMT-Bold;
+  text-transform: uppercase; }
+
+ul.footernavigation li a:hover {
+  color: #ff9968; }
+
+.fl {
+  float: left; }
+
+.fr {
+  float: right; }
+
+.contact-info {
+  width: 60%; }
+
+.conde_holder {
+  display: none; }
+
+.conde_image {
+  float: left;
+  width: 25%; }
+
+.conde_desc {
+  float: right;
+  width: 75%; }
+
+p.first_linec {
+  font-size: 13px;
+  line-height: 20px;
+  text-align: left;
+  padding-top: 15px;
+  margin-bottom: 0px;
+  padding-bottom: 0px;
+  padding-left: 5px; }
+
+p.second_linec a {
+  font-size: 12px;
+  line-height: 20px;
+  font-weight: bold;
+  text-align: left;
+  color: #000;
+  padding-left: 5px; }
+
+p.second_linec {
+  text-align: left; }
+
+/* FOOTER MENTIONS LOGO */
+.footmentions {
+  position: absolute;
+  display: inline-block;
+  bottom: 40px;
+  left: 0; }
+
+.footmentions a {
+  display: inline-block; }
+
+.footmentions img {
+  display: block;
+  height: 50px; }
+
+.footmentions-condenast {
+  margin-right: 10px; }
+
+/* ============================================================  1279 - 0000  ============================================================ */
+@media only screen and (max-width: 1279px) {
+  .footmentions {
+    text-align: center;
+    padding-top: 20px;
+    position: relative;
+    left: auto;
+    bottom: auto;
+    margin-bottom: 30px;
+    width: 100%; } }
+
+/*# sourceMappingURL=styles.css.map */

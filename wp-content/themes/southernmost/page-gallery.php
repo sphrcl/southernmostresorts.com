@@ -48,7 +48,9 @@
 
 	?>
 
-		<li <?php if( $count == 1 ) { echo ' class="current"'; } ?>><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></li>
+		<li <?php if( $count == 1 ) { echo ' class="current"'; } ?>>
+			<a href="<?php the_permalink(); ?>"><?php if( $count == 1 ) echo '<h1>' ?><?php the_title(); ?><?php if( $count == 1 ) echo '</h1>' ?></a>
+		</li>
 	
 	
 	<?php $count++; endwhile; endif; wp_reset_query(); ?>	
@@ -82,7 +84,7 @@
 	              	<?php for ($i = 0; $i < $imagesCount; $i++): ?>
 	                <?php if (!empty($galleryImages[$i])) :?>
 					                  		
-						<a class="lightbox" href="<?php echo $galleryImages[$i]['full'][0]; ?>" data-lightbox-gallery="<?php echo $post->post_name; ?>"><img src="<?php echo tt($galleryImages[$i]['full'][0],240,220); ?>" alt="Southernmost Gallery Image"></a>
+						<a class="lightbox" href="<?php echo $galleryImages[$i]['full'][0]; ?>" data-lightbox-gallery="<?php echo $post->post_name; ?>"><img src="<?php echo tt($galleryImages[$i]['full'][0],240,220); ?>" alt="<?php echo $galleryImages[$i]['alt']; ?>"></a>
 					
 					<?php endif; endfor; endif; ?>
 					

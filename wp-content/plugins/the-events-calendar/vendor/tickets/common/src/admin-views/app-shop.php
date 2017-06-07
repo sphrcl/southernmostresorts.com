@@ -1,68 +1,97 @@
 <div id="tribe-app-shop" class="wrap">
 
 	<div class="header">
-		<h1><?php esc_html_e( 'Tribe Event Add-Ons', 'tribe-common' ); ?></h1>
+		<h1><?php esc_html_e( 'Events Add-Ons', 'tribe-common' ); ?></h1>
+		<a class="button" href="https://theeventscalendar.com/?utm_campaign=in-app&utm_source=addonspage&utm_medium=top-banner" target="_blank"><?php esc_html_e( 'Browse All Add-Ons', 'tribe-common' ); ?></a>
 	</div>
+	<?php
+	$all_products = array(
+		'for-sale' => array(),
+		'installed' => array(),
+	);
+	foreach ( $products as $product ) {
+		if ( $product->is_installed ) {
+			$all_products['installed'][] = $product;
+		} else {
+			$all_products['for-sale'][] = $product;
+		}
+	}
 
-
-	<div class="content-wrapper">
-		<?php
-
-		if ( ! empty( $banner ) ) {
-			$banner_markup = '';
-			if ( property_exists( $banner, 'top_banner_url' ) && ! empty( $banner->top_banner_url ) ) {
-				$banner_markup = sprintf( "<img src='%s'/>", esc_url( $banner->top_banner_url ) );
-			}
-			if ( property_exists( $banner, 'top_banner_link' ) && ! empty( $banner->top_banner_link ) ) {
-				$banner_markup = sprintf( "<a href='%s' target='_blank'>%s</a>", esc_url( $banner->top_banner_link ), $banner_markup );
-			}
-			echo $banner_markup;
+	$products = array();
+	foreach ( $all_products as $type => $products ) {
+		if ( empty( $products ) ) {
+			continue;
 		}
 
-		$category = null;
-		$i = 1;
-		foreach ( (array) $products as $product ) {
+		$button_label = esc_html__( 'Buy This Add-On', 'tribe-common' );
+		$button_class = 'button-primary';
+		if ( 'installed' == $type ) {
+			?><h1><?php esc_html_e( 'Installed Add-Ons', 'tribe-common' ); ?></h1><?php
+			$button_class = 'button-disabled';
+			$button_label = '<span class="dashicons dashicons-yes"></span>' . esc_html__( 'Installed', 'tribe-common' );
+		}
 
 		?>
+		<div class="content-wrapper">
+			<div class="addon-grid">
+				<?php
 
-		<?php if ( $product->category != $category ) { ?>
+				$count = count( $products );
 
-			<?php if ( $category !== null ) : ?>
-				</div>
-			<?php endif; ?>
+				switch ( $count ) {
+					case 0:
+					case 3:
+					case 6:
+						$wide_indexes = array();
+						break;
 
-	<div class="addon-grid">
+					case 2:
+						$wide_indexes = array( 0, 1 );
+						break;
 
-		<?php
-		$category = $product->category;
-		} ?>
-		<div class="tribe-addon<?php if ( $i == 1 ) {
-			echo ' first tribe-clearfix';
-		} ?>">
-			<div class="thumb">
-				<a href="<?php echo esc_url( $product->permalink ); ?>"><img src="<?php echo esc_attr( $product->featured_image_url ); ?>" /></a>
-			</div>
-			<div class="caption">
-				<h4><a href="<?php echo esc_url( $product->permalink ); ?>"><?php echo $product->title; ?></a></h4>
+					case 5:
+						$wide_indexes = array( 0, 4 );
+						break;
 
-				<div class="description">
-					<p><?php echo $product->description; ?></p>
-				</div>
-				<div class="meta">
-					<?php
-					if ( $product->version ) {
-						echo sprintf( '<strong>%s</strong>: %s<br/>', esc_html__( 'Version', 'tribe-common' ), esc_html( $product->version ) );
-					}
-					if ( $product->last_update ) {
-						echo sprintf( '<strong>%s</strong>: %s<br/>', esc_html__( 'Last Update', 'tribe-common' ), esc_html( $product->last_update ) );
-					}
+					case 1:
+					case 4:
+					case 7:
+					default:
+						$wide_indexes = array( 0 );
+				}
+
+				$i = 0;
+				foreach ( $products as $product ) {
 					?>
-				</div>
-				<a class="button button-primary" href="<?php echo esc_url( $product->permalink ); ?>">Get This Add-on</a>
+					<div class="tribe-addon<?php echo in_array( $i, $wide_indexes ) ? ' first' : ''; ?>">
+						<div class="thumb">
+							<a href="<?php echo esc_url( $product->link ); ?>"><img src="<?php echo esc_url( tribe_resource_url( $product->image, false, null, $main ) ); ?>" /></a>
+						</div>
+						<div class="caption">
+							<h4><a href="<?php echo esc_url( $product->link ); ?>"><?php echo esc_html( $product->title ); ?></a></h4>
+
+							<div class="description">
+								<p><?php echo $product->description; ?></p>
+								<?php
+								if ( isset( $product->requires ) ) {
+									?>
+									<p><strong><?php esc_html_e( 'Requires:', 'tribe-common' );?></strong> <?php echo esc_html( $product->requires ); ?></p>
+									<?php
+								}
+								?>
+							</div>
+
+							<a class="button <?php esc_attr_e( $button_class ); ?>" href="<?php echo esc_url( $product->link ); ?>"><?php echo $button_label; // escaped above ?></a>
+						</div>
+					</div>
+
+					<?php
+					$i++;
+				}
+				?>
 			</div>
 		</div>
-
-		<?php $i ++;
-		} ?>
-	</div>
+		<?php
+	}
+	?>
 </div>

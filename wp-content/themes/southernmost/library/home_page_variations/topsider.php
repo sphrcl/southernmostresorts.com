@@ -71,7 +71,7 @@
               		<?php for ($i = 0; $i < 1; $i++): ?>
                   	<?php if (!empty($galleryImages[$i])) :?>
 	
-	       			<img<?php if(get_post_meta($post->ID, 'misfit_imagecredit', $single = true)) { ?> style="margin-bottom: 55px;" <?php } ?> class="mobileheader mobileadd" src="<?php echo $galleryImages[$i]['full'][0];?>" alt="<?php the_title(); ?>" />  
+	       			<img<?php if(get_post_meta($post->ID, 'misfit_imagecredit', $single = true)) { ?> style="margin-bottom: 55px;" <?php } ?> class="mobileheader mobileadd" src="<?php echo $galleryImages[$i]['full'][0];?>" alt="<?php echo $galleryImages[$i]['alt']; ?>" />  
 	       			  		
 		       		<?php endif; ?>
   					<?php endfor; ?>
@@ -129,7 +129,7 @@
 										
 									<a href="https://twitter.com/share?url=<?php the_permalink(); ?>&text=<?php the_title(); ?>&via=<?php echo get_option('misfit_twitter'); ?>" target="_blank"><i class="fa fa-twitter"></i></a>
 
-									<a href="http://www.facebook.com/sharer.php?s= 100&amp;p[title]=<?php the_title(); ?>&amp;p[url]=<?php the_permalink(); ?>&amp;p[images][0]=<?php echo $imgsrc[0]; ?>&amp;p[summary]=<?php echo excerpt(30); ?>" target="_blank"><i class="fa fa-facebook"></i></a>
+									<a href="//www.facebook.com/sharer.php?s= 100&amp;p[title]=<?php the_title(); ?>&amp;p[url]=<?php the_permalink(); ?>&amp;p[images][0]=<?php echo $imgsrc[0]; ?>&amp;p[summary]=<?php echo excerpt(30); ?>" target="_blank"><i class="fa fa-facebook"></i></a>
 										
 									<?php 
 
@@ -142,7 +142,7 @@
 
 									?>
 
-									<a class="pin" href="http://pinterest.com/pin/create/button/?url=http%3A%2F%2F<?php echo $perm; ?>&media=<?php echo $imgsrc[0]; ?>&description=<?php echo excerpt(30); ?>" target="_blank"><i class="fa fa-pinterest"></i></a>
+									<a class="pin" href="//pinterest.com/pin/create/button/?url=http%3A%2F%2F<?php echo $perm; ?>&media=<?php echo $imgsrc[0]; ?>&description=<?php echo excerpt(30); ?>" target="_blank"><i class="fa fa-pinterest"></i></a>
 
 					
 								</div>
@@ -265,9 +265,9 @@
 								<div class="socialbox" style="padding-top: 20px;">
 							
 						<a href="https://twitter.com/share?url=<?php the_permalink(); ?>&text=<?php the_title(); ?>&via=<?php get_option('misfit_twitter'); ?>" target="_blank"><i class="fa fa-twitter"></i></a>
-						<a href="http://www.facebook.com/sharer.php?s= 100&amp;p[title]=<?php the_title(); ?>&amp;p[url]=<?php the_permalink(); ?>&amp;p[images][0]=<?php echo $imgsrc[0]; ?>&amp;p[summary]=<?php echo excerpt(30); ?>" target="_blank"><i class="fa fa-facebook"></i></a>
+						<a href="//www.facebook.com/sharer.php?s= 100&amp;p[title]=<?php the_title(); ?>&amp;p[url]=<?php the_permalink(); ?>&amp;p[images][0]=<?php echo $imgsrc[0]; ?>&amp;p[summary]=<?php echo excerpt(30); ?>" target="_blank"><i class="fa fa-facebook"></i></a>
 							
-						<?php $perm = get_permalink(); $img = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "Full"); $regex = '/(?<!href=["\'])http:\/\//'; $regio = '/(?<!href=["\'])http:\/\//'; $perm = preg_replace($regio, '', $perm); $img = preg_replace($regex, '', $img); ?><a class="pin" href="http://pinterest.com/pin/create/button/?url=http%3A%2F%2F<?php echo $perm; ?>&media=http%3A%2F%2F<?php echo $img; ?>&description=<?php echo excerpt(30); ?>" target="_blank"><i class="fa fa-pinterest"></i></a>
+						<?php $perm = get_permalink(); $img = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "Full"); $regex = '/(?<!href=["\'])http:\/\//'; $regio = '/(?<!href=["\'])http:\/\//'; $perm = preg_replace($regio, '', $perm); $img = preg_replace($regex, '', $img); ?><a class="pin" href="//pinterest.com/pin/create/button/?url=http%3A%2F%2F<?php echo $perm; ?>&media=http%3A%2F%2F<?php echo $img; ?>&description=<?php echo excerpt(30); ?>" target="_blank"><i class="fa fa-pinterest"></i></a>
 
 					
 						</div>

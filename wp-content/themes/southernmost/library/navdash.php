@@ -17,7 +17,7 @@
 				
 					<div class="hi">
 					<a href="<?php bloginfo('url'); ?>">
-					<img src="<?php if(get_option('misfit_logo')) { echo get_option('misfit_logo'); } else { ?><?php bloginfo ('template_url'); ?>/images/logo.png<?php } ?>" alt="<?php bloginfo('description'); ?>">
+					<img src="<?php if(get_option('misfit_logo')) { echo get_option('misfit_logo'); } else { ?><?php bloginfo ('template_url'); ?>/images/logo.png<?php } ?>" alt="navdash logo">
 					</a>
 					</div>
 				
@@ -66,13 +66,13 @@
 						<?php } ?>
 						
 						<?php if(get_option('misfit_facebook')) { ?>
-						<a href="http://facebook.com/<?php echo get_option('misfit_facebook'); ?>" target="_blank"><i class="fa fa-facebook"></i></a>
+						<a href="//facebook.com/<?php echo get_option('misfit_facebook'); ?>" target="_blank"><i class="fa fa-facebook"></i></a>
 						<?php } ?>
 						<?php if(get_option('misfit_twitter')) { ?>
-						<a href="http://twitter.com/<?php echo get_option('misfit_twitter'); ?>" target="_blank"><i class="fa fa-twitter"></i></a>
+						<a href="//twitter.com/<?php echo get_option('misfit_twitter'); ?>" target="_blank"><i class="fa fa-twitter"></i></a>
 						<?php } ?>
 						<?php if(get_option('misfit_pinterest')) { ?>
-						<a href="http://www.pinterest.com/<?php echo get_option('misfit_pinterest'); ?>" target="_blank"><i class="fa fa-pinterest"></i></a>
+						<a href="//www.pinterest.com/<?php echo get_option('misfit_pinterest'); ?>" target="_blank"><i class="fa fa-pinterest"></i></a>
 						<?php } ?>
 						<?php if(get_option('misfit_dribbble')) { ?>
 						<a href="https://dribbble.com/<?php echo get_option('misfit_dribbble'); ?>" target="_blank"><i class="fa fa-dribbble"></i></a>
@@ -294,7 +294,7 @@
 						
 							<div class="rightcolumnone twittable">
 							
-								<a class="twithello" href="http://twitter.com/<?php echo get_option('misfit_twitter'); ?>">@<?php echo get_option('misfit_twitter'); ?></a>
+								<a class="twithello" href="//twitter.com/<?php echo get_option('misfit_twitter'); ?>">@<?php echo get_option('misfit_twitter'); ?></a>
 						
 						<div class="twittling">
 						
@@ -316,13 +316,13 @@
 			
 						</div>	
 						
-						<a class="twitgoodbye" href="http://twitter.com/<?php echo get_option('misfit_twitter'); ?>"><i class="fa fa-twitter"></i></a>	
+						<a class="twitgoodbye" href="//twitter.com/<?php echo get_option('misfit_twitter'); ?>"><i class="fa fa-twitter"></i></a>	
 						
 						
 					        </div>
 							<div class="rightcolumntwo">
 							
-								<div class="instalink"><a href="http://instagram.com/<?php echo get_option('misfit_instagram'); ?>"><i class="fa fa-instagram"></i></a></div>
+								<div class="instalink"><a href="//instagram.com/<?php echo get_option('misfit_instagram'); ?>"><i class="fa fa-instagram"></i></a></div>
 						
 									<div id="instafeed"></div>
 						

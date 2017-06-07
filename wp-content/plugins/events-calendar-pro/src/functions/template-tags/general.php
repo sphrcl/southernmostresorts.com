@@ -91,7 +91,7 @@ if ( class_exists( 'Tribe__Events__Pro__Main' ) ) {
 	function tribe_get_recurrence_start_dates( $post_id = null ) {
 		$post_id = Tribe__Events__Main::postIdHelper( $post_id );
 
-		return Tribe__Events__Pro__Recurrence_Meta::get_start_dates( $post_id );
+		return Tribe__Events__Pro__Recurrence__Meta::get_start_dates( $post_id );
 	}
 
 	/**
@@ -108,7 +108,7 @@ if ( class_exists( 'Tribe__Events__Pro__Main' ) ) {
 		function tribe_get_recurrence_text( $postId = null ) {
 			$postId = Tribe__Events__Main::postIdHelper( $postId );
 
-			return apply_filters( 'tribe_get_recurrence_text', Tribe__Events__Pro__Recurrence_Meta::recurrenceToTextByPost( $postId ) );
+			return apply_filters( 'tribe_get_recurrence_text', Tribe__Events__Pro__Recurrence__Meta::recurrenceToTextByPost( $postId ) );
 		}
 	}
 
@@ -138,7 +138,7 @@ if ( class_exists( 'Tribe__Events__Pro__Main' ) ) {
 		if ( ! tribe_is_week() && ! tribe_is_month() ) {
 			echo '<span class="tribe-events-user-recurrence-toggle">';
 				echo '<label for="tribeHideRecurrence">';
-					echo '<input type="checkbox" name="tribeHideRecurrence" value="1" id="tribeHideRecurrence" ' . checked( $hide_recurrence, 1, false ) . '>' . sprintf( __( 'Show only the first upcoming instance of recurring %s', 'tribe-events-calendar-pro' ), strtolower( tribe_get_event_label_plural() ) );
+					echo '<input type="checkbox" name="tribeHideRecurrence" value="1" id="tribeHideRecurrence" ' . checked( $hide_recurrence, 1, false ) . '>' . sprintf( __( 'Show only the first upcoming instance of recurring %s', 'tribe-events-calendar-pro' ), tribe_get_event_label_plural_lowercase() );
 				echo '</label>';
 			echo '</span>';
 		}
@@ -169,11 +169,14 @@ if ( class_exists( 'Tribe__Events__Pro__Main' ) ) {
 					}
 					$meta = sprintf( '<a href="%s" target="%s">%s</a>',
 						esc_url( $meta ),
-						apply_filters( 'tribe_get_event_website_link_target', 'self' ),
+						apply_filters( 'tribe_get_event_website_link_target', '_self' ),
 						apply_filters( 'tribe_get_event_website_link_label', $url_label )
 						);
 				}
-				if ( $meta ) {
+
+				// Display $meta if not empty - making a special exception for (string) '0'
+				// which in this context should be considered a valid, non-empty value
+				if ( $meta || '0' === $meta ) {
 					$data[ esc_html( $field['label'] ) ] = $meta; // $meta has been through wp_kses - links are allowed
 				}
 			}
@@ -522,10 +525,13 @@ if ( class_exists( 'Tribe__Events__Pro__Main' ) ) {
 			$date = is_null( $date ) ? $wp_query->get( 'start_date' ) : $date;
 		}
 
+		$timezone = Tribe__Timezones::wp_timezone_string();
+		$timezone = Tribe__Timezones::generate_timezone_string_from_utc_offset( $timezone );
+
 		try {
-			$date = new DateTime( $date );
+			$date = new DateTime( $date, new DateTimeZone( $timezone ) );
 		} catch ( exception $e ) {
-			$date = new DateTime();
+			$date = new DateTime( current_time( 'Y-m-d' ), new DateTimeZone( $timezone ) );
 		}
 
 		// Clone to avoid altering the original date
@@ -821,4 +827,98 @@ if ( class_exists( 'Tribe__Events__Pro__Main' ) ) {
 		}
 	}
 
+	/**
+	 * Returns the next upcoming event in a recurring series from the /all/ URL
+	 * if one can be found, else returns null.
+	 *
+	 * @since 4.2
+	 *
+	 * @param string $url URL of the recurring series
+	 *
+	 * @return int|null
+	 */
+	function tribe_get_upcoming_recurring_event_id_from_url( $url ) {
+		$path = @parse_url( $url );
+
+		// Ensure we were able to parse the URL and have an actual path to look at (could be just a scheme, host and query etc)
+		if ( empty( $path ) || ! isset( $path[ 'path' ] ) ) {
+			return null;
+		}
+
+		$path = trim( $path['path'], '/' );
+		$path = explode( '/', $path );
+
+		// We expect $path to contain at least 3 elements (could be more, for subdir installations etc)
+		if ( count( $path ) < 3 ) {
+			return null;
+		}
+
+		// Grab the post name from the /all/ URL
+		$post_name = $path[ count( $path ) - 2 ];
+
+		// Fetch the parent (even if it is in the past, hence 'custom')
+		$sequence_parent = tribe_get_events( array(
+			'name'           => $post_name,
+			'post_status'    => 'publish',
+			'posts_per_page' => 1,
+			'eventDisplay'   => 'custom',
+		) );
+
+		if ( empty( $sequence_parent ) ) {
+			return null;
+		}
+
+		$parent = current( $sequence_parent );
+
+		// Ensure we are indeed looking at an actual recurring event
+		if ( ! tribe_is_recurring_event( $parent->ID ) ) {
+			return null;
+		}
+
+		// Is the parent itself the next upcoming instance? If so, we can return its ID
+		if ( $parent->_EventEndDateUTC >= current_time( 'mysql' ) ) {
+			return $parent->ID;
+		}
+
+		// Otherwise look for upcoming children of this event
+		$upcoming_child = tribe_get_events( array(
+			'post_parent'    => $parent->ID,
+			'posts_per_page' => 1,
+		) );
+
+		if ( empty( $upcoming_child ) ) {
+			return null;
+		}
+
+		return current( $upcoming_child )->ID;
+	}
+
 }
+
+if ( ! function_exists( 'tribe_get_mobile_default_view' ) ) {
+	/**
+	 * Allow users to fetch default view For Mobile
+	 *
+	 * @category Events
+	 *
+	 * @return int
+	 */
+	function tribe_get_mobile_default_view() {
+		$default = Tribe__Events__Main::instance()->default_view();
+
+		// If there isn't a default mobile set, it will get the default from the normal settings
+		$default_view = tribe_get_option( 'mobile_default_view', 'default' );
+
+		if ( 'default' === $default_view ) {
+			$default_view = $default;
+		}
+
+		/**
+		 * Allow users to filter which is the default Mobile view globally
+		 *
+		 * @param string $default_view The default view set
+		 */
+		return apply_filters( 'tribe_events_mobile_default_view', $default_view );
+	}
+}//end if
+

@@ -56,7 +56,7 @@
   
 </ul>
 
-<script type="text/javascript" src="http://maps.google.com/maps/api/js?v=3.5&sensor=false"></script>
+<script type="text/javascript" src="//maps.google.com/maps/api/js?v=3.5&sensor=false"></script>
 <script src="<?php bloginfo ('template_url'); ?>/js/markermanager.js" type="text/javascript"></script>
 <script src="<?php bloginfo ('template_url'); ?>/js/StyledMarker.js" type="text/javascript"></script>
 <script src="<?php bloginfo ('template_url'); ?>/js/jquery.metadata.js" type="text/javascript"></script>
