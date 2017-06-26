@@ -88,6 +88,15 @@
 		}
 	</script>
 
+	<script type='text/javascript'>
+		var axel = Math.random() + '';
+		var a = axel * 10000000000000;
+		document.write('<img src="https://pubads.g.doubleclick.net/activity;dc_iu=/5349/DFPAudiencePixel;ord=' + a + ';dc_seg=475997594?" width=1 height=1 border=0/>');
+		</script>
+		<noscript>
+		<img src="https://pubads.g.doubleclick.net/activity;dc_iu=/5349/DFPAudiencePixel;ord=1;dc_seg=475997594?" width=1 height=1 border=0/>
+	</noscript>
+
 	</head> 
 	
 	<body <?php body_class(); ?>>	

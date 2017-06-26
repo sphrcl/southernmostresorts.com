@@ -568,6 +568,10 @@ and (max-width: 799px) {
 	.footleft input[type="submit"] {
 		margin: 0 2.5% 0 0;
 	}
+
+	.footmentions .footmentions-stc {
+		display: inline-block;
+	}
 	
 	
 	/* ======================== ////// ======================== */
