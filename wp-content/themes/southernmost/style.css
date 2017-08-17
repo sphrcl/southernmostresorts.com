@@ -8167,23 +8167,35 @@ ul.subnavigation li.current::after {
 	margin-right: 1%;
 }
 
-.smallcams {
-	width: 37%;
-	float: right;
-}
-
-
-
-
 .bigcam {
-	width: 60%;
+	box-sizing: border-box;
 	float: left;
+	width: 60%;
+	padding-right: 3px;
+	
 }
 
-.bigcam img {
+.bigcam iframe {
+	display: block;
 	width: 100%;
+	height: 485px;
 }
 
+.smallcams {
+	box-sizing: border-box;
+	float: left;
+	width: 40%;
+	padding-left: 2px;
+}
+
+.smallcams iframe {
+	display: block;
+	width: 100%;
+	height: 240px;
+}
+	.smallcams iframe:nth-child(1) {
+		margin-bottom: 5px;
+	}
 
 
 .page-template-page-gallery-php div#pagecontent .container, .single-imagegalleries div#pagecontent .container {
