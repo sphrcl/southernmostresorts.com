@@ -478,10 +478,19 @@ and (max-width: 800px) {
 		right: 60px;
 	}
 	
-	.bigcam, .smallcams {
-		width: 100%;
-		margin: 0;
+	.bigcam,
+	.smallcams {
+		float: none;
+		width: auto;
 	}
+		.bigcam { padding-right: 0; }
+		.smallcams { padding-left: 0; }
+
+	.bigcam iframe,
+	.smallcams iframe {
+		margin-bottom: 5px;
+	}
+
 }
 
 
