@@ -19,7 +19,7 @@
 	<div class="topbanner-overlay"></div>
 
 
-<?php endwhile; endif; wp_reset_query(); ?>	
+<?php endwhile; endif; wp_reset_query(); ?>
 
 
 </div>
@@ -64,40 +64,51 @@
 	</div>
 
 	<div id="specials_list">
-	
-	
-	<?php 
 
-			$dining = new WP_Query(array(
+		<?php 
+
+			$sspecials = new WP_Query(array(
 				'post_type' => 'sspecials',
 				'posts_per_page' => -1
 			));
 
-			if($dining->have_posts()) : while($dining->have_posts()) : $dining->the_post(); 
-			$imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "Full");
+			if ( $sspecials->have_posts() ) : while ( $sspecials->have_posts() ) : $sspecials->the_post(); 
+
+				$imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "Full");
+
+				if ( !get_field('ss_disable_on_offer_list_page') ) :
 
 		?>
-		
-		
-		<div class="specialsbox" style="background-image: url(<?php echo tt($imgsrc[0],1400,755); ?>);">
-		
-			
-			<div class="specialscontent">
-				<div class="specialtitle">
-					<h3><?php the_title(); ?></h3>
-					<h4><?php echo get_post_meta($post->ID,'misfit_shortname',true); ?></h4>
-				</div>
-				<div class="specialbuttons">
-					<a class="button6" href="<?php echo get_post_meta($post->ID,'misfit_reservation',true); ?>">Book</a>
-					<a class="button7" href="<?php the_permalink(); ?>">Details</a>
-				</div>
-			</div>
-		</div>
 
-		<?php endwhile; endif; wp_reset_query(); ?>	
-		
-		
-		
+			<div class="specialsbox">
+
+				<div class="specialswrap">
+
+					<div class="specialsimg" style="background-image: url(<?php echo tt($imgsrc[0],1400,755); ?>);"></div>
+
+					<div class="specialscontent">
+						<div class="specialtitle">
+							<h3><?php the_title(); ?></h3>
+							<h4><?php echo get_post_meta($post->ID,'misfit_shortname',true); ?></h4>
+						</div>
+						<div class="specialbuttons">
+							<a class="button6" href="<?php echo get_post_meta($post->ID,'misfit_reservation',true); ?>">Book</a>
+							<a class="button7" href="<?php the_permalink(); ?>">Details</a>
+						</div>
+					</div>
+
+				</div>
+
+			</div>
+
+		<?php
+
+				endif; // ss_disable_on_offer_list_page
+
+			endwhile; endif; wp_reset_postdata();
+
+		?>
+
 	</div>
 </div>
 
