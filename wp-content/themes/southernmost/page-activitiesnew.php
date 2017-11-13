@@ -92,71 +92,48 @@
 
 	</div>
 
-		<div id="specials_list">
 
 
- <?php $content3=get_page(2665); 
-	  $imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $content3->ID ), "Full");
-  ?>	<a href="<?php echo get_the_permalink($content3->ID); ?>">
-		<div class="specialsbox" style="background-image: url(<?php echo tt($imgsrc[0],1400,755); ?>);">
-			
-			<div class="specialscontent">
-				<div class="specialtitle">
-					<h3><?php echo $content3->post_title; ?> </h3>
-					 
+	<div id="specials_list">
+
+		<?php
+
+			$specials_items = array(
+				get_page(2665),
+				get_page(445),
+				get_page(2579),
+				get_page(1285),
+			);
+
+			foreach ( $specials_items as $special_item ) :
+
+				$imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $special_item->ID ), "Full");
+
+		?>
+
+
+			<div class="specialsbox">
+
+				<div class="specialswrap">
+
+					<a class="dropanchor" href="<?php the_permalink($special_item->ID); ?>"></a>
+
+					<div class="specialsimg" style="background-image: url(<?php echo tt($imgsrc[0],1400,755); ?>);"></div>
+
+					<div class="specialscontent">
+						<div class="specialtitle">
+							<h3><?php echo $special_item->post_title; ?> </h3>
+						</div>
+					</div>
+
 				</div>
-				 
-			</div>
-		</div></a>		
 
-
-<?php $content1=get_page(445); 
-	  $imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $content1->ID ), "Full");
-  ?>	<a href="<?php echo get_the_permalink($content1->ID); ?>">
-		<div class="specialsbox" style="background-image: url(<?php echo tt($imgsrc[0],1400,755); ?>);">
-			
-			<div class="specialscontent">
-				<div class="specialtitle">
-					<h3><?php echo $content1->post_title; ?> </h3>
-				 
-				</div>
-				 
 			</div>
-		</div>
-         </a>
 
-<?php $content2=get_page(2579); 
-      //$content2=get_page(2488);
-	  $imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $content2->ID ), "Full");
-  ?>	<a href="<?php echo get_the_permalink($content2->ID); ?>">
-		<div class="specialsbox" style="background-image: url(<?php echo tt($imgsrc[0],1400,755); ?>);">
-			
-			<div class="specialscontent">
-				<div class="specialtitle">
-					<h3><?php echo $content2->post_title; ?></h3>
-					 
-				</div>
-				 
-			</div>
-		</div></a>
+		<?php endforeach; ?>
 
-<?php $content4=get_page(1285); 
-	  $imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $content4->ID ), "Full");
-  ?>	<a href="<?php echo get_the_permalink($content4->ID); ?>">
-		<div class="specialsbox" style="background-image: url(<?php echo tt($imgsrc[0],1400,755); ?>);">
-			
-			<div class="specialscontent">
-				<div class="specialtitle">
-					<h3>Events Calendar</h3>
-				 
-				</div>
-				 
-			</div>
-		</div></a>
- 
-		
-		
 	</div>
+
 </div>
 
 <?php endwhile; endif; wp_reset_query(); ?>

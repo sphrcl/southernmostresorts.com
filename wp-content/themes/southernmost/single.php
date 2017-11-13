@@ -77,12 +77,11 @@ get_header(); ?>
 	</div>
 
 	<div id="specials_list">
-	
-	
-	<?php 
 
-			$dining = new WP_Query(array(
-				'post_type' => 'locations',
+		<?php 
+
+			$neighborhood = new WP_Query(array(
+				'post_type' => 'neighborhood',
 				 'tax_query' => array(
 			        array(
 			            'taxonomy' => 'loctype',
@@ -92,32 +91,36 @@ get_header(); ?>
 				'posts_per_page' => -1
 			));
 
-			if($dining->have_posts()) : while($dining->have_posts()) : $dining->the_post(); 
-			$imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "Full");
+			if ( $neighborhood->have_posts() ) : while ( $neighborhood->have_posts() ) : $neighborhood->the_post(); 
+
+				$imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "Full");
 
 		?>
 		
-		
-		<div class="specialsbox" style="background-image: url(<?php echo tt($imgsrc[0],1400,755); ?>);">
-		
-			
-			<div class="specialscontent">
-				<div class="specialtitle">
-					<h3><?php the_title(); ?></h3>
-					<h4><?php echo excerpt(20); ?></h4>
+			<div class="specialsbox">
+
+				<div class="specialswrap">
+
+					<div class="specialsimg" style="background-image: url(<?php echo tt($imgsrc[0],1400,755); ?>);"></div>
+
+					<div class="specialscontent">
+						<div class="specialtitle">
+							<h3><?php the_title(); ?></h3>
+							<h4><?php echo excerpt(20); ?></h4>
+						</div>
+						<div class="specialbuttons">
+							<a class="button7" href="<?php the_permalink(); ?>">Details</a>
+						</div>
+					</div>
+
 				</div>
-				<div class="specialbuttons">
-				 
-					<a class="button7" href="<?php the_permalink(); ?>">Details</a>
-				</div>
+
 			</div>
-		</div>
 
 		<?php endwhile; endif; wp_reset_query(); ?>	
-		
-		
-		
+
 	</div>
+
 </div>
 
 

@@ -64,24 +64,31 @@
 				'posts_per_page' => -1
 			));
 
-			if($dining->have_posts()) : while($dining->have_posts()) : $dining->the_post();
-			$imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "Full");
+			if ( $dining->have_posts() ) : while ( $dining->have_posts() ) : $dining->the_post(); 
+
+				$imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "Full");
 
 		?>
 
-			<div class="specialsbox" style="background-image: url('<?php echo tt($imgsrc[0],1400,755); ?>');">
+			<div class="specialsbox">
 
-				<a href="<?php the_permalink(); ?>" class="dropanchor"></a>
+				<div class="specialswrap">
 
-				<div class="specialscontent">
-					<div class="specialtitle">
-						<a href="<?php the_permalink(); ?>"><h3><?php the_title(); ?></h3></a>
+					<a class="dropanchor" href="<?php the_permalink(); ?>"></a>
+
+					<div class="specialsimg" style="background-image: url('<?php echo tt($imgsrc[0],1400,755); ?>');"></div>
+
+					<div class="specialscontent">
+						<div class="specialtitle">
+							<a href="<?php the_permalink(); ?>"><h3><?php the_title(); ?></h3></a>
+						</div>
 					</div>
+
 				</div>
 
 			</div>
 
-		<?php endwhile; endif; wp_reset_query(); ?>
+		<?php endwhile; endif; wp_reset_postdata(); ?>
 
 	</div>
 

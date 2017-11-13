@@ -988,11 +988,13 @@ and (max-width: 599px) {
 	/* ======================== PAGE - SPECIALS ======================== */
 	
 	.specialsbox {
-		float: none !important;
+		float: none;
 		height: 300px;
 		width: 100%;
+		margin-left: 0;
+		margin-right: 0;
 	}
-	
+
 	.specialbuttons .button6,
 	.specialbuttons .button7 {
 		width: 50%;
