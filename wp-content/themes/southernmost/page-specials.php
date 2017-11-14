@@ -83,7 +83,7 @@
 					$mobileClass = 'specialsbox-mobileonly';
 				}
 
-				if ( !get_field('ss_mobile_only_offer') ) :
+				if ( !get_field('ss_disable_offer') ) :
 
 		?>
 
