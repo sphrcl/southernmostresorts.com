@@ -730,7 +730,11 @@ and (max-width: 767px) {
 	
 	
 	/* ======================== PAGE - SPECIALS ======================== */
-	
+
+	.specialsbox-mobileonly {
+		display: block;
+	}
+
 	.specialtitle h3 {
 		font-size: 20px;
 		line-height: 26px;

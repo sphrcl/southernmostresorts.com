@@ -2015,6 +2015,10 @@ div#specials_list {
   margin-bottom: 2px;
 }
 
+.specialsbox-mobileonly {
+  display: none;
+}
+
 .specialswrap {
   width: 100%;
   height: 100%;
