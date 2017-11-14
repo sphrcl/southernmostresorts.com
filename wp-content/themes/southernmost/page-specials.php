@@ -76,11 +76,16 @@
 
 				$imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "Full");
 
-				if ( !get_field('ss_disable_on_offer_list_page') ) :
+				$mobileOnly = get_field('ss_mobile_only_offer');
+
+				$mobileClass = '';
+				if ( $mobileOnly ) {
+					$mobileClass = 'specialsbox-mobileonly';
+				}
 
 		?>
 
-			<div class="specialsbox">
+			<div class="specialsbox <?php echo $mobileClass; ?>">
 
 				<div class="specialswrap">
 
@@ -101,13 +106,7 @@
 
 			</div>
 
-		<?php
-
-				endif; // ss_disable_on_offer_list_page
-
-			endwhile; endif; wp_reset_postdata();
-
-		?>
+		<?php endwhile; endif; wp_reset_postdata(); ?>
 
 	</div>
 </div>
