@@ -83,6 +83,8 @@
 					$mobileClass = 'specialsbox-mobileonly';
 				}
 
+				if ( !get_field('ss_mobile_only_offer') ) :
+
 		?>
 
 			<div class="specialsbox <?php echo $mobileClass; ?>">
@@ -106,7 +108,13 @@
 
 			</div>
 
-		<?php endwhile; endif; wp_reset_postdata(); ?>
+		<?php
+
+				endif;
+
+			endwhile; endif; wp_reset_postdata();
+
+		?>
 
 	</div>
 </div>
