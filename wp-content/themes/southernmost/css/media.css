@@ -1330,17 +1330,33 @@ and (max-width: 319px) {
 
 
 
+/* ============================================================  HEIGHT 640 - 000  ============================================================ */
+
+@media only screen and (max-height: 899px) {
+
+	.single-sspecials .static-banner {
+		height: 475px;
+	}
+
+}
 
 
+/* ============================================================  HEIGHT 640 - 000  ============================================================ */
 
+@media only screen and (max-height: 799px) {
 
+	.single-sspecials .static-banner,
+	.single-sspecials .static-banner.short {
+		height: 300px;
+	}
+
+}
 
 
 
 /* ============================================================  HEIGHT 640 - 000  ============================================================ */
 
-@media only screen 
-and (max-height: 640px) {
+@media only screen and (max-height: 640px) {
 	
 	/* ======================== HOMEPAGE ======================== */
 	
@@ -1363,8 +1379,7 @@ and (max-height: 640px) {
 
 /* ============================================================  HEIGHT 600 - 000  ============================================================ */
 
-@media only screen 
-and (max-height: 600px) {
+@media only screen and (max-height: 600px) {
 	
 	/* ======================== HOMEPAGE ======================== */
 	
@@ -1402,15 +1417,19 @@ and (max-height: 600px) {
 	.static-banner.short {
 		height: 480px;
 	}
-	
+
+	.single-sspecials .static-banner,
+	.single-sspecials .static-banner.short {
+		height: 180px;
+	}
+
 }
 
 
 
 /* ============================================================  HEIGHT 540 - 000  ============================================================ */
 
-@media only screen 
-and (max-height: 540px) {
+@media only screen and (max-height: 540px) {
 
 	.ressys .logo-white {
 		display: none;
@@ -1422,8 +1441,7 @@ and (max-height: 540px) {
 
 /* ============================================================  HEIGHT 500 - 000  ============================================================ */
 
-@media only screen 
-and (max-height: 500px) {
+@media only screen and (max-height: 500px) {
 	
 	/* ======================== HOMEPAGE ======================== */
 	
@@ -1462,11 +1480,21 @@ and (max-height: 500px) {
 }
 
 
+/* ============================================================  HEIGHT 500 - 000  ============================================================ */
+
+@media only screen and (max-height: 500px) {
+
+	.single-sspecials .static-banner,
+	.single-sspecials .static-banner.short {
+		height: 150px;
+	}
+
+}
+
 
 /* ============================================================  HEIGHT 400 - 000  ============================================================ */
 
-@media only screen 
-and (max-height: 400px) {
+@media only screen and (max-height: 400px) {
 	
 	/* ======================== HOMEPAGE ======================== */
 	
@@ -1496,8 +1524,7 @@ and (max-height: 400px) {
 
 /* ============================================================  HEIGHT 380 - 000  ============================================================ */
 
-@media only screen 
-and (max-height: 380px) {
+@media only screen and (max-height: 380px) {
 	
 	/* ======================== HEADER ======================== */
 	
@@ -1527,8 +1554,7 @@ and (max-height: 380px) {
 
 /* ============================================================  HEIGHT 320 - 000  ============================================================ */
 
-@media only screen 
-and (max-height: 320px) {
+@media only screen and (max-height: 320px) {
 	
 	/* ======================== HOMEPAGE ======================== */
 	
