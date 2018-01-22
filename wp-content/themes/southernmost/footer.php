@@ -88,7 +88,7 @@
 				</div>
 
 				<div class="save-the-children">
-					<a href="https://www.gofundme.com/highgate-2017-winter-campaign/" target="_blank"><img width="90px" src="<?php bloginfo('template_url'); ?>/images/stc-logo2.png"></a>
+					<a href="https://secure.savethechildren.org/site/c.8rKLIXMGIpI4E/b.6239401/k.C01C/Global_Action_Fund/apps/ka/sd/donor.asp?msource=cpkhhgaf0417&utm_source=Highgate2017&utm_medium=link&utm_campaign=highgatehotels0417" target="_blank"><img width="90px" src="<?php bloginfo('template_url'); ?>/images/stc-logo2.png"></a>
 				</div>
 
 			</div>
