@@ -2007,25 +2007,42 @@ div#specials_list {
 }
 
 .specialsbox {
-  background-size: cover;
-  background-position: center;
-  width: calc(50% - 1px);
-  height: 480px;
+  box-sizing: border-box;
   float: left;
+  width: 50%;
+  height: 480px;
+  padding: 0 1px;
   margin-bottom: 2px;
-    position: relative;
 }
 
-.specialsbox:nth-child(even) {
-  float: right;
+.specialsbox-mobileonly {
+  display: none;
+}
+
+.specialswrap {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.specialsimg {
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
 }
 
 .specialscontent {
+  background: rgba(29, 29, 29, 0.7);
+  padding: 5px;
   position: absolute;
   bottom: 10px;
   right: 10px;
-  background: rgba(29, 29, 29, 0.7);
-  padding: 5px;
+  z-index: 1;
 }
 
 .specialtitle h3 {
