@@ -65,21 +65,45 @@
 				<?php if(have_posts()) : while(have_posts()) : the_post(); ?>
 								
 					<?php if(get_the_title() == "Webcam")  { ?>
-					
-						<div class="webcamblock">
-					
-							<div class="bigcam">
-								<iframe src="https://www.youtube.com/embed/QHjVJt8MARA?autoplay=1" frameborder="0" allowfullscreen></iframe>
+						
+						<?php
+
+							$webcams_totalCount = count(get_field('webcam_webcam_videos'));
+
+							if ( have_rows('webcam_webcam_videos') ) :
+
+								$webcams_i = 1;
+
+						?>
+
+							<div class="webcamblock">
+
+								<?php while ( have_rows('webcam_webcam_videos') ) : the_row(); ?>
+
+									<?php if ( $webcams_i == 1 ) : ?>
+										<div class="bigcam">
+									<?php elseif ( $webcams_i == 2 ) : ?>
+										<div class="smallcams">
+									<?php endif; ?>
+
+										<?php the_sub_field('video_embed'); ?>
+
+									<?php
+										if (
+											$webcams_i == 1 ||
+											$webcams_i == $webcams_totalCount
+										) :
+									?>
+										</div>
+									<?php endif; ?>
+
+								<?php $webcams_i++; endwhile; ?>
+
+								<div class="clear"></div>
+
 							</div>
 
-							<div class="smallcams">
-								<iframe src="https://www.youtube.com/embed/eNCwj35OwmI?autoplay=1" frameborder="0" allowfullscreen></iframe>
-								<iframe src="https://www.youtube.com/embed/se9t8P6g0ko?autoplay=1" frameborder="0" allowfullscreen></iframe>
-							</div>
-
-							<div class="clear"></div>
-
-						</div>
+						<?php endif; ?>
 							
 					<?php } else { ?>
 					

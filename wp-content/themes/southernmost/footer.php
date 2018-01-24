@@ -101,7 +101,7 @@
 		</div>
 
 		<div class="footmentions">
-			<a class="footmentions-condenast" target="_blank" href="//www.cntraveler.com/"><img src="<?php bloginfo('template_url'); ?>/images/florida-keys-finalist.png" alt="cntraveler Logo"></a>
+			<a class="footmentions-condenast" target="_blank" href="//www.cntraveler.com/"><img src="<?php bloginfo('template_url'); ?>/images/cnt-rca-2017.png" alt="Condé Nast Reader Choice Awards 2017 Logo"></a>
 			<a class="footmentions-highgate" target="_blank" href="///www.highgate.com/"><img src="<?php bloginfo('template_url'); ?>/images/highgate-logo.png" alt="Highgate Logo"></a>
 			<a class="footmentions-stc" href="https://secure.savethechildren.org/site/c.8rKLIXMGIpI4E/b.6239401/k.C01C/Global_Action_Fund/apps/ka/sd/donor.asp?msource=cpkhhgaf0417&utm_source=Highgate2017&utm_medium=link&utm_campaign=highgatehotels0417" target="_blank"><img width="90px" src="<?php bloginfo('template_url'); ?>/images/stc-logo2.png"></a>
 		</div>
