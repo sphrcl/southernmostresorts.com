@@ -552,8 +552,5 @@
 
 	<?php wp_footer(); ?>
 
-	<!-- Voyat Code -->
-	<script>(function(){ var v = document.createElement('script'); var s = document.getElementsByTagName('script')[0]; v.src = '//io.voyat.com/v.js'; v.async = true; s.parentNode.insertBefore(v, s); })();</script>
-	<!-- End of Voyat Code -->
 </body>
 </html>
