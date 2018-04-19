@@ -49,7 +49,15 @@
 			
 </ul>
 -->
-<div class="wrapper"><div id="submenu"></div></div>
+<div class="wrapper"><div id="submenu"></div>
+    <?php                        
+        if ( function_exists('yoast_breadcrumb') ) {
+            yoast_breadcrumb('
+            <p id="breadcrumbs">','</p>
+            ');
+        }
+    ?>  
+</div>
 
 <div id="pagecontent">
 

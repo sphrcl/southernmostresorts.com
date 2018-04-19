@@ -25,6 +25,13 @@
 </div>
 
 <div class="innerpage wrapper specials_page dining">
+    <?php                        
+        if ( function_exists('yoast_breadcrumb') ) {
+            yoast_breadcrumb('
+            <p id="breadcrumbs">','</p>
+            ');
+    }
+    ?>  
 	<div id="pagecontent">
 
 		<div class="container">

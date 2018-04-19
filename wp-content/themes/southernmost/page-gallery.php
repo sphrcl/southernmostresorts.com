@@ -58,6 +58,13 @@
 </ul>
 	
 <div class="innerpage wrapper">
+    <?php                        
+        if ( function_exists('yoast_breadcrumb') ) {
+            yoast_breadcrumb('
+            <p id="breadcrumbs">','</p>
+            ');
+        }
+    ?>  
 	<div id="pagecontent">
 
 		<div class="container">

@@ -61,7 +61,6 @@
 
 
 <div class="wrapper">
-
 	<div id="submenu">
 		<!--
 		<ul class="subnavigation roomsub">
@@ -77,7 +76,13 @@
 		</ul>
 		-->
 	</div>
-
+    <?php                        
+        if ( function_exists('yoast_breadcrumb') ) {
+            yoast_breadcrumb('
+            <p id="breadcrumbs">','</p>
+            ');
+        }
+    ?>  
 </div>
 
 	<div id="pagecontent">

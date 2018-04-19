@@ -1,5 +1,7 @@
 <?php
 /**
+ * WPSEO plugin file.
+ *
  * @package WPSEO\Admin\ConfigurationUI
  */
 
@@ -22,7 +24,14 @@ class WPSEO_Config_Field_Upsell_Site_Review extends WPSEO_Config_Field {
 			'</a>'
 		);
 
-		$html = '<p>' . $upsell_text . '</p>';
+		$html = '<p>' .
+				wp_kses( $upsell_text, array(
+					'a' => array(
+						'href'   => array(),
+						'target' => array( '_blank' ),
+					),
+				) ) .
+				'</p>';
 
 		$this->set_property( 'html', $html );
 	}
