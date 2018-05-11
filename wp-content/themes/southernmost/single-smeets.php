@@ -138,7 +138,7 @@
 						Capacity Seating: <br>
 						<?php 
 
-							if ( have_rows( ('cap_seat') ) ) : while ( have_rows ( ('cap_seat') ) ) : the_row();
+							if ( have_rows( ('capacity_seating') ) ) : while ( have_rows ( ('capacity_seating') ) ) : the_row();
 
 								echo get_sub_field('capacity_name') . ':' . get_sub_field('capacity_value').'<br>';
 
