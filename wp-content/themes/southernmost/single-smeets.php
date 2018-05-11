@@ -50,13 +50,13 @@
 </ul>
 -->
 <div class="wrapper"><div id="submenu"></div>
-    <?php                        
-        if ( function_exists('yoast_breadcrumb') ) {
-            yoast_breadcrumb('
-            <p id="breadcrumbs">','</p>
-            ');
-        }
-    ?>  
+	<?php                        
+		if ( function_exists('yoast_breadcrumb') ) {
+			yoast_breadcrumb('
+			<p id="breadcrumbs">','</p>
+			');
+		}
+	?>  
 </div>
 
 <div id="pagecontent">
@@ -102,49 +102,54 @@
 
 		<div class="dimensions">
 
-            <?php 
-                if( have_rows('meeting_dimensions') ) : while ( have_rows ('meeting_dimensions') ) : the_row();
-            ?>
-                    <h2><?php echo get_sub_field('table_name'); ?></h2>
-                    <ul>
-                        <li>
-                            <?php 
-                                $dimension = get_field_object('field_5acde9f89ab60');
-                                if ( $dimension ) {
-                                     echo '<h3>' . get_sub_Field('dimensions') . '</h3>';
-                                     echo '<span>' . $dimension['label'] . '</span>';
-                                }
-                            ?>
-                        </li>
-                        <li>
-                            <?php 
-                                $sqrfeet = get_field_object('field_5acdee139ab62');
-                                if ( $sqrfeet ) {
-                                     echo '<h3>' . get_sub_Field('square_feet') . '</h3>';
-                                     echo '<span>' . $sqrfeet['label'] . '</span>';
-                                }
-                            ?>
-                        </li>
-                        <li>
-                            <?php 
-                                $height = get_field_object('field_5acdee1b9ab63');
-                                if ( $height ) {
-                                     echo '<h3>' . get_sub_Field('height') . '</h3>';
-                                     echo '<span>' . $height['label'] . '</span>';
-                                }
-                            ?>
-                        </li>
-                        <li>
-                            <?php 
-                            $capacity = get_field_object('field_5acdee5d9ab64');
-                            echo $capacity['label'].': <br>';
-                            if( have_rows( ('cap_seat') ) ) : while ( have_rows ( ('cap_seat') ) ) : the_row();
-                              echo get_sub_Field('capacity_name') . ':' . get_sub_Field('capacity_value').'<br>';
-                            endwhile; endif; 
-                            ?>
-                        </li>
-                    </ul>   
-            <?php endwhile; endif; ?>
+			<?php if ( have_rows('meeting_dimensions') ) : while ( have_rows ('meeting_dimensions') ) : the_row(); ?>
+
+				<h2><?php echo get_sub_field('table_name'); ?></h2>
+
+				<ul>
+					<li>
+						<?php 
+							$dimensions = get_sub_field('dimensions');
+							if ( $dimensions ) {
+								 echo '<h3>' . $dimensions . '</h3>';
+								 echo '<span>Dimensions</span>';
+							}
+						?>
+					</li>
+					<li>
+						<?php 
+							$square_feet = get_sub_field('square_feet');
+							if ( $square_feet ) {
+								 echo '<h3>' . $square_feet . '</h3>';
+								 echo '<span>Square Feet</span>';
+							}
+						?>
+					</li>
+					<li>
+						<?php 
+							$height = get_sub_field('height');
+							if ( $height ) {
+								 echo '<h3>' . $height . '</h3>';
+								 echo '<span>Height</span>';
+							}
+						?>
+					</li>
+					<li>
+						Capacity Seating: <br>
+						<?php 
+
+							if ( have_rows( ('cap_seat') ) ) : while ( have_rows ( ('cap_seat') ) ) : the_row();
+
+								echo get_sub_field('capacity_name') . ':' . get_sub_field('capacity_value').'<br>';
+
+							endwhile; endif; 
+
+						?>
+					</li>
+
+				</ul>
+
+			<?php endwhile; endif; ?>
  
 
 		</div>
