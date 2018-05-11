@@ -2283,9 +2283,9 @@ div#specials_list {
 		color: #555;
 		float: none;
 		font-size: 16px;
-		height: 82px;
+		height:102px;
 		overflow: hidden;
-		padding: 20px;
+		padding:10px;
 		text-transform: uppercase;
 }
 

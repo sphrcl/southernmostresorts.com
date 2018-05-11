@@ -102,30 +102,50 @@
 
 		<div class="dimensions">
 
-			<ul>
-				<li>
-					<h3><?php echo get_post_meta($post->ID,'misfit_dimensions',true); ?></h3>
-					<span>Dimensions</span>
-				</li>
-				<li>
-					<h3><?php echo get_post_meta($post->ID,'misfit_sqft',true); ?></h3>
-					<span>SQ. FT.</span>
-				</li>
-				<li>
-					<h3><?php echo get_post_meta($post->ID,'misfit_height',true); ?></h3>
-					<span>Height</span>
-				</li>
-				<li>
-					<?php if(get_post_meta($post->ID,'misfit_reception',true) || get_post_meta($post->ID,'misfit_banquet',true) || get_post_meta($post->ID,'misfit_theatre',true)) { ?>
-
-						Capacity Seating:<br>
-						<?php if(get_post_meta($post->ID,'misfit_reception',true)) { ?>Reception: <?php echo get_post_meta($post->ID,'misfit_reception',true); ?><br><?php } ?>
-						<?php if(get_post_meta($post->ID,'misfit_banquet',true)) { ?>Banquet: <?php echo get_post_meta($post->ID,'misfit_banquet',true); ?><br><?php } ?>
-						<?php if(get_post_meta($post->ID,'misfit_theatre',true)) { ?>Theatre: <?php echo get_post_meta($post->ID,'misfit_theatre',true); ?><?php } ?>
-
-					<?php } ?>
-				</li>
-			</ul>
+            <?php 
+                if( have_rows('meeting_dimensions') ) : while ( have_rows ('meeting_dimensions') ) : the_row();
+            ?>
+                    <h2><?php echo get_sub_field('table_name'); ?></h2>
+                    <ul>
+                        <li>
+                            <?php 
+                                $dimension = get_field_object('field_5acde9f89ab60');
+                                if ( $dimension ) {
+                                     echo '<h3>' . get_sub_Field('dimensions') . '</h3>';
+                                     echo '<span>' . $dimension['label'] . '</span>';
+                                }
+                            ?>
+                        </li>
+                        <li>
+                            <?php 
+                                $sqrfeet = get_field_object('field_5acdee139ab62');
+                                if ( $sqrfeet ) {
+                                     echo '<h3>' . get_sub_Field('square_feet') . '</h3>';
+                                     echo '<span>' . $sqrfeet['label'] . '</span>';
+                                }
+                            ?>
+                        </li>
+                        <li>
+                            <?php 
+                                $height = get_field_object('field_5acdee1b9ab63');
+                                if ( $height ) {
+                                     echo '<h3>' . get_sub_Field('height') . '</h3>';
+                                     echo '<span>' . $height['label'] . '</span>';
+                                }
+                            ?>
+                        </li>
+                        <li>
+                            <?php 
+                            $capacity = get_field_object('field_5acdee5d9ab64');
+                            echo $capacity['label'].': <br>';
+                            if( have_rows( ('cap_seat') ) ) : while ( have_rows ( ('cap_seat') ) ) : the_row();
+                              echo get_sub_Field('capacity_name') . ':' . get_sub_Field('capacity_value').'<br>';
+                            endwhile; endif; 
+                            ?>
+                        </li>
+                    </ul>   
+            <?php endwhile; endif; ?>
+ 
 
 		</div>
 
