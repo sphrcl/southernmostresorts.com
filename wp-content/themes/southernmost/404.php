@@ -46,22 +46,22 @@
 		       		<div class="socializer" style="position: relative;">
 							<ul>
 								<?php if(get_option('misfit_facebook')) { ?>
-								<li><a href="//facebook.com/pursuitofeverything" target="_blank" class="flaticon-facebook51"></a></li>
+								<li><a href="//facebook.com/pursuitofeverything" target="_blank" class="flaticon-facebook51" aria-label="link to pursuit to everything facebook page"></a></li>
 								<?php } ?>
 								<?php if(get_option('misfit_twitter')) { ?>
-								<li><a href="//twitter.com/cebocampbell" target="_blank" class="flaticon-twitter44"></a></li>
+								<li><a href="//twitter.com/cebocampbell" target="_blank" class="flaticon-twitter44" aria-label="link to instagram page"></a></li>
 								<?php } ?>
 								<?php if(get_option('misfit_dribbble')) { ?>
-								<li><a href="https://dribbble.com/cebo" target="_blank" class="flaticon-dribbble14"></a></li>
+								<li><a href="https://dribbble.com/cebo" target="_blank" class="flaticon-dribbble14" aria-label="link to dribble page"></a></li>
 								<?php } ?>
 								<?php if(get_option('misfit_googleplus')) { ?>
-								<li><a href="https://plus.google.com/+101368968681233125083" target="_blank" class="flaticon-google115"></a></li>
+								<li><a href="https://plus.google.com/+101368968681233125083" target="_blank" class="flaticon-google115" aria-label="link to google plus page"></a></li>
 								<?php } ?>
 								<?php if(get_option('misfit_instagram')) { ?>
-								<li><a href="https://instagram.com/cebocampbell" target="_blank" class="flaticon-instagram7"></a></li>
+								<li><a href="https://instagram.com/cebocampbell" target="_blank" class="flaticon-instagram7" aria-label="link to instagram page"></a></li>
 								<?php } ?>
 								<?php if(get_option('misfit_behance')) { ?>
-								<li style="margin-left: 8px;"><a href="https://behance.net/cebocampbell" target="_blank" class="flaticon-behance2"></a></li>												<?php } ?>
+								<li style="margin-left: 8px;"><a href="https://behance.net/cebocampbell" target="_blank" class="flaticon-behance2" aria-label="link to behance page"></a></li>												<?php } ?>
 
 
 							<span style="display: block;" class="clear"></span>

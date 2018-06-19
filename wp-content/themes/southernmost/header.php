@@ -94,10 +94,10 @@
 	<script type='text/javascript'>
 		var axel = Math.random() + '';
 		var a = axel * 10000000000000;
-		document.write('<img src="https://pubads.g.doubleclick.net/activity;dc_iu=/5349/DFPAudiencePixel;ord=' + a + ';dc_seg=475997594?" width=1 height=1 border=0/>');
+		document.write('<img src="https://pubads.g.doubleclick.net/activity;dc_iu=/5349/DFPAudiencePixel;ord=' + a + ';dc_seg=475997594?" width=1 height=1 border=0 alt="ads"/>');
 		</script>
 		<noscript>
-		<img src="https://pubads.g.doubleclick.net/activity;dc_iu=/5349/DFPAudiencePixel;ord=1;dc_seg=475997594?" width=1 height=1 border=0/>
+		<img src="https://pubads.g.doubleclick.net/activity;dc_iu=/5349/DFPAudiencePixel;ord=1;dc_seg=475997594?" width=1 height=1 border=0 alt="ads"/>
 	</noscript>
 
 	</head> 
@@ -111,7 +111,7 @@
 
 	<div id="wrapper" class="wrapper">
 	
-	<a href="#" class="closer"></a>
+	<a href="#" class="closer" aria-label="close button"></a>
 	
 		<div id="header">
 	
@@ -148,7 +148,7 @@
 										$imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "Full"); 
 								    ?>
 										<div class="item">
-											<a href="<?php the_permalink(); ?>"><div class="slide-image" style="background-image: url(<?php echo tt($imgsrc[0],340,270); ?>);"></div></a>
+											<a href="<?php the_permalink(); ?>" aria-label="<?php the_title(); ?>"><div class="slide-image" style="background-image: url(<?php echo tt($imgsrc[0],340,270); ?>);"></div></a>
 											<a href="<?php the_permalink(); ?>"><span><?php the_title(); ?></span></a>
 										</div>
 										
@@ -181,7 +181,7 @@
 										$imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "Full"); 
 								    ?>
 										<div class="item">
-											<a href="<?php the_permalink(); ?>"><div class="slide-image" style="background-image: url(<?php echo tt($imgsrc[0],340,270); ?>);"></div></a>
+											<a href="<?php the_permalink(); ?>" aria-label="<?php the_title(); ?>"><div class="slide-image" style="background-image: url(<?php echo tt($imgsrc[0],340,270); ?>);"></div></a>
 											<a href="<?php the_permalink(); ?>"><span><?php the_title(); ?></span></a>
 										</div>
 									<?php endwhile; endif; wp_reset_query(); ?>
@@ -213,7 +213,7 @@
 										$imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "Full"); 
 								    ?>
 										<div class="item">
-											<a href="<?php the_permalink(); ?>"><div class="slide-image" style="background-image: url(<?php echo tt($imgsrc[0],340,270); ?>);"></div></a>
+											<a href="<?php the_permalink(); ?>" aria-label="<?php the_title(); ?>"><div class="slide-image" style="background-image: url(<?php echo tt($imgsrc[0],340,270); ?>);"></div></a>
 											<a href="<?php the_permalink(); ?>"><span><?php the_title(); ?></span></a>
 										</div>
 									<?php endwhile; endif; wp_reset_query(); ?>
@@ -245,7 +245,7 @@
 										$imgsrc = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), "Full"); 
 								    ?>
 										<div class="item">
-											<a href="<?php the_permalink(); ?>"><div class="slide-image" style="background-image: url(<?php echo tt($imgsrc[0],340,270); ?>);"></div></a>
+											<a href="<?php the_permalink(); ?>" aria-label="<?php the_title(); ?>"><div class="slide-image" style="background-image: url(<?php echo tt($imgsrc[0],340,270); ?>);"></div></a>
 											<a href="<?php the_permalink(); ?>"><span><?php the_title(); ?></span></a>
 										</div>
 									<?php endwhile; endif; wp_reset_query(); ?>
@@ -261,7 +261,7 @@
 				</div>
 
 				<div class="mobileicon">
-					<a href="tel:8003544455"><img src="//www.southernmostbeachresort.com/wp-content/uploads/2015/10/phoneiconmobile.png" alt="phoneicon mobile"></a>
+					<a href="tel:8003544455" aria-label="telephone number"><img src="//www.southernmostbeachresort.com/wp-content/uploads/2015/10/phoneiconmobile.png" alt="phoneicon mobile"></a>
 				</div>
 				
 				<div class="hamburger">
