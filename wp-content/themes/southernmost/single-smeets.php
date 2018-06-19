@@ -50,13 +50,13 @@
 </ul>
 -->
 <div class="wrapper"><div id="submenu"></div>
-    <?php                        
-        if ( function_exists('yoast_breadcrumb') ) {
-            yoast_breadcrumb('
-            <p id="breadcrumbs">','</p>
-            ');
-        }
-    ?>  
+	<?php                        
+		if ( function_exists('yoast_breadcrumb') ) {
+			yoast_breadcrumb('
+			<p id="breadcrumbs">','</p>
+			');
+		}
+	?>  
 </div>
 
 <div id="pagecontent">
@@ -68,18 +68,20 @@
 		<div class="contenttitle">
 
 			<h1 class="title"><?php the_title(); ?></h1>
-			<h2 class="subtitle"><?php echo get_post_meta($post->ID,'misfit_subtitle',true); ?></h2>
+             <?php if(get_post_meta($post->ID,'misfit_subtitle')) : ?>
+			     <h2 class="subtitle"><?php echo get_post_meta($post->ID,'misfit_subtitle',true); ?></h2>
+            <?php endif; ?>
 
 		</div>
 
 		<div class="socialmedia">
 			<ul>
-				<?php if(get_option('misfit_facebook')) { ?><?php if(get_option('misfit_facebook')) { ?><li><a href="<?php echo get_option('misfit_facebook'); ?>" target="_blank"><i class="fa fa-facebook"></i></a></li><?php } ?><?php } ?>
-				<?php if(get_option('misfit_twitter')) { ?><?php if(get_option('misfit_twitter')) { ?><li><a href="<?php echo get_option('misfit_twitter'); ?>" target="_blank"><i class="fa fa-twitter"></i></a></li><?php } ?><?php } ?>
-				<?php if(get_option('misfit_youtube')) { ?><?php if(get_option('misfit_youtube')) { ?><li><a href="<?php echo get_option('misfit_youtube'); ?>" target="_blank"><i class="fa fa-youtube-play"></i></a></li><?php } ?><?php } ?>
-				<?php if(get_option('misfit_instagram')) { ?><?php if(get_option('misfit_instagram')) { ?><li><a href="<?php echo get_option('misfit_instagram'); ?>" target="_blank"><i class="fa fa-instagram"></i></a></li><?php } ?><?php } ?>
-				<?php if(get_option('misfit_google_plus')) { ?><li><a href="<?php echo get_option('misfit_google_plus'); ?>" target="_blank"><i class="fa fa-google-plus"></i></a></li><?php } ?>
-				<?php if(get_option('misfit_tripadvisor')) { ?><li><a href="<?php echo get_option('misfit_tripadvisor'); ?>" target="_blank"><i class="fa fa-tripadvisor"></i></a></li><?php } ?>
+				<?php if(get_option('misfit_facebook')) { ?><?php if(get_option('misfit_facebook')) { ?><li><a href="<?php echo get_option('misfit_facebook'); ?>" target="_blank" aria-label="link to southernmost facebook page"><i class="fa fa-facebook"></i></a></li><?php } ?><?php } ?>
+				<?php if(get_option('misfit_twitter')) { ?><?php if(get_option('misfit_twitter')) { ?><li><a href="<?php echo get_option('misfit_twitter'); ?>" target="_blank" aria-label="link to southernmost twitter page"><i class="fa fa-twitter"></i></a></li><?php } ?><?php } ?>
+				<?php if(get_option('misfit_youtube')) { ?><?php if(get_option('misfit_youtube')) { ?><li><a href="<?php echo get_option('misfit_youtube'); ?>" target="_blank" aria-label="link to southernmost youtube page"><i class="fa fa-youtube-play"></i></a></li><?php } ?><?php } ?>
+				<?php if(get_option('misfit_instagram')) { ?><?php if(get_option('misfit_instagram')) { ?><li><a href="<?php echo get_option('misfit_instagram'); ?>" target="_blank" aria-label="link to southernmost instagram page"><i class="fa fa-instagram"></i></a></li><?php } ?><?php } ?>
+				<?php if(get_option('misfit_google_plus')) { ?><li><a href="<?php echo get_option('misfit_google_plus'); ?>" target="_blank" aria-label="link to southernmost google plus page"><i class="fa fa-google-plus"></i></a></li><?php } ?>
+				<?php if(get_option('misfit_tripadvisor')) { ?><li><a href="<?php echo get_option('misfit_tripadvisor'); ?>" target="_blank" aria-label="link to southernmost trip advisor page"><i class="fa fa-tripadvisor"></i></a></li><?php } ?>
 			</ul>
 		</div>
 
@@ -102,49 +104,54 @@
 
 		<div class="dimensions">
 
-            <?php 
-                if( have_rows('meeting_dimensions') ) : while ( have_rows ('meeting_dimensions') ) : the_row();
-            ?>
-                    <h2><?php echo get_sub_field('table_name'); ?></h2>
-                    <ul>
-                        <li>
-                            <?php 
-                                $dimension = get_field_object('field_5acde9f89ab60');
-                                if ( $dimension ) {
-                                     echo '<h3>' . get_sub_Field('dimensions') . '</h3>';
-                                     echo '<span>' . $dimension['label'] . '</span>';
-                                }
-                            ?>
-                        </li>
-                        <li>
-                            <?php 
-                                $sqrfeet = get_field_object('field_5acdee139ab62');
-                                if ( $sqrfeet ) {
-                                     echo '<h3>' . get_sub_Field('square_feet') . '</h3>';
-                                     echo '<span>' . $sqrfeet['label'] . '</span>';
-                                }
-                            ?>
-                        </li>
-                        <li>
-                            <?php 
-                                $height = get_field_object('field_5acdee1b9ab63');
-                                if ( $height ) {
-                                     echo '<h3>' . get_sub_Field('height') . '</h3>';
-                                     echo '<span>' . $height['label'] . '</span>';
-                                }
-                            ?>
-                        </li>
-                        <li>
-                            <?php 
-                            $capacity = get_field_object('field_5acdee5d9ab64');
-                            echo $capacity['label'].': <br>';
-                            if( have_rows( ('cap_seat') ) ) : while ( have_rows ( ('cap_seat') ) ) : the_row();
-                              echo get_sub_Field('capacity_name') . ':' . get_sub_Field('capacity_value').'<br>';
-                            endwhile; endif; 
-                            ?>
-                        </li>
-                    </ul>   
-            <?php endwhile; endif; ?>
+			<?php if ( have_rows('meeting_dimensions') ) : while ( have_rows ('meeting_dimensions') ) : the_row(); ?>
+
+				<h2><?php echo get_sub_field('table_name'); ?></h2>
+
+				<ul>
+					<li>
+						<?php 
+							$dimensions = get_sub_field('dimensions');
+							if ( $dimensions ) {
+								 echo '<h3>' . $dimensions . '</h3>';
+								 echo '<span>Dimensions</span>';
+							}
+						?>
+					</li>
+					<li>
+						<?php 
+							$square_feet = get_sub_field('square_feet');
+							if ( $square_feet ) {
+								 echo '<h3>' . $square_feet . '</h3>';
+								 echo '<span>Square Feet</span>';
+							}
+						?>
+					</li>
+					<li>
+						<?php 
+							$height = get_sub_field('height');
+							if ( $height ) {
+								 echo '<h3>' . $height . '</h3>';
+								 echo '<span>Height</span>';
+							}
+						?>
+					</li>
+					<li>
+						Capacity Seating: <br>
+						<?php 
+
+							if ( have_rows( ('capacity_seating') ) ) : while ( have_rows ( ('capacity_seating') ) ) : the_row();
+
+								echo get_sub_field('capacity_name') . ':' . get_sub_field('capacity_value').'<br>';
+
+							endwhile; endif; 
+
+						?>
+					</li>
+
+				</ul>
+
+			<?php endwhile; endif; ?>
  
 
 		</div>
