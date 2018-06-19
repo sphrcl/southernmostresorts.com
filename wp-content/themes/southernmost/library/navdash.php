@@ -66,22 +66,22 @@
 						<?php } ?>
 						
 						<?php if(get_option('misfit_facebook')) { ?>
-						<a href="//facebook.com/<?php echo get_option('misfit_facebook'); ?>" target="_blank"><i class="fa fa-facebook"></i></a>
+						<a href="//facebook.com/<?php echo get_option('misfit_facebook'); ?>" target="_blank" aria-label="link to southernmost facebook page"><i class="fa fa-facebook"></i></a>
 						<?php } ?>
 						<?php if(get_option('misfit_twitter')) { ?>
-						<a href="//twitter.com/<?php echo get_option('misfit_twitter'); ?>" target="_blank"><i class="fa fa-twitter"></i></a>
+						<a href="//twitter.com/<?php echo get_option('misfit_twitter'); ?>" target="_blank" aria-label="link to southernmost twitter page"><i class="fa fa-twitter"></i></a>
 						<?php } ?>
 						<?php if(get_option('misfit_pinterest')) { ?>
-						<a href="//www.pinterest.com/<?php echo get_option('misfit_pinterest'); ?>" target="_blank"><i class="fa fa-pinterest"></i></a>
+						<a href="//www.pinterest.com/<?php echo get_option('misfit_pinterest'); ?>" target="_blank" aria-label="link to southernmost pinterest page"><i class="fa fa-pinterest"></i></a>
 						<?php } ?>
 						<?php if(get_option('misfit_dribbble')) { ?>
-						<a href="https://dribbble.com/<?php echo get_option('misfit_dribbble'); ?>" target="_blank"><i class="fa fa-dribbble"></i></a>
+						<a href="https://dribbble.com/<?php echo get_option('misfit_dribbble'); ?>" target="_blank" aria-label="link to southernmost dribble page"><i class="fa fa-dribbble"></i></a>
 						<?php } ?>
 						<?php if(get_option('misfit_googleplus')) { ?>
-						<a href="https://plus.google.com/+<?php echo get_option('misfit_googleplus'); ?>" target="_blank"><i class="fa fa-google-plus"></i></a>
+						<a href="https://plus.google.com/+<?php echo get_option('misfit_googleplus'); ?>" target="_blank" aria-label="link to southernmost google plus page"><i class="fa fa-google-plus"></i></a>
 						<?php } ?>
 						<?php if(get_option('misfit_instagram')) { ?>
-						<a href="https://instagram.com/<?php echo get_option('misfit_instagram'); ?>" target="_blank"><i class="fa fa-instagram"></i></a>	
+						<a href="https://instagram.com/<?php echo get_option('misfit_instagram'); ?>" target="_blank" aria-label="link to southernmost instagram page"><i class="fa fa-instagram"></i></a>	
 						<?php } ?>
 						
 					</div>

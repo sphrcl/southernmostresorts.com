@@ -76,12 +76,12 @@
 
 		<div class="socialmedia">
 			<ul>
-				<?php if(get_option('misfit_facebook')) { ?><li><a href="<?php echo get_option('misfit_facebook'); ?>" target="_blank"><i class="fa fa-facebook"></i></a></li><?php } ?>
-				<?php if(get_option('misfit_twitter')) { ?><li><a href="<?php echo get_option('misfit_twitter'); ?>" target="_blank"><i class="fa fa-twitter"></i></a></li><?php } ?>
-				<?php if(get_option('misfit_youtube')) { ?><li><a href="<?php echo get_option('misfit_youtube'); ?>" target="_blank"><i class="fa fa-youtube-play"></i></a></li><?php } ?>
-				<?php if(get_option('misfit_instagram')) { ?><li><a href="<?php echo get_option('misfit_instagram'); ?>" target="_blank"><i class="fa fa-instagram"></i></a></li><?php } ?>
-				<?php if(get_option('misfit_google_plus')) { ?><li><a href="<?php echo get_option('misfit_google_plus'); ?>" target="_blank"><i class="fa fa-google-plus"></i></a></li><?php } ?>
-				<?php if(get_option('misfit_tripadvisor')) { ?><li><a href="<?php echo get_option('misfit_tripadvisor'); ?>" target="_blank"><i class="fa fa-tripadvisor"></i></a></li><?php } ?>
+				<?php if(get_option('misfit_facebook')) { ?><li><a href="<?php echo get_option('misfit_facebook'); ?>" target="_blank" aria-label="link to southernmost facebook page"><i class="fa fa-facebook"></i></a></li><?php } ?>
+				<?php if(get_option('misfit_twitter')) { ?><li><a href="<?php echo get_option('misfit_twitter'); ?>" target="_blank" aria-label="link to southernmost twitter page"><i class="fa fa-twitter"></i></a></li><?php } ?>
+				<?php if(get_option('misfit_youtube')) { ?><li><a href="<?php echo get_option('misfit_youtube'); ?>" target="_blank" aria-label="link to southernmost youtube page"><i class="fa fa-youtube-play"></i></a></li><?php } ?>
+				<?php if(get_option('misfit_instagram')) { ?><li><a href="<?php echo get_option('misfit_instagram'); ?>" target="_blank" aria-label="link to instagram youtube page"><i class="fa fa-instagram"></i></a></li><?php } ?>
+				<?php if(get_option('misfit_google_plus')) { ?><li><a href="<?php echo get_option('misfit_google_plus'); ?>" target="_blank" aria-label="link to southernmost google plus page"><i class="fa fa-google-plus"></i></a></li><?php } ?>
+				<?php if(get_option('misfit_tripadvisor')) { ?><li><a href="<?php echo get_option('misfit_tripadvisor'); ?>" target="_blank" aria-label="link to southernmost tripadvisor page"><i class="fa fa-tripadvisor"></i></a></li><?php } ?>
 			</ul>
 		</div>
 
@@ -94,17 +94,17 @@
 						<input type="hidden" value="1" name="rooms">
 						
 						<span class="calsec">
-							<input type="text" id="date" placeholder="ARRIVAL" class="calendarsection">
+							<input type="text" id="date" placeholder="ARRIVAL" class="calendarsection" aria-label="Arrival date">
 							<input type="hidden" id="arvv" name="arrival_date">
 						</span>
 						
 						<span class="calsec">
-							<input type="text" id="dater" placeholder="DEPARTURE" class="calendarsection">
+							<input type="text" id="dater" placeholder="DEPARTURE" class="calendarsection" aria-label="Departure date">
 							<input type="hidden" id="deptt" name="departure_date">
 						</span>
 						
 						<span class="dropsec">
-							<select name="rooms" id="rooms" class="halfsies">
+							<select name="rooms" id="rooms" class="halfsies" aria-label='number of rooms'>
 								<option value="" disabled selected>Total ROOMS</option>
 								<option value="1">1 Room</option>
 								<option value="2">2 Rooms</option>
@@ -112,7 +112,7 @@
 						</span>
 
 						<span class="dropsec">
-							<select name="adults[]" id="guests" class="halfsies">
+							<select name="adults[]" id="guests" class="halfsies" aria-label="number of adults">
 								<option value="" disabled selected>Total GUESTS</option>
 								<option value="1">1 Guest</option>
 								<option value="2">2 Guests</option>
@@ -239,7 +239,7 @@
 
 			<h5 class="discovertext"><?php the_title(); ?></h5>
 			
-			<a href="<?php the_permalink(); ?>" class="dropanchor"></a>
+			<a href="<?php the_permalink(); ?>" class="dropanchor" aria-label="<?php the_title(); ?>"></a>
 
 			<ul class="slides">
 			
@@ -276,7 +276,7 @@
 
 			<h3 class="discovertext"><?php the_title(); ?></h3>
 			
-			<a href="<?php the_permalink(); ?>" class="dropanchor"></a>
+			<a href="<?php the_permalink(); ?>" class="dropanchor" aria-label="<?php the_title(); ?>"></a>
 
 			<ul class="slides">
 			

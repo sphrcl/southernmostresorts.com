@@ -324,25 +324,25 @@ class social_Widget extends WP_Widget {
 					
 					
 						<?php if(get_option('misfit_facebook')) { ?>
-						<li><a href="http://facebook.com/<?php echo get_option('misfit_facebook'); ?>" target="_blank" class="flaticon-facebook51"></a></li>
+						<li><a href="http://facebook.com/<?php echo get_option('misfit_facebook'); ?>" target="_blank" class="flaticon-facebook51"  aria-label="link to southernmost facebook page"></a></li>
 						<?php } ?>
 						<?php if(get_option('misfit_twitter')) { ?>
-						<li><a href="http://twitter.com/<?php echo get_option('misfit_twitter'); ?>" target="_blank" class="flaticon-twitter44"></a></li>
+						<li><a href="http://twitter.com/<?php echo get_option('misfit_twitter'); ?>" target="_blank" class="flaticon-twitter44"  aria-label="link to southernmost twitter page"></a></li>
 						<?php } ?>
 						<?php if(get_option('misfit_pinterest')) { ?>
-						<li><a href="http://www.pinterest.com/<?php echo get_option('misfit_pinterest'); ?>" target="_blank" class="flaticon-pinterest31"></a></li>
+						<li><a href="http://www.pinterest.com/<?php echo get_option('misfit_pinterest'); ?>" target="_blank" class="flaticon-pinterest31"  aria-label="link to southernmost pinterest page"></a></li>
 						<?php } ?>
 						<?php if(get_option('misfit_dribbble')) { ?>
-						<li><a href="https://dribbble.com/<?php echo get_option('misfit_dribbble'); ?>" target="_blank" class="flaticon-dribbble14"></a></li>
+						<li><a href="https://dribbble.com/<?php echo get_option('misfit_dribbble'); ?>" target="_blank" class="flaticon-dribbble14"  aria-label="link to southernmost dribble page"></a></li>
 						<?php } ?>
 						<?php if(get_option('misfit_googleplus')) { ?>
-						<li><a href="https://plus.google.com/+<?php echo get_option('misfit_googleplus'); ?>" target="_blank" class="flaticon-google115"></a></li>
+						<li><a href="https://plus.google.com/+<?php echo get_option('misfit_googleplus'); ?>" target="_blank" class="flaticon-google115"  aria-label="link to southernmost google plus page"></a></li>
 						<?php } ?>
 						<?php if(get_option('misfit_instagram')) { ?>
-						<li><a href="https://instagram.com/<?php echo get_option('misfit_instagram'); ?>" target="_blank" class="flaticon-instagram7"></a></li>	
+						<li><a href="https://instagram.com/<?php echo get_option('misfit_instagram'); ?>" target="_blank" class="flaticon-instagram7"  aria-label="link to southernmost instagram page"></a></li>	
 						<?php } ?>
 						<?php if(get_option('misfit_behance')) { ?>
-						<li style="margin-left: 5px;"><a href="https://behance.net/<?php echo get_option('misfit_behance'); ?>" target="_blank" class="flaticon-behance2"></a></li>	
+						<li style="margin-left: 5px;"><a href="https://behance.net/<?php echo get_option('misfit_behance'); ?>" target="_blank" class="flaticon-behance2"  aria-label="link to southernmost behance page"></a></li>	
 						<?php } ?>
 
 					<span style="display: block;" class="clear"></span>

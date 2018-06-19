@@ -27,18 +27,18 @@
 
 				<div class="newsletter">
 					<form id="eclubCheck" method="post" action="//www.data2gold.com/cc3/safeandsecure.wow?6O521I55494X2X2G6G1O0L216R693Q5H3Z5E" class="eClub" target="_blank">
-						<input id="firstname" type="text" size="40" name="FIRSTNAME" maxlength="40" placeholder="First Name" required="required">
-						<input id="lastname" type="text" size="40" name="LASTNAME" maxlength="40" placeholder="Last Name" required="required">
-						<input id="email" type="text" size="40" name="email" maxlength="150" placeholder="Email Address" required="required">
+						<input id="firstname" type="text" size="40" name="FIRSTNAME" maxlength="40" placeholder="First Name" required="required" aria-label="First Name">
+						<input id="lastname" type="text" size="40" name="LASTNAME" maxlength="40" placeholder="Last Name" required="required" aria-label="Last Name">
+						<input id="email" type="text" size="40" name="email" maxlength="150" placeholder="Email Address" required="required" aria-label="Email Address">
 						<input id="form_submit" type="submit" value="Join Our List" />
-						<input type="HIDDEN" name="PEA" value="" />
-						<input type="HIDDEN" name="PEACC" value="" />
-						<input type="HIDDEN" name="PEABC" value="" />
-						<input type="HIDDEN" name="PEASUBJECT" value="LOOKUP" />
-						<INPUT TYPE="HIDDEN" NAME="NewUser" VALUE="1">
-						<INPUT TYPE="HIDDEN" NAME="PrThanksPage" VALUE="1">
-						<INPUT TYPE="HIDDEN" NAME="ftpbox" VALUE="01613">
-						<INPUT TYPE="HIDDEN" NAME="PRThanksTemplate" VALUE="ETHANKS">
+						<input type="hidden" name="PEA" value="" />
+						<input type="hidden" name="PEACC" value="" />
+						<input type="hidden" name="PEABC" value="" />
+						<input type="hidden" name="PEASUBJECT" value="LOOKUP" />
+						<INPUT TYPE="hidden" NAME="NewUser" VALUE="1">
+						<INPUT TYPE="hidden" NAME="PrThanksPage" VALUE="1">
+						<INPUT TYPE="hidden" NAME="ftpbox" VALUE="01613">
+						<INPUT TYPE="hidden" NAME="PRThanksTemplate" VALUE="ETHANKS">
 						<input type="hidden" name="sys_formtype" value="eClub">
 						<input type="hidden" name="hv_preftype" value="eClub" />
 						<input type="hidden" name="ECWT" value="EWELCOME" />
@@ -55,12 +55,12 @@
 
 				<div class="socialmedia">
 					<ul>
-						<?php if(get_option('misfit_facebook')) { ?><li><a href="<?php echo get_option('misfit_facebook'); ?>" target="_blank"><i class="fa fa-facebook"></i></a></li><?php } ?>
-						<?php if(get_option('misfit_twitter')) { ?><li><a href="<?php echo get_option('misfit_twitter'); ?>" target="_blank"><i class="fa fa-twitter"></i></a></li><?php } ?>
-						<?php if(get_option('misfit_youtube')) { ?><li><a href="<?php echo get_option('misfit_youtube'); ?>" target="_blank"><i class="fa fa-youtube-play"></i></a></li><?php } ?>
-						<?php if(get_option('misfit_instagram')) { ?><li><a href="<?php echo get_option('misfit_instagram'); ?>" target="_blank"><i class="fa fa-instagram"></i></a></li><?php } ?>
-						<?php if(get_option('misfit_google_plus')) { ?><li><a href="<?php echo get_option('misfit_google_plus'); ?>" target="_blank"><i class="fa fa-google-plus"></i></a></li><?php } ?>
-						<?php if(get_option('misfit_tripadvisor')) { ?><li><a href="<?php echo get_option('misfit_tripadvisor'); ?>" target="_blank"><i class="fa fa-tripadvisor"></i></a></li><?php } ?>
+						<?php if(get_option('misfit_facebook')) { ?><li><a href="<?php echo get_option('misfit_facebook'); ?>" target="_blank" aria-label="link to southernmost facebook page"><i class="fa fa-facebook"></i></a></li><?php } ?>
+						<?php if(get_option('misfit_twitter')) { ?><li><a href="<?php echo get_option('misfit_twitter'); ?>" target="_blank" aria-label="link to southernmost twitter page"><i class="fa fa-twitter"></i></a></li><?php } ?>
+						<?php if(get_option('misfit_youtube')) { ?><li><a href="<?php echo get_option('misfit_youtube'); ?>" target="_blank" aria-label="link to southernmost youtube page"><i class="fa fa-youtube-play"></i></a></li><?php } ?>
+						<?php if(get_option('misfit_instagram')) { ?><li><a href="<?php echo get_option('misfit_instagram'); ?>" target="_blank" aria-label="link to instagram twitter page"><i class="fa fa-instagram"></i></a></li><?php } ?>
+						<?php if(get_option('misfit_google_plus')) { ?><li><a href="<?php echo get_option('misfit_google_plus'); ?>" target="_blank" aria-label="link to southernmost google plus page"><i class="fa fa-google-plus"></i></a></li><?php } ?>
+						<?php if(get_option('misfit_tripadvisor')) { ?><li><a href="<?php echo get_option('misfit_tripadvisor'); ?>" target="_blank" aria-label="link to southernmost tripadvisor page"><i class="fa fa-tripadvisor"></i></a></li><?php } ?>
 					</ul>
 				</div>
 
@@ -88,7 +88,7 @@
 				</div>
 
 				<div class="save-the-children">
-					<a href="https://secure.savethechildren.org/site/c.8rKLIXMGIpI4E/b.6239401/k.C01C/Global_Action_Fund/apps/ka/sd/donor.asp?msource=cpkhhgaf0417&utm_source=Highgate2017&utm_medium=link&utm_campaign=highgatehotels0417" target="_blank"><img width="90px" src="<?php bloginfo('template_url'); ?>/images/stc-logo2.png"></a>
+					<a href="https://secure.savethechildren.org/site/c.8rKLIXMGIpI4E/b.6239401/k.C01C/Global_Action_Fund/apps/ka/sd/donor.asp?msource=cpkhhgaf0417&utm_source=Highgate2017&utm_medium=link&utm_campaign=highgatehotels0417" target="_blank"><img width="90px" src="<?php bloginfo('template_url'); ?>/images/stc-logo2.png" alt="save the children"></a>
 				</div>
 
 			</div>
@@ -104,7 +104,7 @@
 		<div class="footmentions">
 			<a class="footmentions-condenast" target="_blank" href="//www.cntraveler.com/"><img src="<?php bloginfo('template_url'); ?>/images/cnt-rca-2017.png" alt="Condé Nast Reader Choice Awards 2017 Logo"></a>
 			<a class="footmentions-highgate" target="_blank" href="///www.highgate.com/"><img src="<?php bloginfo('template_url'); ?>/images/highgate-logo.png" alt="Highgate Logo"></a>
-			<a class="footmentions-stc" href="https://secure.savethechildren.org/site/c.8rKLIXMGIpI4E/b.6239401/k.C01C/Global_Action_Fund/apps/ka/sd/donor.asp?msource=cpkhhgaf0417&utm_source=Highgate2017&utm_medium=link&utm_campaign=highgatehotels0417" target="_blank"><img width="90px" src="<?php bloginfo('template_url'); ?>/images/stc-logo2.png"></a>
+			<a class="footmentions-stc" href="https://secure.savethechildren.org/site/c.8rKLIXMGIpI4E/b.6239401/k.C01C/Global_Action_Fund/apps/ka/sd/donor.asp?msource=cpkhhgaf0417&utm_source=Highgate2017&utm_medium=link&utm_campaign=highgatehotels0417" target="_blank"><img width="90px" src="<?php bloginfo('template_url'); ?>/images/stc-logo2.png" alt="save the children"></a>
 		</div>
 
 	</div>
@@ -139,12 +139,12 @@
 
 		<div class="socialmedia">
 			<ul>
-				<?php if(get_option('misfit_facebook')) { ?><li><div class="rnsm-fa"><a href="<?php echo get_option('misfit_facebook'); ?>" target="_blank"><i class="fa fa-facebook"></i></a></div></li><?php } ?>
-				<?php if(get_option('misfit_twitter')) { ?><li><div class="rnsm-tw"><a href="<?php echo get_option('misfit_twitter'); ?>" target="_blank"><i class="fa fa-twitter"></i></a></div></li><?php } ?>
-				<?php if(get_option('misfit_youtube')) { ?><li><div class="rnsm-yo"><a href="<?php echo get_option('misfit_youtube'); ?>" target="_blank"><i class="fa fa-youtube-play"></i></a></div></li><?php } ?>
-				<?php if(get_option('misfit_instagram')) { ?><li><div class="rnsm-in"><a href="<?php echo get_option('misfit_instagram'); ?>" target="_blank"><i class="fa fa-instagram"></i></a></div></li><?php } ?>
-				<?php if(get_option('misfit_google_plus')) { ?><li><div class="rnsm-go"><a href="<?php echo get_option('misfit_google_plus'); ?>" target="_blank"><i class="fa fa-google-plus"></i></a></div></li><?php } ?>
-				<?php if(get_option('misfit_tripadvisor')) { ?><li><div class="rnsm-tr"><a href="<?php echo get_option('misfit_tripadvisor'); ?>" target="_blank"><i class="fa fa-tripadvisor"></i></a></div></li><?php } ?>
+				<?php if(get_option('misfit_facebook')) { ?><li><div class="rnsm-fa"><a href="<?php echo get_option('misfit_facebook'); ?>" target="_blank" aria-label="link to southernmost facebook page"><i class="fa fa-facebook"></i></a></div></li><?php } ?>
+				<?php if(get_option('misfit_twitter')) { ?><li><div class="rnsm-tw"><a href="<?php echo get_option('misfit_twitter'); ?>" target="_blank" aria-label="link to southernmost twitter page"><i class="fa fa-twitter"></i></a></div></li><?php } ?>
+				<?php if(get_option('misfit_youtube')) { ?><li><div class="rnsm-yo"><a href="<?php echo get_option('misfit_youtube'); ?>" target="_blank" aria-label="link to southernmost youtube page"><i class="fa fa-youtube-play"></i></a></div></li><?php } ?>
+				<?php if(get_option('misfit_instagram')) { ?><li><div class="rnsm-in"><a href="<?php echo get_option('misfit_instagram'); ?>" target="_blank" aria-label="link to southernmost instagram page"><i class="fa fa-instagram"></i></a></div></li><?php } ?>
+				<?php if(get_option('misfit_google_plus')) { ?><li><div class="rnsm-go"><a href="<?php echo get_option('misfit_google_plus'); ?>" target="_blank" aria-label="link to southernmost google plus page"><i class="fa fa-google-plus"></i></a></div></li><?php } ?>
+				<?php if(get_option('misfit_tripadvisor')) { ?><li><div class="rnsm-tr"><a href="<?php echo get_option('misfit_tripadvisor'); ?>" target="_blank" aria-label="link to southernmost tripadvisor page"><i class="fa fa-tripadvisor"></i></a></div></li><?php } ?>
 				<div class="clear"></div>
 			</ul>
 		</div>
@@ -315,7 +315,7 @@
 
 
 	<div class="overlay">
-		<a href="#" class="shutdown"></a>
+		<a href="#" class="shutdown" aria-label="shutdown"></a>
 	</div>
 
 
