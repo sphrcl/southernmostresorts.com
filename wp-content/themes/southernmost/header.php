@@ -124,7 +124,7 @@
 					
 					<ul id="menu-top-navigation" class="topnavigation">
 						<li>
-							<a href="<?php bloginfo('url');?>/rooms/">Accommodations</a>
+							<a href="<?php bloginfo('url');?>/accomodations/">Accommodations</a>
 							<div class="slidedown-nav">
 
 								<div class="left">
