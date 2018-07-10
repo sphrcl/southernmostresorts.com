@@ -32,7 +32,7 @@ function project_items()
     'publicly_queryable' => true,
     'show_ui' => true,
     'query_var' => true,
-    'rewrite' => array( 'slug' => 'room' ),
+    'rewrite' => array( 'slug' => 'accommodations' ),
     'capability_type' => 'post',
     'menu_icon' => get_bloginfo('template_url').'/options/images/icon_project.png',
     'hierarchical' => false,
@@ -136,7 +136,7 @@ function createdr_post_types() {
         'singular_name' => __( 'Meetings' )
       ),
       'public' => true,
-      'rewrite' => array('slug' => 'meetingsevents'),
+      'rewrite' => array('slug' => 'meetings'),
       'menu_icon' => get_bloginfo('template_url').'/options/images/icon_team.png',
       'supports' => array('title','custom-fields','editor','category','author','thumbnail')
     )
@@ -154,7 +154,7 @@ function createds_post_types() {
         'singular_name' => __( 'Locations' )
       ),
       'public' => true,
-      'rewrite' => array('slug' => 'locations'),
+      'rewrite' => array('slug' => '/activities/key-west'),
       'menu_icon' => get_bloginfo('template_url').'/options/images/icon_team.png',
       'supports' => array('title','custom-fields','editor','category','author','thumbnail')
     )
