@@ -32,7 +32,7 @@ function project_items()
     'publicly_queryable' => true,
     'show_ui' => true,
     'query_var' => true,
-    'rewrite' => array( 'slug' => 'accomodations' ),
+    'rewrite' => array( 'slug' => 'accommodations' ),
     'capability_type' => 'post',
     'menu_icon' => get_bloginfo('template_url').'/options/images/icon_project.png',
     'hierarchical' => false,
