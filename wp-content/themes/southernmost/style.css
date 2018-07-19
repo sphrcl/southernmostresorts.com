@@ -5391,3 +5391,38 @@ p.second_linec{
 .footmentions-condenast {
 	margin-right: 10px;
 }
+
+/*cookie consent*/
+.cookie-consent {
+	display: none;
+	position: fixed;
+	bottom: 0px;
+	left: 0px;
+	width: 100%;
+	background: #fff;
+	border-top: 3px solid rgba(76, 76, 76, 0.2);
+	z-index: 99999999;
+	text-align: center;
+	padding: 0; 
+}
+
+.cookie-consent p {
+    margin-top: 10px;
+    margin-bottom: 20px;
+    color: #646056;
+}
+
+.cookie-consent p a {
+	color: #179dab;
+}
+
+.cookie-consent__accept-btn {
+	padding: 7px;
+	text-transform: uppercase;
+	color: #fff;
+	position: relative;
+	top: -22px;
+	cursor: pointer;
+	font-size: 13px;
+	letter-spacing: 1px; 
+}
