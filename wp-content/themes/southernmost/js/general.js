@@ -597,3 +597,24 @@ $(document).ready(function(){
 	});
 
 });
+
+// GDPR cookies update
+
+jQuery( document ).ready(function( $ ) {
+    if ($(window).width() < 768) {
+        $('.button').removeAttr('target');
+   }
+    
+  if (!localStorage.getItem("cookies")) {
+		$('.cookie-consent').css("display", "block");
+   	}
+	$('.cookie-consent__accept-btn').on('click', function () {
+	    if (typeof(Storage) !== "undefined") {
+	    	if (!localStorage.getItem("cookies")) {
+				localStorage.cookies = "accept";
+				$('.cookie-consent').css("display", "none");
+	    	}
+		}
+	});       
+
+});
