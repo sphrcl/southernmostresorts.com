@@ -5426,3 +5426,18 @@ p.second_linec{
 	font-size: 13px;
 	letter-spacing: 1px; 
 }
+
+.newsletter__condition-container {
+	position: relative;
+	margin-bottom: 6px;
+}
+
+.newsletter__condition-container #condition-error {
+	position: absolute;
+	bottom: -12px;
+}
+
+.newsletter__condition-container p {
+	display: inline-block;
+	font-size: 12px;
+}
