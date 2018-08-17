@@ -382,13 +382,12 @@
 	</div><!-- end ressys form -->
 
 	<!-- GDPR Pop-up code -->
-	<div class="cookie-consent">
-	 	<p>
-	 		<?php echo get_bloginfo( 'name' ); ?> site uses cookies. By using this site, you are agreeing to our <a href="<?php bloginfo('url'); ?>/privacy-policy/" target="_blank" target="_blank">Privacy Policy</a>.
-	 	</p>
-	 	<a class="cookie-consent__accept-btn button">accept</a>
-	</div>
-
+	<?php if( get_field('activate_gdpr','option') === true ) :?>
+        <div class="cookie-consent">
+            <?php echo the_field('gdpr_message','option'); ?>
+            <a class="cookie-consent__accept-btn button">accept</a>
+        </div>
+    <?php endif; ?>
 
 	<script type='text/javascript' src='//ajax.googleapis.com/ajax/libs/jqueryui/1.11.1/jquery-ui.min.js'></script>
 

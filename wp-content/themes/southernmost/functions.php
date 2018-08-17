@@ -90,7 +90,19 @@ if ( !function_exists('ss_framework_admin_scripts') ) {
 	
 }
 
+// ACF Option
 
+if ( function_exists('acf_add_options_page') ) {
+
+	// Parent
+
+	$options_page_parent = acf_add_options_page(array(
+		'page_title' 	=> 'GDPR Settings',
+		'menu_title' 	=> 'GDPR Settings',
+		'redirect' 		=> false
+	));
+
+}
 
 // register widget
 add_action('widgets_init', 'ctUp_ads_widget');
