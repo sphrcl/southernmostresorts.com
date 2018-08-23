@@ -414,6 +414,73 @@
 	});
 	</script>
 
+
+	<?php if (is_home() || is_front_page()): ?>
+		<!-- Sojern Container Tag cp_v1_js, Pixel Version: 1 -->
+			<script>
+			  (function () {
+			    /* Please fill the following values. */
+			    var params = {
+			      hpid: "KEYSBR", /* Property ID */
+			      pt: "HOME_PAGE" /* Page Type - HOME_PAGE or PRODUCT or TRACKING */
+			    };
+			    /* Please do not modify the below code. */
+			    var paramsArr = [];
+			    for(key in params) { paramsArr.push(key + '=' + encodeURIComponent(params[key])) };
+			    var pl = document.createElement('script');
+			    pl.type = 'text/javascript';
+			    pl.async = true;
+			    pl.src = "https://beacon.sojern.com/pixel/cp/8?f_v=cp_v1_js&p_v=1&" + paramsArr.join('&');
+			    (document.getElementsByTagName('head')[0] ||
+			document.getElementsByTagName('body')[0]).appendChild(pl);
+			  })();
+			</script>
+		<!-- End Sojern Tag -->
+
+	<?php elseif( is_page_template('page-rooms.php') ): ?>
+		<!-- Sojern Container Tag cp_v1_js, Pixel Version: 1 -->
+			<script>
+			  (function () {
+			    /* Please fill the following values. */
+			    var params = {
+			      hpid: "KEYSBR", /* Property ID */
+			      pt: "PRODUCT" /* Page Type - HOME_PAGE or PRODUCT or TRACKING */
+			    };
+			    /* Please do not modify the below code. */
+			    var paramsArr = [];
+			    for(key in params) { paramsArr.push(key + '=' + encodeURIComponent(params[key])) };
+			    var pl = document.createElement('script');
+			    pl.type = 'text/javascript';
+			    pl.async = true;
+			    pl.src = "https://beacon.sojern.com/pixel/cp/8?f_v=cp_v1_js&p_v=1&" + paramsArr.join('&');
+			    (document.getElementsByTagName('head')[0] ||
+			document.getElementsByTagName('body')[0]).appendChild(pl);
+			  })();
+			</script>
+		<!-- End Sojern Tag -->
+	<?php else: ?>
+		<!-- Sojern Container Tag cp_v1_js, Pixel Version: 1 -->
+			<script>
+			  (function () {
+			    /* Please fill the following values. */
+			    var params = {
+			      hpid: "KEYSBR", /* Property ID */
+			      pt: "TRACKING" /* Page Type - HOME_PAGE or PRODUCT or TRACKING */
+			    };
+			    /* Please do not modify the below code. */
+			    var paramsArr = [];
+			    for(key in params) { paramsArr.push(key + '=' + encodeURIComponent(params[key])) };
+			    var pl = document.createElement('script');
+			    pl.type = 'text/javascript';
+			    pl.async = true;
+			    pl.src = "https://beacon.sojern.com/pixel/cp/8?f_v=cp_v1_js&p_v=1&" + paramsArr.join('&');
+			    (document.getElementsByTagName('head')[0] ||
+			document.getElementsByTagName('body')[0]).appendChild(pl);
+			  })();
+			</script>
+		<!-- End Sojern Tag -->
+	<?php endif ?>
+
 	<script type="text/javascript" src="<?php bloginfo ('template_url'); ?>/js/jquery.flexslider-min.js"></script>
 
 	<!-- Validation -->
