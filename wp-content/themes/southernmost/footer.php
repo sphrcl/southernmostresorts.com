@@ -30,6 +30,9 @@
 						<input id="firstname" type="text" size="40" name="FIRSTNAME" maxlength="40" placeholder="First Name" required="required" aria-label="First Name">
 						<input id="lastname" type="text" size="40" name="LASTNAME" maxlength="40" placeholder="Last Name" required="required" aria-label="Last Name">
 						<input id="email" type="text" size="40" name="email" maxlength="150" placeholder="Email Address" required="required" aria-label="Email Address">
+						<div class="newsletter__condition-container">
+							<input type="checkbox" name="condition" value=""> <p> I agree to the <a href="<?php bloginfo ('url'); ?>/terms/">Terms and Conditions</a>.</p>
+						</div>
 						<input id="form_submit" type="submit" value="Join Our List" />
 						<input type="hidden" name="PEA" value="" />
 						<input type="hidden" name="PEACC" value="" />
