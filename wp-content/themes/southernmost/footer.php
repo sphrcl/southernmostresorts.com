@@ -31,7 +31,7 @@
 						<input id="lastname" type="text" size="40" name="LASTNAME" maxlength="40" placeholder="Last Name" required="required" aria-label="Last Name">
 						<input id="email" type="text" size="40" name="email" maxlength="150" placeholder="Email Address" required="required" aria-label="Email Address">
 						<div class="newsletter__condition-container">
-							<input type="checkbox" name="condition" value=""> <p> I agree to the <a href="<?php bloginfo ('url'); ?>/terms/">Terms and Conditions</a>.</p>
+							<input type="checkbox" name="condition" value=""> <p> I agree to the <a href="<?php bloginfo ('url'); ?>/terms/">Terms and Conditions</a> and <a href="<?php bloginfo('url'); ?>/privacy-policy">Privacy Policy.</a></p>
 						</div>
 						<input id="form_submit" type="submit" value="Join Our List" />
 						<input type="hidden" name="PEA" value="" />
