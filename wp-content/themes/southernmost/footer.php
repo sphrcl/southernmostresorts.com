@@ -90,7 +90,7 @@
 					 <div class="conde_desc"><p class="first_linec">Our Hotel has been selected to be in<br>Conde Nast Choice Award</p><p class="second_linec"><a href="//www.cntraveler.com/vote">Vote and see the full list of hotels here ></a></p></div>
 				</div>
 
-				<div class="save-the-children">
+				<div class="save-the-children" style="display: none;">
 					<a href="https://secure.savethechildren.org/site/c.8rKLIXMGIpI4E/b.6239401/k.C01C/Global_Action_Fund/apps/ka/sd/donor.asp?msource=cpkhhgaf0417&utm_source=Highgate2017&utm_medium=link&utm_campaign=highgatehotels0417" target="_blank"><img width="90px" src="<?php bloginfo('template_url'); ?>/images/stc-logo2.png" alt="save the children"></a>
 				</div>
 
